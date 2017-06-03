@@ -342,7 +342,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1231381607}
+    m_TransformParent: {fileID: 808862230}
     m_Modifications:
     - target: {fileID: 400000, guid: e8ef930c672fcce4a88723bcce7a2591, type: 3}
       propertyPath: m_LocalPosition.x
@@ -350,11 +350,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8ef930c672fcce4a88723bcce7a2591, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.50900006
+      value: -0.29099995
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8ef930c672fcce4a88723bcce7a2591, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.122
+      value: 0.12200165
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8ef930c672fcce4a88723bcce7a2591, type: 3}
       propertyPath: m_LocalRotation.x
@@ -374,7 +374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e8ef930c672fcce4a88723bcce7a2591, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8ef930c672fcce4a88723bcce7a2591, type: 3}
@@ -5149,6 +5149,10 @@ Prefab:
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_TagString
       value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -11946,6 +11950,10 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 487882, guid: c9f398b49033ac143a5bfc6a39c9f8f4, type: 2}
   m_PrefabInternal: {fileID: 214466401}
+--- !u!4 &808862230 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  m_PrefabInternal: {fileID: 306017023}
 --- !u!1001 &809483137
 Prefab:
   m_ObjectHideFlags: 0
