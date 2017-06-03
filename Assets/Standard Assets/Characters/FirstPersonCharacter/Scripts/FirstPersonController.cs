@@ -81,6 +81,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if(Input.GetKey(KeyCode.C)){
+                transform.position = new Vector3(transform.position.x,transform.position.y - 0.7f,transform.position.z);
+                m_WalkSpeed = 2.5f;
+                m_UseHeadBob = false;
+            }
+            if(Input.GetKeyUp(KeyCode.C)){
+                m_WalkSpeed = 5f;
+                m_UseHeadBob = true;
+            }
         }
 
 
