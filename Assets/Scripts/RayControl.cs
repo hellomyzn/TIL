@@ -28,7 +28,6 @@ public class RayControl : MonoBehaviour {
 			sparkle2.enabled = false;
 			Destroy(bullet);
 		}					
-		print(bulletInterval);	
 	}
 
 	void GenerateBullet(){
