@@ -3,26 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AK47 : MonoBehaviour {
-	AudioClip getItemSound;
+	AudioClip shotSound;
 	AudioSource audioSource;
-	public RayControl rayControl;
+	public GameControl gameControl;
 
 
 	// Use this for initialization
 	void Start () {
-		getItemSound = Resources.Load<AudioClip>("Audio/fire");
+		shotSound = Resources.Load<AudioClip>("Audio/fire");
 		audioSource  = GetComponent<AudioSource>();		
 	}
 	
 	// Update is called once per frame
 	void Update () {	
-		if(Input.GetMouseButtonDown(0)){
-			if (rayControl.bulletInterval >= 0.3f) {
-				audioSource.PlayOneShot(getItemSound);
-			}
-		}
-		if(Input.GetMouseButtonUp(0)){
-
+		if(gameControl.shot == true){
+			audioSource.PlayOneShot(shotSound);
 		}
 	}
 }
