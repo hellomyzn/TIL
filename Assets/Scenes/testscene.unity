@@ -15075,6 +15075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sparkle: {fileID: 1420415654725262, guid: 39f0e0ef53fc2442e937de06a612c639, type: 2}
   sparkle2: {fileID: 325105214}
+  firstPersonCharacter: {fileID: 808862229}
 --- !u!1 &949708106
 GameObject:
   m_ObjectHideFlags: 0
@@ -18466,6 +18467,8 @@ MonoBehaviour:
   bulletInterval: 0
   audioControll: {fileID: 175189811}
   raycontroll: {fileID: 947509198}
+  bullet: 30
+  bulletBox: 150
 --- !u!4 &1203128485
 Transform:
   m_ObjectHideFlags: 0
