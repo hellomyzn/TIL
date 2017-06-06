@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AK47 : MonoBehaviour {
-	AudioClip shotSound;
+public class AudioControl : MonoBehaviour {
+	public GameObject ak47;
+	AudioClip shotSound; 
 	AudioSource audioSource;
-	public GameControl gameControl;
-
-
 	// Use this for initialization
 	void Start () {
 		shotSound = Resources.Load<AudioClip>("Audio/fire");
-		audioSource  = GetComponent<AudioSource>();		
+		audioSource  = ak47.GetComponent<AudioSource>();	
 	}
 	
 	// Update is called once per frame
-	void Update () {	
-		if(gameControl.shot == true){
-			audioSource.PlayOneShot(shotSound);
-		}
+	void Update () {		
+	}
+
+	public void GunShot(){
+		audioSource.PlayOneShot(shotSound);
 	}
 }
