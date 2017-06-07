@@ -6,6 +6,8 @@ public class RayControl : MonoBehaviour {
 	public GameObject sparkle;
 	public Renderer sparkle2;
 	public GameObject firstPersonCharacter;
+	public int targetLife;
+	public int score;
 	GameObject bullet;
 	Camera camera;
 	
@@ -15,6 +17,8 @@ public class RayControl : MonoBehaviour {
 	void Start () {
 		sparkle2 = sparkle2.GetComponent<Renderer>();
 		camera = firstPersonCharacter.GetComponent<Camera>();
+		score = 0;
+		targetLife = 5;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +32,14 @@ public class RayControl : MonoBehaviour {
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit)){			
 			bullet = Instantiate(sparkle,hit.point, Quaternion.identity);
+			print(hit.collider.gameObject.name + hit.point);
+			if(hit.collider.gameObject.name == "pCube1"){
+				targetLife--;
+				score += 20;
+			}else if(hit.collider.gameObject.name == "HeadMarkerTarget"){
+				targetLife--;
+				score += 100;
+			}
 		}
 		
 	}
