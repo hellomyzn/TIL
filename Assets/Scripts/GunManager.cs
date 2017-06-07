@@ -54,17 +54,17 @@ public class GunManager : MonoBehaviour {
 		if(bulletBox >= 30){
 			bullet  =30;
 			bulletBox = bulletBox - reloadBullet;
-			audioControllScript.ReloadSound();
 			print(bullet);
 			print(bulletBox);
 		}else if(bulletBox < 30 && bulletBox > 0){
 			bullet += bulletBox;
 			bulletBox = 0;
-			audioControllScript.ReloadSound();
 			print(bullet);
 			print(bulletBox);
 		}else{
 			print("リロードできません");
+			return;
 		}
+		audioControllScript.ReloadSound();
 	}
 }
