@@ -36,25 +36,13 @@ public class RayControl : MonoBehaviour {
 			bullet = Instantiate(sparkle,hit.point - bulletPosition, Quaternion.identity);
 			Vector3 hitPoint = hit.point;
 			Vector3 targetPoint = hit.collider.gameObject.transform.position;
-			// print(hit.collider.gameObject.name + hitPoint + targetPoint);
-
-			if(hit.collider.gameObject.name == "pCube1"){
-				targetScript.targetLife --;
-				scoreManagerScript.AddScore();
-				
-			}else if(hit.collider.gameObject.name == "HeadMarkerSensor"){
-				targetScript.targetLife--;
-				float HeadMarkerPoint= (targetPoint - hitPoint).magnitude * 10;
-				if(HeadMarkerPoint < 1){
-					scoreManagerScript.AddHeadMarkerHigh();
-				}else{
-					scoreManagerScript.AddHeadMarkerLow();
-				}
-			}
+			float HeadMarkerPoint= (targetPoint - hitPoint).magnitude * 10;
+			scoreManagerScript.AddScore(HeadMarkerPoint,hit,targetScript);
 		}
 	}
   
   public void DestroyBullet(){
+		targetScript.TargetDown();
 		sparkle2.enabled = false;
 		Destroy(bullet);       
   }
