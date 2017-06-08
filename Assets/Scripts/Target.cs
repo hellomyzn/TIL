@@ -15,10 +15,9 @@ public class Target : MonoBehaviour {
 		targetLife = 5;
 	}
 	// Update is called once per frame
-	void Update () {
-		TargetDown();		
+	void Update () {		
 	}
-	void TargetDown(){
+	public void TargetDown(){
 		if(targetLife == 0){
 			anim.SetBool("IsDown",true);
 			targetLife = 5;
