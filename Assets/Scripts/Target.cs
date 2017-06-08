@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour {
 	public GameObject rayControl;
+	public int targetLife;
 	RayControl rayControlScript;
 	Animator anim;
 
@@ -11,15 +12,16 @@ public class Target : MonoBehaviour {
 	void Start () {
 		rayControlScript = rayControl.GetComponent<RayControl>();
 		anim = GetComponent<Animator>();
+		targetLife = 5;
 	}
 	// Update is called once per frame
 	void Update () {
 		TargetDown();		
 	}
 	void TargetDown(){
-		if(rayControlScript.targetLife == 0){
+		if(targetLife == 0){
 			anim.SetBool("IsDown",true);
-			rayControlScript.targetLife = 5;
+			targetLife = 5;
 			Invoke("TargetUp",10f);
 		}	
 	}
