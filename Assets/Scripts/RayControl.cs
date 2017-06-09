@@ -31,22 +31,15 @@ public class RayControl : MonoBehaviour {
 		Ray ray = camera.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
 		Debug.DrawRay (ray.origin, ray.direction * 100, Color.red, 3, false);
 		RaycastHit hit;
+
 		if(Physics.Raycast(ray, out hit)){
-			Vector3 hitPoint = hit.point;
-			Vector3 targetPoint = hit.collider.gameObject.transform.position;			
-			Vector3 bulletPosition = (hit.point - ray.origin).normalized;
-			float HeadMarkerPoint= (targetPoint - hitPoint).magnitude * 10;
-			
+			Vector3 bulletPosition = (hit.point - ray.origin).normalized;			
 			bullet = Instantiate(sparkle,hit.point - bulletPosition, Quaternion.identity);
 
 			if(hit.collider.gameObject.tag == "Target"){
 				targetScript.targetLife --;
-				scoreManagerScript.score += 20;
-				
-			}else if(hit.collider.gameObject.tag == "HeadMarker"){
-				targetScript.targetLife--;
-				scoreManagerScript.AddHeadMarker(HeadMarkerPoint);
-			}				
+				scoreManagerScript.AddScore(hit);
+			}
 		}
 	}
   
