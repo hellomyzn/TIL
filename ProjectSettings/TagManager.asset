@@ -6,6 +6,8 @@ TagManager:
   tags:
   - nodecal
   - Bullet
+  - Target
+  - HeadMarker
   layers:
   - Default
   - TransparentFX
