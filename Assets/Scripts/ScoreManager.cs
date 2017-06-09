@@ -12,11 +12,16 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {		
 	}
-	public void AddHeadMarker(float HeadMarkerPoint){
+	public void AddScore(RaycastHit hit){
+		Vector3 hitPoint = hit.point;
+		Vector3 targetPoint = hit.collider.gameObject.transform.position;					
+		float HeadMarkerPoint= (targetPoint - hitPoint).magnitude * 10;
 		if(HeadMarkerPoint < 1.0f){
 			score += 100;
-		}else{
+		}else if (HeadMarkerPoint < 2.0f){
 			score += 50;
+		}else{
+			score += 20;
 		}
 	}
 }
