@@ -11883,7 +11883,7 @@ GameObject:
   - component: {fileID: 784502772}
   - component: {fileID: 784502771}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: ReticleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25232,7 +25232,7 @@ GameObject:
   - component: {fileID: 1612313111}
   - component: {fileID: 1612313110}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: ReticleBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30016,7 +30016,7 @@ GameObject:
   - component: {fileID: 1834254187}
   - component: {fileID: 1834254186}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: ReticleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31492,7 +31492,7 @@ GameObject:
   - component: {fileID: 1905936291}
   - component: {fileID: 1905936290}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ReticleTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
