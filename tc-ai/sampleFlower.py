@@ -5,4 +5,7 @@ iris = load_iris()
 
 pd.DataFrame(data = iris.data,columns = iris.feature_names)
 x = iris.data
-x_train,x_test,y_train,y_test = train_test_split(x,test_size = 0.3)
+x_train, x_test = train_test_split(x, test_size=0.3)
+
+print(len(x_train))
+print(len(x_test))
