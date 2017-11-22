@@ -14,12 +14,12 @@ import matplotlib.pyplot as plt
 # plt.plot(x,y)
 # plt.show()
 
-x = np.linspace(start = 1,stop = 50,num = 100)
-y = np.linspace(start = 1,stop = 50,num = 100)
+x = np.linspace(start=1, stop=50, num=100)
+y = np.linspace(start=1, stop=50, num=100)
 # print(x,"\n",y)
 
 np.random.shuffle(x)
 # print(x)
 
-plt.scatter(x,y,c="red",marker= "^")
+plt.scatter(x, y, c="red", marker="^")
 plt.show()
