@@ -4,7 +4,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/00292/Wholesale%20customers%20data.csv")
+dataset = pd.read_csv(
+    "https://archive.ics.uci.edu/ml/machine-learning\
+    -databases/00292/Wholesale%20customers%20data.csv")
 dataset.head()
 
 del(dataset['Channel'])
