@@ -5,6 +5,7 @@ from sklearn.linear_model import LogisticRegression
 from matplotlib.colors import ListedColormap
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
 df_wine = pd.read_csv(
@@ -25,12 +26,12 @@ x_test_std = sc.fit_transform(x_test)
 lr = LogisticRegression(C=0.1, random_state=0)
 lr.fit(x_train_std, y_train)
 
-print('トレーニングデータの正答率: ', lr.score(X_train_std, y_train))
-print('テストデータの正答率: ', lr.score(X_test_std, y_test))
+print('トレーニングデータの正答率: ', lr.score(x_train_std, y_train))
+print('テストデータの正答率: ', lr.score(x_test_std, y_test))
 pca = PCA(n_components=2)
 lr = LogisticRegression()
 
-x_train_pca = pca.fit_transform(x_train_std)
+x_train_pca = pca.transform(x_train_std)
 x_test_pca = pca.transform(x_test_std)
 
 lr.fit(x_train_pca, y_train)
