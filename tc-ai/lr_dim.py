@@ -31,7 +31,7 @@ print('テストデータの正答率: ', lr.score(x_test_std, y_test))
 pca = PCA(n_components=2)
 lr = LogisticRegression()
 
-x_train_pca = pca.transform(x_train_std)
+x_train_pca = pca.fit_transform(x_train_std)
 x_test_pca = pca.transform(x_test_std)
 
 lr.fit(x_train_pca, y_train)

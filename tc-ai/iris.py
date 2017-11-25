@@ -80,6 +80,7 @@ grid_points = np.concatenate((x_axis.reshape(data_num, 1),
                               y_axis.reshape(data_num, 1)), axis=1)
 # 構造を確認しよう
 print(grid_points.shape)
+print(grid_points)
 
 # predictメソッドを使い予測
 pred_label = lr.predict(grid_points)
