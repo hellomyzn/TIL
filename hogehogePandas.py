@@ -279,3 +279,11 @@ dframe2 = DataFrame(np.arange(16).reshape(4, 4),
                     columns=[['NY', 'NY', 'LA', 'SF'],
                              ['cold', 'hot', 'hot', 'cold']])
 dframe2
+
+
+# 階層的なindexに名前を付けられます。
+# 行方向の名前
+dframe2.index.names = ['INDEX_1', 'INDEX_2']
+# 列方向の名前
+dframe2.columns.names = ['Cities', 'Temp']
+dframe2
