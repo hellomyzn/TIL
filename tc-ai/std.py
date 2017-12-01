@@ -15,7 +15,12 @@ x_train, x_test, y_train, y_test = train_test_split(
     x, y, test_size=0.3, random_state=0)
 
 sc = StandardScaler()
-sc.fit(x_train)
+hoge = sc.fit(x_train)
+
+
+hoge.scale_
+hoge.with_std
+hoge.partial_fit
 
 x_train_std = sc.transform(x_train)
 x_test_std = sc.transform(x_test)
