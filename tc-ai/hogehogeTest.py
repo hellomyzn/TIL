@@ -26,6 +26,8 @@ print(y.shape)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=0)
 
+X_train.shape
+y_train.shape
 
 # 平均と標準偏差を計算して、標準化
 sc = StandardScaler()
@@ -49,7 +51,8 @@ X_train2, X_test2, y_train2, y_test2 = train_test_split(X_train_std,
                                                         y_train,
                                                         test_size=0.25,
                                                         random_state=1)
-
+X_train.shape
+X_train2.shape
 
 # Xの特徴量の個数を取得
 dimension = X_train2.shape[1]
@@ -152,7 +155,7 @@ while dimension > k_features:
     subsets = []
 
     # 特徴量の部分集合を表す列インデックスの組み合わせごとに処理を反復
-    for p in combinations(indices, dimension-1):
+    for p in combinations(indices, dimension - 1):
         # スコアを計算
         knn.fit(X_train2[:, p], y_train2)
         # クラスラベルの予測
@@ -179,27 +182,36 @@ print(best_subsets)
 
 print(best_scores)
 
+[print(k) for k in [1, 2, 3, 3, 4, 4, 5, 6, 7, 8]]
 
 # 特徴量の個数のリスト
 k_fea = [len(k) for k in best_subsets]
+plt.grid()
+plt.ylim([0.5, 1.1])
 
 plt.xlabel('Number of Dimensions')
 plt.ylabel('Correct Answer Rate')
 # 横軸を特徴量の個数、縦軸をスコアとした折れ線グラフ
 plt.plot(k_fea, best_scores, marker='o', color='red')
-plt.ylim([0.5, 1.1])
+
 # x軸とy軸のタイトルを表示
 
 # 目盛(グリッド)線の表示
-plt.grid()
+
 plt.show()
 
 # 特徴量を選択し、インデックスを変数に格納
 index = best_subsets[7]
 print(index)
 
+index
+X_train_std[:, index].shape
+y_train.shape
+y_train2.shape
 # 6つの特徴量でフィッティング
 knn.fit(X_train_std[:, index], y_train)
 
 print('トレーニングデータの正答率: ', knn.score(X_train_std[:, index], y_train))
 print('テストデータの正答率: ', knn.score(X_test_std[:, index], y_test))
+knn.score(X_train2[:, index], y_train2)
+knn.score(X_test2[:, index], y_test2)
