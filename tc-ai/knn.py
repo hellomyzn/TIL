@@ -17,7 +17,17 @@ y_min, y_max = x[:, 1].min() - 1, x[:, 1].max() + 1
 
 x_axis, y_axis = np.meshgrid(np.arange(x_min, x_max, 0.02),
                              np.arange(y_min, y_max, 0.02))
+x_axis.shape
 
+a = np.meshgrid(np.arange(0, 5, 1), np.arange(10, 15, 1))
+a[0].shape
+a[1].shape
+a[0]
+a[1]
+
+c = np.concatenate((a[0].reshape(25, 1), a[1].reshape(25, 1) ,a[1].reshape(25, 1)), axis=1)
+c.shape
+c
 print(x_axis.shape)
 print(y_axis.shape)
 
