@@ -25,7 +25,7 @@ a[1].shape
 a[0]
 a[1]
 
-c = np.concatenate((a[0].reshape(25, 1), a[1].reshape(25, 1) ,a[1].reshape(25, 1)), axis=1)
+c = np.concatenate((a[0].reshape(25, 1), a[1].reshape(25, 1)), axis=1)
 c.shape
 c
 print(x_axis.shape)
