@@ -79,9 +79,9 @@ nfl_frame.tail()
 nfl_frame.ix[3]
 # 列全体に値を代入
 nfl_frame['Stadium'] = "Levi's Stadium"  # 文字列内に「'」があるので、全体は「”」で囲む
-nfl_frame
+print(nfl_frame)
 # 長さが合っていれば、列への代入が可能。
-nfl_frame["Stadium"] = np.arange(10)
+nfl_frame["Stadium"] = np.arange(32)
 nfl_frame
 # SeriesをDataFrameに追加する
 stadiums = Series(["Levi's Stadium", "AT&T Stadium"], index=[4, 0])
@@ -110,7 +110,7 @@ my_index
 my_index[2]
 my_index[2:]
 # シリーズのインデックスは書き換え不可
-my_index[0] = '2'
+#my_index[0] = '2'
 
 
 ser1 = Series([1, 2, 3, 4], index=['A', 'B', 'C', 'D'])

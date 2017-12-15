@@ -6,7 +6,7 @@ from pandas import Series, DataFrame
 from pandas_datareader import DataReader
 from datetime import datetime
 from IPython.display import SVG
-from __future__ import division
+# from __future__ import division
 sns.set_style("whitegrid")
 
 """
