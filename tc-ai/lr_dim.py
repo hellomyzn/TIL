@@ -18,10 +18,12 @@ x, y = df_wine.iloc[:, 1:].values, df_wine.iloc[:, 0].values
 x_train, x_test, y_train, y_test = train_test_split(
     x, y, test_size=0.3, random_state=0)
 
+
 # 平均と標準偏差を使って標準化
 sc = StandardScaler()
 x_train_std = sc.fit_transform(x_train)
 x_test_std = sc.fit_transform(x_test)
+
 
 lr = LogisticRegression(C=0.1, random_state=0)
 lr.fit(x_train_std, y_train)
@@ -31,9 +33,17 @@ print('テストデータの正答率: ', lr.score(x_test_std, y_test))
 pca = PCA(n_components=2)
 lr = LogisticRegression()
 
+
 x_train_pca = pca.fit_transform(x_train_std)
 x_test_pca = pca.transform(x_test_std)
 
+x_train_std.shape
+x_test_std.shape
+
+x_train_pca.shape
+x_test_pca.shape
+
+x_test_pca
 lr.fit(x_train_pca, y_train)
 
 
