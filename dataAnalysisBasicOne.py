@@ -9,7 +9,8 @@ import lxml
 from pandas import DataFrame
 from sklearn.datasets import load_boston
 
-cat lec25.csv
+# cat lec25.csv
+
 
 dframe = pd.read_csv('lec25.csv')
 dframe
@@ -20,7 +21,7 @@ dframe
 pd.read_csv('lec25.csv', header=None, nrows=2)
 dframe.to_csv('mytextdata_out.csv')
 
-cat mytextdata_out.csv
+# cat mytextdata_out.csv
 dframe.to_csv(sys.stdout)
 dframe.to_csv('mytextdata_out.csv', sep='_')
 
@@ -39,20 +40,20 @@ dframe = DataFrame(data['diet'])
 dframe
 
 json.dump(data, open('data.json', 'w'))
-cat data.json
+# cat data.json
 json.load(open('data.json'))
 
 
 url = 'http://www.fdic.gov/bank/individual/failed/banklist.html'
-webbrowser.open('http://www.fdic.gov/bank/individual/failed/banklist.html')
+webbrowser.open(url)
 dframe_list = pd.read_html(url, flavor='html5lib')
 
+
 dframe = dframe_list[0]
-dframe_list[0]
-dframe.columns.values
+print(dframe_list[0])
+print(dframe.columns.values)
 
 
-dframe = pd.read_excel('Lec_28_test.xlsx',
-                       sheetname='Sheet1')
+dframe = pd.read_excel('Lec_28_test.xlsx')
 
-dframe
+print(dframe)
