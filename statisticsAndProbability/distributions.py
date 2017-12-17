@@ -13,6 +13,8 @@ plt.hist(values, 50, edgecolor="k")
 確率密度関数を視覚化しましょう。
 """
 x = np.arange(-3, 3, 0.001)
+x.shape
+norm.pdf(x)
 plt.plot(x, norm.pdf(x))
 
 """
