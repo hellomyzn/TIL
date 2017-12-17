@@ -138,5 +138,30 @@ plt.show()
 
 X = randn(500)
 Y = randn(500)
-plt.scatter(X,Y)
+plt.scatter(X, Y)
+plt.show()
+
+
+"""
+ヒストグラム
+"""
+incomes = np.random.normal(27000, 15000, 10000)
+plt.hist(incomes, 50)
+plt.show()
+
+
+"""
+箱ひげ図¶
+データの広がりと歪みを視覚化するのに便利。赤い線はデータの平均値を表す。 箱の中には、
+下位1/4より大きく、上位3/4より小さいデータが入る。従って、半数のデータは箱の中に存在する。
+点線のひげはデータの範囲を表す。外れ値はひげの外側にプロットされる。外れ値は、箱の上端、
+下端から箱の高さの1.5倍以上離れた値とする。 下の例は、-40から60までの均一に分布したデータに
+100以上、及び-100以下の外れ値を加えたもの
+"""
+
+uniformSkewed = np.random.rand(100) * 100 - 40
+high_outliers = np.random.rand(10) * 50 + 100
+low_outliers = np.random.rand(10) * -50 - 100
+data = np.concatenate((uniformSkewed, high_outliers, low_outliers))
+plt.boxplot(data)
 plt.show()
