@@ -1,0 +1,109 @@
+body {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+header {
+  /*background-colorプロパティを削除*/
+  margin-top: 10px;
+}
+
+.heading {
+  /*background-colorプロパティを削除*/
+  /*heightプロパティを削除*/
+  margin: 0 auto;
+  width: 960px;
+}
+
+.contents {
+  /*background-colorプロパティを削除*/
+  margin: 10px auto;
+  width:960px;
+}
+
+.navbar {
+  width: 930px;
+  margin: 0 auto;
+  height: 20px;
+  background-color: #fff;
+  padding: 15px;
+}
+
+.left-content {
+  height:400px;
+  width: 640px;
+  float: left;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.right-content {
+  height: 370px;
+  width: 280px;
+  float: left;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+footer {
+  /*background-colorプロパティを削除*/
+  /*heightプロパティを削除*/
+  text-align: center;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.title {
+  font-family: fantasy;
+}
+
+.heading-sentence {
+  font-size: 18px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+}
+
+td {
+  margin: 0;
+  padding-left: 10px;
+  line-height: 30px;
+}
+
+.stylist-image {
+  height: 100px;
+  width: 100px;
+}
+
+.stylist-name {
+  font-size: 16px;
+  text-align: center;
+}
+
+a {
+  color: red;
+}
+
+a:hover {
+  color: blue;
+}
