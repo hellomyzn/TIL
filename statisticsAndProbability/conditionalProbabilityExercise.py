@@ -82,3 +82,45 @@ P(E,F)と P(E)P(F)は近いですね。しかしながら、EとFが依存関係
 それでは、P(E|F) = P(E,F)/P(F)の関係を確かめてみましょう。
 """
 print((purchases[30] / 100000.0) / PF)
+
+"""
+演習
+上記のコードを修正し、購入確率が年齢範囲によらないようにしてみましょう。この場合、
+EとFに依存関係がなくなります。
+
+そして、P(E|F)がP(E)とほぼ同じであることを確かめましょう。
+ある年齢範囲における購入の条件付き確率は、全年齢範囲における購入確率と変わらないことを示しましょう。
+
+条件付き確率　演習の解答
+最初に、購入確率が年齢によらないように、コードを修正します。今回、購入確率を40%とします。
+"""
+
+totals = {20: 0, 30: 0, 40: 0, 50: 0, 60: 0, 70: 0}
+purchases = {20: 0, 30: 0, 40: 0, 50: 0, 60: 0, 70: 0}
+totalPurchases = 0
+for _ in range(100000):
+    ageDecade = random.choice([20, 30, 40, 50, 60, 70])
+    purchaseProbability = 0.4
+    totals[ageDecade] += 1
+    if (random.random() < purchaseProbability):
+        totalPurchases += 1
+        purchases[ageDecade] += 1
+
+"""
+次に、P(E|F)を計算します。再び30代を選びましょう。
+"""
+
+PEF = float(purchases[30]) / float(totals[30])
+print("P(purchase | 30s): " + str(PEF))
+
+
+"""
+そして、P(E)を計算します。
+"""
+
+PE = float(totalPurchases) / 100000.0
+print("P(Purchase):" + str(PE))
+
+"""
+P(E|F)とP(E)はほぼ同じですね。従って、EとFは無関係であるといえます。
+"""
