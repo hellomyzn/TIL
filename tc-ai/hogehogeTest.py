@@ -215,3 +215,28 @@ print('トレーニングデータの正答率: ', knn.score(X_train_std[:, inde
 print('テストデータの正答率: ', knn.score(X_test_std[:, index], y_test))
 knn.score(X_train2[:, index], y_train2)
 knn.score(X_test2[:, index], y_test2)
+
+
+pokemon = pd.read_csv(
+    'https://raw.githubusercontent.com/we-b/datasets_for_ai/master/poke.csv')
+X = np.array(pokemon)
+X.shape
+# データ(行)数を取得
+print(X.shape[0])
+# 列数を取得
+print(X.shape[1])
+
+tmp = np.array([1, 2, 3, 4, 5])
+tmp.shape
+
+
+A = X[0:3]
+B = X[3:6]
+print(A)
+print(B)
+
+print(np.concatenate((A, B), axis=0))
+print(np.concatenate((A, B), axis=0).shape)
+
+print(np.concatenate((A, B), axis=1))
+print(np.concatenate((A, B), axis=1).shape)

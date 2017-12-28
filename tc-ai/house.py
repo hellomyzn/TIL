@@ -46,7 +46,6 @@ print(round(lr.score(X_train, y_train), 2))
 
 # 必要なライブラリのインポート
 import matplotlib.pyplot as plt
-%matplotlib inline
 # データ点をプロット
 plt.scatter(X, y, color='blue')
 # 線形回帰モデルをプロット
