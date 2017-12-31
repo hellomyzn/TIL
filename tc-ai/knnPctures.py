@@ -11,6 +11,12 @@ digits = load_digits(n_class=10)
 digits.images.shape
 
 
+digits.data.shape
+
+print(digits.data)
+
+plt.plot(digits.data[0], digits.data[1])
+
 plt.axis('off')
 plt.imshow(digits.images[0], cmap="gray_r")
 plt.show()
@@ -25,6 +31,7 @@ hoge
 
 
 pd.DataFrame(digits.images[4])
+
 len(digits.images[0])
 pd.DataFrame(digits.data)
 
@@ -44,6 +51,7 @@ X_train.shape
 y_train.shape
 
 knn = KNeighborsClassifier(n_neighbors=5)
+
 
 knn.fit(X_train, y_train)
 
@@ -73,5 +81,3 @@ for i in range(10):
     # 予測した数字と実際の画像を縦に並べる
     plt.title('pred' + str(y_test_pred[i]))
     plt.show()
-
-plt.plot(digits.data)
