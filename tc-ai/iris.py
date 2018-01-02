@@ -108,23 +108,23 @@ plt.ylim(y_axis.min(), y_axis.max())
 plt.contourf(x_axis, y_axis, pred_label, alpha=0.3, cmap=cmap)
 plt.show()
 
-
+hogeColor = ("red", "blue", "yellow")
 # トレーニングデータのプロット
 for i, n in enumerate(np.unique(y)):
     plt.scatter(x=X_train[y_train == n, 0],
                 y=X_train[y_train == n, 1],
-                c=cmap(i),
+                c=hogeColor[i],
                 marker=markers[i],
                 s=70,
                 edgecolors='',
                 label=n)
 
 # テストデータは色・マーカーを変えて、プロット
-plt.scatter(X_test[:, 0],  # X_testの0列目(花びらの長さ)の全ての行を取得
-            X_test[:, 1],  # X_testの1列目(花びらの横幅)の全ての行を取得
-            c='k',
-            marker='v',
-            label='test data')
+    plt.scatter(X_test[:, 0],  # X_testの0列目(花びらの長さ)の全ての行を取得
+                X_test[:, 1],  # X_testの1列目(花びらの横幅)の全ての行を取得
+                c='k',
+                marker='v',
+                label='test data')
 
 # 軸の範囲を指定
 plt.xlim(x_axis.min(), x_axis.max())
