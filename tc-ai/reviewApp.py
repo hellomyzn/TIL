@@ -49,7 +49,13 @@ while True:
     print("[0]レビューを書く")
     print("[1]レビューを読む")
     print("[2]アプリを終了する")
-    user_input = int(input())
+
+    inputCheck = input()
+
+    if inputCheck.isdigit():
+        user_input = int(inputCheck)
+    else:
+        user_input = 0
 
     if user_input == 0:
         post_review()        # post_review()関数の呼び出し
