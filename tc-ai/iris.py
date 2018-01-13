@@ -10,6 +10,15 @@ import numpy as np
 
 iris = datasets.load_iris()
 iris = datasets.load_iris()
+iris
+
+pd_iris_data = pd.DataFrame(iris.data)
+pd_iris_feature_names = pd.DataFrame(iris.feature_names)
+pd_iris_target = pd.DataFrame(iris.target)
+pd_iris_target_names = pd.DataFrame(iris.target_names)
+
+
+
 print(iris.DESCR)
 pd.DataFrame(data=iris.data, columns=iris.feature_names).head()
 X = iris.data[:, [2, 3]]

@@ -42,5 +42,11 @@ print(centroids)
 print(centroids.shape)
 
 pd_centroids = pd.DataFrame(centroids, columns=dataset.columns)
+dataset['centroids'] = y
+dataset
+
+
 pd_centroids.plot.bar()
 plt.show()
+
+pd_centroids.plot()
