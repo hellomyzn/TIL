@@ -14,13 +14,4 @@ public class Owner : MonoBehaviour
 			Debug.Log(text);
 		};
 	}
-	//void Start () 
-	//{
-	//	
-	//}
-	
-	//void Update () 
-	//{
-	//	
-	//}
 }
