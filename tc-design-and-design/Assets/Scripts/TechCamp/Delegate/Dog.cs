@@ -26,13 +26,4 @@ public class Dog : MonoBehaviour
 			OnAlived("なでなで");
 		}
 	}
-	//void Start () 
-	//{
-	//	
-	//}
-	
-	//void Update () 
-	//{
-	//	
-	//}
 }
