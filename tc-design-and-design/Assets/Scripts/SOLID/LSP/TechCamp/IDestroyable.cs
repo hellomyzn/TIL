@@ -1,0 +1,4 @@
+interface IDestroyable
+{
+    void Destroy();
+}

@@ -155,6 +155,7 @@
 -define:UNITY_EDITOR_OSX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
+'Assets/Scripts/SOLID/LSP/TechCamp.cs'
 'Assets/Scripts/SOLID/OCP/TechCamp/IPlayState.cs'
 'Assets/Scripts/SOLID/OCP/TechCamp/PlayerOCP.cs'
 'Assets/Scripts/SOLID/OCP/TechCamp/Run.cs'
@@ -180,6 +181,15 @@
 'Assets/Scripts/TechCamp/Singleton/SingletonPattern.cs'
 'Assets/Scripts/TechCamp/Singleton/SingletonSampleObject.cs'
 'Assets/Scripts/TechCamp/State/IState.cs'
+'Assets/Scripts/TechCamp/State/MainState.cs'
+'Assets/Scripts/TechCamp/State/StateRun.cs'
+'Assets/Scripts/TechCamp/State/StateWalk.cs'
+'Assets/Scripts/TechCamp/Strategy/AgeComparator.cs'
+'Assets/Scripts/TechCamp/Strategy/CompareClassStrategy.cs'
+'Assets/Scripts/TechCamp/Strategy/CompareSample.cs'
+'Assets/Scripts/TechCamp/Strategy/HeightComparator.cs'
+'Assets/Scripts/TechCamp/Strategy/HumanStrategy.cs'
+'Assets/Scripts/TechCamp/Strategy/IComparator.cs'
 -r:'/Applications/Unity/Unity2017.2.0f3.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity2017.2.0f3.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'
 -r:'/Applications/Unity/Unity2017.2.0f3.app/Contents/Mono/lib/mono/unity/UnityScript.dll'
