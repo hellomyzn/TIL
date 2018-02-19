@@ -49,7 +49,13 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'pg', '~> 0.18'
+end
+
 gem "devise"
 gem 'toastr-rails'
 gem "paperclip", "~> 5.2.1"
 gem 'dropzonejs-rails'
+gem "figaro","~> 1.1.0"
