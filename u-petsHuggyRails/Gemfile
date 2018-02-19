@@ -51,3 +51,5 @@ end
 
 gem "devise"
 gem 'toastr-rails'
+gem "paperclip", "~> 5.2.1"
+gem 'dropzonejs-rails'

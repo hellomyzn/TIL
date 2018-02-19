@@ -13,14 +13,14 @@
         <li class="<%= "active" if controller?("listings") && action?("description") %>">
           <%= link_to "リスティングの内容", manage_listing_description_path(@listing)%>
         </li>
-        <li class="<%= "active" if controller?("listings") && action?("adress") %>">
+        <li class="<%= "active" if controller?("listings") && action?("address") %>">
           <%= link_to "住所情報", manage_listing_address_path(@listing)%>
         </li>
         <li class="<%= "active" if controller?("listings") && action?("price") %>">
           <%= link_to "料金", manage_listing_price_path(@listing)%>
         </li>
         <li class="<%= "active" if controller?("listings") && action?("photos") %>">
-          <%= link_to "写真", manage_listing_photos_path(@listing)%>
+          <%= link_to "写真", manage_listing_photos_path(@listing), data:{turbolinks:false}%>
         </li>
         <li class="<%= "active" if controller?("listings") && action?("calender") %>">
           <%= link_to "カレンダー", manage_listing_calender_path(@listing)%>
