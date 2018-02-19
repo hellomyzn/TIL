@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   resources :listings
   resources :users, only: [:show]
 
+  resources :photos, only: [:create, :destroy] do
+    collection do
+      get :list
+    end
+  end
+
+
   get "manage-listing/:id/basics" => "listings#basics", as: "manage_listing_basics"
   get "manage-listing/:id/description" => "listings#description", as: "manage_listing_description"
   get "manage-listing/:id/address" => "listings#address", as: "manage_listing_address"
@@ -13,9 +20,6 @@ Rails.application.routes.draw do
   get "manage-listing/:id/calender" => "listings#calender", as: "manage_listing_calender"
   get "manage-listing/:id/bankaccount" => "listings#bankaccount", as: "manage_listing_bankaccount"
   get "manage-listing/:id/publish" => "listings#publish", as: "manage_listing_publish"
-
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
