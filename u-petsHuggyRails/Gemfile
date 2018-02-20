@@ -60,3 +60,4 @@ gem "paperclip", "~> 5.2.1"
 gem 'dropzonejs-rails'
 gem "figaro","~> 1.1.0"
 gem 'aws-sdk', '~> 2.3'
+gem 'geocoder'
