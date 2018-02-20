@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_listing, only: [:show, :update, :basics, :description, :address, :price, :photos, :calender, :bankaccount, :publish]
+  before_action :set_listing, only: [:show, :update, :basics, :description, :address, :price, :photos, :calendar, :bankaccount, :publish]
 
   def index
     @listings = current_user.listings
@@ -9,23 +9,26 @@ class ListingsController < ApplicationController
   def show
     @photos = @listing.photos
   end
+
   def new
     # 現在のユーザーのリスティングの作成
     @listing = current_user.listings.build
   end
 
   def create
-    # パラメータとともに現在のユーザーのリスティングを作成
+    # パラメーターとともに現在のユーザーのリスティングを作成
     @listing = current_user.listings.build(listing_params)
 
     if @listing.save
-      redirect_to manage_listing_basics_path	@listing, notice: 'リスティングを作成・保存をしました'
+      redirect_to manage_listing_basics_path(@listing), notice: "リスティングを作成・保存をしました"
     else
-      redirect_to new_listing_path, notice: 'リスティングを作成・保存できませんでした'
+      redirect_to new_listing_path, notice: "リスティングを作成・保存出来ませんでした"
     end
+
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @listing.update(listing_params)
@@ -49,7 +52,7 @@ class ListingsController < ApplicationController
     @photo = Photo.new
   end
 
-  def calender
+  def calendar
   end
 
   def bankaccount
@@ -58,8 +61,9 @@ class ListingsController < ApplicationController
   def publish
   end
 
-  private
 
+
+  private
   def listing_params
     params.require(:listing).permit(:home_type, :pet_type, :breeding_years, :pet_size, :price_pernight, :address, :listing_title, :listing_content, :active)
   end
@@ -67,4 +71,6 @@ class ListingsController < ApplicationController
   def set_listing
     @listing = Listing.find(params[:id])
   end
+
+
 end
