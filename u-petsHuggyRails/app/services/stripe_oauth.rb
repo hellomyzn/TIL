@@ -3,7 +3,7 @@ class StripeOauth < Struct.new( :user )
   def oauth_url( params )
     url = client.authorize_url( {
       scope: 'read_write',
-      stripe_landing: 'login',
+      stripe_landing: 'register',
       stripe_user: {
         email: user.email
       }
