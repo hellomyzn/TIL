@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220095830) do
+ActiveRecord::Schema.define(version: 20180221072421) do
 
   create_table "listings", force: :cascade do |t|
     t.string   "home_type",       limit: 255
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180220095830) do
     t.integer  "total_price",    limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.boolean  "self_booking"
   end
 
   add_index "reservations", ["listing_id"], name: "index_reservations_on_listing_id", using: :btree
@@ -77,6 +78,10 @@ ActiveRecord::Schema.define(version: 20180220095830) do
     t.string   "name",                   limit: 255
     t.string   "phone_number",           limit: 255
     t.string   "description",            limit: 255
+    t.string   "image_file_name",        limit: 255
+    t.string   "image_content_type",     limit: 255
+    t.integer  "image_file_size",        limit: 4
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
