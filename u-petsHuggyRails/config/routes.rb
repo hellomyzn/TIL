@@ -31,4 +31,9 @@ Rails.application.routes.draw do
   get "manage-listing/:id/bankaccount" => "listings#bankaccount", as: "manage_listing_bankaccount"
   get "manage-listing/:id/publish" => "listings#publish", as: "manage_listing_publish"
 
+  # stripe connect oauth path
+  get "/connect/oauth" => "stripe#oauth", as: "stripe_oauth"
+  get "/connect/confirm" => "stripe#confirm", as: "stripe_confirm"
+  get "/connect/deauthorize" => "stripe#deauthorize", as: "stripe_deauthrize"
+
 end
