@@ -14,7 +14,7 @@ class Listing < ActiveRecord::Base
   after_validation :geocode, :if => :address_changed?
 
   def average_star_rate
-    reviews.cont == 0 ? 0 :reviews.average(:rate).round(1)
+    reviews.count == 0 ? 0 : reviews.average(:rate).round(1)
   end
 
 
