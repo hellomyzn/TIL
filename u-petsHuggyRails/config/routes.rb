@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
 
+  resources :listings do
+    resources :reviews, only: [:create, :destroy]
+  end
 
   # 予約ホームのルート
   get "/setdate" => "reservations#setdate"

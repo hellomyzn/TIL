@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221095123) do
+ActiveRecord::Schema.define(version: 20180222063611) do
 
   create_table "listings", force: :cascade do |t|
     t.string   "home_type",       limit: 255
@@ -59,6 +59,18 @@ ActiveRecord::Schema.define(version: 20180221095123) do
   add_index "reservations", ["listing_id"], name: "index_reservations_on_listing_id", using: :btree
   add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.text     "description", limit: 65535
+    t.integer  "rate",        limit: 4
+    t.integer  "listing_id",  limit: 4
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "reviews", ["listing_id"], name: "index_reviews_on_listing_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -96,4 +108,6 @@ ActiveRecord::Schema.define(version: 20180221095123) do
   add_foreign_key "photos", "listings"
   add_foreign_key "reservations", "listings"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "listings"
+  add_foreign_key "reviews", "users"
 end
