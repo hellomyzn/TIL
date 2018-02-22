@@ -64,3 +64,5 @@ gem 'geocoder'
 gem 'jquery-ui-rails'
 gem 'stripe'
 gem 'rest-client'
+gem "private_pub"
+gem "thin"
