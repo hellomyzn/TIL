@@ -72,7 +72,11 @@ class ListingsController < ApplicationController
   def publish
   end
 
-
+  def not_checked
+    @listing = Listing.find(params[:listing_id])
+    @listing.update(not_checked: params[:not_checked])
+    render :nothing => true
+  end
 
   private
   def listing_params
