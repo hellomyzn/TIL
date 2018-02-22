@@ -139,7 +139,7 @@
                                 </div>
 
                                 <div class="actions text-center">
-                                    <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide" %>
+                                    <%= f.submit "この日程で予約する", class: "btn btn-danger btn-wide",disabled:true %>
                                 </div>
                             <% end %>
                         </div>
@@ -165,15 +165,18 @@
     </div>
 
 
-    <!-- レビュー    -->
-    <div class="row">
-        <div class="col-md-9">
-            <h3 class="row-space-3">レビュー</h3>
-        </div>
+    <!-- レビュー     -->
+    <div class="row row-space-4">
+      <div class="col-md-9">
+        <h3 class="row-space-3">レビュー<%= @reviews.count %>件</h3>
+        <div id="average_star_rate"></div>
+          <%= render 'reviews/form' if @currentUserBooking && !@currentUserReview %>
+          <%= render 'reviews/list' %>
+      </div>
 
-        <div class="col-md-3">
+      <div class="col-md-3">
 
-        </div>
+      </div>
     </div>
 
     <!-- google map    -->
@@ -262,7 +265,7 @@ function initMap() {
 
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=<%=ENV["GOOGLE_APP_KEY"]%>&signed_in=true&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1BoiSo2jL950_AuFzV-f9ETgKn0uQl2I&signed_in=true&callback=initMap">
 </script>
 
 <script>
@@ -420,4 +423,16 @@ $(function() {
     }
   });
 });
+</script>
+
+
+<script type="text/javascript">
+  $("#average_star_rate").raty
+  (
+    {
+      path: "/assets",
+      readOnly: true,
+      score: <%= @listing.avarage_star_rate %>
+    }
+  );
 </script>

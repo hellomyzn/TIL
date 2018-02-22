@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   root :to => "pages#index"
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",:registrations => 'registrations' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations'}
+
   resources :listings
   resources :users, only: [:show]
 
@@ -15,6 +16,9 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
 
+  resources :listings do
+    resources :reviews, only: [:create, :destroy]
+  end
 
   # 予約ホームのルート
   get "/setdate" => "reservations#setdate"
