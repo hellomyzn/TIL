@@ -17,4 +17,5 @@ class Listing < ActiveRecord::Base
     reviews.cont == 0 ? 0 :reviews.average(:rate).round(1)
   end
 
+
 end
