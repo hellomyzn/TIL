@@ -27,5 +27,10 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::auth();
+    Route::get('/', 'TweetsController@index');
+    Route::resource('tweets', 'TweetsController');
+    Route::resource('tweets.comments', 'CommentsController', ['only' => 'store']);
+    Route::get('/tweets/{id}/delete', "TweetsController@destroy");
+    Route::resource('users', 'UsersController', ['only' => 'show']);
 });
