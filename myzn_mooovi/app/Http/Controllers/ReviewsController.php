@@ -17,9 +17,18 @@ class ReviewsController extends RankingController
         return view('reviews.create')->with(array('product' => $product, 'review' => $review));
     }
 
-    public function store()
+    public function store(Request $request)
     {
         // Review::create()
-        return redirect('/products');
+        Review::create
+        (
+            [
+                'nickname' => $request->nickname,
+                'rate' => $request->rate,
+                'review' => $request->review,
+                'product_id' => $request->products,
+            ]
+        );
+        return redirect('/');
     }
 }
