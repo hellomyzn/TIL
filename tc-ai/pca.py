@@ -52,10 +52,12 @@ pca.components_
 attr=['HP','Attack','Defense','Sp. Atk','Sp. Def','Speed']
 
 fig, ax = plt.subplots(figsize=(16,8))
-plt.scatter(x, y)
+
+
+
 for i in range(pca.components_.shape[1]):
     x1=pca.components_[0,i]*100
     y1=pca.components_[1,i]*100
-    ax.arrow(0, 0, x1, y1,  head_width=5, head_length=10, fc='k', ec='k')
+    plt.arrow(0, 0, x1, y1,  head_width=5, head_length=10, fc='k', ec='k')
     plt.text(x1+15, y1,attr[i])
 plt.show()
