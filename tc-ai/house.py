@@ -39,9 +39,15 @@ y = house['median_house_value']
 print(X)
 print(y)
 
+house = pd.read_csv(
+    'https://raw.githubusercontent.com/we-b/datasets_for_ai/master/cal_house.csv')
+X = house[['housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income']]
+y = house['median_house_value']
+
+
 # トレーニングデータとテストデータの分割の為の関数をインストール
 # トレーニングデータとテストデータを70%:30%の割合で分割
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
 
 # トレーニングデータのshapeを確認
 print(X_train.shape)
