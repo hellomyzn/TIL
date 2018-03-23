@@ -23,7 +23,7 @@
                       </h3>
                       <p class="text-small">
                         <span class="rating-star">
-                          <i class="star-actived rate-[ここに評価を表示]0"></i>
+                          <i class="star-actived rate-{{ $product->review_average() }}0"></i>
                         </span>
                       </p>
                     </div>

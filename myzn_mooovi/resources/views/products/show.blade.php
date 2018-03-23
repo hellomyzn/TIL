@@ -28,11 +28,11 @@
                 @foreach ($product->reviews()->get() as $review)
                   <li style="border-bottom: dotted 1px">
                     <div class="thumbnail__caption">
-                      <h3 class="text-xsmall text-overflow" title="{{ $review->nickname }}">
-                        <span><i class="text-xxsmall" title=""></i></span>{{ $review->nickname }}
+                      <h3 class="text-xsmall text-overflow" title="{{ $review->user->name }}">
+                        <span><i class="text-xxsmall" title=""></i></span>{{ $review->user->name }}
                       </h3>
                       <p class="text-small">
-                        <span class="rating-star"><i class="star-actived rate-[ここに評価を表示]0"></i></span>
+                        <span class="rating-star"><i class="star-actived rate-{{ $review->rate }}0"></i></span>
                       </p>
                       <p>
                         {{ $review->review }}

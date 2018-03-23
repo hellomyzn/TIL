@@ -7,9 +7,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
 use App\Review;
-
+use Auth;
 class ReviewsController extends RankingController
 {
+
+    public function __construct()
+    {
+      parent::__construct();
+      $this->middleware('auth', array('only' => 'create'));
+    }
     public function create($id)
     {
         $product = Product::find($id);
@@ -23,7 +29,7 @@ class ReviewsController extends RankingController
         Review::create
         (
             [
-                'nickname' => $request->nickname,
+                'user_id' => Auth::user()->id,
                 'rate' => $request->rate,
                 'review' => $request->review,
                 'product_id' => $request->products,

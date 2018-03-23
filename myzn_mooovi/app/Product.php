@@ -12,4 +12,9 @@ class Product extends Model
     {
       return $this->hasMany(Review::class);
     }
+
+    public function review_average()
+    {
+      return round($this->reviews()->avg('rate'));
+    }
 }
