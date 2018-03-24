@@ -2,6 +2,11 @@ from sklearn.cross_validation import train_test_split as tts
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+
+"""
+Section1
+"""
 num = 1
 name = "Mike"
 new_name = "1"
@@ -20,16 +25,42 @@ print(num, type(num))
 new_num = int(new_name)
 print(new_num, type(new_num))
 
+
+
+"""
+Section2
+"""
+
 # print()の際にsep=","を引数に渡すと,[,]で区切ってくれる
 print("Hi", "Mike", sep=',', end='\n')
-print("Hi", "Mike", sep=',', end='\n')
+print("Hi", "Mike", sep=',', end='.\n')
+
+"""
+Section3
+"""
 
 # //小数点以下を省く、**でべき乗
 print(17 / 3, 17 // 3, 5 * 5 * 5 * 5 * 5, 5**5)
 
 # round関数の使い方
 pie = 3.14151515151515
-round(pie, 2)
+round(pie, 2
+
+import math
+# 平方根
+result = math.sqrt(25)
+print(result)
+
+#log
+y = math.log2(10)
+print(y)
+
+print(help(math))
+
+
+"""
+Section4
+"""
 
 # \の使い方
 print("I don't know")
@@ -60,6 +91,11 @@ prefix = "py"
 print(prefix + "thon")
 
 
+
+"""
+Section5
+"""
+
 # str型を配列で文字を出力する
 word = "python"
 print(word[0])
@@ -79,6 +115,10 @@ n = len(word)
 print(n)
 
 
+
+"""
+Section6
+"""
 # 特定の文字列があるかどうか
 s = "My name is Mike. Hi Mike"
 print(s)
