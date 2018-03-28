@@ -96,4 +96,90 @@ while count < 5:
     count += 1
 else:
     print("done")
+
+
+"""
+input
+"""
+
+while True:
+    word = input('Enter:')
+    num = int(word)
+    if num == 100:
+        break
+
+    print("next")
+
+
+
+
+"""
+for
+"""
+
+some_list = [1,2,3,4,5]
+
+i = 0
+while i < len(some_list):
+    print(some_list[i])
+    i += 1
+
+
+# for文で書く
+for i in some_list:
+    print(i)
+
+# for else
+for fruit in ['apple', 'banana', 'orange']:
+    if fruit == 'banana':
+        print("stop eating")
+        break
+    print(fruit)
+else:
+    print("i ate all")
+
+
+# range関数
+for i in range(2,10, 3):
+    print(i)
+
+for i in range(10):
+    print(i , "hello")
+
+for _ in range(10):
+    pritn("good bye")
+
+
+"""
+enumerate
+"""
+
+for i, fruit in enumerate(['apple', 'banana', 'orange']):
+    print(i, fruit)
+
+
+"""
+zip
+"""
+
+days = ["Mon", "Tue", "Wed"]
+fruits = ["apple", "banana", "orange"]
+drinks = ["coffee", "tea", "beer"]
+
+for i in range(len(days)):
+    print(days[i], fruits[i], drinks[i])
+
+
+for day, fruit, drink in zip(days, fruits, drinks):
+    print(day, fruit, drink)
+
+
+
+"""
+dictのfor文
+"""
+
+d = {'x': 100, 'y': 200}
+for k, v in d.items():
+    print(k , v)
     
