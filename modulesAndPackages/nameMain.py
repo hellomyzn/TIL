@@ -1,3 +1,7 @@
+"""
+絶対パスと相対パスのURL
+"""
+
 print("standardLibrary:",__name__)
 
 import lesson_package.talk.animal
