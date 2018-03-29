@@ -1,3 +1,7 @@
+"""
+標準ライブラリー
+"""
+
 s = "sjdflasmv,nojfoejfkljfjl"
 
 d = {}
