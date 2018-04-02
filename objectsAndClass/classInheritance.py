@@ -1,3 +1,51 @@
+class Person():
+    def __init__(self, name="Tom"):
+      self.name = name
+      print(self.name)
+
+    def say_something(self):
+      print("I'm %s. hello" % (self.name))
+      self.run(10)
+
+    def run(self, num):
+        print("run" * num)
+
+person = Person()
+person.say_something()
+
+
+"""
+継承
+"""
+
+class Car():
+    def __init__(self, model=None):
+        self.model = model
+
+    def run(self):
+        print("run")
+
+class TokyoCar(Car):
+    def run(self):
+        print("fast")
+
+class TeslaCar(Car):
+    def __init__(self, model="Model S", enable_auto_run=False):
+        super().__init__(model)
+        self.enable_auto_run = enable_auto_run
+
+    def run(self):
+        print("super fast")
+
+    def auto_run(self):
+        print("auto run")
+
+car = Car()
+car.run
+
+
+
+
 class Person(object):
     def __init__(self, age=1):
         self.age = age
@@ -103,3 +151,22 @@ t = T()
 t.name = "Mike"
 t.age = 20
 pprint(t.name, t.age)
+
+
+
+class Person():
+    kind = "human"
+
+    def __init__(self):
+        self.x = 100
+
+    @classmethod
+    def what_is_your_kind(cls):
+        return cls.kind
+
+
+a = Person()
+print(a.what_is_your_kind())
+
+print(Person.kind)
+print(Person.what_is_your_kind)
