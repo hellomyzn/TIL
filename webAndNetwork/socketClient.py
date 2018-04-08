@@ -1,5 +1,9 @@
 import socket
 
+
+"""
+TCP/IPの場合
+"""
 #
 # with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 #     s.connect(('127.0.0.1', 50007))
@@ -8,8 +12,7 @@ import socket
 #     print(repr(data))
 
 """
+UDPの場合
 """
-
-
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     s.sendto(b'Hello UDP', ('127.0.0.1', 50007))
