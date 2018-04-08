@@ -5,6 +5,10 @@
 """
 
 
+"""
+TCP/IPの場合
+"""
+
 import socket
 #
 # with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -20,10 +24,12 @@ import socket
 #                 print('data: {}, addr: {}'.format(data, addr))
 #                 conn.sendall(b'Received: ' + data)
 
-"""
-"""
 
 
+
+"""
+UDPの場合
+"""
 
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     s.bind(('127.0.0.1', 50007))
