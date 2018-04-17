@@ -24,7 +24,7 @@ class TestCal(object):
         print('method={}'.format(method.__name__))
 
     def test_add_num_and_double(self, request):
-        os_name = request.config.getoption('--os-name')
+        os_name=  request.config.getoption('--os-name')
         print(os_name)
         if os_name == 'mac':
             print('ls')
