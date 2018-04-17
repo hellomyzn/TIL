@@ -1,0 +1,6 @@
+python_programming_demo_app.egg-info/PKG-INFO
+python_programming_demo_app.egg-info/SOURCES.txt
+python_programming_demo_app.egg-info/dependency_links.txt
+python_programming_demo_app.egg-info/requires.txt
+python_programming_demo_app.egg-info/top_level.txt
+test/test_calculation.py
