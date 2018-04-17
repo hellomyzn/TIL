@@ -53,7 +53,7 @@ for i, n in enumerate(np.unique(y)):
                 s=70,
                 edgecolors='',
                 label=n)
-
+    plt.show()
 # テストデータは色・マーカーを変えて、プロット
 plt.scatter(x=X_test[:, 0],  # X_test(花びらの長さ)の全ての行を取得
             y=X_test[:, 1],  # X_testの1列目(花びらの横幅)の全ての行を取得
