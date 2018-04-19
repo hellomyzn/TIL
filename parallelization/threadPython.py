@@ -12,17 +12,35 @@ def worker1():
     logging.debug('end')
 
 
-def worker2(x, y=1):
+def worker2():
     logging.debug('start')
-    logging.debug(x)
-    logging.debug(y)
-    time.sleep(5)
+    time.sleep(2)
     logging.debug('end')
 
 if __name__ == '__main__':
-    t1 = threading.Thread(name="rename worker1", target=worker1)
-    t2 = threading.Thread(target=worker2, args=(100,), kwargs={'y':200})
-    t1.start() #スレッドが走る
-    t2.start()
 
-    print('started')
+    t = threading.Timer(3, worker1)
+    t.start()
+
+    # for _ in range(5):
+    #     t = threading.Thread(target=worker1)
+    #     t.setDaemon(True) #このt1の処理が長い時にまたないで処理を終了する
+    #     t.start()
+    #
+    # print(threading.enumerate())
+    # for thread in threading.enumerate():
+    #     if thread is threading.currentThread():
+    #         print(thread)
+    #         continue
+    #     thread.join()
+    #
+    #
+    #
+    # t2 = threading.Thread(target=worker2)
+    # t1.start() #スレッドが走る
+    # t2.start()
+    #
+    # print('started')
+    #
+    # t1.join()　# setDeamonしたやつでも処理が終わるまで待つ
+    # t2.join()　#デーモン化してないやつでも明示的に書くのが暗黙の了解
