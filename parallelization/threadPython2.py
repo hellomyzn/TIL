@@ -7,33 +7,32 @@ import time
 logging.basicConfig(
     level=logging.DEBUG, format='%(threadName)s: %(message)s')
 
-def worker1(queue):
+def worker1(event):
+    event.wait() # event.set()を待っている　
     logging.debug('start')
-    while True:
-        item = queue.get()
-        if item is None:
-            break
-        logging.debug(item)
-        queue.task_done()
-
-    logging.debug('logggggggggggggggggggggggggggggggggggggg')
+    time.sleep(3)
     logging.debug('end')
 
+
+def worker2(event):
+    event.wait() #event.set()を待っている
+    logging.debug('start')
+    time.sleep(3)
+    logging.debug('end')
+
+
+def worker3(event):
+    logging.debug('start')
+    time.sleep(5)
+    logging.debug('end')
+    event.set()
+
+
 if __name__ == '__main__':
-    queue = queue.Queue()
-    for i in range(100000):
-        queue.put(i) # queueに値を追加している
-    ts = []
-    for _ in range(3): # 100000万行のデータを3つのスレッドで処理をする
-        t = threading.Thread(target=worker1, args=(queue,))
-        t.start()
-        ts.append(t)
-    logging.debug('tasks are not done')
-    queue.join()
-    logging.debug('task are done')
-
-    for _ in range(len(ts)):
-        queue.put(None)
-
-
-    [t.join() for t in ts]
+    event = threading.Event()
+    t1 = threading.Thread(target=worker1, args=(event,))
+    t2 = threading.Thread(target=worker2, args=(event,))
+    t3 = threading.Thread(target=worker3, args=(event,))
+    t1.start()
+    t2.start()
+    t3.start()
