@@ -52,5 +52,5 @@ class Scraping
         $product->save();
     }
 }
-
+Scraping::movie_urls();
 ?>
