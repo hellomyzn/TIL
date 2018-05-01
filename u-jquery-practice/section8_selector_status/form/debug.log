@@ -1,0 +1,388 @@
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfeeaf000, size 0x230 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff73e000, size 0x230 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff73e000, size 0x230 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfeead000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed7f000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed7c000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed79000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed76000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed73000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed70000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed6d000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed6a000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff73d000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed67000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff60f000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed5e000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff60c000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xfed64000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff609000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff606000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff603000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff600000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff5fd000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff5fa000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff5f7000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff5eb000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff5f4000, size 0xf84 fully unreadable
+[0321/223240:ERROR:process_info.cc(608)] range at 0xff30e000, size 0x230 fully unreadable
+[0321/223240:ERROR:process_reader_win.cc(141)] SuspendThread: アクセスが拒否されました。 (0x5)
+[0321/223240:ERROR:process_reader_win.cc(141)] SuspendThread: アクセスが拒否されました。 (0x5)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75a52000 of 28 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(134)] could not read data directory from C:\WINDOWS\SYSTEM32\GDI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77240000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\USER32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75350000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\MSCTF.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75720000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\system32\IMM32.DLL
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x72570000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINMM.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74190000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\profapi.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741e0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\USERENV.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73f50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WTSAPI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77410000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SHLWAPI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75a70000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SHELL32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74100000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\shcore.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74fa0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\PSAPI.DLL
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74de0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x727b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.18006_none_a9ec6aab013aafee\COMCTL32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77010000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\COMDLG32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x774e0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\ole32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74fb0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\OLEAUT32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77400000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NSI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINNSI.DLL
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x744e0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x755f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WS2_32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x70a50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\USP10.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75710000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\MSASN1.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x770b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\CRYPT32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75310000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINTRUST.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73230000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\Secur32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xf210000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\49.0.2623.87\chrome_child.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x6e6c0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files\AVAST Software\Avast\aswJsFlt.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x749b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCR110.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74950000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnIS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74a90000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCP110.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74920000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnOS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnBS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\netutils.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\srvcli.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73490000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\wkscli.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NETAPI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\log.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74500000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\DNSAPI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74870000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\commchannel.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73b70000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\JsonRpcServer.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741a0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\rasman.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74440000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\RASAPI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74850000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\avastIP.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74830000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswEngLdr.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73580000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\AavmRpch.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74910000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WSOCK32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x76d30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SETUPAPI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74200000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\iertutil.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74620000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WININET.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74b20000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashBase.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswAux.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73760000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashTask.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73880000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\Aavm4h.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xbac154 of 12 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:process_snapshot_win.cc(89)] ReadMemory ExceptionInformation failed
+[0321/223240:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0321/223240:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x775dd04c of 28 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x775dd04c of 28 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(134)] could not read data directory from C:\WINDOWS\SYSTEM32\ole32.dll
+[0321/223240:WARNING:pe_image_reader.cc(134)] could not read data directory from C:\WINDOWS\SYSTEM32\ole32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x775dd04c of 28 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(134)] could not read data directory from C:\WINDOWS\SYSTEM32\ole32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74fb0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74fb0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\OLEAUT32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74fb0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\OLEAUT32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\OLEAUT32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77400000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NSI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77400000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x77400000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NSI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NSI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINNSI.DLL
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINNSI.DLL
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINNSI.DLL
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x744e0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x744e0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x744e0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x755f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x755f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WS2_32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WS2_32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x755f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x70a50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WS2_32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x70a50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\USP10.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\USP10.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x70a50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75710000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\USP10.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75710000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\MSASN1.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\MSASN1.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75710000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\MSASN1.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x770b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x770b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x770b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\CRYPT32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\CRYPT32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\CRYPT32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75310000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINTRUST.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75310000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x75310000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINTRUST.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WINTRUST.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73230000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73230000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\Secur32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73230000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\Secur32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\Secur32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xf210000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\49.0.2623.87\chrome_child.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xf210000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xf210000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\49.0.2623.87\chrome_child.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\49.0.2623.87\chrome_child.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x6e6c0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x6e6c0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files\AVAST Software\Avast\aswJsFlt.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x6e6c0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files\AVAST Software\Avast\aswJsFlt.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\Program Files\AVAST Software\Avast\aswJsFlt.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x749b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x749b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCR110.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x749b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCR110.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCR110.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74950000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnIS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74950000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74950000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnIS.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnIS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74a90000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74a90000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCP110.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74a90000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCP110.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\WinSxS\x86_avast.vc110.crt_2036b14a11e83e4a_11.0.60610.1_none_1d37a43bbfe1dc9c\MSVCP110.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74920000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74920000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnOS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74920000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnOS.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnOS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnBS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c50000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnBS.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswCmnBS.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\netutils.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\netutils.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\netutils.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\srvcli.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\srvcli.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x734b0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73490000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73490000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\srvcli.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\wkscli.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\wkscli.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73490000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\wkscli.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NETAPI32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NETAPI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735d0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\NETAPI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\log.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\log.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74c30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74500000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\log.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\DNSAPI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74500000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\DNSAPI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74870000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74500000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\commchannel.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74870000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\DNSAPI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73b70000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\commchannel.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\JsonRpcServer.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74870000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73b70000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\commchannel.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741a0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\JsonRpcServer.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\rasman.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73b70000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\JsonRpcServer.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741a0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74440000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\rasman.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\RASAPI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x741a0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74440000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\rasman.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74850000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\RASAPI32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\avastIP.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74440000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\RASAPI32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74850000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74830000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\avastIP.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswEngLdr.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74850000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74830000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\avastIP.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73580000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswEngLdr.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\AavmRpch.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74830000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73580000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswEngLdr.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74910000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\AavmRpch.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WSOCK32.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73580000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\AavmRpch.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74910000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x76d30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WSOCK32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SETUPAPI.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74910000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x76d30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74200000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WSOCK32.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SETUPAPI.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\iertutil.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x76d30000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74200000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74620000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\SETUPAPI.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\iertutil.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WININET.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74200000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74620000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\iertutil.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74b20000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WININET.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashBase.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74620000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\WINDOWS\SYSTEM32\WININET.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74b20000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashBase.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x74b20000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswAux.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashBase.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswAux.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73760000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x735f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashTask.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\aswAux.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73760000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashTask.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73760000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73880000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\ashTask.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73880000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\Aavm4h.dll
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\Aavm4h.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0x73880000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:pe_image_reader.cc(280)] could not read dos header from C:\PROGRA~1\AVASTS~1\Avast\Aavm4h.dll
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xbac154 of 12 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:process_snapshot_win.cc(89)] ReadMemory ExceptionInformation failed
+[0321/223240:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xbac154 of 12 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:ERROR:process_reader_win.cc(232)] ReadMemory at 0xbac154 of 12 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
+[0321/223240:WARNING:process_snapshot_win.cc(89)] ReadMemory ExceptionInformation failed
+[0321/223240:WARNING:process_snapshot_win.cc(89)] ReadMemory ExceptionInformation failed
+[0321/223240:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0321/223240:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
+[0321/223240:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558
+[0321/223240:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558
+[0321/223240:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess, ntstatus=-1073741558
