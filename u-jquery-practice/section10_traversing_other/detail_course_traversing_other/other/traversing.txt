@@ -1,0 +1,101 @@
+$("li").filter(":has(ul)");
+$("li").filter(":last-child");
+
+$(".nst2 li").filter(function(i) {
+	return i % 3 == 0;
+});
+
+
+$("li").has("ul");
+
+„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+
+$(".nst2 li").eq(2);
+$(".nst2 li").eq(-2);
+
+$(".nst2 li").first();
+$(".nst2 li").eq(0);
+
+$(".nst2 li").last();
+$(".nst2 li").eq(-1);
+
+
+$(".top")
+$(".top").first();
+$(".top").last();
+
+
+$(".nst2 li").slice(2);
+$(".nst2 li").slice(2, 4);
+$(".nst2 li").slice(-2);
+$(".nst2 li").slice(-4, -2);
+
+„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+
+$("li").not(".top");
+
+$(".nst2 li").not(function(i) {
+	return i % 3 == 0;
+});
+
+„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+
+$(".nst2 li").add(".top");
+
+$(".top");
+$(".top").next();
+$(".top").next().addBack();
+$(".top").next().addBack(":odd");
+
+„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+
+$(".nst2 .top")
+.nextAll().css("color", "red")
+.end().css("color", "blue");
+
+„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+
+$(".nst2 li").each(function(i, e) {
+	var num = "[" + i + "]";
+	console.log(num, $(this).text());
+});
+
+
+$(".nst2 li").each(function(i, e) {
+	console.log(e === this);
+});
+
+
+„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+
+$(".nst2 li").map(function(i, e) {
+	var num = "[" + i + "]";
+	return num + " " + $(this).text();
+});
+
+
+$(".nst2 li").map(function(i, e) {
+	var num = "[" + i + "]";
+	return num + " " + $(this).text();
+}).get().join("\n");
+
+„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ
+
+$("li").each(function(i, e) {
+	var $this = $(this);
+	if ($this.is(":last-child")) {
+		$this.css("color", "blue");
+	}
+});
+
+
+$("li").click(function() {
+	var $this = $(this);
+	if ($this.is(".top")) {
+		console.log("top!!");
+	} else {
+		console.log("not top.");
+	}
+});0;
+
+
