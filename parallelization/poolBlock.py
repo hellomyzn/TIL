@@ -23,8 +23,10 @@ if __name__ == '__main__':
     # t1 = multiprocessing.Process(target=worker1, args=(i,))
     #プールの数でワーカの数を指定する
     with multiprocessing.Pool(3) as p:
+        logging.debug(p.apply(worker1, (200, )))
+        logging.debug('executed apply')
         p1 = p.apply_async(worker1, (100, ))
         p2 = p.apply_async(worker1, (100, ))
         logging.debug('executed')
-        logging.debug(p1.get(timeout=1)) 　# timeoutで1秒で帰ってこなかったらエラーを出す
+        logging.debug(p1.get()) # timeoutで1秒で帰ってこなかったらエラーを出す
         logging.debug(p2.get()) # ワーカーのリターンをgetする
