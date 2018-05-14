@@ -1,0 +1,39 @@
+// title:(タイトルとURLを表示)
+(function() {
+	// jQueryの読み込み
+	var d = document, o;
+	try {
+		$ = jQuery;
+		if ($) {r();}
+	} catch(e) {
+		o = d.createElement("script");
+		o.type = "text/javascript";
+		o.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js";
+		o.onload = r;
+		d.body.appendChild(o);
+	}
+
+	// 実行本体
+	function r() {
+		$ = jQuery;
+
+		// 文字列の取得
+		var url = location.href;
+		var ttl = d.title;
+
+		// ライトボックスの表示
+		var css = {width: "100%", height: "4em",
+				margin: "10px 0 0 0", boxSizing: "border-box"};
+		var $wrp = $("<div>").css({
+			width: "100%", height: "100%", minHeight: "100%",
+			position: "fixed", left: 0, top: 0,
+			background: "#000000", opacity: 0.9, zIndex: 99999
+		})
+		.append($("<textarea>").val(ttl).css(css))
+		.append($("<textarea>").val(url).css(css))
+		.append($("<textarea>").val(ttl+ "\n" + url).css(css))
+		.append($("<button>").text("Close")
+				.css(css).click(function() {$wrp.remove()}))
+		.appendTo("body");
+	}
+})();
