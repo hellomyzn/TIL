@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div id="calc">
+      <div>
+        <input type="text" id="formula">
+      </div>
+      <div>
+        <button class="btnN">9</button>
+        <button class="btnN">8</button>
+        <button class="btnN">7</button>
+        <button class="btnF">*</button>
+      </div>
+      <div>
+        <button class="btnN">6</button>
+        <button class="btnN">5</button>
+        <button class="btnN">4</button>
+        <button class="btnF">/</button>
+      </div>
+      <div>
+        <button class="btnN">3</button>
+        <button class="btnN">2</button>
+        <button class="btnN">1</button>
+        <button class="btnF">-</button>
+      </div>
+      <div>
+        <button class="btnF">C</button>
+        <button class="btnN">0</button>
+        <button class="btnF">=</button>
+        <button class="btnF">+</button>
+      </div>
+      <div id="calcCnfg">
+        <label>
+          <input type="checkbox" id="hstryUse" checked>
+          履歴表示
+        </label>
+        <select id="hstryMax">
+          <option value="4" selected>4</option>
+          <option value="8">8</option>
+          <option value="16">16</option>
+        </select>個
+      </div>
+      <div id="hstry"></div>
+    </div>
+  </body>
+</html>

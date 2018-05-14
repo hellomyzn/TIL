@@ -2,6 +2,8 @@
 (function() {
 	// jQueryの読み込み
 	var d = document, o;
+
+	// webページにjQueryが読み込まれているかを確認する
 	try {
 		$ = jQuery;
 		if ($) {r();}
