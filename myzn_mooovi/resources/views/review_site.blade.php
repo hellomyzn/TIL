@@ -5,7 +5,8 @@
       <title>映画レビューサイト</title>
       <link href="{{ asset('stylesheets/css/review_site.css')}}" rel='stylesheet' type='text/css'>
       <link href="{{ asset('stylesheets/css/font-awesome.css')}}" rel='stylesheet' type='text/css'>
-    </meta>
+    <link href='{{ asset('/stylesheets/css/review_site.css') }}' rel='stylesheet' type='text/css'>
+  </meta>
   </head>
   <body class="yj950-2">
     <div id="wrapper">
