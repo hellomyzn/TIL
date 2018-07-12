@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  <script type="text/javascript" src="../js/style.js"></script>
+
+  <div id="app">
+    <h1 v-once>{{ title  }}</h1>
+    <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+    <hr>
+    <p v-html="finishedLink"></p>
+  </div>
+
+</body>
+</html>
