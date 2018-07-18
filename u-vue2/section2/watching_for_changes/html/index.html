@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  <script type="text/javascript" src="../js/style.js"></script>
+
+  <div id="app">
+    <button v-on:click="counter++">Increase</button>
+    <button v-on:click="counter--">Decrease</button>
+    <button v-on:click="secondCounter++">Increase Second</button>
+    <p> Counter: {{ counter }} | {{ secondCounter }}</p>
+    <p> Result: {{ result() }} | {{ output }}</p>
+  </div>
+
+</body>
+</html>
