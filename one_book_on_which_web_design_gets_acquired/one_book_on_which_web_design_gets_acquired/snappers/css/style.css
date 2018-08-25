@@ -22,14 +22,13 @@ h1 {
 
 img {
   vertical-align: bottom;
-  width: 300px;
-  height:100px;
 }
 
 ul {
   margin: 0;
   padding: 0;
 }
+
 
 a {
   color: #3583aa;
@@ -55,9 +54,17 @@ header{
   margin-top: 50px;
 }
 
-.global-nav {
+#about .logo{
+  margin-top:50px;
+}
+
+#index .global-nav {
   float: right;
-  margin-top: 60px;
+  margin-top: 50px;
+}
+
+#about .global-nav {
+float:right;
 }
 
 .global-nav li {
@@ -82,6 +89,9 @@ header{
 
 #wrap {
   clear: both;
+  background-color: #ffffff;
+  margin-top: 220px;
+  padding: 35px 0;
 }
 
 .content {
@@ -94,6 +104,7 @@ footer {
   text-align: center;
   color: #ffffff;
   padding: 20px 0;
+  background-color: #767671;
 }
 
 footer small {
@@ -155,8 +166,84 @@ footer small {
 }
 
 
+#about{
+  background-image: url(../images/bg-about.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: 100% auto;
+}
+
+
+.main-center {
+  width: 940px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Bitter ', serif;
+  font-size: 36px;
+  border-bottom: 1px solid #cccccc;
+  color:black;
+}
+
+h2 {
+  font-family: 'Bitter', serif;
+  font-size: 24px;
+}
+
+.icon:before{
+  content:"";
+  padding-right: 10px;
+  border-left: 7px solid #9cb4a4;
+}
+
+
+#about .profile-txt{
+  width: 540px;
+  float: left;
+}
+
+#about .profile-txt span {
+  font-weight: bold;
+}
+
+#about .profile-image {
+  float: right;
+}
+
+
+#about .career th {
+  width: 240px;
+  background-color: #f0f0f0;
+  padding:12px 0;
+  border: 1px solid #cccccc
+}
+
+#about .career td {
+  width: 660px;
+  padding:12px 40px; 
+  border: 1px solid #cccccc;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.clearfix:after{
+  content:"";
+  display:block;
+  clear: both;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+
 #index #wrap {
   background-color: transparent;
   margin-top: 0;
-  padding: 0;
+  padding:0;
 }
