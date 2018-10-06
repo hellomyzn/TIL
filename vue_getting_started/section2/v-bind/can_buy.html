@@ -1,0 +1,11 @@
+  <script src="https://unpkg.com/vue@2.5.17"></script>
+
+<button id="b-button" v-bind:disabled="!canBuy">購入</button>
+<script>
+  var vm = new Vue({
+    el: '#b-button',
+    data:{
+      canBuy:false
+    }
+  })
+</script>

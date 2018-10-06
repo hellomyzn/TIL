@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://unpkg.com/vue@2.5.17"></script>
+</head>
+<body>
+  
+ <div id="app">
+    <p>{{items[0].name}} : {{items[0].price}} x {{items[0].quantity }}</p>
+    <p>小計 : {{totalPrice | numberWithDelimiter}}円</p>
+    <p>合計(税込): {{totalPriceWithTax | numberWithDelimiter}}円</p>
+
+  </div>
+
+</body>
+</html>
+
+<script src="app.js"></script>
+
+<!-- chromのconsoleでvm.items[0].quantity = 1と宣言すると動的に値が変化する -->
+
