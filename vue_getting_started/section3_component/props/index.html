@@ -1,0 +1,21 @@
+  <script src="https://unpkg.com/vue@2.5.17"></script>
+
+    <div id="app">
+      <item-disc v-bind:item-name="myItem"></item-disc>
+    </div>
+
+    <script>
+    Vue.component('item-disc', {
+      props: {
+        itemName: {
+          type: String
+        }
+      },
+      template: '<p> {{ itemName }}は便利です</p> '
+    })
+    
+    new Vue({
+      el: '#app',
+      data: { myItem: 'pen' }
+    })
+    </script>
