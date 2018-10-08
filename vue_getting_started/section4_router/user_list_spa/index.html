@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+    <div id="app">
+      <nav>
+        <router-link to="/top">Top Page</router-link>
+        <router-link to="/users">User list Page</router-link>
+      </nav>
+      <router-view></router-view>
+    </div>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1"></script>
+
+
+
+    <script type="text/x-template" id="user-list">
+      <div>
+        <div class="loading" v-if="loading">Loading...</div>
+        <div v-if="error" class="error">{{error}}</div>
+
+        <div v-for="user in users" :key="user.id">
+          <h2>{{ user.name  }}</h2>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-template" id="user-detail">
+      <div>
+        <div class="loading" v-if="loading">Loading...</div>
+        <div v-if="error" class="error">{{error}}</div>
+        <div v-if="user">
+          <h2>{{user.name}}</h2>
+          <p>{{user.description}}</p>
+        </div>
+      </div>
+    </script>
+
+    <script>
+      var userData = [
+        {
+          id: 1,
+          name: 'Takuya Tejima',
+          description: '東南アジアで働くエンジニアです。'
+        },
+        {
+          id: 2,
+          name: 'Yohei Noda',
+          description: 'アウトドア、フットサルが趣味のエンジニアです。'
+        }
+      ]
+
+      var getUsers = function (callback){
+        setTimeout(function() {
+          callback(null, [
+            {
+              id: 1,
+              name: 'Takuya Tejima'
+            },
+            {
+              id: 2,
+              name: 'Yohei Noda'
+            }
+          ])
+        }, 1000)
+      }
+
+
+      var UserList = {
+        template: '#user-list',
+        data: function() {
+          return {
+            loading: false,
+            users: function() {return []},
+            error: null
+          }
+        },
+
+        created: function(){
+          this.fetchData()
+        },
+
+        watch: {
+          '$route': 'fetchData'
+        },
+
+        methods: {
+          fetchData: function(){
+            this.loading = true
+
+            getUsers((function(err, users){
+              this.loading = false
+              if(err){
+                this.error = err.toString()
+              } else {
+                this.users = users
+              }
+            }).bind(this))
+          }
+        }
+      }
+
+      var router = new VueRouter({
+        routes: [
+          {
+            path: '/top',
+            component: {
+              template: '<div>This is Top Page</div>'
+            }
+          },
+          {
+            path: '/users',
+            component: UserList
+          },
+          {
+            path:'users/:userId',
+            component: UserDetail
+          }
+        ]
+      })
+      
+      var app = new Vue({
+        router: router
+      }).$mount('#app')
+
+    </script>
+</body>
+</html>
