@@ -1,16 +1,7 @@
 
       var getUsers = function (callback){
         setTimeout(function() {
-          callback(null, [
-            {
-              id: 1,
-              name: 'Takuya Tejima'
-            },
-            {
-              id: 2,
-              name: 'Yohei Noda'
-            }
-          ])
+          callback(null, userData)
          }, 1000)
        }
 
