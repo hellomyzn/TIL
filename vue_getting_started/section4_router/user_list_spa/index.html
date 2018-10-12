@@ -3,12 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <style>
+    [v-cloak]{
+      display: none
+    }
+  </style>
 </head>
 <body>
     <div id="app">
-      <nav>
+      <nav v-cloak>
         <router-link to="/top">Top Page</router-link>
         <router-link to="/users">User list Page</router-link>
+        <router-link to="/users/new?redirect=true">New User Registration</router-link>
+        <router-link to="/login" v-show="!Auth.loggedIn()">Login</router-link>
+        <router-link to="/logout" v-show="Auth.loggedIn()">Logout</router-link>
       </nav>
       <router-view></router-view>
     </div>
@@ -23,7 +31,7 @@
         <div v-if="error" class="error">{{error}}</div>
 
         <div v-for="user in users" :key="user.id">
-          <h2>{{ user.name  }}</h2>
+          <router-link :to="{path: '/users/' + user.id}">{{ user.name  }}</router-link>
         </div>
       </div>
     </script>
@@ -61,8 +69,29 @@
     </script>
         
 
+    <script type="text/x-template" id="login">
+      <div>
+        <h2>Login</h2>
+        <p v-if="$route.query.redirect">ログインしてください</p>
+        <form @submit.prevent="login">
+          <label>
+            <input type="text" v-model="email" placeholder="email">
+          </label>
+          <label >
+            <input type="password" v-model="pass" placeholder="password" >
+          </label>
+          <br>
+          <button type="submit">ログイン</button>
+          <p v-if="error" class="error">ログインに失敗しました</p>
+        </form>
 
+      </div>
+    </script>
+
+
+    <script src="auth.js"></script>
     <script src="detail.js"></script>
+    <script src="login.js"></script>
     <script src="user_list.js"></script>
     <script src="new.js"></script>
 
@@ -82,16 +111,47 @@
           },
           {
             path: '/users/new',
-            component: UserCreate
+            component: UserCreate,
+            beforeEnter: function(to, from, next){
+              if(!Auth.loggedIn()){
+                next({
+                  path: '/login',
+                  query: {
+                    redirect: to.fullPath
+                  }
+                })
+              } else {
+                next()
+              }
+            }
           },
           {
             path:'/users/:userId',
             component: UserDetail
+          },
+          {
+            path: '/login',
+            component: Login
+          },
+          {
+            path: '/logout',
+            beforeEnter: function (to, from , next) {
+              Auth.logout()
+              next('/')
+            }
+          },
+          {
+
+            path: '*',
+            redirect: '/top'
           }
         ]
       })
       
       var app = new Vue({
+        data: {
+          Auth: Auth
+        },
         router: router
       }).$mount('#app')
 
