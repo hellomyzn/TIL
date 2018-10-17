@@ -28,5 +28,11 @@ class ViewController < ApplicationController
     @book = Book.new(publish: 'hogehoge')
     @books = Book.select(:publish).distinct
   end
+
+  def group_select
+    @review = Review.new
+    @authors = Author.all
+  end
+
 end
 
