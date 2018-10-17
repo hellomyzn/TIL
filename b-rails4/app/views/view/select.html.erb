@@ -1,0 +1,17 @@
+<%= form_for(@book) do |f| %>
+  default
+  <%= f.select :publish, ['hoge', 'fuga', 'piyo'], {include_blank: 'Please select'}, class: 'pub' %>
+
+  <br>
+   
+
+  key - value
+  <%= f.select :publish, {'hoge' => 1, 'fuga' => 2, 'piyo' => 3} %>
+  <br>
+  
+  two- dimensional
+  <%= f.select :publish, [['hoge', 1], ['fuga', 2], ['piyo', 3]] %>
+  <br>
+  
+  <%= f.select :publish, ['hoge', 'fuga', 'piyo'], {include_blank: 'Please select'}, multiple: true %>
+<% end %>

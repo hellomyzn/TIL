@@ -17,5 +17,11 @@ class ViewController < ApplicationController
 
   def html5
     @book = Book.find(11)
+
+  end
+  
+  def select
+    @book = Book.find(11)
   end
 end
+
