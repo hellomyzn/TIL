@@ -50,6 +50,9 @@ class ViewController < ApplicationController
 
   def simpole_format
   end
-
+  
+  def conc
+    @books = Book.all
+  end
 end
 
