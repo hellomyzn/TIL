@@ -39,5 +39,9 @@ class ViewController < ApplicationController
     @authors = Author.all
   end
 
+  def dat_select
+    @book = Book.find(1)
+  end
+
 end
 
