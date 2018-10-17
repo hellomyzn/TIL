@@ -23,5 +23,10 @@ class ViewController < ApplicationController
   def select
     @book = Book.find(11)
   end
+
+  def col_select
+    @book = Book.new(publish: 'hogehoge')
+    @books = Book.select(:publish).distinct
+  end
 end
 
