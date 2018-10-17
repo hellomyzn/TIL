@@ -48,5 +48,8 @@ class ViewController < ApplicationController
     @books = Book.select(:publish).distinct
   end
 
+  def simpole_format
+  end
+
 end
 
