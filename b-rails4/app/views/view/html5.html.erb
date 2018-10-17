@@ -1,8 +1,54 @@
 <%= form_for(@book) do |f| %>
+  color
   <%= f.color_field :isbn %>
   <br>
-  
+
+  date
   <%= f.date_field :published %>
+  <br>
+
+  time
+  <%= f.time_field :published %>
+  <br>
+
+  date - time
+  <%= f.datetime_field :published %>
+  <br>
+
+  date - time -local
+  <%= f.datetime_local_field :published %>
+  <br>
+
+  month
+  <%= f.month_field :published%>
+  <br>
+
+  week
+  <%= f.week_field :published %>
+  <br>
+
+  mail
+  <%= f.email_field :isbn, size: 25, maxlength: 30 %>
+  <br>
+
+  number
+  <%= f.number_field :price, min: 10, max: 10000, step: 10 %>
+  <br>
+
+  slider
+  <%= f.range_field :price, min: 0, max: 10000 %>
+  <br>
+
+  search
+  <%= f.search_field :isbn, size: 10, maxlength: 15 %>
+  <br>
+  
+  telephone
+  <%= f.telephone_field :isbn, size: 15, maxlength: 20 %>
+  <br>
+
+  url
+  <%= f.url_field :isbn, size: 10, maxlength: 15 %>
   <br>
   
 <% end %>
