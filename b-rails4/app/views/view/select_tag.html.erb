@@ -1,0 +1,18 @@
+モデルと関連づかない選択ボックス
+<%= select_tag 'publish', raw('<option value="1">hoge</option><option value="2">fuga</option><option value="3">piyo</option>') %>
+
+<br>
+配列から生成する
+<%= select_tag 'publish', options_for_select(
+  {'hoge' => 1, 'fuga' => 2, 'piyo' => 3} , 2
+) %>
+
+<br>
+データベースから動的に生成する
+
+<%= select_tag('publish', options_from_collection_for_select(@books, :publish, :publish, '技術評論社')) %>
+
+<br>
+
+グループ分けされた選択肢を生成する
+<%#  <%= select_tag 'book', option_groups_from_collection_for_select(@authors, :books, :name, :id, :title, '1') %> 

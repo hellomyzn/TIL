@@ -34,5 +34,10 @@ class ViewController < ApplicationController
     @authors = Author.all
   end
 
+  def select_tag
+    @books = Book.all
+    @authors = Author.all
+  end
+
 end
 
