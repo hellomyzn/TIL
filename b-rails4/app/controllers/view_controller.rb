@@ -10,4 +10,12 @@ class ViewController < ApplicationController
   def form_for
     @book = Book.new
   end
+
+  def field
+    @book = Book.find(11)
+  end
+
+  def html5
+    @book = Book.find(11)
+  end
 end
