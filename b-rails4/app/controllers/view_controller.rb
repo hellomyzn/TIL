@@ -75,5 +75,9 @@ class ViewController < ApplicationController
   def partial_col
     @books = Book.all
   end
+  
+  def partial_spacer
+    @books = Book.all
+  end
 end
 
