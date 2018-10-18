@@ -57,5 +57,15 @@ class ViewController < ApplicationController
 
   def link
   end
+
+
+  def multi 
+    render layout: 'layout'
+  end
+  
+  def nest
+    @msg = "It's sunny"
+    render layout: 'child'
+  end
 end
 

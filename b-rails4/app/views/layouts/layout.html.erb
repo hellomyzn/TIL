@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Railbook</title>
+  <title><%= @title ? @title: 'Rails introduction ' %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= favicon_link_tag %>
-  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
+  <%= yield :extend_menu %>
+  <hr>
 
-<%# <%= yield %>
-<%= content_for?(:content) ? yield(:content ) : yield %> 
+  <%= yield %>
 
 </body>
 </html>
