@@ -112,6 +112,9 @@ class RecordController < ApplicationController
     render text: Book.where(publish: '技術評論社').pluck(:title, :price)
   end
 
-  def 
+  def exits
+
+    flag = Book.where(publish: '新評論社').exists?
+    render text: "存在するか？ : #{flag}"
   end
 end
