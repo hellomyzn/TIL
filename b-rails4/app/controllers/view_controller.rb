@@ -71,5 +71,9 @@ class ViewController < ApplicationController
   def partial_basic
     @book = Book.find(2)
   end
+
+  def partial_col
+    @books = Book.all
+  end
 end
 

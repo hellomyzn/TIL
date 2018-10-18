@@ -1,0 +1,5 @@
+<div id="list">
+  <% @books.each do |book| %>
+    <%= render 'books/book', book: book, type: :details %>
+  <% end %>
+</div>
