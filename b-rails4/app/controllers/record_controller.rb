@@ -123,5 +123,8 @@ class RecordController < ApplicationController
     render text: Review.all.inspect
   end
 
-
+  def count
+    cnt = Book.where(publish: '技術評論社').count
+    render text: "#{cnt}件です。"
+  end
 end
