@@ -39,4 +39,10 @@ class RecordController < ApplicationController
     @books = Book.order(:publish).order(:price)
     render 'books/index'
   end
+
+  def select 
+    # これは動かない
+    @books = Book.where('price >= 2000').select(:title, :price)
+    render 'hello/list'
+  end
 end
