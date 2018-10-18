@@ -54,5 +54,8 @@ class ViewController < ApplicationController
   def conc
     @books = Book.all
   end
+
+  def link
+  end
 end
 
