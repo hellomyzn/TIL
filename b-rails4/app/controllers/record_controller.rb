@@ -117,4 +117,11 @@ class RecordController < ApplicationController
     flag = Book.where(publish: '新評論社').exists?
     render text: "存在するか？ : #{flag}"
   end
+
+  def def_scope
+
+    render text: Review.all.inspect
+  end
+
+
 end
