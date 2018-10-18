@@ -86,5 +86,11 @@ class RecordController < ApplicationController
     render 'books/index'
   end
 
-  def upscope
+  def unscope
+
+    @books = Book.where(publish: '技術評論社').order(:price).select(:isbn, :title).unscope(:where, :select )
+    render 'books/index'
+    
+
+  end
 end
