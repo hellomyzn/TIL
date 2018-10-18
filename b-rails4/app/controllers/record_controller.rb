@@ -139,4 +139,10 @@ class RecordController < ApplicationController
     @books = Book.find_by_sql()
     render 'record/groupby'
   end
+
+
+  def update_all
+    cnt = Book.where(publish: '技術評論社').update_all(publish: 'Gihyo')
+    render text: "#{cnt}件のデータを更新しました。"
+  end
 end
