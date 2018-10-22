@@ -145,4 +145,11 @@ class RecordController < ApplicationController
     cnt = Book.where(publish: '技術評論社').update_all(publish: 'Gihyo')
     render text: "#{cnt}件のデータを更新しました。"
   end
+
+
+  def destroy_all
+    # これもできないp218
+    Book.destroy_all(['publish <> ?', '技術評論社'])
+    render text: '削除完了'
+  end
 end
