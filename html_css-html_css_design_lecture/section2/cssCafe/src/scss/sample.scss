@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+
+p {
+  color: red;
+  & .blue {
+    color: blue
+  }
+}
+
+
+@mixin redText {
+  color: blue;
+  font-size: 12px;
+}
+
+.text1 {
+  @include redText;
+
+}
+
+.text2 {
+  @include redText;
+}
