@@ -1,3 +1,3 @@
-f = open('text.txt', 'w')
+f = o
 f.write("test")
 f.close
