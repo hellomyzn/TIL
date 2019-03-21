@@ -1,7 +1,11 @@
 line = "----------------------------"
-print(line , "入力する数を設定してください。", line)
+print("入力する数を設定してください。 : ")
 n = int(input())
 r = []
+
+
+
+print("start")
 
 for i in range(n):
     print(line, "1~10の間から入力してください", line)
