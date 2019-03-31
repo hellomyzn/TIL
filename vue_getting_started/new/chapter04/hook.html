@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <router-link to='/top'>トップページ</router-link>
+      <router-link to='/users'>ユーザー一覧</router-link>
+      <router-link :to="{name: 'user', params: {userId: 123}}"> ユーザー詳細</router-link>
+      <router-view></router-view>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <script src="https://unpkg.com/vue-router@3.0.1"></script>
+
+
+
+    <script>
+      var router = new VueRouter({
+        routes: [
+        {
+          path: '/users',
+          component: UserList,
+          beforeEnter: function(to, from, next){
+            if(to.query.redirect === 'true'){
+              next('/top')
+            }else{
+              next()
+            }
+          }
+        }
+        ]
+      })
+
+      var UserList = {
+        template: '#user-list',
+        data: function(){
+          return {
+            users: function(){return []},
+            error: null
+          }
+        },
+        beforeRouteEnter: function(to, from, next){
+          getUsers((function(err, users){
+            if(err){
+              this.error = err.toString()
+            }else{
+              next(function(vm){
+                vm.users = users
+              })
+            }
+          }).bind(this))
+        }
+      }
+
+      var app = new Vue({
+        router: router
+      }).$mount('#app')
+    </script>
+
+  </body>
+</html>
