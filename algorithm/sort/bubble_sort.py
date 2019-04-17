@@ -2,7 +2,7 @@
 flagを用いたバブルソート
 """
 
-def bubbleSort(A=[], N=1):
+def bubbleSort(A=None, N=1):
     sw = 0
     flag = True
     count = 1
@@ -25,13 +25,14 @@ def bubbleSort(A=[], N=1):
         count += 1
     return sw
 
-A = []
-N = int(input())
-line = "===========================\n"
-for i in range(N):
-    A.append(int(input()))
 
+if __name__ == "__main__":
 
-print(line, A,"\n", line)
-sw = bubbleSort(A, N)
+    A = []
+    N = int(input("\n数列の長さを入力してください\n"))
+    line = "===========================\n"
+    for i in range(N):
+        A.append(int(input(i, "個目の要素を入力してください\n")))
+    print(line, A,"\n", line)
+    sw = bubbleSort(A, N)
 

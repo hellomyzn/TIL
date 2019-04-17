@@ -1,4 +1,4 @@
-def selectionSort(A=[], N=0):
+def selectionSort(A=None, N=0):
     i, j, t, sw, = 0, 0, 0, 0
     for i in range(N):
         minj = i
@@ -8,21 +8,22 @@ def selectionSort(A=[], N=0):
             if(A[j] < A[minj]):
                 minj = j
 
-        ＃最小値を入れ替える
+        # 最小値を入れ替える
         A[i], A[minj] = A[minj], A[i]
 
         if(i != minj):
             sw += 1
+    print(A)
     return sw
 
-# 任意の要素の配列を入力
-A = []
-N = int(input())
-for i in range(N):
-    A.append(int(input()))
 
-sw = selectionSort(A, N)
+if __name__ == "__main__":
 
-
-print(A)
-print(sw)
+    # 任意の要素の配列を入力
+    A = []
+    N = int(input())
+    for i in range(N):
+        A.append(int(input()))
+    sw = selectionSort(A, N)
+    print(A)
+    print(sw)
