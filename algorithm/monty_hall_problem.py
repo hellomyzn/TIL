@@ -18,5 +18,5 @@ for _ in range(how_many_times):
 no_change_average = (correct_num / how_many_times)*100
 change_average = (changing_correct_num / how_many_times)*100
 
-print(no_change_average)
-print(change_average)
+print("no_change", no_change_average)
+print("change", change_average)
