@@ -1,9 +1,9 @@
 import random
 
 import list_generator
-import bubble_sort
-import insertion_sort
-import selection_sort
+import sort.bubble_sort as bubble_sort
+import sort.insertion_sort as insertion_sort
+import sort.selection_sort as selection_sort
 
 order_lists = ["fibonacci_random_order", "fibonacci_descending_order", "self_order"]
 algorithm_lists = ["bubble_sort", "insertion_sort", "selection_sort"]

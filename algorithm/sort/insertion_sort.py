@@ -8,14 +8,15 @@ Insert sort
 """
 def insertionSort(A=None, N=0):
 
-    for i in range(N):
+    for n, i in enumerate(range(N)):
         v = A[i]
         j = i - 1
         while (j >= 0 and A[j] > v):
             A[j + 1] = A[j]
             j -= 1
         A[j + 1] = v
-    print(A)
+        print(n, "回目\n",A, "\n\n")
+    print("完成\n",A)
     return A
 
 

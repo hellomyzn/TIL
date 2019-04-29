@@ -1,6 +1,6 @@
 def selectionSort(A=None, N=0):
     i, j, t, sw, = 0, 0, 0, 0
-    for i in range(N):
+    for n,i in enumerate(range(N)):
         minj = i
 
         # 最小値を検索
@@ -13,7 +13,9 @@ def selectionSort(A=None, N=0):
 
         if(i != minj):
             sw += 1
-    print(A)
+        print(n, "回目 \n", A, "\n\n")
+
+    print("完成\n",A)
     return sw
 
 
