@@ -8,7 +8,9 @@
   </head>
   <body>
     <div class="" id="app">
-      <p>{{ items[0].name }}</p>
+      <p>{{ items[0].name }}: {{ items[0].price }} x {{ items[0].quantity }}</p>
+      <p>小景 : {{ totalPrice| numberWithDelimiter}}円</p>
+      <p>合計(税込): {{totalPriceWithTax| numberWithDelimiter}} 円</p>
     </div>
   </body>
 </html>
