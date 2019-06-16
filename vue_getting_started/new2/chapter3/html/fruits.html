@@ -13,6 +13,15 @@
       <fruits-list-table></fruits-list-table>
     </div>
 
+    <div class="" id="fruits-component">
+      <ol>
+        <!-- v-forで繰り返した各fruitをprops(fruits-item)に与える -->
+        <fruits-item-name v-for="fruit in fruitsItems" :key="fruit.name" :fruits-item="fruit"></fruits-item-name>
+      </ol>
+    </div>
+
+
+
   </body>
 </html>
 <script type="text/javascript" src="../js/fruits.vue">

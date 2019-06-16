@@ -6,6 +6,7 @@ Vue.component('fruits-list-description', {
   template: '<p>季節の代表的なフルーツの一覧です</p>'
 })
 
+
 Vue.component('fruits-list-table', {
   template: `
   <table>
@@ -31,6 +32,26 @@ Vue.component('fruits-list-table', {
     </tr>
   </table>
 `
+})
+
+Vue.component('fruits-item-name', {
+  props: {
+    fruitsItem: { // テンプレート中ではケバブケース
+      type: Object, // オブジェクトかどうか
+      required: true // このコンポーネントには必須なのでtrue
+    }
+  },
+  template: '<li>{{fruitsItem.name}}</li>'
+})
+
+new Vue({
+  el: '#fruits-component',
+  data: { // 親では配列だが、v-forでObjectとして渡している
+    fruitsItems: [
+      {name: '梨'},
+      {name: 'いちご'}
+    ]
+  }
 })
 
 new Vue ({
