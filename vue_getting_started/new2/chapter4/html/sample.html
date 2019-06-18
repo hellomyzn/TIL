@@ -12,6 +12,9 @@
         <!-- router-linkによるナビゲーション定義 -->
         <router-link to="/top">トップページ</router-link>
         <router-link to="/users">ユーザー一覧ページ</router-link>
+        <router-link to="/users/new?redirect=true">新規ユーザー登録</router-link>
+        <router-link to="/login" v-show="!Auth.loggedIn()">ログイン</router-link>
+        <router-link to="/logout" v-show="Auth.loggedIn()">ログアウト</router-link>
       </nav>
       <router-view></router-view>
     </div>
@@ -42,6 +45,7 @@
 
 
 
+<!-- ユーザーの詳細 -->
 <script type="text/x-template" id="user-detail">
   <div class="">
     <div class="loading" v-if="loading">
@@ -60,6 +64,7 @@
 </script>
 
 
+<!-- ユーザーページ作成 -->
 <script type="text/x-template" id="user-create">
   <div class="">
     <div class="sending" v-if="sending">
@@ -88,6 +93,31 @@
     </div>
   </div>
 </script>
+
+
+
+
+<!-- ログインページ -->
+<script type="text/x-template" id="login">
+  <div>
+    <h2>
+      login
+    </h2>
+
+    <p v-if="$route.query.redirect">
+      ログインしてください
+    </p>
+    <form @submit.prevent="login">
+      <label> <input v-model="email" placeholder="email"> </label>
+      <label> <input v-model="pass" placeholder="password" type="password"> </label><br>
+      <button type="submit">ログイン</button>
+      <p v-if="error" class="error">ログインに失敗しました。</p>
+    </form>
+
+
+  </div>
+</script>
+
 
 
 

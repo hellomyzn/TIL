@@ -1,19 +1,104 @@
+var Auth = {
+  login: function(email, pass, cd){
+    // ダミーデータを使った擬似ログイン
+    setTimeout(function(){
+      if(email === 'vue@example.com' && pass === 'vue'){
+        // ログイン成功時はローカルストレージにtokenを保存する
+        localStorage.token = Math.random().toString(36).substring(7)
+        if(cd){cd(true)}
+      }else{
+        if(cd){cd(false)}
+      }
+    }, 0)
+  },
+  logout: function(){
+    delete localStorage.token
+  },
+
+  loggedIn: function(){
+    // ローカルストレージにtokenがあればログイン状態とみなす
+    return !!localStorage.token
+  }
+}
+
+
+// ダミーデータの定義、本来はデータベースの情報をAPI経由で取得
+var userData = [
+  {
+    id: 1,
+    name: 'Takuya Tejima',
+    description: '東南アジアで働くエンジニアです。'
+  },
+  {
+    id: 2,
+    name: 'Yohei Noda',
+    description: 'アウトドア、フットサルが趣味のエンジニアです'
+  }
+]
+
+
+
+
 // JSONを返す関数
 // この関数を用いて義人的web API経由で情報を取得したようにする。
 var getUsers = function(callback){
   setTimeout(function(){
-    callback(null, [
-      {
-        id: 1,
-        name: 'Takuya Tejima'
-      },
-      {
-        id: 2,
-        name: 'Yohei Noda'
-      }
-    ])
+    callback(null, userData)
   }, 1000)
 }
+
+
+// 擬似的にAPI経由で情報を取得したようにする
+var getUser = function(userId, callback){
+  setTimeout(function(){
+    var filteredUsers = userData.filter(function(user){
+      return user.id === parseInt(userId, 10)
+    })
+    callback(null, filteredUsers && filteredUsers[0])
+  }, 1000)
+}
+
+
+
+// 擬似的にAPI経由で情報を更新したようにする
+// 実際のWebアプリケーションではServerへPOSTリクエストを行う
+var postUser = function (params, callback){
+  setTimeout(function(){
+    // idは追加されるごとに自動的にicrementされていく
+    params.id = userData.length + 1
+    userData.push(params)
+    callback(null, params)
+  }, 1000)
+}
+
+
+
+
+
+// ログインコンポーネント
+var Login = {
+  template: '#login',
+  data: function(){
+    return {
+      email: 'vue@example.com',
+      pass: '',
+      error: false
+    }
+  },
+  methods: {
+    login: function(){
+      Auth.login(this.email, this.pass, (function(loggedIn){
+        if(!loggedIn){
+          this.error = true
+        }else{
+          // redirect パラメーターが付いている場合はそのパスに遷移
+          this.$router.replace(this.$route.query.redirect || '/')
+        }
+      }), bind(this))
+    }
+  }
+}
+
 
 
 
@@ -54,29 +139,9 @@ var UserList = {
   }
 }
 
-var userData = [
-  {
-    id: 1,
-    name: 'Takuya Tejima',
-    description: '東南アジアで働くエンジニアです。'
-  },
-  {
-    id: 2,
-    name: 'Yohei Noda',
-    description: 'アウトドア、フットサルが趣味のエンジニアです'
-  }
-]
 
 
-// 擬似的にAPI経由で情報を取得したようにする
-var getUser = function(userId, callback){
-  setTimeout(function(){
-    var filteredUsers = userData.filter(function(user){
-      return user.id === parseInt(userId, 10)
-    })
-    callback(null, filteredUsers && filteredUsers[0])
-  }, 1000)
-}
+
 
 
 
@@ -118,16 +183,7 @@ var UserDetail = {
 
 
 
-// 擬似的にAPI経由で情報を更新したようにする
-// 実際のWebアプリケーションではServerへPOSTリクエストを行う
-var postUser = function (params, callback){
-  setTimeout(function(){
-    // idは追加されるごとに自動的にicrementされていく
-    params.id = userData.length + 1
-    userData.push(params)
-    callback(null, params)
-  }, 1000)
-}
+
 
 
 // 新規ユーザー作成コンポーネント
@@ -185,6 +241,9 @@ var UserCreate = {
 
 
 
+
+
+
 var router = new VueRouter({
   routes: [
     {
@@ -199,15 +258,48 @@ var router = new VueRouter({
     },
     { // ルート定義を追加
       path: '/users/new',
-      component: UserCreate
+      component: UserCreate,
+      beforeEnter: function(to, from, next){
+        // 承認されていない状態でアクセスした時はloginページに遷移する
+        if(!Auth.loggedIn()){
+          next({
+            path: '/login',
+            query: {
+              redirect: to.fullPath
+            }
+          })
+        }else{
+          // 承認済みであればそのまま新規ユーザー作成ページに進む
+          next()
+        }
+      }
     },
     { // ルート定義の追加
       path: '/users/:userId',
       component: UserDetail
+    },
+    {
+      path: '/login',
+      component: Login
+    },
+    {
+      path: '/logout',
+      beforeEnter: function(to, from, next){
+        Auth.logout()
+        next('/')
+      }
+    },
+    {
+      // 定義されていないパスへの対応、トップページへのリダイレクト
+      path: '*',
+      redirect: '/top'
     }
   ]
 })
 
 var app = new Vue({
+  data: {
+    Auth: Auth
+  },
   router: router
 }).$mount('#app')
