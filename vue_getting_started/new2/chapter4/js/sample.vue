@@ -358,3 +358,15 @@ var app = new Vue({
   },
   router: router
 }).$mount('#app')
+
+
+
+
+
+
+var router = new VueRouter({
+  routes: [
+    {path: '/a', component: A, alias: '/b'}
+    {path: '/c', component: C, alias: ['/b', '/e']}
+  ]
+})
