@@ -39,6 +39,8 @@
     <!-- usersがロードされたら各ユーザーの名前を表示する -->
     <div class="" v-for="user in users" :key="user.id">
       <h2>{{user.name}}</h2>
+      <router-link to="/user/{{ user.id }}">{{user.id}}の詳細ページ</router-link>
+      <router-view></router-view>
     </div>
   </div>
 </script>

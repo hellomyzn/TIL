@@ -241,6 +241,42 @@ var UserCreate = {
 
 
 
+var User = {
+  template:
+    '<div class="user">' +
+      '<h2>ユーザーIDは {{ $route.params.userId }}です。</h2>' +
+      '<router-link :to="\'/user/\' + $route.params.userId + \'/profile\' ">ユーザーのプロフィールページを見る</router-link>' +
+      '<router-link :to="\'/user/\' + $route.params.userId + \'/posts\' ">ユーザーの投稿ページを見る</router-link>' +
+      '<router-view></router-view>' +
+    '</div>'
+}
+
+
+
+
+
+// ユーザー詳細ページ内で部分的に表示されるユーザー投稿ページ
+var UserProfile = {
+template:
+'<div class="user-profile">' +
+  '<h3>こちらユーザー {{ $route.params.userId }}のプロフィールページです</h3>' +
+'</div>'
+}
+
+
+
+var UserPosts = {
+template:
+  '<div class="user-posts">' +
+    '<h3>こちらはユーザー {{ $route.params.userId }} の投稿ページです </h3>' +
+  '</div>'
+
+}
+
+
+
+
+
 
 
 
@@ -293,6 +329,25 @@ var router = new VueRouter({
       // 定義されていないパスへの対応、トップページへのリダイレクト
       path: '*',
       redirect: '/top'
+    },
+    {
+      path: '/user/:userId',
+      name: '/user',
+      component: User,
+      children: [
+       {
+         // /user/:userId/profileがマッチした時に
+         // UserProfileコンポーネントはUserコンポーネントの<router-view>内部でレンダリングされます。
+         path: 'profile',
+         component: UserProfile
+       },
+       {
+         // /user/:userId/postsがマッチした時に
+         // UserPostsコンポーネントはUserコンポーネントの<router-view>内部でレンダリングされる
+         path: 'posts',
+         component: UserPosts
+       }
+      ]
     }
   ]
 })
