@@ -7,7 +7,7 @@ func init(){
 }
 
 func buzz(){
-    fmt.Println('Buzz')
+    fmt.Println("Buzz")
 }
 
 func main(){
