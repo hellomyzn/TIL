@@ -1,5 +1,4 @@
 @charset 'utf-8';
-
-p {
-  color: green;
-}
+@import "./componets/common/header";
+@import "./base/variables";
+@import "./base/reset";
