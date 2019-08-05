@@ -1,20 +1,16 @@
-.header {
-    color:#000;
-}
+@charset 'utf-8';
 
-.Header{
+.Header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 98%;
-
+    height: 98px;
     &__head {
         flex: 1 1 auto;
         text-align: center;
     }
     &__body {
         flex: 3 1 auto;
+        font-size: 16px;
     }
 }
-
-

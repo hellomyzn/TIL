@@ -1,33 +1,33 @@
-@charaset "UTF-8";
-
-$mainColor : #2576E5;
-
-@mixin redText {
-	color: red;
-	font-size: 12px;
-}
-
-header {
-    background-color: $mainColor;
-}
-
-.main {
-    p {
-        color : $mainColor;
-    }
-}
-
-p {
-    color:red;
-    &.blue {
-        color: $mainColor
-    }
-}
-
-.text1 {
-    @include redText;
-}
-
-.text2 {
-    @include redText;
-}
+// @charaset "UTF-8";
+//
+// $mainColor : #2576E5;
+//
+// @mixin redText {
+// 	color: red;
+// 	font-size: 12px;
+// }
+//
+// header {
+//     background-color: $mainColor;
+// }
+//
+// .main {
+//     p {
+//         color : $mainColor;
+//     }
+// }
+//
+// p {
+//     color:red;
+//     &.blue {
+//         color: $mainColor
+//     }
+// }
+//
+// .text1 {
+//     @include redText;
+// }
+//
+// .text2 {
+//     @include redText;
+// }
