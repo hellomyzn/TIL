@@ -4,10 +4,19 @@
     
     &__main {
         display: flex;
-        flex: 1 1 50%;
+        flex: 1 1 55%;
         flex-direction: column;
         justify-content: space-between;
         align-self: stretch;
+        padding: 20px 0;
+    }
+    &__sub{
+        flex: 1 1 45%;
+        margin-right: 20px;
+    }
+    &__thumb {
+        width: 100%;
+        height: auto;
     }
     &__head{
         font-weight: bold;
