@@ -1,11 +1,14 @@
 @charset 'utf-8';
-
 // 1カラムでメインのコンテンツ幅に納める
 .l-column {
   flex: 0 1 $base-content-width;
   margin: 0 auto;
   padding: 0 $space-unit;
   max-width: $base-content-width;
+  @include mq-sp {
+    padding: 0 $sp-space-unit*2;
+    width: auto;
+  }
 }
 
 // 横並びラッパー
@@ -24,6 +27,12 @@
   &:nth-child(even) {
     margin-right: 0;
    }
+   @include mq-sp {
+    display: block;
+    flex: 1 1 100%;
+    max-width: none;
+    margin-right: 0;
+  }
 }
 
 // メインのコンテンツ幅に対して1/4の幅にする
@@ -34,6 +43,11 @@
   &:nth-child(4n) {
     margin-right: 0;
   }
+  @include mq-sp {
+    flex: 1 1 100%;
+    max-width: none;
+    margin: 0;
+  }
 }
 
 // 100%画面幅に対して1/2の幅にする
@@ -42,4 +56,13 @@
   flex: 1 1 50%;
   margin: 0;
   padding: 0;
+  @include mq-sp {
+    flex-basis: 100%;
+  }
+}
+
+// 横幅にfitする画像
+.l-fitImg {
+  max-width: 100%;
+  max-height: 100%;
 }
