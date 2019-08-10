@@ -10,6 +10,9 @@
     display: table;
     border-spacing: 0 $space-unit/2;
     border-collapse: separate;
+    @include mq-sp {
+        font-size: 12px;
+    }
 
     &__item　{
         display: table-row;

@@ -30,5 +30,8 @@
     &__body {
         margin-top: 10px;
         font-size: 14px;
+        @include mq-sp {
+            font-size: 12px;
+        }
     }
 }
