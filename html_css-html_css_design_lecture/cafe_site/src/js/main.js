@@ -17,8 +17,10 @@
         overlay = document.getElementById('overlay'),
         toggleMenu = toggle(wrapper, 'isOpened');
 
-    menuButton.addEventListener('click', toggleMenu, false);
-    overlay.addEventListener('click', toggleMenu, false);
+    if(menuButton && overlay) {
+        menuButton.addEventListener('click', toggleMenu, false);
+        overlay.addEventListener('click', toggleMenu, false);
+    }
 
 }());
 
@@ -35,6 +37,8 @@ function imageSlide (id, options) {
         maxPoint = items.length+(extra),
         flipsnap = null;
 
+    if(!wrapper || !items || !points) return;
+    
     // 要素が2つ以下の場合、インジケーターを消して処理を停止
     if(items.length < 2) {
         items[0].style.margin = '0 auto'; 
@@ -66,6 +70,9 @@ function imageSlide (id, options) {
                 wrapper.style.position = 'relative';
                 wrapper.style.left = (window.innerWidth - items[0].clientWidth)/2+'px';
                 
+                // ポインタをセット
+                activePoint(0);
+
                 // カルーセルを起動 
                 flipsnap = Flipsnap(wrapper, {
                     distance: items[0].clientWidth,
@@ -77,10 +84,12 @@ function imageSlide (id, options) {
 
                 // スライドが動いたら次を計算する
                 flipsnap.element.addEventListener('fspointmove', move );
+
                 // ポインタで動かせるようにする
                 Array.prototype.slice.call(points).forEach(function(point, i){
                     point.addEventListener('click', function(e){
-                        flipsnap.moveToPoint(i-extra);
+                        console.log(i+extra);
+                        flipsnap.moveToPoint(i+extra);
                     }, false)
                 })
             }, 66);

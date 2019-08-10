@@ -1,4 +1,38 @@
-@charset 'utf-8';
+// =====================
+// レイアウトを指定する特別な要素
+// =====================
+
+// 2カラム構成ののラッパー
+.l-content {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 1 $base-content-width;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  max-width: $base-content-width;
+  @include mq-sp {
+    flex-direction: column;
+  }
+}
+
+// メインカラム
+.l-main {
+  flex: 0 2 auto;
+  margin: 0 $space-unit;
+  max-width: 865px;
+}
+
+// サブカラム
+.l-sub {
+  flex: 0 0 275px;
+  margin: 0 $space-unit;
+  margin-left: $column-space;
+  @include mq-sp {
+    flex: 1 1 100%;
+    margin: $sp-space-unit;
+  }
+}
+
 // 1カラムでメインのコンテンツ幅に納める
 .l-column {
   flex: 0 1 $base-content-width;
@@ -47,6 +81,21 @@
     flex: 1 1 100%;
     max-width: none;
     margin: 0;
+  }
+}
+
+// メインのコンテンツ幅に対して1/3の幅にする
+.l-tripartitionColumn {
+  flex: 1 0 0px;
+  max-width: ($base-content-width - $column-space*(2/3))/3;
+  margin-right: $column-space*2/3;
+  @include mq-sp {
+    flex: 1 1 100%;
+    max-width: none;
+    margin: 0;
+  }
+  &:last-child {
+    margin-right: 0;
   }
 }
 
