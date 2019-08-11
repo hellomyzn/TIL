@@ -10,9 +10,19 @@
     <header class="header">
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">Myzn PicTweet</a></h1>
-        <div class="user_nav grid-6">
-          <a href="/tweets/create" class="post">投稿する</a>
-        </div>
+        @if(Auth::check())
+            <div class="user_nav grid-6">
+                {{ Form::open(['url' => "/logout", 'method' => 'post', 'id' => 'logout']) }}
+                {{ Form::close() }}
+                <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout').submit();">Logout</a>
+                <a class="post" href="/tweets/create">Post</a>
+            </div>
+        @else
+            <div class="grid-6">
+                <a href="/login" class="post">Login</a>
+                <a class="post" href="/register">Register</a>
+            </div>
+        @endif
       </div>
     </header>
 

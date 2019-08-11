@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tweet;
+use Auth;
 
 class TweetsController extends Controller
 {
     //
+    
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     public function index()
     {
         $tweets = Tweet::orderBy('created_at', 'DESC')->paginate(5);
@@ -23,9 +30,9 @@ class TweetsController extends Controller
     public function store(Request $request)
     {
         Tweet::create([
-            'name' => $request->name,
             'image' => $request->image,
             'text' => $request->text,
+            'user_number' => Auth::user()->id,
 
         ]);
 

@@ -6,8 +6,8 @@
     <div class="more">
       <span><img src="/images/arrow_top.png"></span>
       <ul class="more_list">
-        <li><a href="/tweets/{{ $tweet->id }}/edit">編集</a></li>
-        <li><a href="/tweets/{{ $tweet->id }}" onclick="event.preventDefault(); document.getElementById('delete_{{ $tweet->id }}').submit();">削除</a></li>
+        <li><a href="/tweets/{{ $tweet->id }}/edit">Edit</a></li>
+        <li><a href="/tweets/{{ $tweet->id }}" onclick="event.preventDefault(); document.getElementById('delete_{{ $tweet->id }}').submit();">Delete</a></li>
         {{ Form::open(['url' => "/tweets/{$tweet->id}", 'method' => 'delete', 'id' => "delete_{$tweet->id}"]) }}
         {{ Form::close() }}
       </ul>
@@ -16,7 +16,7 @@
     <p>{{ $tweet->text }}</p>
     <span class="name">
       <a href="#">
-        <span>投稿者</span>{{ $tweet->name }}
+        <span>User</span>{{ App\User::find($tweet->user_number)->name }}
       </a>
     </span>
   </div>

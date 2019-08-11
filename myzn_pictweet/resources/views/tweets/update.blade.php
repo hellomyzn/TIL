@@ -3,8 +3,8 @@
 @section('content')
 <div class="contents row">
     <div class="success">
-        <h3>更新が完了しました</h3>
-        <a href="/" class="btn">投稿一覧へ戻る</a>
+        <h3>Successfully updated</h3>
+        <a href="/" class="btn">Go back to Home</a>
     </div>
 </div>
 @endsection
