@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'TweetsController@index');
 
 Route::get('tweets', 'TweetsController@index');
 Route::get('tweets/create', 'TweetsController@create');
-Route::post('tweets', 'TweetsContoller@store');
+Route::post('tweets', 'TweetsController@store');
