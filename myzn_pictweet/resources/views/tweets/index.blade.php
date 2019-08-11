@@ -10,10 +10,12 @@
                 </span>
                 <ul class="more_list">
                     <li><a href="/tweets/{{ $tweet->id }}">More</a></li>
-                    <li><a href="/tweets/{{ $tweet->id }}/edit">Edit</a></li>
-                    <li><a href="/tweets/{{ $tweet->id }}" onclick="event.preventDefault(); document.getElementById('delete_{{ $tweet->id }}').submit();">Delete</a></li>
-                    {{ Form::open(['url' => "/tweets/{$tweet->id}", 'method' => 'delete', 'id' => "delete_{$tweet->id}"]) }}
-                    {{ Form::close() }}
+                    @if(Auth::check() && Auth::user()->id == $tweet->user_number)
+                        <li><a href="/tweets/{{ $tweet->id }}/edit">Edit</a></li>
+                        <li><a href="/tweets/{{ $tweet->id }}" onclick="event.preventDefault(); document.getElementById('delete_{{ $tweet->id }}').submit();">Delete</a></li>
+                        {{ Form::open(['url' => "/tweets/{$tweet->id}", 'method' => 'delete', 'id' => "delete_{$tweet->id}"]) }}
+                        {{ Form::close() }}
+                    @endif
 
                 </ul>
             </div>

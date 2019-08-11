@@ -47,10 +47,14 @@ class TweetsController extends Controller
 
     public function update($tweet_id, Request $request)
     {
-        Tweet::find($tweet_id)->update([
-            'image' => $request->image,
-            'text' => $request->text
-        ]);
+        if(Auth::user()->id == Tweet::find($tweet_id)->user_number)
+        {
+            Tweet::find($tweet_id)->update([
+                'image' => $request->image,
+                'text' => $request->text
+            ]);
+
+        }
 
         return view('tweets.update');
     }
@@ -58,7 +62,10 @@ class TweetsController extends Controller
 
     public function destroy($tweet_id)
     {
-        Tweet::destroy($tweet_id);
+        if(Auth::user()->id == Tweet::find($tweet_id)->user_number)
+        {
+            Tweet::destroy($tweet_id);
+        }
         return view('tweets.destroy');
     }
 
