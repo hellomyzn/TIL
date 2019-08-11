@@ -22,3 +22,5 @@ Route::get('tweets/{tweet}', 'TweetsController@show');
 
 Auth::routes();
 
+Route::get('users/{user}', 'UsersController@show');
+
