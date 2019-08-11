@@ -20,7 +20,7 @@
 
         <p>{{ $tweet->text }}</p>
         <span class="name">
-          <a href="#">
+          <a href="/users/{{ $tweet->user_number }}">
             <span>User</span>{{ $name }}
           </a>
         </span>

@@ -21,7 +21,7 @@
             </div>
             <p>{{ $tweet->text  }}</p>
             <span class="name">
-                    <a href="">
+                    <a href="/users/{{ $tweet->user_number }}">
                         <span>User</span>{{ App\User::find($tweet->user_number)->name }}
                     </a>
             </span>
