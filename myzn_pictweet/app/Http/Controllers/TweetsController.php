@@ -14,6 +14,6 @@ class TweetsController extends Controller
 
     public function create()
     {
-        retrun view('tweets.create');
+        return view('tweets.create');
     }
 }
