@@ -31,4 +31,20 @@ class TweetsController extends Controller
 
         return view('tweets.store');
     }
+
+    public function edit($tweet_id)
+    {
+        $tweet = Tweet::find($tweet_id);
+        return view('tweets.edit')->with('tweet', $tweet);
+    }
+
+    public function update($tweet_id, Request $request)
+    {
+        Tweet::find($tweet_id)->update([
+            'image' => $request->image,
+            'text' => $request->text
+        ]);
+
+        return view('tweets.update');
+    }
 }

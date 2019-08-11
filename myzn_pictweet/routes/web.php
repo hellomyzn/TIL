@@ -15,3 +15,6 @@ Route::get('/', 'TweetsController@index');
 Route::get('tweets', 'TweetsController@index');
 Route::get('tweets/create', 'TweetsController@create');
 Route::post('tweets', 'TweetsController@store');
+Route::get('tweets/{tweet}/edit', 'TweetsController@edit');
+Route::patch('tweets/{tweet}', 'TweetsController@update');
+
