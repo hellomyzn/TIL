@@ -54,4 +54,10 @@ class TweetsController extends Controller
         Tweet::destroy($tweet_id);
         return view('tweets.destroy');
     }
+
+    public function show($tweet_id)
+    {
+        $tweet = Tweet::find($tweet_id);
+        return view('tweets.show')->with('tweet', $tweet);
+    }
 }

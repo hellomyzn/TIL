@@ -3,7 +3,6 @@
 @section('content')
     <div class="contents row">
         <div class="container">
-            {{ $tweet->text }}
             {{ Form::open(['url' => "/tweets/{$tweet->id}", 'method' => 'patch']) }}
                 <h3>編集する</h3>
                 <input type="text" name="image" placeholder="Image Url" value="{{ $tweet->image }}">
