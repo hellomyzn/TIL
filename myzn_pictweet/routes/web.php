@@ -24,3 +24,4 @@ Auth::routes();
 
 Route::get('users/{user}', 'UsersController@show');
 
+Route::post('tweets/{tweet}/comments', 'CommentsController@store');

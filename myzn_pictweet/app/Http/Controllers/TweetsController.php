@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tweet;
+use App\Comment;
 use Auth;
 
 class TweetsController extends Controller
@@ -72,6 +73,7 @@ class TweetsController extends Controller
     public function show($tweet_id)
     {
         $tweet = Tweet::find($tweet_id);
-        return view('tweets.show')->with('tweet', $tweet);
+        $comments = Comment::where('tweet_number', $tweet_id)->orderBy('created_at', 'DESC')->get();
+        return view('tweets.show')->with(['tweet' => $tweet, 'comments' => $comments]);
     }
 }
