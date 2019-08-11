@@ -47,4 +47,11 @@ class TweetsController extends Controller
 
         return view('tweets.update');
     }
+
+
+    public function destroy($tweet_id)
+    {
+        Tweet::destroy($tweet_id);
+        return view('tweets.destroy');
+    }
 }
