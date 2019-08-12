@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Review;
 
-class ReviewsController extends Controller
+class ReviewsController extends RankingController
 {
     //
     public function create($product_id)

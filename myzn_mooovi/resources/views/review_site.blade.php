@@ -32,7 +32,7 @@
         @php
           $i = 1;
         @endphp
-        @foreach (array() as $product)
+        @foreach ($ranking as $product)
           <li data-cinema-id="346394">
             <a href="/products/{{ $product->id }}">
               <div class="box">
