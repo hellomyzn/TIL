@@ -19,4 +19,11 @@ class ProductsController extends Controller
         $product = Product::find($product_id);
         return view('products.show')->with('product', $product);
     }
+
+    public function search(Request $request)
+    {
+        $products = Product::where('title', 'LIKE', "%{$request->keyword}%")->take(10)->get();
+        return view('products.search')->with('products', $products);
+
+    }
 }
