@@ -16,4 +16,4 @@ Route::get('products/search', 'ProductsController@search');
 Route::resource('products', 'ProductsController', ['only' => 'show']);
 Route::resource('products.reviews', 'ReviewsController', ['only' => ['create', 'store']]);
 
-Route::view('users/{user}','users.show');
+Route::get('users/{user}','UsersController@show');

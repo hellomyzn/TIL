@@ -5,7 +5,7 @@
   <header class="user_page-header">
     <div class="yjContainer">
       <a href="">
-        <div class="user_image"><img alt="Fix" src="/storage/{{ Auth::user()->avatar }}"></div>
+        <div class="user_image"><img alt="Fix" src="https://myzn-mooovi.s3-ap-northeast-1.amazonaws.com/{{ Auth::user()->avatar }}"></div>
         <h2>{{ Auth::user()->name }}<span>'s Page</span></h2>
       </a>
     </div>

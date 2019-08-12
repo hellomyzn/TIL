@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Storage;
 
 class RegisterController extends Controller
 {
@@ -63,7 +64,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $path = request()->file('avatar')->store('avatars', 'public');
+        $path_hoge = request()->file('avatar')->store('avatars', 'public');
+
+        $image = request()->file('avatar');
+
+        //第一引数はファイルの保存先のパス。「my_images/」配下に保存される
+        //第二引数は画像ファイル
+        //第三引数は外部からのアクセスの可否。publicにすると許可される
+        $path = Storage::disk('s3')->putFile('images/avatar', $image, 'public');
+
+        //アップロード先のファイルパスを取得
+        $url = Storage::disk('s3')->url($path);
+
 
 
         return User::create([
