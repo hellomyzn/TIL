@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Scraping;
 
 class MovieScraping extends Command
 {
@@ -18,7 +19,7 @@ class MovieScraping extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Run the scraping file';
 
     /**
      * Create a new command instance.
@@ -38,5 +39,6 @@ class MovieScraping extends Command
     public function handle()
     {
         //
+        Scraping::movie_urls();
     }
 }
