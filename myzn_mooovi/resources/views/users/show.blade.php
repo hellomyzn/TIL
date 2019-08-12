@@ -6,7 +6,7 @@
     <div class="yjContainer">
       <a href="">
         <div class="user_image"><img alt="Fix" src="/storage/{{ Auth::user()->avatar }}"></div>
-        <h2>{{ Auth::user()->name }}<span>さんのマイページ</span></h2>
+        <h2>{{ Auth::user()->name }}<span>'s Page</span></h2>
       </a>
     </div>
   </header>

@@ -10,7 +10,7 @@
             <div class="container">
               <header class="header header--section">
                 <h2 class="text-middle">
-                  <i class="fa fa-film color-gray-light"></i>新着作品
+                  <i class="fa fa-film color-gray-light"></i>New Contents
                 </h2>
               </header>
               <ul class="thumbnails thumbnail--movies row grid4 js-lazy-load-images js-my-check-stats" id="list-module">
