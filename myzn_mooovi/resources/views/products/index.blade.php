@@ -30,6 +30,7 @@
                   </li>
                 @endforeach
               </ul>
+              {{ $products->links() }}
             </div>
           </article>
         </div>

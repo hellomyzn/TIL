@@ -11,3 +11,4 @@
 |
 */
 Route::get('/', 'ProductsController@index');
+Route::resource('products', 'ProductsController', ['only' => 'show']);
