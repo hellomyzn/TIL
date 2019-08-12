@@ -23,13 +23,15 @@ class ProductsController extends RankingController
     public function show($product_id)
     {
         $product = Product::find($product_id);
-        return view('products.show')->with('product', $product);
+        $reviews_num = count($product->reviews()->get());
+        return view('products.show')->with(['product' => $product, 'reviews_num' => $reviews_num]);
     }
 
     public function search(Request $request)
     {
         $products = Product::where('title', 'LIKE', "%{$request->keyword}%")->take(10)->get();
-        return view('products.search')->with('products', $products);
+        $keyword = $request->keyword;
+        return view('products.search')->with(['products' => $products, 'keyword' => $keyword]);
 
     }
 }

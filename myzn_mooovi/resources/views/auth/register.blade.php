@@ -5,7 +5,7 @@
   <div id="yjContentsBody">
     <div class="yjContainer">
       <div class="form_box">
-        <h2>mooovi<span>新規登録</span></h2>
+        <h2>Myzn mooovi<span>Register</span></h2>
         {{ Form::open(['files' => true]) }}
           @if (count($errors) > 0)
             <div id="error_explanation">
@@ -18,19 +18,19 @@
           @endif
           <div class="label">
             {{ Form::label('name') }}
-            {{ Form::text('name', '', ['placeholder' => 'ニックネームを入力(必須)']) }}
+            {{ Form::text('name', '', ['placeholder' => 'Username)']) }}
           </div>
           <div class="label">
             {{ Form::label('email') }}
-            {{ Form::email('email', '', ['placeholder' => 'メールアドレスを入力']) }}
+            {{ Form::email('email', '', ['placeholder' => 'Mail address']) }}
           </div>
           <div class="label">
             {{ Form::label('password') }}
-            {{ Form::password('password', ['placeholder' => 'パスワードを入力']) }}
+            {{ Form::password('password', ['placeholder' => 'Password']) }}
           </div>
           <div class="label">
             {{ Form::label('password_confirmation') }}
-            {{ Form::password('password_confirmation', ['placeholder' => 'パスワードを入力（確認）']) }}
+            {{ Form::password('password_confirmation', ['placeholder' => 'Password(confirm)']) }}
           </div>
           <div class="field">
             {{ Form::file('avatar') }}
@@ -44,7 +44,7 @@
         {{ Form::close() }}
 
         <div class="more_link_box">
-          <strong>すでにアカウントを持っていますか？</strong>
+          <strong>Do you still have a your account?</strong>
           <a href="/login">Log in</a>
         </div>
       </div>

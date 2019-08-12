@@ -10,11 +10,11 @@
           <div class="container">
             <header class="header header--section">
               <h2 class="text-middle">
-                <i class="fa fa-film color-gray-light"></i>投稿する作品を検索
+                <i class="fa fa-film color-gray-light"></i>Seach for movies
               </h2>
             </header>
             <form action='/products/search' accept_sharset="UTF-8" method="get">
-              <input class="search__query" name="keyword" placeholder="作品名で検索" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="fa fa-search"></i></button>
+              <input class="search__query" name="keyword" placeholder="Enter keyword here" type="text" value=""><button class="btn-search" title="検索" type="submit"><i class="fa fa-search"></i></button>
             </form>
             <form accept-charset="utf-8" action="/" class="js-search-submit" method="get">
             </form>
@@ -24,7 +24,7 @@
           <div class="container">
             <header class="header header--section">
               <h2 class="text-middle">
-                <i class="fa fa-film color-gray-light"></i>検索結果
+                <i class="fa fa-film color-gray-light"></i>Result for: {{ $keyword }}
               </h2>
             </header>
             <ul class="listview js-lazy-load-images">

@@ -17,11 +17,11 @@
               <img src="{{ $product->image_url }}" alt="{{ $product->title }}">
             </p>
             <div style="text-align: right">
-              <a href="/products/{{ $product->id }}/reviews/create">この作品を投稿する</a>
+              <a href="/products/{{ $product->id }}/reviews/create">Write a review</a>
             </div>
             <header class="header header--section">
               <h2 class="text-middle">
-                <i class="fa fa-users icon-movie color-gray-light"></i>みんなのレビュー
+                <i class="fa fa-users icon-movie color-gray-light"></i>{{ $reviews_num }} reviews
               </h2>
             </header>
             <ul style="padding: 0">

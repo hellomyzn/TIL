@@ -5,7 +5,7 @@
   <div id="yjContentsBody">
     <div class="yjContainer">
       <div class="form_box">
-        <h2>mooovi <span>ログイン</span></h2>
+        <h2>Myzn mooovi <span>Login</span></h2>
         {{ Form::open() }}
           @if (count($errors) > 0)
             <div id="error_explanation">
@@ -17,24 +17,23 @@
             </div>
           @endif
           <div>
-            {{ Form::email('email', '', ['placeholder' => 'メールアドレスを入力']) }}
+            {{ Form::email('email', '', ['placeholder' => 'Mail address']) }}
           </div>
           <div>
-            {{ Form::password('password', ['placeholder' => 'パスワードを入力']) }}
+            {{ Form::password('password', ['placeholder' => 'Password']) }}
           </div>
           <div class="row">
             <div class="col-xs-6">
               {{ Form::checkbox('remember_me', '') }}
-              {{ Form::label('', 'パスワードを記憶')}}
+              {{ Form::label('', 'remember me')}}
             </div>
-            <div class="col-xs-6">パスワードを忘れましたか？</div>
-            <div class="submit">{{ Form::submit('ログイン', ['class' => 'btn btn--block']) }}</div>
+            <div class="submit">{{ Form::submit('Login', ['class' => 'btn btn--block']) }}</div>
           </div>
         {{ Form::close() }}
         <div class="more_link_box">
-          <strong>まだアカウントを持っていませんか？</strong>
+          <strong>Don't have a your account yet?</strong>
           <a href="/register">Sign Up</a>
-          <strong>パスワードをお忘れですか？</strong>
+          <strong>Forgot your password?</strong>
           <a href="/password/reset">Forgot your password?</a>
         </div>
       </div>
