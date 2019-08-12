@@ -8,6 +8,11 @@ use App\Review;
 
 class ReviewsController extends RankingController
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->middleware('auth', ['only' => 'create']);
+    }
     //
     public function create($product_id)
     {

@@ -15,9 +15,20 @@
           <li class="logo" style="float: left">
             <a href="/">mooovi</a>
           </li>
-          <li class="entry_button" style="float: right">
-            <a href="/products/search">投稿する</a>
-          </li>
+            @if (Auth::check())
+              <li class="entry_button">
+                {{ Form::open(['url' => "/logout", 'method' => 'post', 'id' => 'logout']) }}
+                {{ Form::close() }}
+                <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout').submit();">サインアウト</a>
+              </li>
+            @else
+              <li class="entry_button" style="float: right">
+                <a href="/register">新規登録</a>
+              </li>
+              <li class="entry_button" style="float: right">
+                <a href="/login">ログイン</a>
+              </li>
+            @endif
         </ul>
       </div>
     </nav>
