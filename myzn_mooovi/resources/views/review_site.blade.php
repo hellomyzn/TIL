@@ -21,6 +21,9 @@
                 {{ Form::close() }}
                 <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout').submit();">サインアウト</a>
               </li>
+              <li class="entry_button" style="float: right">
+                  <a href="/users/{{ Auth::user()->id }}">マイページ</a>
+              </li>
             @else
               <li class="entry_button" style="float: right">
                 <a href="/register">新規登録</a>

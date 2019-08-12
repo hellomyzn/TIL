@@ -5,8 +5,8 @@
   <header class="user_page-header">
     <div class="yjContainer">
       <a href="">
-        <div class="user_image"><img alt="アバター画像" src="https://images.pexels.com/photos/192544/dandelion-sun-dew-water-192544.jpeg"></div>
-        <h2>テスト太郎<span>さんのマイページ</span></h2>
+        <div class="user_image"><img alt="Fix" src="/storage/{{ Auth::user()->avatar }}"></div>
+        <h2>{{ Auth::user()->name }}<span>さんのマイページ</span></h2>
       </a>
     </div>
   </header>
@@ -14,78 +14,17 @@
     <div id="yjContentsBody">
       <div class="yjContainer">
         <ul class="user_page-contents">
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
-          <li style="background-image: url('http://image.eiga.k-img.com/images/movie/80704/poster2/200.jpg?1407203842')">
-            <div class="meta">
-              <header>
-                <div class="title">6才のボクが、大人になるまで。</div>
-                <span class="star"><span class="rating-star"><i class="star-actived rate-100"></i></span></span>
-              </header>
-              <div class="user_review">感動した！久々に名作に出会った感じ</div>
-            </div>
-          </li>
+          @foreach (Auth::user()->reviews as $review)
+            <li style="background-image: url({{ $review->product->image_url }})">
+              <div class="meta">
+                <header>
+                  <div class="title">{{ $review->product->title }}</div>
+                  <span class="star"><span class="rating-star"><i class="star-actived rate-{{ $review->rate }}0"></i></span></span>
+                </header>
+                <div class="user_review">{{ $review->review }}</div>
+              </div>
+            </li>
+          @endforeach
         </ul>
       </div>
     </div>
