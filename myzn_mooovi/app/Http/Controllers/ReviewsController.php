@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Review;
+use Auth;
 
 class ReviewsController extends RankingController
 {
@@ -23,7 +24,7 @@ class ReviewsController extends RankingController
     public function store(Request $request, $product_id)
     {
         Review::create([
-            'nickname' => $request->nickname,
+            'user_id' => Auth::user()->id,
             'rate' => $request->rate,
             'review' => $request->review,
             'product_id' => $product_id,
