@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/single', 'SingleController');
+Route::get('/other', 'HelloController@other');
+Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
