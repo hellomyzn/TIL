@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/single', 'SingleController');
+Route::get('/hello/request_and_response', 'HelloController@request_and_response');
 Route::get('/other', 'HelloController@other');
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
