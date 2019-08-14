@@ -66,6 +66,11 @@ EOF;
         return view('hello.if', ['msg'=>$request->msg]);
     }
 
+    public function isisset(Request $request)
+    {
+        return view('hello.isset', ['msg'=>$request->msg]);
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>

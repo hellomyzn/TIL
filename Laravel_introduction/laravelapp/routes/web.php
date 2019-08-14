@@ -29,4 +29,7 @@ Route::post('hello', 'HelloController@post');
 Route::get('hello/ifif', 'HelloController@ifif');
 Route::post('hello/ifif', 'HelloController@ifif');
 
+Route::get('hello/isset', 'HelloController@isisset');
+Route::post('hello/isset', 'HelloController@isisset');
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
