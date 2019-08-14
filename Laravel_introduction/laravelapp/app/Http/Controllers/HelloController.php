@@ -77,6 +77,12 @@ EOF;
         return view('hello.forfor', ['data'=>$data]);
     }
 
+
+    public function forbreak()
+    {
+        return view('hello.forbreak');
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>
