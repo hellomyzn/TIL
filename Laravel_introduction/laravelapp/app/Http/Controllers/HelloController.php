@@ -99,7 +99,12 @@ EOF;
 
     public function section()
     {
-        return view('hello.section');
+        $data = [
+            ['name' => "hoge", 'mail'=>'hoge@hoge'],
+            ['name' => "fuge", 'mail'=>'fuge@fuge'],
+            ['name' => "piyo", 'mail'=>'piyo@piyo'],
+        ];
+        return view('hello.section', ['data'=>$data]);
     }
 
     public function other(){
