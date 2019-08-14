@@ -71,6 +71,12 @@ EOF;
         return view('hello.isset', ['msg'=>$request->msg]);
     }
 
+    public function forfor()
+    {
+        $data = ['one', 'two', 'three', 'four', 'five'];
+        return view('hello.forfor', ['data'=>$data]);
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>

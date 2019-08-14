@@ -32,4 +32,6 @@ Route::post('hello/ifif', 'HelloController@ifif');
 Route::get('hello/isset', 'HelloController@isisset');
 Route::post('hello/isset', 'HelloController@isisset');
 
+Route::get('hello/forfor', 'HelloController@forfor');
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
