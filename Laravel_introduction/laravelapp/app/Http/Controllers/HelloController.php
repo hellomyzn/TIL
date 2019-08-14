@@ -25,6 +25,15 @@ EOF;
     }
 
 
+    public function index2(Request $request)
+    {
+        $data = [
+            'msg' => 'This is Message from Hello Controller',
+            'id' => $request->id,
+        ];
+        return view('hello.index2', $data);
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>
