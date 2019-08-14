@@ -90,6 +90,13 @@ EOF;
         return view('hello.loop', ['data'=>$data]);
     }
 
+    public function pphhpp()
+    {
+        $data = ['one', 'two', 'three', 'four', 'five'];
+        return view('hello.pphhpp', ['data'=>$data]);
+
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>

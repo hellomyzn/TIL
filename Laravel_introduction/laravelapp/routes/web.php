@@ -38,4 +38,6 @@ Route::get('hello/forbreak', 'HelloController@forbreak');
 
 Route::get('hello/loop', 'HelloController@loop');
 
+Route::get('hello/pphhpp', 'HelloController@pphhpp');
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
