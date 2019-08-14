@@ -40,4 +40,6 @@ Route::get('hello/loop', 'HelloController@loop');
 
 Route::get('hello/pphhpp', 'HelloController@pphhpp');
 
+Route::get('hello/section', 'HelloController@section');
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');

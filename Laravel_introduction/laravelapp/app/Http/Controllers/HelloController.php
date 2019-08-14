@@ -97,6 +97,11 @@ EOF;
 
     }
 
+    public function section()
+    {
+        return view('hello.section');
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>
