@@ -39,6 +39,25 @@ EOF;
         $data = [
             'msg' => 'This is Message from Hello Controller with using blade',
         ];
+
+        return view('hello.index3', $data);
+    }
+
+    public function form()
+    {
+        $data = [
+            'msg' => 'This is Form page',
+        ];
+
+        return view('hello.form', $data);
+    }
+
+    public function post(Request $request)
+    {
+        $msg = $request->msg;
+        $data = [
+            'msg'=>'hello'.$msg.'san!',
+        ];
         return view('hello.index3', $data);
     }
 
