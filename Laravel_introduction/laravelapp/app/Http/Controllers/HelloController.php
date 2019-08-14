@@ -34,6 +34,14 @@ EOF;
         return view('hello.index2', $data);
     }
 
+    public function index3()
+    {
+        $data = [
+            'msg' => 'This is Message from Hello Controller with using blade',
+        ];
+        return view('hello.index3', $data);
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>

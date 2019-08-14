@@ -23,4 +23,5 @@ Route::get('/hello', function(){
 });
 
 Route::get('hello2', 'HelloController@index2');
+Route::get('hello3', 'HelloController@index3');
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
