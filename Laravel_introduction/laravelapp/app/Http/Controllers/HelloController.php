@@ -61,6 +61,11 @@ EOF;
         return view('hello.index3', $data);
     }
 
+    public function ifif(Request $request)
+    {
+        return view('hello.if', ['msg'=>$request->msg]);
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>
