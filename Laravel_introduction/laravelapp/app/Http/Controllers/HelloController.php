@@ -83,6 +83,13 @@ EOF;
         return view('hello.forbreak');
     }
 
+    public function loop()
+    {
+
+        $data = ['one', 'two', 'three', 'four', 'five'];
+        return view('hello.loop', ['data'=>$data]);
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>
