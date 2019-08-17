@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Requests\HelloRequest;
 
 class HelloController extends Controller
 {
@@ -146,6 +147,11 @@ EOF;
         return view('hello.validate',['msg' => '正しく入力されまいした']);
     }
 
+
+    public function validate_request(HelloRequest $request)
+    {
+        return view('hello.validate', ['msg'=>'正しく入力されました']);
+    }
 
 
     public function other(){

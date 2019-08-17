@@ -55,4 +55,6 @@ Route::get('hello/groupe', 'HelloController@groupe')->middleware('helo');
 Route::get('hello/validate_hoge', 'HelloController@validate_hoge');
 Route::post('hello/validate_post', 'HelloController@validate_hoge_post');
 
+Route::post('hello/validate_request', 'HelloController@validate_request');
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
