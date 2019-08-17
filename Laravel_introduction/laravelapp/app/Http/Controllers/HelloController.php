@@ -107,6 +107,11 @@ EOF;
         return view('hello.section', ['data'=>$data]);
     }
 
+    public function middle(Request $request)
+    {
+        return view('hello.middle', ['data'=>$request->data]);
+    }
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>

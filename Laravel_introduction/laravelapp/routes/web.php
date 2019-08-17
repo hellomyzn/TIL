@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\HelloMiddleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,5 +43,7 @@ Route::get('hello/loop', 'HelloController@loop');
 Route::get('hello/pphhpp', 'HelloController@pphhpp');
 
 Route::get('hello/section', 'HelloController@section');
+
+Route::get('hello/middle', 'HelloController@middle')->middleware(HelloMiddleware::class);
 
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
