@@ -124,6 +124,11 @@ EOF;
         return view('hello.global');
     }
 
+    public function groupe(Request $request)
+    {
+        return view('hello.groupe');
+    }
+
 
     public function other(){
         return <<<EOF

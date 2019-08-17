@@ -50,4 +50,6 @@ Route::get('hello/response', 'HelloController@response')->middleware(HelloMiddle
 
 Route::get('hello/global', 'HelloController@global');
 
+Route::get('hello/groupe', 'HelloController@groupe');
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
