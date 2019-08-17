@@ -121,13 +121,31 @@ EOF;
 
     public function global(Request $request)
     {
-        return view('hello.global');
+        return view('hello.global', ['data'=>$request->data] );
     }
 
     public function groupe(Request $request)
     {
-        return view('hello.groupe');
+        return view('hello.groupe', ['data'=>$request->data]);
     }
+
+    public function validate_hoge(Request $request)
+    {
+        return view('hello.validate', ['msg' => 'フォームを入力']);
+    }
+
+    public function validate_hoge_post(Request $request)
+    {
+        $validate_rule = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0,150',
+        ];
+
+        $this->validate($request, $validate_rule);
+        return view('hello.validate',['msg' => '正しく入力されまいした']);
+    }
+
 
 
     public function other(){

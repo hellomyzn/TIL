@@ -2,8 +2,7 @@
 
 use App\Http\Middleware\HelloMiddleware;
 
-/*
-|--------------------------------------------------------------------------
+/* |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -50,6 +49,10 @@ Route::get('hello/response', 'HelloController@response')->middleware(HelloMiddle
 
 Route::get('hello/global', 'HelloController@global');
 
-Route::get('hello/groupe', 'HelloController@groupe');
+Route::get('hello/groupe', 'HelloController@groupe')->middleware('helo');
+
+
+Route::get('hello/validate_hoge', 'HelloController@validate_hoge');
+Route::post('hello/validate_post', 'HelloController@validate_hoge_post');
 
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
