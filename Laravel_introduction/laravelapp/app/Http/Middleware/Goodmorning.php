@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class HelloMiddleware
+class Goodmorning
 {
     /**
      * Handle an incoming request.

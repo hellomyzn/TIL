@@ -45,5 +45,9 @@ Route::get('hello/pphhpp', 'HelloController@pphhpp');
 Route::get('hello/section', 'HelloController@section');
 
 Route::get('hello/middle', 'HelloController@middle')->middleware(HelloMiddleware::class);
+Route::get('hello/response', 'HelloController@response')->middleware(HelloMiddleware::class);
+
+
+Route::get('hello/global', 'HelloController@global');
 
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');

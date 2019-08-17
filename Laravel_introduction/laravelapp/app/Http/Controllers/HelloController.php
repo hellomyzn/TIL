@@ -112,6 +112,19 @@ EOF;
         return view('hello.middle', ['data'=>$request->data]);
     }
 
+    public function response(Request $request)
+        
+    {
+        return view('hello.response', ['data'=>$request->data]);
+    }
+
+
+    public function global(Request $request)
+    {
+        return view('hello.global');
+    }
+
+
     public function other(){
         return <<<EOF
 <!DOCTYPE html>
