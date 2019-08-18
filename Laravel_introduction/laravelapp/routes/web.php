@@ -60,5 +60,8 @@ Route::post('hello/validate_request', 'HelloController@validate_request');
 Route::post('hello/validator_hoge', 'HelloController@validator_hoge');
 Route::post('hello/validator_costom', 'HelloController@validator_costom');
 
+Route::get('hello/cookie_index', 'HelloController@cookie_index');
+Route::post('hello/cookie_post', 'HelloController@cookie_post');
+
 
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');

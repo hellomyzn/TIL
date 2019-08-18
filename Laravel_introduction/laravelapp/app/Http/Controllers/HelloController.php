@@ -202,6 +202,31 @@ EOF;
         return view('hello.validate', ['msg'=>'正しく入力されました']);
     }
 
+    public function cookie_index(Request $request)
+    {
+        if($request->hasCookie('msg'))
+        {
+            $msg = 'Cookie: '. $request->cookie('msg');
+        }else
+        {
+            $msg = "Nothing the cookie";
+        }
+        return view('hello.cookie', ['msg'=>$msg]);
+    }
+
+    public function cookie_post(Request $request)
+    {
+        $validate_rule = [
+            'msg' => 'required',
+        ];
+
+        $this->validate($request, $validate_rule);
+        $msg = $request->msg;
+        $response = new Response(view('hello.cookie', ['msg' => '['. $msg. '] saved cookie']));
+        $response->cookie('msg', $msg, 100);
+        return $response;
+    }
+
 
     public function other(){
         return <<<EOF
