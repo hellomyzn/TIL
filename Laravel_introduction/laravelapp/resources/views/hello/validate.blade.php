@@ -8,7 +8,7 @@
 
 
 <table>
-<form action="/hello/validate_request" method="post">
+<form action="/hello/validator_costom" method="post">
     {{ csrf_field() }}
     @if ($errors->has('name'))
     <tr>

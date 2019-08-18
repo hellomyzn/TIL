@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
+use Validator;
 
 class HelloController extends Controller
 {
@@ -150,6 +151,54 @@ EOF;
 
     public function validate_request(HelloRequest $request)
     {
+        return view('hello.validate', ['msg'=>'正しく入力されました']);
+    }
+
+    public function validator_hoge(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0,150',
+        ]);
+
+        if ($validator->fails()){
+            return redirect('/hello/validate_hoge')->withErrors($validator)->withInput();
+        }
+
+    }
+
+    public function validator_costom(Request $request)
+    {
+        $rules = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric',
+        ];
+
+        $messages = [
+            'name.required' => "Please enter your name",
+            'mail.email' => "Please enter your email",
+            'age.min' => "Please enter your age more than 0",
+            'age.max' => "Please enter your age less than 199",
+            'age.numeric' => 'Please enter numeric'
+
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        $validator->sometimes('age', 'min:0', function($input){
+            return !is_int($input->age);
+        });
+
+        $validator->sometimes('age', 'max:200', function($input){
+            return !is_int($input->age);
+        });
+
+        if($validator->fails()){
+            return redirect('/hello/validate_hoge')->withErrors($validator)->withInput();
+        }
+
         return view('hello.validate', ['msg'=>'正しく入力されました']);
     }
 
