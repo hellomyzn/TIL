@@ -64,4 +64,10 @@ Route::get('hello/cookie_index', 'HelloController@cookie_index');
 Route::post('hello/cookie_post', 'HelloController@cookie_post');
 
 
+Route::get('hello/db_index', 'HelloController@db_index');
+Route::get('hello/add', 'HelloController@add');
+
+Route::post('hello/add', 'HelloController@add_post');
+
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
