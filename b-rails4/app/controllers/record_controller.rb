@@ -152,4 +152,8 @@ class RecordController < ApplicationController
     Book.destroy_all(['publish <> ?', '技術評論社'])
     render text: '削除完了'
   end
+
+  def keyword
+    @search = SearchKeyword.new
+  end
 end
