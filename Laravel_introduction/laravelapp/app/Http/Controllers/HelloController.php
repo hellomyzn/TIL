@@ -332,5 +332,21 @@ EOF;
         DB::update('update people set name = :name, mail = :mail, age = :age where id = :id', $param);
         return redirect('/hello/db_index');
     }
+
+
+    public function db_del(Request $request)
+    {
+        $param = ['id' => $request->id];
+        $item = DB::select('select * from people where id = :id',$param);
+
+        return view('hello.delete', ['form' => $item[0]]);
+    }
+
+    public function remove(Request $request)
+    {
+        $param = ['id' => $request->id];
+        DB::delete('delete from people where id = :id', $param);
+        return redirect('/hello/db_index');
+    }
 }
 
