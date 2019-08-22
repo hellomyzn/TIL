@@ -70,4 +70,8 @@ Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', 'HelloController@db_create');
 
 
+Route::get('hello/edit', 'HelloController@db_edit');
+Route::post('hello/edit', 'HelloController@db_update');
+
+
 Route::get('/hello/{id?}/{pass?}', 'HelloController@index');
