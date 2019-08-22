@@ -10,6 +10,6 @@ class People extends Model
     protected $fillable = [
         'name',
         'mail',
-        'age'
+        'age',
     ];
 }

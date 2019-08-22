@@ -267,10 +267,10 @@ EOF;
 EOF;
     }
 
-    public function db_indeex(Request $request)
+    public function db_index(Request $request)
     {
         $items = DB::select('select * from people');
-        return view('hello.db_index' => $items);
+        return view('hello.db_index', ['items' => $items]);
     }
 
 
@@ -287,12 +287,19 @@ EOF;
         return view('hello.db_index', ['items' => $items]);
     }
 
+
+    public function db_post(Request $request)
+    {
+        $items = DB::select('select * from people');
+        return view('hello.db_index', ['items' => $items]);
+    }
+
     public function add(Request $request)
     {
         return view('hello.add');
     }
 
-    public function create(Request $request)
+    public function db_create(Request $request)
     {
         $param = [
             'name' => $request->name,
