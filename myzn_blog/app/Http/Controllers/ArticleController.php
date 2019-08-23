@@ -44,4 +44,9 @@ class ArticleController extends Controller
             'text'    => $text,
         ]);
     }
+
+    public function monthly_create()
+    {
+        return view('article.monthly_create');
+    }
 }
