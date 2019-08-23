@@ -26,12 +26,9 @@ class ArticleController extends Controller
 
 
 
-
-
-
     public function weekly_index()
     {
-        $weeklies = Weekly::all();
+        $weeklies = Weekly::orderBy('created_at', 'DESC')->get();
         $text = "this is TEXT";
         return view('article.weekly_index', [
             'text'        => $text,
@@ -44,6 +41,7 @@ class ArticleController extends Controller
     {
         return view('article.weekly_create');
     }
+
 
     public function weekly_store(Request $request)
     {
@@ -61,15 +59,28 @@ class ArticleController extends Controller
 
     public function monthly_index()
     {
+        $monthlies = Monthly::orderBy('created_at', 'DESC')->get();
         $text = "this is TEXT";
         return view('article.monthly_index', [
-            'title' => $request->title,
-            'text'  => $request->text,
+            'text' => $text,
+            'monthlies'  => $monthlies,
         ]);
     }
+
 
     public function monthly_create()
     {
         return view('article.monthly_create');
     }
+
+
+    public function monthly_store(Request $request)
+    {
+        Monthly::create([
+            'title' => $request->title,
+            'text'  => $request->text,
+        ]);
+        return redirect('/monthly');
+    }
+
 }
