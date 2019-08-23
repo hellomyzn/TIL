@@ -15,6 +15,7 @@ class CreateMonthliesTable extends Migration
     {
         Schema::create('monthlies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
             $table->text('text');
             $table->timestamps();
         });

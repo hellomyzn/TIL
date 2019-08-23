@@ -31,11 +31,14 @@ class ArticleController extends Controller
 
     public function weekly_index()
     {
+        $weeklies = Weekly::all();
         $text = "this is TEXT";
         return view('article.weekly_index', [
-            'text'    => $text,
+            'text'        => $text,
+            'weeklies'    => $weeklies,
         ]);
     }
+
 
     public function weekly_create()
     {
@@ -45,7 +48,8 @@ class ArticleController extends Controller
     public function weekly_store(Request $request)
     {
         Weekly::create([
-            'text' => $request->text,
+            'title' => $request->title,
+            'text'  => $request->text,
         ]);
         return redirect('/weekly');
     }
@@ -59,7 +63,8 @@ class ArticleController extends Controller
     {
         $text = "this is TEXT";
         return view('article.monthly_index', [
-            'text'    => $text,
+            'title' => $request->title,
+            'text'  => $request->text,
         ]);
     }
 

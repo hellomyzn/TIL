@@ -17,6 +17,7 @@ class CreateDailiesTable extends Migration
             $table->increments('id');
             $table->text('picture');
             $table->date('date');
+            $table->string('title');
             $table->text('text');
             $table->timestamps();
         });
