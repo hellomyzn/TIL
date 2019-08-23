@@ -19,4 +19,19 @@ class ArticleController extends Controller
         ]);
     }
 
+    public function index_weekly()
+    {
+        $text = "this is TEXT";
+        return view('article.index_weekly', [
+            'text'    => $text,
+        ]);
+    }
+
+    public function index_monthly()
+    {
+        $text = "this is TEXT";
+        return view('article.index_monthly', [
+            'text'    => $text,
+        ]);
+    }
 }

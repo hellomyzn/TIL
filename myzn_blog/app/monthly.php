@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class monthly extends Model
+class Monthly extends Model
 {
-    //
+    protected $guarded = ['id'];
 }
