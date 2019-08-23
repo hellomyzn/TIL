@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Daily;
-use app\Monthly;
-use app\Weekly;
+use App\Daily;
+use App\Monthly;
+use App\Weekly;
 
 class ArticleController extends Controller
 {
@@ -22,6 +22,13 @@ class ArticleController extends Controller
         ]);
     }
 
+
+
+
+
+
+
+
     public function weekly_index()
     {
         $text = "this is TEXT";
@@ -34,6 +41,17 @@ class ArticleController extends Controller
     {
         return view('article.weekly_create');
     }
+
+    public function weekly_store(Request $request)
+    {
+        Weekly::create([
+            'text' => $request->text,
+        ]);
+        return redirect('/weekly');
+    }
+
+
+
 
 
 
