@@ -3,34 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Daily;
+use app\Monthly;
+use app\Weekly;
 
 class ArticleController extends Controller
 {
     //Show all articles
-    public function index_daily()
+    public function daily_index()
     {
         $picture = "this is PICTURE";
         $title = "this is TITLE";
         $text = "this is TEXT";
-        return view('article.index_daily', [
+        return view('article.daily_index', [
             'picture' => $picture,
             'title'   => $title,
             'text'    => $text,
         ]);
     }
 
-    public function index_weekly()
+    public function weekly_index()
     {
         $text = "this is TEXT";
-        return view('article.index_weekly', [
+        return view('article.weekly_index', [
             'text'    => $text,
         ]);
     }
 
-    public function index_monthly()
+    public function weekly_create()
+    {
+        return view('article.weekly_create');
+    }
+
+
+
+    public function monthly_index()
     {
         $text = "this is TEXT";
-        return view('article.index_monthly', [
+        return view('article.monthly_index', [
             'text'    => $text,
         ]);
     }

@@ -15,21 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('daily', 'ArticleController@index_daily');
+Route::get('daily', 'ArticleController@daily_index');
 
-Route::get('daily/create', 'ArticleController@create_daily');
-Route::post('daily/', 'ArticleController@store_daily');
-
-
-
-Route::get('weekly', 'ArticleController@index_weekly');
-
-Route::get('weekly/create', 'ArticleController@create_weekly');
-Route::post('weekly/', 'ArticleController@store_weekly');
+Route::get('daily/create', 'ArticleController@daily_create');
+Route::post('daily/', 'ArticleController@daily_store');
 
 
 
-Route::get('monthly', 'ArticleController@index_monthly');
+Route::get('weekly', 'ArticleController@weekly_index');
 
-Route::get('monthly/create', 'ArticleController@create_monthly');
-Route::post('monthly/', 'ArticleController@store_monthly');
+Route::get('weekly/create', 'ArticleController@weekly_create');
+Route::post('weekly/', 'ArticleController@weekly_store');
+
+
+
+Route::get('monthly', 'ArticleController@monthly_index');
+
+Route::get('monthly/create', 'ArticleController@monthly_create');
+Route::post('monthly/', 'ArticleController@monthly_store');
