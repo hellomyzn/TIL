@@ -14,13 +14,9 @@ class ArticleController extends Controller
     //Show all articles
     public function daily_index()
     {
-        $picture = "this is PICTURE";
-        $title = "this is TITLE";
-        $text = "this is TEXT";
+        $dailies = Daily::orderBy('created_at', 'DESC')->get();
         return view('article.daily_index', [
-            'picture' => $picture,
-            'title'   => $title,
-            'text'    => $text,
+            'dailies'    => $dailies,
         ]);
     }
 
