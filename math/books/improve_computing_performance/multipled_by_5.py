@@ -4,27 +4,29 @@ import timeout_decorator
 
 
 @timeout_decorator.timeout(5)
-def test(even, multiple_of_5) -> int:
-    answer = input("%d x %d = " % (even, multiple_of_5))
+def test(random_number) -> int:
+    answer = 0
+    answer = input("%d x 5 = " % random_number)
     if answer is "":
         answer = "missed"
     return answer
 
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
+
     answers = []
-    currects  = []
+    currects = []
     line = "\n\n=====================================\n\n"
 
-    for i, _ in enumerate(range(5)):
-        even = random.randrange(2, 20, 2)
-        multiple_of_5 = random.randrange(5, 100, 5)
-        currect = even * multiple_of_5
+    for _ in range(5):
+        random_number = random.randrange(10, 1000)
+        currect = random_number * 5
         currects.append(currect)
 
         try:
             print(line)
-            answers.append(test(even, multiple_of_5))
+            answers.append(test(random_number))
         except:
             print ("test timed out :(")
             answers.append("missed")
