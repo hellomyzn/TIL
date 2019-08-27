@@ -5,7 +5,6 @@ import timeout_decorator
 
 @timeout_decorator.timeout(5)
 def test(random_number) -> int:
-    answer = 0
     answer = input("%d x 5 = " % random_number)
     if answer is "":
         answer = "missed"
