@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('tofeel', 'ToFeelController@index');
+
 Route::get('daily', 'ArticleController@daily_index');
 
 Route::get('daily/create', 'ArticleController@daily_create');
