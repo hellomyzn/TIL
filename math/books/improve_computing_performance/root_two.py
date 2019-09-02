@@ -4,7 +4,7 @@ import timeout_decorator
 
 @timeout_decorator.timeout(5)
 def test(random_number) ->int:
-    answer = input("What's root of %d? : " % random_number)
+    answer = input("What's root two of %d? : " % random_number)
     if answer is "":
         answer = "missed"
 
