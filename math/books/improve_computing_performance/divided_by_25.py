@@ -25,6 +25,7 @@ if __name__ == "__main__":
             print(line)
             answers.append(test(random_number))
         except:
+            print(line)
             print("test timed out :(")
             answers.append("missed")
 
