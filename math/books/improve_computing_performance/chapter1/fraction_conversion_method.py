@@ -13,7 +13,7 @@ def calculator(random_number):
     number_a = random_number / 100
     while True:
         number_a = 1 / number_a
-        number_a = round(number_a, 2)
+        number_a = round(number_a, 7)
         if str(number_a).split('.')[1][0] is "0":
             break
         else:
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     for _ in range(5):
         random_number = random.randrange(5, 100, 10)
-        random_number = 35
+        random_number = 15
         currects.append(calculator(random_number))
 
         try:
