@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+    width: 100%;
+    height: auto;
+    min-width: 1600px;
+    min-height: 1200px;
+    position: fixed;
+    z-index: -1
+

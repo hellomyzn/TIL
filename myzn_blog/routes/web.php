@@ -36,3 +36,6 @@ Route::get('monthly', 'ArticleController@monthly_index');
 
 Route::get('monthly/create', 'ArticleController@monthly_create');
 Route::post('monthly/', 'ArticleController@monthly_store');
+
+
+Route::get('deepbreath', 'Deepbreath@index');
