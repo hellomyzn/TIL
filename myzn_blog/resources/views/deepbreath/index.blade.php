@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="{{ asset('./css/deepbreath/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/deepbreath/style.css') }}">
 </head>
 <body>
     <div class="wrapper">
