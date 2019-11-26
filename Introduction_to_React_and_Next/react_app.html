@@ -2,33 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>React</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <style>
-        #root {
-            cursor: pointer;
-            font-size:20px;
-            background-color:lightblue;
-            padding:1px 20px;
-        }
-    </style>
-   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 </head>
 <body>
     <h1>React</h1>
-    <dit id="root" onclick="doCount();">wait...</dit>
+    <div id="root">wait...</div>
     <script>
-        let counter = 0;
         let dom = document.querySelector('#root');
-        doCount();
+        let element = React.createElement(
+            'p', {}, 'Hello React!',
+        );
+        ReactDom.render(element, dom);
 
-        function doCount(){
-            counter++;
-            let element = React.createElement(
-                'p', {}, "count: " + counter
-            );
-            ReactDOM.render(element, dom);
-        }
     </script>
 </body>
 </html>
