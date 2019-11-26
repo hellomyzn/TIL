@@ -2,7 +2,7 @@ let dom = document.querySelector('#root');
 let element = React.createElement(
     'div', {}, [
         React.createElement(
-            'h2', {}, "Hello"
+            'h2', {}, "Hello!"
         ),
         React.createElement(
             'h3', {}, "React sample page."
@@ -21,5 +21,4 @@ let element = React.createElement(
             ]
         ),
     ]);
-
 ReactDOM.render(element, dom);
