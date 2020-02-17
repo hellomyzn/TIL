@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello/{msg?}', function ($msg="no message.") {
+
+
+
+Route::get('hello_sample/{msg?}', function ($msg="no message.") {
     $html = <<<EOF
     <html>
     <head> 
@@ -35,3 +38,14 @@ Route::get('hello/{msg?}', function ($msg="no message.") {
 EOF;
     return $html;
 });
+
+
+# hello Controller
+Route::get('hello', 'HelloController@index');
+Route::get('hello_with_parameter/{id?}/{pass?}', 'HelloController@index_with_parameter');
+
+# single action
+Route::get('hello_for_single','hello_for_single');
+
+# Response
+Route::get('hello_response', 'HelloController@index_response');
