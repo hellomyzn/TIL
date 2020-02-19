@@ -76,4 +76,9 @@ EOF;
     return $response;
 
     }
+
+
+    public function index_template(){
+        return view('hello.index');
+    }
 }

@@ -49,3 +49,11 @@ Route::get('hello_for_single','hello_for_single');
 
 # Response
 Route::get('hello_response', 'HelloController@index_response');
+
+# Template
+Route::get('hello_template', function(){
+    return view('hello.index');
+});
+
+# Template with Controller
+Route::get('hello_template_with_controller', 'HelloController@index_template');
