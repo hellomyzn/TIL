@@ -81,4 +81,9 @@ EOF;
     public function index_template(){
         return view('hello.index');
     }
+
+    public function index_parameter(){
+        $data = ['msg' => 'This is value from parameter'];
+        return view('hello.parameter', $data);
+    }
 }

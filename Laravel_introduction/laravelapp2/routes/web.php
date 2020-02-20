@@ -57,3 +57,6 @@ Route::get('hello_template', function(){
 
 # Template with Controller
 Route::get('hello_template_with_controller', 'HelloController@index_template');
+
+# parameter
+Route::get('hello_parameter', 'HelloController@index_parameter');
