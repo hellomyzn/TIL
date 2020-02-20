@@ -108,5 +108,14 @@ EOF;
         return view('hello.query', $data);
 
     }
+
+
+    public function blade()
+    {
+        $data = [
+            'msg' => 'This is used by blade file',
+        ];
+        return view('hello.blade', $data);
+    }
 }
 

@@ -66,3 +66,6 @@ Route::get('root_parameter/{id?}', 'HelloController@root_parameter');
 
 # query
 Route::get('query', 'HelloController@query');
+
+# blade
+Route::get('blade', 'HelloController@blade');
