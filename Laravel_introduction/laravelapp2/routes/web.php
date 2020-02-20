@@ -69,3 +69,6 @@ Route::get('query', 'HelloController@query');
 
 # blade
 Route::get('blade', 'HelloController@blade');
+
+# post
+Route::post('hello', 'HelloController@post');

@@ -117,5 +117,14 @@ EOF;
         ];
         return view('hello.blade', $data);
     }
+
+    public function post(Request $request)
+    {
+        $msg = $request->msg;
+        $data = [
+            'msg'=> 'hello ' . $msg . ' san! ',
+        ];
+        return view('hello.blade', $data);
+    }
 }
 
