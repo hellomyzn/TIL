@@ -97,4 +97,16 @@ EOF;
 
         return view('hello.root_paramater', $data);
     }
+
+
+    public function query(Request $request)
+    {
+        $data = [
+            'msg' => 'You recived the message from Controller',
+            'id' => $request->id
+        ];
+        return view('hello.query', $data);
+
+    }
 }
+
