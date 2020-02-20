@@ -126,5 +126,16 @@ EOF;
         ];
         return view('hello.blade', $data);
     }
+
+
+    public function at_if()
+    {
+        return view('hello.at_if', ['msg'=>'']);
+    }
+
+    public function post_at_if(Request $request)
+    {
+        return view('hello.at_if', ['msg'=>$request->msg]);
+    }
 }
 

@@ -72,3 +72,9 @@ Route::get('blade', 'HelloController@blade');
 
 # post
 Route::post('hello', 'HelloController@post');
+
+# @if
+Route::get('at_if', 'HelloController@at_if');
+
+# @if_post
+Route::post('at_if', 'HelloController@post_at_if');
