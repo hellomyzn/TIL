@@ -86,4 +86,15 @@ EOF;
         $data = ['msg' => 'This is value from parameter'];
         return view('hello.parameter', $data);
     }
+
+
+    public function root_parameter($id='zero')
+    {
+        $data = [
+            'msg' => 'the message is from controller',
+            'id' => $id
+        ];
+
+        return view('hello.root_paramater', $data);
+    }
 }

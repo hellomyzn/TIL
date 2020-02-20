@@ -60,3 +60,6 @@ Route::get('hello_template_with_controller', 'HelloController@index_template');
 
 # parameter
 Route::get('hello_parameter', 'HelloController@index_parameter');
+
+# root_parameter
+Route::get('root_parameter/{id?}', 'HelloController@root_parameter');
