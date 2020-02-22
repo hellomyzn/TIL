@@ -160,5 +160,11 @@ EOF;
     {
         return view('Hello.break_continue');
     }
+    
+    public function php_sentence()
+    {
+        $data = ["a", "b", "c", "d", 'e'];
+        return view('Hello.php_sentence', ['data' => $data]);
+    }
 }
 

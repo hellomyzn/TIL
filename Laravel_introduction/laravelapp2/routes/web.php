@@ -90,3 +90,8 @@ Route::get('foreach_test', 'HelloController@foreach_test');
 
 // @break_contine
 Route::get('break_continue', 'HelloController@break_continue');
+
+
+// @php
+Route::get('php_sentence', 'HelloController@php_sentence');
+Route::get('break_continue', 'HelloController@break_continue');
