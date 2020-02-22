@@ -87,3 +87,6 @@ Route::post('isset', 'HelloController@isset_post');
 
 // @foreach
 Route::get('foreach_test', 'HelloController@foreach_test');
+
+// @break_contine
+Route::get('break_continue', 'HelloController@break_continue');

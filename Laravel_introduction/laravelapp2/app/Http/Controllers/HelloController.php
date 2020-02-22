@@ -155,5 +155,10 @@ EOF;
         $data = ["a", "b", "c", "d", 'e'];
         return view("Hello.foreach_test", ['data' => $data]);
     }
+
+    public function break_continue()
+    {
+        return view('Hello.break_continue');
+    }
 }
 
