@@ -166,5 +166,11 @@ EOF;
         $data = ["a", "b", "c", "d", 'e'];
         return view('Hello.php_sentence', ['data' => $data]);
     }
+
+
+    public function yeild_test()
+    {
+        return view('Hello.yield_test');
+    }
 }
 
