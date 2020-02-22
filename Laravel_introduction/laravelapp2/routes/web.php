@@ -73,8 +73,17 @@ Route::get('blade', 'HelloController@blade');
 # post
 Route::post('hello', 'HelloController@post');
 
-# @if
+// @if
 Route::get('at_if', 'HelloController@at_if');
 
 # @if_post
 Route::post('at_if', 'HelloController@post_at_if');
+
+// @isset
+Route::get('isset', 'HelloController@isset');
+
+// @isset post
+Route::post('isset', 'HelloController@isset_post');
+
+// @foreach
+Route::get('foreach_test', 'HelloController@foreach_test');

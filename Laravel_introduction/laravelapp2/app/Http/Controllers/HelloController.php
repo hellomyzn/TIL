@@ -137,5 +137,23 @@ EOF;
     {
         return view('hello.at_if', ['msg'=>$request->msg]);
     }
+
+
+    public function isset()
+    {
+        return view('hello.is_set');
+    }
+
+    public function isset_post(Request $request)
+    {
+        return view('hello.is_set', ['$msg'=>$request->msg]);
+    }
+
+
+    public function foreach_test()
+    {
+        $data = ["a", "b", "c", "d", 'e'];
+        return view("Hello.foreach_test", ['data' => $data]);
+    }
 }
 
