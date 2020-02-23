@@ -170,7 +170,12 @@ EOF;
 
     public function yeild_test()
     {
-        return view('Hello.yield_test');
+        $data = [
+            ['name'=>'hoge', 'mail'=>'hoge@hoge'],
+            ['name'=>'fuga', 'mail'=>'hoge@fuga'],
+            ['name'=>'piyo', 'mail'=>'hoge@piyo'],
+        ];
+        return view('Hello.yield_test', ['data'=>$data]);
     }
 }
 

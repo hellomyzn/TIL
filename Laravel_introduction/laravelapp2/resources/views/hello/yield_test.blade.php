@@ -10,9 +10,22 @@
 
 @section('content')
     <p>This is contents</p>
-    <p>You can write here</p>
-@endsection
 
+    @each('components.item', $data, 'item')
+    <p>You can write here</p>
+
+    @component('components.message')
+        @slot('msg_title')
+            CAUTION!
+        @endslot
+
+        @slot('msg_content')
+            displying the messages
+        @endslot
+    @endcomponent
+
+    @include('components.message', ['msg_title'=>'OK', 'msg_content'=>'sub view'])
+@endsection
 
 @section('footer')
     copyright 2017
