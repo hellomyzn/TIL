@@ -175,7 +175,8 @@ EOF;
             ['name'=>'fuga', 'mail'=>'hoge@fuga'],
             ['name'=>'piyo', 'mail'=>'hoge@piyo'],
         ];
-        return view('Hello.yield_test', ['data'=>$data]);
+
+        return view('Hello.yield_test', ['data'=>$data, 'message'=>'Hello']);
     }
 }
 

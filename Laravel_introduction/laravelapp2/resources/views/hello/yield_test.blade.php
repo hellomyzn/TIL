@@ -25,6 +25,10 @@
     @endcomponent
 
     @include('components.message', ['msg_title'=>'OK', 'msg_content'=>'sub view'])
+
+    <p>This is contents</p>
+    <p>Controller value <br>'message' = {{$message}}</p>
+    <p>ViewComposer value <br>'view_message' = {{$view_message}}</p>
 @endsection
 
 @section('footer')
