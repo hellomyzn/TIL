@@ -19,6 +19,10 @@ class HelloServiceProvider extends ServiceProvider
                 $view->with('view_message', 'composer message');
             }
         );
+
+        View::composer(
+            'Hello.yield_test', 'App\Http\Composers\HelloComposer'
+        );
     }
 
     /**
