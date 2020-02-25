@@ -11,7 +11,20 @@ class HelloController extends Controller
     //
     public function index(Request $request)
     {
-        return view('Hello.index', ['msg'=>'フォームを入力 : ']);
+
+        $validator = Validator::make($request->query(), [
+            'id' => 'required',
+            'pass' => 'required',
+
+        ]);
+
+        if ($validator->fails()){
+            $msg = "query";
+        } else{
+            $msg = "ID/Pass, fill up the form";
+        }
+        
+        return view('Hello.index', ['msg'=>$msg]);
     }
 
 
