@@ -34,7 +34,7 @@ class HelloController extends Controller
         $rules = [
             'name' => 'required',
             'mail' => 'email',
-            'age' => 'numeric|between:0, 150',
+            'age' => 'numeric',
 
         ];
 
@@ -42,11 +42,19 @@ class HelloController extends Controller
             'name.required' => 'Name',
             'mail.email' => 'Mail',
             'age.numeric' => 'age',
-            'age.between' => '0-150',
+            'age.min' => 'more than 0',
+            'age.max' => 'less than 200',
+
         ];
 
+        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator->sometimes('age', 'min:0', function($input){
+            return !is_int($input->age);
+        });
+        $validator->sometimes('age', 'max:200', function($input){
+            return !is_int($input->age);
+        });
 
-        $validator = Validator::make($request->all(), $rules,  $messages);
 
         if ($validator->fails()){
             return redirect('/hello')
