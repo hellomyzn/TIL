@@ -1,13 +1,12 @@
 package main
 
 import (
-    "fmt"
-    "os/user"
-    "time"
+	"fmt"
+	"os/user"
+	"time"
 )
 
-func main(){
-    fmt.Println(time.Now())
-    fmt.Println(user.Current())
+func main() {
+	fmt.Println(time.Now())
+	fmt.Println(user.Current())
 }
-

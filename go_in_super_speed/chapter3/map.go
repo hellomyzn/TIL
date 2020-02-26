@@ -29,8 +29,7 @@ func main() {
 	fmt.PrintLn(m3)
 
 	var s []int
-	if s == nil{
+	if s == nil {
 		fmt.PrintLn("Nil")
 	}
 }
-
