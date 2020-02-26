@@ -32,7 +32,7 @@ class HelloRequest extends FormRequest
             //
             'name' => 'required',
             'mail' => 'email',
-            'age' => 'numeric|between:0,150',
+            'age' => 'numeric|hello',
         ];
     }
 
@@ -42,7 +42,8 @@ class HelloRequest extends FormRequest
             'name.required' => 'Name',
             'mail.email' => 'Mail',
             'age.numeric' => 'age',
-            'age.between' => '0-150',
+            'age.hello' => 'only odd',
+
         ];
     }
 }
