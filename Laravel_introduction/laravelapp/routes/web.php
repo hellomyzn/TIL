@@ -23,3 +23,6 @@ Route::post('hello', 'HelloController@post');
 
 Route::get('cookie', 'HelloController@cookie');
 Route::post('cookie', 'HelloController@cookie_post');
+
+Route::get('hello/add', 'HelloController@add');
+Route::post('hello/add', 'HelloController@create');
