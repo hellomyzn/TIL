@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HelloController;
 use App\Http\Middleware\HelloMiddleware;
 
 /*
@@ -26,3 +27,6 @@ Route::post('cookie', 'HelloController@cookie_post');
 
 Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', 'HelloController@create');
+
+Route::get('hello/edit', 'HelloController@edit');
+Route::post('hello/edit', 'HelloController@update');
