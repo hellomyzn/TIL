@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\HelloRequest;
+use Illuminate\Support\Facades\DB;
 use Validator;
 
 
@@ -12,7 +13,8 @@ class HelloController extends Controller
     //
     public function index(Request $request)
     {
-        return view('Hello.index', ['msg'=>'Fill up the form']);
+        $items = DB::select('select * from people');
+        return view('Hello.index', ['items' => $items]);
     }
 
 
