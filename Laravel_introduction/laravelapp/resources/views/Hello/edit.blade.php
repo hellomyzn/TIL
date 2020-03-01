@@ -1,6 +1,10 @@
 <table>
     <form action="/hello/edit" method="post">
         {{ csrf_field() }}
+        <tr>
+            <th>ID: </th>
+            <td><input type="int" name="name" value="{{$form->id}}"></td>
+        </tr>
         <input type="hidden" name="id" value="{{$form->id}}">
         <tr>
             <th>Name: </th>
