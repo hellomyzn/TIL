@@ -2,6 +2,10 @@
     <form action="/hello/add" method="post">
         {{ csrf_field() }}
         <tr>
+            <th>ID: </th>
+            <td><input type="int" name="id"></td>
+        </tr>        
+        <tr>
             <th>Name: </th>
             <td><input type="text" name="name"></td>
         </tr>
