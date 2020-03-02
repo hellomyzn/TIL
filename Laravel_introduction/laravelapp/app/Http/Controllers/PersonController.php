@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Builder;
 use App\Person;
 
 class PersonController extends Controller
@@ -27,13 +26,4 @@ class PersonController extends Controller
         $param = ['input' => $request->input, 'item' => $item];
         return view('person.find', $param);
     }
-
-    protected static function boot()
-    {
-        person::boot();
-
-        static::addGlobalScope('age', function(Builder $builder){
-            $builder->where('age', '>', 20);
-        });
-    }    
 }
