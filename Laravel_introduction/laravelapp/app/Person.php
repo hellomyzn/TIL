@@ -42,3 +42,4 @@ class Person extends Model
         static::addGlobalScope(new ScopePerson);
     }    
 }
+
