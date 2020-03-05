@@ -48,3 +48,6 @@ Route::post('person/add', 'PersonController@create');
 
 Route::get('person/edit', 'PersonController@edit');
 Route::post('person/edit', 'PersonController@update');
+
+Route::get('person/del', 'PersonController@delete');
+Route::get('person/del', 'PersonController@remove');
