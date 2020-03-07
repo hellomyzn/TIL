@@ -6,14 +6,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests\HelloRequest;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use App\Person;
 
 
 class HelloController extends Controller
-{
+{   
     //
     public function index(Request $request)
     {
-        $items = DB::table('people')->get();
+        $items = DB::table('people')->simplePaginate(5);
         return view('Hello.index', ['items' => $items]);
     }
 
