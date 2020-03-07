@@ -15,6 +15,8 @@ class CreateRestdataTable extends Migration
     {
         Schema::create('restdata', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('message');
+            $table->string('url');
             $table->timestamps();
         });
     }
