@@ -59,3 +59,5 @@ Route::post('board/add', 'BoardController@create');
 
 Route::get('board/del', 'BoardController@delete');
 Route::get('board/del', 'BoardController@remove');
+
+Route::resource('rest', 'RestappController');
