@@ -12,16 +12,15 @@
     @foreach ( $items as $item)
         <tr>
             <td>{{$item->getData()}}</td>
-            <table width="100%">
-                @foreach ($item->boards as $obj)
-                    <tr>
-                        <td>{{ $obj->getData() }}</td>
-                    </tr>
-                @endforeach
-            </table>
+
             <td>@if ($item->board != null)
-                {{ $item->board->getData() }}
-                
+                <table width="100%">
+                    @foreach ($item->boards as $obj)
+                        <tr>
+                            <td>{{ $obj->getData() }}</td>
+                        </tr>
+                    @endforeach
+                </table>
             @endif</td>
         </tr>
     @endforeach
