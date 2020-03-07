@@ -3,6 +3,7 @@
         th {background-color: #999; color:fff; padding: 5px 10px;}
         td {boder: solid 1px #aaa; color:#999; padding: 5px 10px;}
     </style>
+    <link rel="stylesheet" href="text/css" href="css/app.css">
 </head>
 <table>
     <tr>
