@@ -5,6 +5,11 @@
     </style>
     <link rel="stylesheet" href="text/css" href="css/app.css">
 </head>
+@if (Auth::check())
+<p>User: {{$user->name . '(' . $user->email . ')' }}</p>
+@else
+<p>You couldn't login ( <a href="/login">ログイン</a> <a href="/regster">登録</a></p>    
+@endif
 <table>
     <tr>
         <th><a href="/hello?sort=name">Name</a></th>
