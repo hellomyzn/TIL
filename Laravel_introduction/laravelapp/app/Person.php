@@ -41,5 +41,15 @@ class Person extends Model
         parent::boot();
         static::addGlobalScope(new ScopePerson);
     }    
+
+    public function board()
+    {
+        return $this->hasOne('App\Board');
+    }
+
+    public function boards()
+    {
+        return $this->hasMany('App\Board');
+    }
 }
 

@@ -6,16 +6,23 @@
 </head>
 <table>
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Mail</th>
-        <th>Age</th>
+        <th>Person</th>
+        <th>Board</th>
     </tr>
     @foreach ( $items as $item)
-
-
         <tr>
             <td>{{$item->getData()}}</td>
+            <table width="100%">
+                @foreach ($item->boards as $obj)
+                    <tr>
+                        <td>{{ $obj->getData() }}</td>
+                    </tr>
+                @endforeach
+            </table>
+            <td>@if ($item->board != null)
+                {{ $item->board->getData() }}
+                
+            @endif</td>
         </tr>
     @endforeach
 </table>
