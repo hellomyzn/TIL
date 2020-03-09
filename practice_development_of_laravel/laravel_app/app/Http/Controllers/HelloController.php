@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
+    function __construct()
+    {
+        config(['sample.message' => 'This is new message']);
+    }
+
     public function index(Request $request)
     {
         $sample_msg = config('sample.message');
@@ -20,10 +25,6 @@ class HelloController extends Controller
 
     public function other(Request $request)
     {
-        $data = [
-            'msg'=>$request->bye,
-        ];
-
-        return view('hello.index', $data);
+        return redirect()->route('sample');
     }
 }
