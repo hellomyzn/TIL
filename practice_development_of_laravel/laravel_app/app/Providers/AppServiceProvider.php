@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        config([
+            'sample.data'=>['こんんいちは', 'どうも', 'さようなら']
+        ]);
     }
 }
