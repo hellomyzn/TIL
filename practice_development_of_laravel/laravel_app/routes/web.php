@@ -22,3 +22,8 @@ Route::middleware([HelloMiddleware::class])->group(function(){
 });
 
 Route::get('/hello/{id}', 'HelloController@index')->where('id', '[0-9]+');
+
+Route::namespace("Sample")->group(function(){
+    Route::get('/sample', 'SampleController@index');
+    Route::get('/sample/other', "SampleController@other");
+});
