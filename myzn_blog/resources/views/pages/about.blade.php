@@ -80,8 +80,8 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">About {{ $fullname }}</div>
-                <p>I Like to eat curry</p>
+                <div class="title m-b-md">About {{ $data['fullname']}}</div>
+                <p>Email me at {{ $data["email"] }}</p>
             </div>
         </div>
     </body>

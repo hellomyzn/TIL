@@ -13,8 +13,13 @@ class PageController extends Controller {
         $last = 'Curtis';
 
         $full = $first . " " . $last;
+        $email = 'eiji@eiji.com';
 
-        return view("pages.about")->with('fullname', $full);
+        $data = [];
+        $data['email'] = $email;
+        $data['fullname'] = $full;
+
+        return view("pages.about")->withData($data);
     }
 
     public function getContact(){
