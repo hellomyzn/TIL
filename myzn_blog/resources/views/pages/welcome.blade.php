@@ -1,5 +1,9 @@
 @extends('../layouts/main')
 
+@section('stylesheets')
+    <link rel="stylesheet" href="style.css" type="text/css">
+@endsection
+
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -56,4 +60,9 @@
     </div>
 </div> {{-- end of .row --}}
 
+@endsection
+
+
+@section('scripts ')
+    <script src="js/scripts.js"></script>
 @endsection
