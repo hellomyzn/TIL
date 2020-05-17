@@ -1,8 +1,6 @@
 @extends('../layouts/main')
 
-@section('stylesheets')
-    <link rel="stylesheet" href="style.css" type="text/css">
-@endsection
+@section('title', '| Home')
 
 @section('content')
 <div class="row">
@@ -62,7 +60,3 @@
 
 @endsection
 
-
-@section('scripts ')
-    <script src="js/scripts.js"></script>
-@endsection

@@ -10,7 +10,7 @@
 
     @yield('stylesheets')
 
-    <title>Laravel Blog</title> {{-- Change this for each page --}}
+    <title>Laravel Blog @yield('title')</title> {{-- Change this for each page --}}
     </head>
     <body>
 
