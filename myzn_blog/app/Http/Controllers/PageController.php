@@ -8,7 +8,13 @@ class PageController extends Controller {
     }
 
     public function getAbout(){
-        return view("pages.about");
+
+        $first = 'Alex';
+        $last = 'Curtis';
+
+        $full = $first . " " . $last;
+
+        return view("pages.about")->with('fullname', $full);
     }
 
     public function getContact(){
