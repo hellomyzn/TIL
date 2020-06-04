@@ -1,10 +1,9 @@
 import unittest
 
-from main import is_prime_v1 as is_prime
+from main import is_prime_v2 as is_prime
 
 
 class PrimeTest(unittest.TestCase):
-
     def test_is_prime_ok(self):
         for i in [2,3,5,7,11,13,17,19]:
             self.assertTrue(is_prime(i))
