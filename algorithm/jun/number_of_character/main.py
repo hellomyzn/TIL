@@ -8,10 +8,15 @@ from typing import Tuple
 
 def count_chars_v1(strings: str) -> Tuple[str, int]:
     strings = strings.lower()
-    l = []
-    for char in strings:
-        if not char.isspace():
-            l.append((char, strings.count(char)))
+
+    # v1
+    # l = []
+    # for char in strings:
+    #     if not char.isspace():
+    #         l.append((char, strings.count(char)))
+
+    # List comprehension
+    l = [(c, strings.count(c)) for c in strings if not c.isspace()]
 
     return max(l, key=operator.itemgetter(1))
 
