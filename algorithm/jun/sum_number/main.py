@@ -1,4 +1,3 @@
-
 """
 1. Maximum subarray sum
 Input: [1, -2, 3, 6, -1, 2, 4, -5, 2]
@@ -15,7 +14,6 @@ from typing import List
 def get_max_sequence_sum(numbers: List[int], operator=max) -> int:
     result_sequence, sum_sequence = 0, 0
     for num in numbers:
-        # Input: [1, -2, 3, 6, -1, 2, 4, -5, 2]
         sum_sequence = operator(num, sum_sequence + num)
         result_sequence = operator(result_sequence, sum_sequence)
 
@@ -23,16 +21,8 @@ def get_max_sequence_sum(numbers: List[int], operator=max) -> int:
 
 
 def find_max_circular_sequence_sum(numbers: List[int]) -> int:
-    #1 [1, 2, 3, -1, -2, 1, -3, 3, 2, 1]
-    #2 [-100, 1, 2, 3, -1, -2, 1, -3, 3, 2, 1, -100]
     max_sequence_sum = get_max_sequence_sum(numbers)
-    # invert_numbers = []
-    # all_sum = 0
-    # for num in numbers:
-    #     all_sum += num
-    #     invert_numbers.append(-num)
-
-    max_wrap_sequence = all_sum - (-get_max_sequence_sum(invert_numbers))
+    max_wrap_sequence = sum(numbers) - get_max_sequence_sum(numbers, operator=min)
     return max(max_sequence_sum, max_wrap_sequence)
 
 
