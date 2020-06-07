@@ -38,3 +38,4 @@ def find_max_circular_sequence_sum(numbers: List[int]) -> int:
 
 if __name__ == '__main__':
     print(get_max_sequence_sum([1, -2, 3, 6, -1, 2, 4, -5, 2]))
+    print(find_max_circular_sequence_sum([1, -2, 3, 6, -1, 2, 4, -5, 2]))
