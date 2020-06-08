@@ -28,7 +28,15 @@ def delete_duplicate_v2(numbers: List[int]) -> None:
     numbers[:] = tmp
 
 
+def delete_duplicate_v3(numbers: List[int]) -> None:
+    i = 0
+    while i < len(numbers) -1:
+        if numbers[i] == numbers[i + 1]:
+            numbers.remove(numbers[i])
+            i -= 1
+        i += 1
+
 if __name__ == "__main__":
     l = [1,3,3,5,5,7,7,7,10,12,12,15]
-    delete_duplicate_v2(l)
+    delete_duplicate_v3(l)
     print(l)
