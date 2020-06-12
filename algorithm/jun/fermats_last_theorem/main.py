@@ -53,12 +53,14 @@ def fermat_last_theorem_v2(max_num: int, squire_num: int) -> List[Tuple[int, int
 
 if __name__ == '__main__':
     import time
-    
-    start = time.time()
-    print('v1', fermat_last_theorem_v1(20,2))
-    print('v1', 'time =', time.time() - start)
 
-    start = time.time()
-    print('v2', fermat_last_theorem_v2(20,2))
-    print('v2', 'time =', time.time() - start)
+
+    for n in range(2, 10):
+        start = time.time()
+        print('v1', fermat_last_theorem_v1(20,n))
+        print('v1', 'time =', time.time() - start)
+
+        start = time.time()
+        print('v2', fermat_last_theorem_v2(20,n))
+        print('v2', 'time =', time.time() - start)
 
