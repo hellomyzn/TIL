@@ -53,7 +53,7 @@
         <hr>
     </div> {{-- end of .col-md-8 --}}
 
-    <div class="col-md-3 col-md-offset-1" >
+    <div class="col-md-3 offset-md-1">
         <h2>Sidebar</h2>
     </div>
 </div> {{-- end of .row --}}
