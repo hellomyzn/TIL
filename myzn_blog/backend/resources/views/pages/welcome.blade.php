@@ -16,41 +16,17 @@
 <div class="row">
     <div class="col-md-8">
 
+        @foreach($posts as $post)
         <div class="post">
-            <h3>Post Title</h3>
+            <h3>{{ $post->title }}</h3>
             <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde veniam ipsa impedit autem dolorum quas, quos, nulla nihil distinctio mollitia cum voluptates suscipit praesentium aut dolorem quibusdam? Nam, eaque! Est.
+                {{ substr($post->body, 0, 300) }} {{ strlen($post->body) > 300 ? "..." : "" }}
             </p>
             <a href="" class="btn btn-primary">Read More</a>
         </div>
         <hr>
+        @endforeach()
 
-        <div class="post">
-            <h3>Post Title</h3>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde veniam ipsa impedit autem dolorum quas, quos, nulla nihil distinctio mollitia cum voluptates suscipit praesentium aut dolorem quibusdam? Nam, eaque! Est.
-            </p>
-            <a href="" class="btn btn-primary">Read More</a>
-        </div>
-        <hr>
-
-        <div class="post">
-            <h3>Post Title</h3>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde veniam ipsa impedit autem dolorum quas, quos, nulla nihil distinctio mollitia cum voluptates suscipit praesentium aut dolorem quibusdam? Nam, eaque! Est.
-            </p>
-            <a href="" class="btn btn-primary">Read More</a>
-        </div>
-        <hr>
-
-        <div class="post">
-            <h3>Post Title</h3>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde veniam ipsa impedit autem dolorum quas, quos, nulla nihil distinctio mollitia cum voluptates suscipit praesentium aut dolorem quibusdam? Nam, eaque! Est.
-            </p>
-            <a href="" class="btn btn-primary">Read More</a>
-        </div>
-        <hr>
     </div> {{-- end of .col-md-8 --}}
 
     <div class="col-md-3 offset-md-1">
