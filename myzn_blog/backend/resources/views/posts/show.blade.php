@@ -12,6 +12,10 @@
             <div class="card">
                 <div class="card-body">
                     <dl class="row">
+                        <dt class="col-5">URL: </dt>
+                        <dd class="col-7"><a href="{{ url($post->slug) }}"> {{ url($post->slug) }} </a></dd>
+                    </dl>
+                    <dl class="row">
                         <dt class="col-5">Create at:</dt>
                         <dd class="col-7">{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</dd>
                     </dl>
