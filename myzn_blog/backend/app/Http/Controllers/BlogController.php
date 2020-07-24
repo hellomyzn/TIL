@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class BlogController extends Controller
 {
     public function getSingle($slug){
-        return view('blog.index');
+        $post = Post::where('slug', '=', $slug)->first();
+        return view('blogs.single')->withPost($post);
     }
 }
