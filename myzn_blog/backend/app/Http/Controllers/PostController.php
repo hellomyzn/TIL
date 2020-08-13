@@ -85,7 +85,12 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('posts.edit')->with('post', $post);
+        $categories = Category::all();
+        $cats = array();
+        foreach ($categories as $category) {
+            $cats[$category->id] = $category->name;
+        }
+        return view('posts.edit', compact('post', 'cats'));
     }
 
     /**
@@ -103,12 +108,14 @@ class PostController extends Controller
         if ($request->input('slug') == $post->slug ){
             $this->validate($request, array(
                 'title' => 'required|max:255',
+                'category_id' => 'required|integer',
                 'body' => 'required'
             ));
         } else {
             $this->validate($request, array(
                 'title' => 'required|max:255',
                 'slug' => 'required|alpha_dash|min:5|max:255|unique:posts',
+                'category_id' => 'required|integer',
                 'body' => 'required'
             ));
         }
@@ -117,6 +124,7 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->slug = $request->input('slug');
+        $post->category_id = $request->input('category_id');
         $post->body = $request->input('body');
 
         $post->save();

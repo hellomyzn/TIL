@@ -7,11 +7,14 @@
 <div class="row">
 
     <div class="col-md-8">
-        {{ Form::label('title', 'Title: ') }}
+        {{ Form::label('title: ', 'Title: ') }}
         {{ Form::text('title', null , ["class" => 'form-control']) }}
 
-        {{ Form::label('slug', 'Slug', ['class' => 'form-spacing-top']) }}
+        {{ Form::label('slug', 'Slug: ', ['class' => 'form-spacing-top']) }}
         {{ Form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255')) }}
+
+        {{ Form::label('category_id', 'Category: ',  ['class' => 'form-spacing-top']) }}
+        {{ Form::select('category_id', $cats, null, ['class' => 'form-control']) }}
 
         {{ Form::label('body', 'Body: ', ['class' => 'form-spacing-top']) }}
         {{ Form::textarea('body',null,  ['class' => 'form-control']) }}
