@@ -16,6 +16,10 @@
                         <dd class="col-7"><a href="{{ route('blogs.single', $post->slug) }}"> {{ route('blogs.single', $post->slug) }} </a></dd>
                     </dl>
                     <dl class="row">
+                        <dt class="col-5">Category: </dt>
+                        <dd class="col-7">{{ $post->category->name }}</dd>
+                    </dl>
+                    <dl class="row">
                         <dt class="col-5">Create at:</dt>
                         <dd class="col-7">{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</dd>
                     </dl>
