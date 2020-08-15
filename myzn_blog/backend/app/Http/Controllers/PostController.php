@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Tag;
 use App\Category;
+use Illuminate\Cache\TagSet;
 use Session;
 
 class PostController extends Controller
@@ -95,7 +96,14 @@ class PostController extends Controller
         foreach ($categories as $category) {
             $cats[$category->id] = $category->name;
         }
-        return view('posts.edit', compact('post', 'cats'));
+
+        $tags = Tag::all();
+        $tags2 = array();
+        foreach ($tags as $tag){
+            $tags2[$tag->id] = $tag->name;
+        }
+
+        return view('posts.edit', compact('post', 'cats', 'tags2'));
     }
 
     /**
@@ -133,6 +141,8 @@ class PostController extends Controller
         $post->body = $request->input('body');
 
         $post->save();
+
+        $post->tags()->sync($request->tags);
 
         # Set flash data with success message
         Session::flash('success', 'This post was successfully saved');

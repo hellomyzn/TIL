@@ -20,6 +20,9 @@
         {{ Form::label('category_id', 'Category: ',  ['class' => 'form-spacing-top']) }}
         {{ Form::select('category_id', $cats, null, ['class' => 'form-control']) }}
 
+        {{ Form::label('tags', 'Tags: ', ['class' => 'form-spacing-top']) }}
+        {{ Form::select('tags[]', $tags2, null, ['class' => 'form-control js-example-basic-multiple', 'multiple' => 'multiple'] ) }}
+
         {{ Form::label('body', 'Body: ', ['class' => 'form-spacing-top']) }}
         {{ Form::textarea('body',null,  ['class' => 'form-control']) }}
     </div>
@@ -56,4 +59,11 @@
 
 @section('scripts')
     {!! Html::script('js/select2.js') !!}
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
 @endsection
