@@ -4,10 +4,10 @@
 
 @section('content')
 
-    {{ Form::open() }}
+    {{ Form::model($tag, ['route' => ['tags.update', $tag->id], 'method' => 'PUT']) }}
         {{ Form::label('title', "Title:") }}
-        {{ Form::text('title', null, ['class' => 'form-control']) }}
+        {{ Form::text('name', null, ['class' => 'form-control']) }}
 
-        {{ Form::submit('Save Changes') }}
+        {{ Form::submit('Save Changes', ['class' => 'btn btn-success', 'style' => 'margin-top:20px;']) }}
     {{ Form::close() }}
 @endsection
