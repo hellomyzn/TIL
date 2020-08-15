@@ -2,6 +2,10 @@
 
 @section('title', '| Edit Blog Post')
 
+@section('stylesheets')
+    {!! Html::style('css/select2.min.css') !!}
+@endsection
+
 @section('content')
 {!! Form::model($post, ['method' => 'PUT', 'route' => ['posts.update', $post->id] ]) !!}
 <div class="row">
@@ -48,4 +52,8 @@
 
 </div> {{-- end of row from form  --}}
 {!! Form::close() !!}
+@endsection
+
+@section('scripts')
+    {!! Html::script('js/select2.js') !!}
 @endsection
