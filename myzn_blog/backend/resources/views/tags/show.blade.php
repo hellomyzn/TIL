@@ -9,7 +9,7 @@
         </div>
 
         <div class="col-md-2 offset-me-2">
-            <a href="" class="btn btn-lg btn-primary pull-right btn-block" style="">Edit</a>
+            <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-lg btn-primary pull-right btn-block" style="">Edit</a>
         </div>
     </div>
 
@@ -31,9 +31,10 @@
                         <td>{{ $post->title }}</td>
                         <td>
                             @foreach ($post->tags as $tag)
-                            <span class="badge badge-secondary">{{ $tag->name }}</span>
+                                <span class="badge badge-secondary">{{ $tag->name }}</span>
                             @endforeach
                         </td>
+                        <td><a href="{{ route('posts.show', $post->id) }}" class="btn btn-default btn-sm">View</a></td>
                     @endforeach
                 </tbody>
             </table>
