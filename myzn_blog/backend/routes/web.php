@@ -26,7 +26,8 @@ Route::group(['middleware' => ['web']], function(){
 Route::resource('categories', 'CategoryController', ['except' => ['create']] );
 
 // Tag
-Route::resource('tags', 'CategoryController', ['expect' => ['create']]);
+Route::resource('tags', 'TagController', ['expect' => ['create']]);
+
 
 Auth::routes();
 
