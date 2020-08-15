@@ -16,8 +16,9 @@ Route::group(['middleware' => ['web']], function(){
     Route::get('blog/{slug}', ['as' => 'blogs.single', 'uses' => 'BlogController@getSingle']);
     Route::get('blog', ['as' => 'blog.index', 'uses' => 'BlogController@getIndex']);
     Route::get('contact', 'PageController@getContact');
+    Route::post('contact', 'PageController@postContact');
     Route::get('about', 'PageController@getAbout');
-    Route::get('/', 'PageController@getIndex');
+    Route::get('/', 'PageController@getIndex')->name('/');
     Route::resource('posts', 'PostController');
 
 });
@@ -27,7 +28,6 @@ Route::resource('categories', 'CategoryController', ['except' => ['create']] );
 
 // Tag
 Route::resource('tags', 'TagController', ['expect' => ['create']]);
-
 
 Auth::routes();
 
