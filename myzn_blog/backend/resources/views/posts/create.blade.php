@@ -4,6 +4,7 @@
 
 @section('stylesheets')
     {!! Html::style('css/parsley.css') !!}
+    {!! Html::style('css/select2.min.css') !!}
 @endsection
 
 @section('content')
@@ -37,4 +38,5 @@
 
 @section('scripts')
     {!! Html::script('js/parsley.min.js') !!}
+    {!! Html::script('js/select2.js') !!}
 @endsection
