@@ -46,6 +46,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $this->validate($request, array(
             'title' => 'required|max:255',
             'slug' => 'required|alpha_dash|min:5|max:255|unique:posts',
@@ -60,6 +61,8 @@ class PostController extends Controller
         $post->body = $request->body;
 
         $post->save();
+
+        $post->tags()->sync($request->tags, false);
 
         Session::flash('success', 'The blog post was successfully save!');
 
