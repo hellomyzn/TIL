@@ -32,7 +32,7 @@
                         <tr>
                         <th>{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
-                        <td>{{ substr($post->body, 0, 50) }} {{ strlen($post->body) > 50 ? "..." : ""}}</td>
+                        <td>{{ html_entity_decode(substr(strip_tags($post->body), 0, 50), ENT_NOQUOTES, 'UTF-8') }} {{ strlen( html_entity_decode(strip_tags($post->body), ENT_NOQUOTES, 'UTF-8') ) > 50 ? "..." : ""}}</td>
                         <td>{{ date('M j, Y', strtotime($post->created_at)) }}</td>
                         <td>
                             <a href="{{ route('posts.show', $post->id) }}" class="btn btn-default">View</a>

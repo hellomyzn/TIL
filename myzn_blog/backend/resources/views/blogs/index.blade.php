@@ -17,7 +17,7 @@
             <h2> {{ $post->title }}</h2>
             <h6>published: {{ date('M j, y', strtotime($post->created_at)) }}</h6>
 
-            <p>{{ substr($post->body, 0, 250) }}{{ strlen($post->body) > 250 ? "..." : "" }}</p>
+            <p>{{ html_entity_decode(substr(strip_tags($post->body), 0, 250), ENT_NOQUOTES, 'UTF-8') }}{{ strlen( html_entity_decode(strip_tags($post->body), ENT_NOQUOTES, 'UTF-8') ) > 250 ? "..." : "" }}</p>
 
             <a href="{{ route('blogs.single', $post->slug) }}" class="btn btn-primary">Read More</a>
             <hr>
