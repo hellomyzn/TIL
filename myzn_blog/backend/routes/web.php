@@ -34,6 +34,7 @@ Route::post('comment/{post_id}', ['uses' => 'CommentController@store', 'as' => '
 Route::get('comment/{id}/edit', ['uses' => 'CommentController@edit', 'as' => 'comments.edit']);
 Route::put('comment/{id}/', ['uses' => 'CommentController@update', 'as' => 'comments.update']);
 Route::delete('comment/{id}/', ['uses' => 'CommentController@destroy', 'as' => 'comments.destroy']);
+Route::get('comment/{id}/delete', ['uses' => 'CommentController@delete', 'as' => 'comments.delete']);
 
 Auth::routes();
 
