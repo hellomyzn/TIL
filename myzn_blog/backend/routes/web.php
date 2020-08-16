@@ -31,6 +31,9 @@ Route::resource('tags', 'TagController', ['except' => ['create']]);
 
 // Comments
 Route::post('comment/{post_id}', ['uses' => 'CommentController@store', 'as' => 'comments.store']);
+Route::get('comment/{id}/edit', ['uses' => 'CommentController@edit', 'as' => 'comments.edit']);
+Route::put('comment/{id}/', ['uses' => 'CommentController@update', 'as' => 'comments.update']);
+Route::delete('comment/{id}/', ['uses' => 'CommentController@destroy', 'as' => 'comments.destroy']);
 
 Auth::routes();
 
