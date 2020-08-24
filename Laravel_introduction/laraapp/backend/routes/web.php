@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('hello', function(){
+    return "hello";
+});
+
+// Route::get('hello/{hoge}', function($hoge){
+//     return $hoge;
+// });
+
+Route::get('hello/{id}/{slug?}', function($id, $slug='Nothing'){
+    return "{$id}, {$slug}";
+});
