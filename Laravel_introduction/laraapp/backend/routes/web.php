@@ -41,3 +41,5 @@
 # Section 3
 
 Route::get("hello/php-template", "HelloController@index_php");
+Route::get("hello/php-template/{id?}", "HelloController@index_php_refer");
+Route::get("hello/query", "HelloController@index_query");
