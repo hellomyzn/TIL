@@ -11,28 +11,33 @@
 |
 */
 
-# Section 1
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('hello', function(){
-    return "hello";
-});
-
-
-# Section 2
-
-// Route::get('hello/{hoge}', function($hoge){
-//     return $hoge;
+// # Section 1
+// Route::get('/', function () {
+//     return view('welcome');
 // });
 
-Route::get('hello/{id}/{slug?}', function($id, $slug='Nothing'){
-    return "{$id}, {$slug}";
-});
+// Route::get('hello', function(){
+//     return "hello";
+// });
 
-Route::get('hellocontroller/{id?}/{pass?}', "HelloController@index");
 
-Route::get('oneaction', 'OneActionController');
+// # Section 2
 
-Route::get('reqandres', "HelloController@index_req_and_res");
+// // Route::get('hello/{hoge}', function($hoge){
+// //     return $hoge;
+// // });
+
+// Route::get('hello/{id}/{slug?}', function($id, $slug='Nothing'){
+//     return "{$id}, {$slug}";
+// });
+
+// Route::get('hello/hello/{id?}/{pass?}', "HelloController@index");
+
+// Route::get('oneaction', 'OneActionController');
+
+// Route::get('hello/reqandres', "HelloController@index_req_and_res");
+
+
+# Section 3
+
+Route::get("hello/php-template", "HelloController@index_php");

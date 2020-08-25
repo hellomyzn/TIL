@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    //
+    # Section 2
     public function index($id='no-id', $pass="no-pass"){
         return "{$id}, {$pass}";
     }
@@ -17,5 +17,11 @@ class HelloController extends Controller
                 {$request}<br><br>
                 <h1>This is response</h1><br>
                 {$response}";
+    }
+
+
+    # Section 3
+    public function index_php(){
+        return view("hello.index");
     }
 }
