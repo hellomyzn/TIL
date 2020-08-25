@@ -11,6 +11,7 @@
 |
 */
 
+# Section 1
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,6 +20,9 @@ Route::get('hello', function(){
     return "hello";
 });
 
+
+# Section 2
+
 // Route::get('hello/{hoge}', function($hoge){
 //     return $hoge;
 // });
@@ -26,3 +30,9 @@ Route::get('hello', function(){
 Route::get('hello/{id}/{slug?}', function($id, $slug='Nothing'){
     return "{$id}, {$slug}";
 });
+
+Route::get('hellocontroller/{id?}/{pass?}', "HelloController@index");
+
+Route::get('oneaction', 'OneActionController');
+
+Route::get('reqandres', "HelloController@index_req_and_res");
