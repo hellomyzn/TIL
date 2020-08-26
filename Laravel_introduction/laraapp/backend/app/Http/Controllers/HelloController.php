@@ -69,4 +69,9 @@ class HelloController extends Controller
         $msg = $request->msg;
         return view("hello.index_unless", compact("msg"));
     }
+
+    public function index_empty(Request $request){
+        $msg = $request->msg;
+        return view("hello.index_empty", compact("msg"));
+    }
 }
