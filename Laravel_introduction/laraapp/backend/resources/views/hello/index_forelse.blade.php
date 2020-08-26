@@ -1,1 +1,5 @@
-This is forelse
+@forelse ($people as $person)
+
+@empty
+
+@endforelse

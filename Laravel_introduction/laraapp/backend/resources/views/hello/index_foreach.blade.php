@@ -1,1 +1,3 @@
-This is foreach
+@foreach($people as $person)
+    {{ $person }} <br>
+@endforeach

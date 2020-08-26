@@ -85,11 +85,23 @@ class HelloController extends Controller
     }
 
     public function index_foreach(){
-        return view('hello.index_foreach');
+        $people = [
+            "taro",
+            "take",
+            "mana",
+            "yumi"
+        ];
+        return view('hello.index_foreach', compact("people"));
     }
 
     public function index_forelse(){
-        return view('hello.index_forelse');
+        $people = [
+            "taro",
+            "take",
+            "mana",
+            "yumi"
+        ];
+        return view('hello.index_forelse', compact("people"));
     }
 
     public function index_while(){
