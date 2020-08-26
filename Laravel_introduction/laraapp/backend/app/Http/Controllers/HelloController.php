@@ -79,4 +79,20 @@ class HelloController extends Controller
         $msg = $request->msg;
         return view("hello.index_isset", compact("msg"));
     }
+
+    public function index_for(){
+        return view('hello.index_for');
+    }
+
+    public function index_foreach(){
+        return view('hello.index_foreach');
+    }
+
+    public function index_forelse(){
+        return view('hello.index_forelse');
+    }
+
+    public function index_while(){
+        return view('hello.index_while');
+    }
 }

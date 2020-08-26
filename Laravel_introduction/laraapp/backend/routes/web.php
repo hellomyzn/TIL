@@ -55,3 +55,8 @@ Route::get("hello/index_empty", "HelloController@index_empty");
 Route::post('hello/index_empty', "HelloController@index_empty");
 Route::get("hello/index_isset", "HelloController@index_isset");
 Route::post("hello/index_isset", "HelloController@index_isset");
+
+Route::get("hello/index_for", "HelloController@index_for");
+Route::get("hello/index_foreach", "HelloController@index_foreach");
+Route::get("hello/index_forelse", "HelloController@index_forelse");
+Route::get("hello/index_while", "HelloController@index_while");
