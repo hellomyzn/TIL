@@ -48,8 +48,10 @@ Route::get("hello/index_form", "HelloController@index_form");
 Route::post('hello', "HelloController@post");
 
 Route::get('hello/index_if', "HelloController@index_if");
-Route::post('hello/index_if_post', "HelloController@index_if");
+Route::post('hello/index_if', "HelloController@index_if");
 Route::get('hello/index_unless', "HelloController@index_unless");
-Route::post('hello/index_unless_post', "HelloController@index_unless");
+Route::post('hello/index_unless', "HelloController@index_unless");
 Route::get("hello/index_empty", "HelloController@index_empty");
-Route::post('hello/index_empty_post', "HelloController@index_empty");
+Route::post('hello/index_empty', "HelloController@index_empty");
+Route::get("hello/index_isset", "HelloController@index_isset");
+Route::post("hello/index_isset", "HelloController@index_isset");

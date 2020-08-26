@@ -1,11 +1,10 @@
-
-@unless ($msg == "")
+@isset($msg)
     {{ $msg }}
 @else
     There is no message yet
-@endunless
+@endisset
 
-<form action="/hello/index_unless" method="post">
+<form action="/hello/index_isset" method="post">
     {{ csrf_field() }}
     <input type="text" name="msg">
     <input type="submit">

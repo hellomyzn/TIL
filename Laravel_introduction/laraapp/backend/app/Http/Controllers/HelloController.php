@@ -74,4 +74,9 @@ class HelloController extends Controller
         $msg = $request->msg;
         return view("hello.index_empty", compact("msg"));
     }
+
+    public function index_isset(Request $request){
+        $msg = $request->msg;
+        return view("hello.index_isset", compact("msg"));
+    }
 }
