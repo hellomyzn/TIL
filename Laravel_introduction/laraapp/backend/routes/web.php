@@ -46,3 +46,6 @@ Route::get("hello/query", "HelloController@index_query");
 Route::get("hello/index_blade", "HelloController@index_blade");
 Route::get("hello/index_form", "HelloController@index_form");
 Route::post('hello', "HelloController@post");
+
+Route::get('hello/index_if', "HelloController@index_if");
+Route::post('hello/index_if_post', "HelloController@index_if");

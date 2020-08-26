@@ -59,4 +59,9 @@ class HelloController extends Controller
         ];
         return view("hello.post", compact("data"));
     }
+
+    public function index_if(Request $request){
+        $msg = $request->msg;
+        return view("hello.index_if", compact("msg"));
+    }
 }
