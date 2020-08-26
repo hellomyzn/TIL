@@ -120,4 +120,15 @@ class HelloController extends Controller
     {
         return view("hello/index_continue");
     }
+
+    public function index_loop()
+    {
+        $people = [
+            "taro",
+            "take",
+            "mana",
+            "yumi"
+        ];
+        return view("hello/index_loop", compact("people"));
+    }
 }

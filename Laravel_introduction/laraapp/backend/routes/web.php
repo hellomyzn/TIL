@@ -62,3 +62,4 @@ Route::get("hello/index_forelse", "HelloController@index_forelse");
 Route::get("hello/index_while", "HelloController@index_while");
 Route::get("hello/index_break", "HelloController@index_break");
 Route::get("hello/index_continue", "HelloController@index_continue");
+Route::get("hello/index_loop", "HelloController@index_loop");
