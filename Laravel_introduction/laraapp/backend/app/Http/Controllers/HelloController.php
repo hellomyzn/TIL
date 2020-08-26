@@ -40,4 +40,23 @@ class HelloController extends Controller
         ];
         return view("hello.query",compact("msg"));
     }
+
+    public function index_blade(){
+        $data = [
+            "msg" => "This is message from controller throught the blade file"
+        ];
+
+        return view("hello.index_blade", compact("data"));
+    }
+
+    public function index_form(){
+        return view("hello.index_form");
+    }
+
+    public function post(Request $request){
+        $data = [
+            "msg" => $request->msg
+        ];
+        return view("hello.post", compact("data"));
+    }
 }
