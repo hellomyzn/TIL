@@ -49,3 +49,5 @@ Route::post('hello', "HelloController@post");
 
 Route::get('hello/index_if', "HelloController@index_if");
 Route::post('hello/index_if_post', "HelloController@index_if");
+Route::get('hello/index_unless', "HelloController@index_unless");
+Route::post('hello/index_unless_post', "HelloController@index_unless");
