@@ -107,6 +107,7 @@ class HelloController extends Controller
     }
 
     public function index_while(){
-        return view('hello.index_while');
+        $number = 0;
+        return view('hello.index_while', compact("number"));
     }
 }
