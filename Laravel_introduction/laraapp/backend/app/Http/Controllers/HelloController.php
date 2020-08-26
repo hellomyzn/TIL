@@ -101,6 +101,8 @@ class HelloController extends Controller
             "mana",
             "yumi"
         ];
+
+        $people = [];
         return view('hello.index_forelse', compact("people"));
     }
 
