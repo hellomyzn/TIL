@@ -131,4 +131,9 @@ class HelloController extends Controller
         ];
         return view("hello/index_loop", compact("people"));
     }
+
+    public function index_php_directive()
+    {
+        return view('hello.index_php_directive');
+    }
 }
