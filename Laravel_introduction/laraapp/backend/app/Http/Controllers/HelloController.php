@@ -110,4 +110,14 @@ class HelloController extends Controller
         $number = 0;
         return view('hello.index_while', compact("number"));
     }
+
+    public function index_break()
+    {
+        return view("hello/index_break");
+    }
+
+    public function index_continue()
+    {
+        return view("hello/index_continue");
+    }
 }
