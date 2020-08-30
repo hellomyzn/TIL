@@ -3,14 +3,11 @@
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     </head>
     <body>
-        <h1>@yeild('title')</h1>
+        <h1>@yield('title')</h1>
         @section('menubar')
-
-        <ul>
-            <p class="menutitle">Menu</p>
-            <li>@show</li>
-        </ul>
-        <hr>
+        <p class="menutitle">Menu</p>
+        <li>To everyone</li>
+        @show
 
         <div class="content">
             @yield('content')

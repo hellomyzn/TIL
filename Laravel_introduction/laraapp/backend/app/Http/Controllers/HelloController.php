@@ -141,6 +141,13 @@ class HelloController extends Controller
 
     public function index_yield(){
         return view("hello.index_yield");
+    }
 
+    public function index_student(){
+        return view("hello.index_student");
+    }
+
+    public function index_teacher(){
+        return view("hello.index_teacher");
     }
 }

@@ -4,16 +4,17 @@
 
 @section('menubar')
     @parent
-    Yield page
+    <li>Yeild parent1</li>
+    <li>Yeild parent2</li>
 @endsection
 
 
 @section('content')
-    <p>Paragraph</p>
-    <p>hogehogehoge</p>
+<p>This is Yield page</p>
+<p>hogehogehoge</p>
 @endsection
 
 
 @section('footer')
-        copyright 2017 Eiji
+    copyright 2017 Eiji
 @endsection
