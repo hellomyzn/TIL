@@ -21,9 +21,12 @@
         @slot('msg_content')
         This is message from component
         @endslot
-
-
     @endcomponent
+
+    @include('components.message', [
+        'msg_title' => "Hello This is sub-view title",
+        'msg_content' => "This is message from sub-view"
+    ])
 
 
 @endsection
