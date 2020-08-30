@@ -180,4 +180,24 @@ class HelloController extends Controller
     public function index_middleware_response(Request $request){
         return view('hello.index_middleware_response');
     }
+
+    public function index_validate()
+    {
+        $msg = 'Please fill up the form';
+        return view('hello.index_validate',compact('msg'));
+    }
+
+    public function post_validate(Request $request)
+    {
+        $validate_rule = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0, 150',
+        ];
+
+        $this->validate($request, $validate_rule);
+
+        $msg = "You success to send a message";
+        return view('hello.index_validate', compact('msg'));
+    }
 }
