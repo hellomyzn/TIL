@@ -158,4 +158,15 @@ class HelloController extends Controller
         $message = "This message is from controller";
         return view('hello.index_provider', compact(['data', 'message']));
     }
+
+    public function index_composer(){
+        $data = [
+            ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
+            ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
+            ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
+        ];
+
+        $message = "This message is from controller";
+        return view('hello.index_composer', compact(['data', 'message']));
+    }
 }

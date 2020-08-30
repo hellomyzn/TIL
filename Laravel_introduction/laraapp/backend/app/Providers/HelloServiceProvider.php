@@ -29,5 +29,9 @@ class HelloServiceProvider extends ServiceProvider
                 $view->with('view_message', 'This message is from composer message!');
             }
         );
+
+        View::composer(
+            'hello.index_composer', 'App\Http\Composers\HelloComposer'
+        );
     }
 }
