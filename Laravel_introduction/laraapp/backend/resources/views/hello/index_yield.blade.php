@@ -10,9 +10,24 @@
 
 
 @section('content')
-<p>This is Yield page</p>
-<p>hogehogehoge</p>
+    <p>This is Yield page</p>
+    <p>hogehogehoge</p>
+
+    @component('components.message')
+        @slot('msg_title')
+        Hello This is component title
+        @endslot
+
+        @slot('msg_content')
+        This is message from component
+        @endslot
+
+
+    @endcomponent
+
+
 @endsection
+
 
 
 @section('footer')
