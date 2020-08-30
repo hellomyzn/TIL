@@ -71,6 +71,7 @@
 // Route::get('hello/index_composer', "HelloCOntroller@index_composer");
 
 # Section 5
-use App\Http\Middleware\HelloMiddleware;
 Route::get('hello/index_middleware', 'HelloController@index_middleware')->middleware('hello');
 Route::get('hello/index_middleware_response','HelloController@index_middleware_response')->middleware('hello.response');
+Route::get('hello/index_middleware_helo', 'HelloController@index_middleware')->middleware('helo');
+Route::get('hello/index_middleware_response_helo','HelloController@index_middleware_response')->middleware('helo');

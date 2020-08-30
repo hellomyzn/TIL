@@ -41,6 +41,11 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
+
+        'helo' => [
+            \App\Http\Middleware\HelloResponseMiddleware::class,
+            \App\Http\Middleware\HelloMiddleware::class,
+        ],
     ];
 
     /**
