@@ -1,11 +1,11 @@
 @extends('layouts.hello')
 
-@section('title', "yeild")
+@section('title', "provide")
 
 @section('menubar')
     @parent
-    <li>Yeild parent1</li>
-    <li>Yeild parent2</li>
+    <li>Provider parent1</li>
+    <li>Provider parent2</li>
 @endsection
 
 
@@ -37,6 +37,10 @@
         <li>{{ $item['name'] }} {{ $item['mail'] }}</li>
     @endforeach
     <br>
+
+    This is from Provider
+    <p>Controller Value: {{ $message }}</p>
+    <p>View Composer Value: {{ $view_message }}</p>
 
 
 @endsection

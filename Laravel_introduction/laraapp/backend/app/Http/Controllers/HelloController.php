@@ -140,14 +140,22 @@ class HelloController extends Controller
     # Section 4
 
     public function index_yield(){
-        return view("hello.index_yield");
+        $data = [
+            ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
+            ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
+            ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
+        ];
+        return view("hello.index_yield", compact('data'));
     }
 
-    public function index_student(){
-        return view("hello.index_student");
-    }
+    public function index_provider(){
+        $data = [
+            ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
+            ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
+            ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
+        ];
 
-    public function index_teacher(){
-        return view("hello.index_teacher");
+        $message = "This message is from controller";
+        return view('hello.index_provider', compact(['data', 'message']));
     }
 }

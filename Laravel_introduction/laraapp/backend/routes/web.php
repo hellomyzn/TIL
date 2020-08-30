@@ -68,3 +68,4 @@
 
 # Section 4
 Route::get("hello/index_yield", "HelloController@index_yield");
+Route::get('hello/index_provider', "HelloController@index_provider");
