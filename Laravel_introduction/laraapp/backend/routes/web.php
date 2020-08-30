@@ -65,8 +65,11 @@
 // Route::get("hello/index_loop", "HelloController@index_loop");
 // Route::get("hello/index_php_directive", "HelloController@index_php_directive");
 
+// # Section 4
+// Route::get("hello/index_yield", "HelloController@index_yield");
+// Route::get('hello/index_provider', "HelloController@index_provider");
+// Route::get('hello/index_composer', "HelloCOntroller@index_composer");
 
-# Section 4
-Route::get("hello/index_yield", "HelloController@index_yield");
-Route::get('hello/index_provider', "HelloController@index_provider");
-Route::get('hello/index_composer', "HelloCOntroller@index_composer");
+# Section 5
+use App\Http\Middleware\HelloMiddleware;
+Route::get('hello/index_middleware', 'HelloController@index_middleware')->middleware('hello');

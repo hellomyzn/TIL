@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -137,36 +138,42 @@ class HelloController extends Controller
     //     return view('hello.index_php_directive');
     // }
 
-    # Section 4
+    // # Section 4
 
-    public function index_yield(){
-        $data = [
-            ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
-            ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
-            ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
-        ];
-        return view("hello.index_yield", compact('data'));
-    }
+    // public function index_yield(){
+    //     $data = [
+    //         ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
+    //         ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
+    //         ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
+    //     ];
+    //     return view("hello.index_yield", compact('data'));
+    // }
 
-    public function index_provider(){
-        $data = [
-            ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
-            ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
-            ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
-        ];
+    // public function index_provider(){
+    //     $data = [
+    //         ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
+    //         ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
+    //         ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
+    //     ];
 
-        $message = "This message is from controller";
-        return view('hello.index_provider', compact(['data', 'message']));
-    }
+    //     $message = "This message is from controller";
+    //     return view('hello.index_provider', compact(['data', 'message']));
+    // }
 
-    public function index_composer(){
-        $data = [
-            ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
-            ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
-            ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
-        ];
+    // public function index_composer(){
+    //     $data = [
+    //         ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
+    //         ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],
+    //         ['name' => 'piyo', 'mail' => 'piyo@piyo.com']
+    //     ];
 
-        $message = "This message is from controller";
-        return view('hello.index_composer', compact(['data', 'message']));
+    //     $message = "This message is from controller";
+    //     return view('hello.index_composer', compact(['data', 'message']));
+    // }
+
+    # Section 5
+    public function index_middleware(Request $request){
+        $data = $request->data;
+        return view('hello.index_middleware', compact('data'));
     }
 }
