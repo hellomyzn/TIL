@@ -176,4 +176,8 @@ class HelloController extends Controller
         $data = $request->data;
         return view('hello.index_middleware', compact('data'));
     }
+
+    public function index_middleware_response(Request $request){
+        return view('hello.index_middleware_response');
+    }
 }

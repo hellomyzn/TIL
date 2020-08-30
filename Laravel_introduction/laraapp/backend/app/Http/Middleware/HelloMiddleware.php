@@ -15,6 +15,7 @@ class HelloMiddleware
      */
     public function handle($request, Closure $next)
     {
+
         $data = [
             ['name' => 'hoge', 'mail' => 'hoge@hoge.com'],
             ['name' => 'fuga', 'mail' => 'fuga@fuga.com'],

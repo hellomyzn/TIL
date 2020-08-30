@@ -73,3 +73,4 @@
 # Section 5
 use App\Http\Middleware\HelloMiddleware;
 Route::get('hello/index_middleware', 'HelloController@index_middleware')->middleware('hello');
+Route::get('hello/index_middleware_response','HelloController@index_middleware_response')->middleware('hello.response');
