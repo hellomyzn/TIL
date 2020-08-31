@@ -538,4 +538,15 @@ class HelloController extends Controller
 
         return view('hello.index_query_builder_whereRaw', compact('items'));
     }
+
+    public function index_query_builder_orderby(Request $request){
+
+        $min = $request->min;
+        $max = $request->max;
+        $items = DB::table('people')
+                        ->orderBy('age', 'asc')
+                        ->get();
+
+        return view('hello.index_query_builder_orderby', compact('items'));
+    }
 }
