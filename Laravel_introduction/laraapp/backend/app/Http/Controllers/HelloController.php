@@ -549,4 +549,15 @@ class HelloController extends Controller
 
         return view('hello.index_query_builder_orderby', compact('items'));
     }
+
+    public function index_query_builder_offsetLimit(Request $request){
+
+        $page = $request->page;
+        $items = DB::table('people')
+                        ->offset($page * 3)
+                        ->limit(2)
+                        ->get();
+
+        return view('hello.index_query_builder_offsetLimit', compact('items'));
+    }
 }

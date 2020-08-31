@@ -125,3 +125,4 @@ Route::get('hello/index_query_builder_wherewhere', "HelloController@index_query_
 Route::get('hello/index_query_builder_whereorwhere', "HelloController@index_query_builder_whereorwhere");
 Route::get('hello/index_query_builder_whereRaw', "HelloController@index_query_builder_whereRaw");
 Route::get('hello/index_query_builder_orderby', "HelloController@index_query_builder_orderby");
+Route::get('hello/index_query_builder_offsetLimit', "HelloController@index_query_builder_offsetLimit");
