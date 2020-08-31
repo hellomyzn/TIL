@@ -444,4 +444,21 @@ class HelloController extends Controller
 
         return view('hello.index_db_combine', compact('items'));
     }
+
+    public function add(){
+        return view('hello.add');
+    }
+
+    public function store(Request $request)
+    {
+        $params = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
+        ];
+
+        DB::insert('insert into people (name, mail, age) values(:name, :mail, :age)', $params);
+
+        return redirect('hello/index_db');
+    }
 }
