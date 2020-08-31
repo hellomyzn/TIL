@@ -235,4 +235,48 @@ class HelloController extends Controller
         $msg = "You success to send a message, This message was validated by validator";
         return view('hello.index_validator', compact('msg'));
     }
+
+    public function index_query_validate(Request $request){
+
+        $validator = Validator::make($request->query(), [
+            'id' => 'required',
+            'pass' => 'required',
+        ]);
+
+        if($validator->fails()){
+            $msg = 'There is problme of query';
+        } else {
+            $msg = 'We got your ID/PASS. So please fill up the form';
+        }
+
+        return view('hello.index_query_validate', compact('msg'));
+    }
+
+    public function post_query_validate(Request $request){
+        $rules = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0, 150',
+        ];
+
+        $messages = [
+            'name.required' => '名前を必ず入力してください。 by query validate',
+            'mail.email' => 'メールアドレスが必要です by query validate',
+            'age.numeric' => '年齢を整数で入力ください by query validate',
+            'age.between' => '年齢は0-150の間で入力ください by query validate',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails())
+        {
+            return redirect('/hello/index_query_validate')
+                            ->withErrors($validator)
+                            ->withInput();
+        }
+
+        $msg = "You success to send a message, This message was validated by query validate";
+        return view('hello.index_query_validate', compact('msg'));
+    }
+
 }
