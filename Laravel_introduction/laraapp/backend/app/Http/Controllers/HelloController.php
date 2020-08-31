@@ -505,9 +505,26 @@ class HelloController extends Controller
     }
 
     public function index_query_builder_where(Request $request){
-
         $items = DB::table('people')->where('id', "<=", $request->id)->get();
 
         return view('hello.index_query_builder_where', compact('items'));
+    }
+
+    public function index_query_builder_wherewhere(Request $request){
+        $items = DB::table('people')
+                        ->where('name', 'like', '%'. $request->name . '%')
+                        ->where('mail', 'like', '%'. $request->mail . '%')
+                        ->get();
+
+        return view('hello.index_query_builder_wherewhere', compact('items'));
+    }
+
+    public function index_query_builder_whereorwhere(Request $request){
+        $items = DB::table('people')
+                        ->where('name', 'like', '%'. $request->name . '%')
+                        ->orWhere('mail', 'like', '%'. $request->mail . '%')
+                        ->get();
+
+        return view('hello.index_query_builder_whereorwhere', compact('items'));
     }
 }
