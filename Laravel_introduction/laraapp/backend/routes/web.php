@@ -110,3 +110,6 @@ Route::get('hello/index_db_combine', "HelloController@index_db_combine");
 
 Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', "HelloController@store");
+
+Route::get('hello/edit', 'HelloController@edit');
+ROute::post('hello/update', 'HelloController@update');
