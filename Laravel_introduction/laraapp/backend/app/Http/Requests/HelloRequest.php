@@ -13,7 +13,7 @@ class HelloRequest extends FormRequest
      */
     public function authorize()
     {
-        if ($this->path() == 'hello/index_request')
+        if ($this->path() == "hello/index_validator" || $this->path() == 'hello/index_request')
         {
             return true;
         } else

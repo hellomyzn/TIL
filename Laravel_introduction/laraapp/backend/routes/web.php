@@ -81,3 +81,6 @@ Route::post('hello/index_validate', 'HelloController@post_validate');
 
 Route::get('hello/index_request', 'HelloController@index_request');
 Route::post('hello/index_request', 'HelloController@post_request');
+
+Route::get('hello/index_validator', 'HelloController@index_validator');
+Route::post('hello/index_validator', 'HelloController@post_validator');

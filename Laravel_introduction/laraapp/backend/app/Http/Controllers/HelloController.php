@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
+use Validator;
 
 class HelloController extends Controller
 {
@@ -211,5 +212,27 @@ class HelloController extends Controller
 
         $msg = "You success to send a message, This message was validated by request";
         return view('hello.index_request', compact('msg'));
+    }
+
+    public function index_validator(){
+        $msg = "Please fill up the form. we are testing validator";
+        return view('hello.index_validator',compact('msg'));
+    }
+
+    public function post_validator(HelloRequest $request){
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0, 150',
+        ]);
+
+        if ($validator->fails()){
+            return redirect('/hello_validator')
+                        ->wtihErrors($validator)
+                        ->withInput();
+        }
+        $msg = "You success to send a message, This message was validated by validator";
+        return view('hello.index_validator', compact('msg'));
     }
 }
