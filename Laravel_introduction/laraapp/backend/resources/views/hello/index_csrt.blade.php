@@ -14,8 +14,8 @@
     @endif
 
     <table>
-        <form action='/hello/index_validate_extend' method='post'>
-            {{ csrf_field() }}
+        <form action='/hello/index_csrt' method='post'>
+
             @if(count($errors) > 0)
                 <tr>
                     <th>Error: </th>

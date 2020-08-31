@@ -351,12 +351,12 @@ class HelloController extends Controller
 
     }
 
-    public function index_helloValidate(){
-        $msg = "Please fill up the form. we are testing helloValidate";
+    public function index_validate_extend(){
+        $msg = "Please fill up the form. we are testing validate extend";
         return view('hello.index_validate_extend', compact('msg'));
     }
 
-    public function post_helloValidate(Request $request){
+    public function post_validate_extend(Request $request){
         $rules = [
             'name' => 'required',
             'mail' => 'email',
@@ -380,6 +380,26 @@ class HelloController extends Controller
 
         return view('hello.index_validate_extend', compact('msg'));
 
+    }
+
+    public function index_csrt()
+    {
+        $msg = 'Please fill up the form csrt';
+        return view('hello.index_csrt',compact('msg'));
+    }
+
+    public function post_csrt(Request $request)
+    {
+        $validate_rule = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between:0, 150',
+        ];
+
+        $this->validate($request, $validate_rule);
+
+        $msg = "You success to send a message";
+        return view('hello.index_csrt', compact('msg'));
     }
 
 }
