@@ -70,35 +70,39 @@
 // Route::get('hello/index_provider', "HelloController@index_provider");
 // Route::get('hello/index_composer', "HelloCOntroller@index_composer");
 
-# Section 5
-Route::get('hello/index_middleware', 'HelloController@index_middleware')->middleware('hello');
-Route::get('hello/index_middleware_response','HelloController@index_middleware_response')->middleware('hello.response');
-Route::get('hello/index_middleware_helo', 'HelloController@index_middleware')->middleware('helo');
-Route::get('hello/index_middleware_response_helo','HelloController@index_middleware_response')->middleware('helo');
+// # Section 5
+// Route::get('hello/index_middleware', 'HelloController@index_middleware')->middleware('hello');
+// Route::get('hello/index_middleware_response','HelloController@index_middleware_response')->middleware('hello.response');
+// Route::get('hello/index_middleware_helo', 'HelloController@index_middleware')->middleware('helo');
+// Route::get('hello/index_middleware_response_helo','HelloController@index_middleware_response')->middleware('helo');
 
-Route::get('hello/index_validate', 'HelloController@index_validate');
-Route::post('hello/index_validate', 'HelloController@post_validate');
+// Route::get('hello/index_validate', 'HelloController@index_validate');
+// Route::post('hello/index_validate', 'HelloController@post_validate');
 
-Route::get('hello/index_request', 'HelloController@index_request');
-Route::post('hello/index_request', 'HelloController@post_request');
+// Route::get('hello/index_request', 'HelloController@index_request');
+// Route::post('hello/index_request', 'HelloController@post_request');
 
-Route::get('hello/index_validator', 'HelloController@index_validator');
-Route::post('hello/index_validator', 'HelloController@post_validator');
+// Route::get('hello/index_validator', 'HelloController@index_validator');
+// Route::post('hello/index_validator', 'HelloController@post_validator');
 
-Route::get('hello/index_query_validate', 'HelloController@index_query_validate');
-Route::post('hello/index_query_validate', 'HelloController@post_query_validate');
+// Route::get('hello/index_query_validate', 'HelloController@index_query_validate');
+// Route::post('hello/index_query_validate', 'HelloController@post_query_validate');
 
-Route::get('hello/index_sometimes', 'HelloController@index_sometimes');
-Route::post('hello/index_sometimes', 'HelloController@post_sometimes');
+// Route::get('hello/index_sometimes', 'HelloController@index_sometimes');
+// Route::post('hello/index_sometimes', 'HelloController@post_sometimes');
 
-Route::get('hello/index_helloValidate', 'HelloController@index_helloValidate');
-Route::post('hello/index_helloValidate', 'HelloController@post_helloValidate');
+// Route::get('hello/index_helloValidate', 'HelloController@index_helloValidate');
+// Route::post('hello/index_helloValidate', 'HelloController@post_helloValidate');
 
-Route::get('hello/index_validate_extend', 'HelloController@index_validate_extend');
-Route::post('hello/index_validate_extend', 'HelloController@post_validate_extend');
+// Route::get('hello/index_validate_extend', 'HelloController@index_validate_extend');
+// Route::post('hello/index_validate_extend', 'HelloController@post_validate_extend');
 
-Route::get('hello/index_csrt', 'HelloController@index_csrt');
-Route::post('hello/index_csrt', 'HelloController@post_csrt');
+// Route::get('hello/index_csrt', 'HelloController@index_csrt');
+// Route::post('hello/index_csrt', 'HelloController@post_csrt');
 
-Route::get('hello/index_cookie', "HelloController@index_cookie");
-Route::post('hello/index_cookie', 'HelloController@post_cookie');
+// Route::get('hello/index_cookie', "HelloController@index_cookie");
+// Route::post('hello/index_cookie', 'HelloController@post_cookie');
+
+
+# Section 5.2
+Route::get('hello/index_db', "HelloController@index_db");
