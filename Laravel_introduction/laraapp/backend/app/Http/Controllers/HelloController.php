@@ -431,4 +431,17 @@ class HelloController extends Controller
         $items = DB::select('select * from people');
         return view('hello.index_db', compact('items'));
     }
+
+    public function index_db_combine(Request $request){
+        if (isset($request->id))
+        {
+            $param = ['id' => $request->id];
+            $items = DB::select('select * from people where id = :id', $param);
+
+        } else {
+            $items = DB::select('select * from people');
+        }
+
+        return view('hello.index_db_combine', compact('items'));
+    }
 }

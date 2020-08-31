@@ -106,3 +106,4 @@
 
 # Section 5.2
 Route::get('hello/index_db', "HelloController@index_db");
+Route::get('hello/index_db_combine', "HelloController@index_db_combine");
