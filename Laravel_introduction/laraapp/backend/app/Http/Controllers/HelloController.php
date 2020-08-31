@@ -402,4 +402,26 @@ class HelloController extends Controller
         return view('hello.index_csrt', compact('msg'));
     }
 
+    public function index_cookie(Request $request){
+        $msg = 'test for coockie';
+
+        if ($request->hasCookie('msg')){
+            $msg = 'Cookie: ' . $request->cookie('msg');
+        } else {
+            $msg = 'There is no cookie yet';
+        }
+        return view('hello.index_cookie', compact("msg"));
+    }
+
+    public function post_cookie(Request $request){
+        $validate_rule = [
+            'msg' => 'required',
+        ];
+
+        $this->validate($request, $validate_rule);
+        $msg = $request->msg;
+        $response = new Response(view('hello.index_cookie', ['msg' => '[' . $msg . ']: We got the cookie' ]));
+        $response->cookie('msg', $msg, 100);
+        return $response;
+    }
 }

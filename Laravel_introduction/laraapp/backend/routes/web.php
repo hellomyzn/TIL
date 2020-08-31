@@ -99,3 +99,6 @@ Route::post('hello/index_validate_extend', 'HelloController@post_validate_extend
 
 Route::get('hello/index_csrt', 'HelloController@index_csrt');
 Route::post('hello/index_csrt', 'HelloController@post_csrt');
+
+Route::get('hello/index_cookie', "HelloController@index_cookie");
+Route::post('hello/index_cookie', 'HelloController@post_cookie');
