@@ -480,4 +480,15 @@ class HelloController extends Controller
         DB::update('update people set name =:name, mail = :mail, age = :age where id = :id', $param);
         return redirect('hello/index_db');
     }
+
+    public function del(Request $request) {
+        $item = DB::select('select * from people where id = :id', ['id' => $request->id]);
+        return view('hello.delete', compact('item'));
+    }
+
+    public function remove(Request $request)
+    {
+        DB::delete('delete from people where id = :id', ['id' => $request->id]);
+        return redirect('hello/index_db');
+    }
 }

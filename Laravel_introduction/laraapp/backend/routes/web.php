@@ -112,4 +112,7 @@ Route::get('hello/add', 'HelloController@add');
 Route::post('hello/add', "HelloController@store");
 
 Route::get('hello/edit', 'HelloController@edit');
-ROute::post('hello/update', 'HelloController@update');
+Route::post('hello/update', 'HelloController@update');
+
+Route::get('hello/del', 'HelloController@del');
+Route::post('hello/del', "HelloCOntroller@remove");
