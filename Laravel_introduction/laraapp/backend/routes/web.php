@@ -126,3 +126,6 @@ Route::get('hello/index_query_builder_whereorwhere', "HelloController@index_quer
 Route::get('hello/index_query_builder_whereRaw', "HelloController@index_query_builder_whereRaw");
 Route::get('hello/index_query_builder_orderby', "HelloController@index_query_builder_orderby");
 Route::get('hello/index_query_builder_offsetLimit', "HelloController@index_query_builder_offsetLimit");
+
+Route::get('hello/add_insert', "HelloController@add_insert");
+Route::post('hello/add_insert', "HelloController@create_insert");

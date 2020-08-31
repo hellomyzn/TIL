@@ -560,4 +560,20 @@ class HelloController extends Controller
 
         return view('hello.index_query_builder_offsetLimit', compact('items'));
     }
+
+    public function add_insert(Request $request){
+        return view('hello.add_insert');
+    }
+
+    public function create_insert(Request $request){
+
+        $param = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
+        ];
+
+        DB::table('people')->insert($param);
+        return redirect('/hello/index_db');
+    }
 }
