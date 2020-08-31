@@ -503,4 +503,11 @@ class HelloController extends Controller
 
         return view('hello.show_query_builder', compact('item'));
     }
+
+    public function index_query_builder_where(Request $request){
+
+        $items = DB::table('people')->where('id', "<=", $request->id)->get();
+
+        return view('hello.index_query_builder_where', compact('items'));
+    }
 }
