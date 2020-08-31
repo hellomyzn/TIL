@@ -279,4 +279,44 @@ class HelloController extends Controller
         return view('hello.index_query_validate', compact('msg'));
     }
 
+    public function index_sometimes(){
+        $msg = "Please fill up the form. we are testing sometimes";
+        return view('hello.index_sometimes', compact('msg'));
+    }
+
+    public function post_sometimes(Request $request){
+        $rules = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric',
+        ];
+
+        $messages = [
+            'name.required' => '名前を必ず入力してください。 by sometimes',
+            'mail.email' => 'メールアドレスが必要です by sometimes',
+            'age.numeric' => '年齢を整数で入力ください by sometimes',
+            'age.min' => '年齢は0才以上 by qsometimes',
+            'age.max' => '年齢は150才以下 by qsometimes',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        $validator->sometimes('age', 'min:0', function($input){
+            return !is_int($input->age);
+        });
+
+        $validator->sometimes('age', 'max:200', function($input){
+            return !is_int($input->age);
+        });
+
+        if ($validator->fails()){
+            return redirect('/hello/index_sometimes')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        return view('hello.index_sometimes', compact('msg'));
+
+    }
+
 }
