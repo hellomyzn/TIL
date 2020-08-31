@@ -576,4 +576,26 @@ class HelloController extends Controller
         DB::table('people')->insert($param);
         return redirect('/hello/index_db');
     }
+
+    public function edit_query_builder(Request $request){
+        $item = DB::table('people')
+                        ->where('id', $request->id)
+                        ->first();
+
+        return view('hello.edit_query_builder', compact('item'));
+    }
+
+    public function update_query_builder(Request $request){
+
+        $param = [
+            'name' => $request->name,
+            'mail' => $request->mail,
+            'age' => $request->age,
+        ];
+
+        DB::table('people')
+                ->where('id', $request->id)
+                ->update($param);
+        return redirect('/hello/index_db');
+    }
 }

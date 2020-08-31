@@ -129,3 +129,6 @@ Route::get('hello/index_query_builder_offsetLimit', "HelloController@index_query
 
 Route::get('hello/add_insert', "HelloController@add_insert");
 Route::post('hello/add_insert', "HelloController@create_insert");
+
+Route::get('hello/edit_query_builder', "HelloController@edit_query_builder");
+Route::post('hello/update_query_builder', "HelloController@update_query_builder");
