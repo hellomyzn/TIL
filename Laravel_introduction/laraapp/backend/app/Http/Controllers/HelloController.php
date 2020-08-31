@@ -319,4 +319,36 @@ class HelloController extends Controller
 
     }
 
+
+    public function index_helloValidate(){
+        $msg = "Please fill up the form. we are testing helloValidate";
+        return view('hello.index_helloValidate', compact('msg'));
+    }
+
+    public function post_helloValidate(Request $request){
+        $rules = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|hello',
+        ];
+
+        $messages = [
+            'name.required' => '名前を必ず入力してください。 by Hello Validate',
+            'mail.email' => 'メールアドレスが必要です by Hello Validate',
+            'age.numeric' => '年齢を整数で入力ください by Hello Validate',
+            'age.hello' => 'Hello!　入力は偶数のみです。 by Hello Validate',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()){
+            return redirect('/hello/index_helloValidate')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        return view('hello.index_helloValidate', compact('msg'));
+
+    }
+
 }
