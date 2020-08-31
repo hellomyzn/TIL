@@ -491,4 +491,16 @@ class HelloController extends Controller
         DB::delete('delete from people where id = :id', ['id' => $request->id]);
         return redirect('hello/index_db');
     }
+
+    public function index_query_builder(Request $request){
+        $items = DB::table('people')->get();
+        return view('hello.index_query_builder', compact('items'));
+    }
+
+    public function show_query_builder(Request $request){
+
+        $item = DB::table('people')->where('id', $request->id)->first();
+
+        return view('hello.show_query_builder', compact('item'));
+    }
 }

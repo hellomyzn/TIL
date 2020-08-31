@@ -116,3 +116,6 @@ Route::post('hello/update', 'HelloController@update');
 
 Route::get('hello/del', 'HelloController@del');
 Route::post('hello/del', "HelloCOntroller@remove");
+
+Route::get('hello/index_query_builder', "HelloController@index_query_builder");
+Route::get('hello/show_query_builder', "HelloController@show_query_builder");
