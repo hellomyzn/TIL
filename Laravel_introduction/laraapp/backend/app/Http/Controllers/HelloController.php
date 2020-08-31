@@ -527,4 +527,15 @@ class HelloController extends Controller
 
         return view('hello.index_query_builder_whereorwhere', compact('items'));
     }
+
+    public function index_query_builder_whereRaw(Request $request){
+
+        $min = $request->min;
+        $max = $request->max;
+        $items = DB::table('people')
+                        ->whereRaw('age >= ? and age <= ?', [$min, $max])
+                        ->get();
+
+        return view('hello.index_query_builder_whereRaw', compact('items'));
+    }
 }

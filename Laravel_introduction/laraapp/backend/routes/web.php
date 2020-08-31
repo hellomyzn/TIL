@@ -123,3 +123,4 @@ Route::get('hello/index_query_builder_where', "HelloController@index_query_build
 
 Route::get('hello/index_query_builder_wherewhere', "HelloController@index_query_builder_wherewhere");
 Route::get('hello/index_query_builder_whereorwhere', "HelloController@index_query_builder_whereorwhere");
+Route::get('hello/index_query_builder_whereRaw', "HelloController@index_query_builder_whereRaw");
