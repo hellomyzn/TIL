@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Requests\HelloRequest;
 
 class HelloController extends Controller
 {
@@ -199,5 +200,16 @@ class HelloController extends Controller
 
         $msg = "You success to send a message";
         return view('hello.index_validate', compact('msg'));
+    }
+
+    public function index_request(){
+        $msg = 'Please fill up the form. We are testing request functions';
+        return view('hello.index_request', compact('msg'));
+    }
+
+    public function post_request(HelloRequest $request){
+
+        $msg = "You success to send a message, This message was validated by request";
+        return view('hello.index_request', compact('msg'));
     }
 }

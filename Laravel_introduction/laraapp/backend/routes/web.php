@@ -78,3 +78,6 @@ Route::get('hello/index_middleware_response_helo','HelloController@index_middlew
 
 Route::get('hello/index_validate', 'HelloController@index_validate');
 Route::post('hello/index_validate', 'HelloController@post_validate');
+
+Route::get('hello/index_request', 'HelloController@index_request');
+Route::post('hello/index_request', 'HelloController@post_request');
