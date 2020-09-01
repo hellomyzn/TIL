@@ -426,192 +426,195 @@ class HelloController extends Controller
     //     return $response;
     // }
 
-    # Section 6
-    public function index_db(Request $request){
-        $items = DB::select('select * from people');
-        return view('hello.index_db', compact('items'));
-    }
+    // # Section 6
+    // public function index_db(Request $request){
+    //     $items = DB::select('select * from people');
+    //     return view('hello.index_db', compact('items'));
+    // }
 
-    public function index_db_combine(Request $request){
-        if (isset($request->id))
-        {
-            $param = ['id' => $request->id];
-            $items = DB::select('select * from people where id = :id', $param);
+    // public function index_db_combine(Request $request){
+    //     if (isset($request->id))
+    //     {
+    //         $param = ['id' => $request->id];
+    //         $items = DB::select('select * from people where id = :id', $param);
 
-        } else {
-            $items = DB::select('select * from people');
-        }
+    //     } else {
+    //         $items = DB::select('select * from people');
+    //     }
 
-        return view('hello.index_db_combine', compact('items'));
-    }
+    //     return view('hello.index_db_combine', compact('items'));
+    // }
 
-    public function add(){
-        return view('hello.add');
-    }
+    // public function add(){
+    //     return view('hello.add');
+    // }
 
-    public function store(Request $request)
-    {
-        $params = [
-            'name' => $request->name,
-            'mail' => $request->mail,
-            'age' => $request->age,
-        ];
+    // public function store(Request $request)
+    // {
+    //     $params = [
+    //         'name' => $request->name,
+    //         'mail' => $request->mail,
+    //         'age' => $request->age,
+    //     ];
 
-        DB::insert('insert into people (name, mail, age) values(:name, :mail, :age)', $params);
+    //     DB::insert('insert into people (name, mail, age) values(:name, :mail, :age)', $params);
 
-        return redirect('hello/index_db');
-    }
+    //     return redirect('hello/index_db');
+    // }
 
-    public function edit(Request $request)
-    {
-        $item = DB::select('select * from people where id = :id', ['id' => $request->id]);
-        return view('hello.edit', compact('item'));
-    }
+    // public function edit(Request $request)
+    // {
+    //     $item = DB::select('select * from people where id = :id', ['id' => $request->id]);
+    //     return view('hello.edit', compact('item'));
+    // }
 
-    public function update(Request $request)
-    {
-        $param = [
-            'id' => $request->id,
-            'name' => $request->name,
-            'mail' => $request->mail,
-            'age' => $request->age,
-        ];
+    // public function update(Request $request)
+    // {
+    //     $param = [
+    //         'id' => $request->id,
+    //         'name' => $request->name,
+    //         'mail' => $request->mail,
+    //         'age' => $request->age,
+    //     ];
 
-        DB::update('update people set name =:name, mail = :mail, age = :age where id = :id', $param);
-        return redirect('hello/index_db');
-    }
+    //     DB::update('update people set name =:name, mail = :mail, age = :age where id = :id', $param);
+    //     return redirect('hello/index_db');
+    // }
 
-    public function del(Request $request) {
-        $item = DB::select('select * from people where id = :id', ['id' => $request->id]);
-        return view('hello.delete', compact('item'));
-    }
+    // public function del(Request $request) {
+    //     $item = DB::select('select * from people where id = :id', ['id' => $request->id]);
+    //     return view('hello.delete', compact('item'));
+    // }
 
-    public function remove(Request $request)
-    {
-        DB::delete('delete from people where id = :id', ['id' => $request->id]);
-        return redirect('hello/index_db');
-    }
+    // public function remove(Request $request)
+    // {
+    //     DB::delete('delete from people where id = :id', ['id' => $request->id]);
+    //     return redirect('hello/index_db');
+    // }
 
-    public function index_query_builder(Request $request){
-        $items = DB::table('people')->get();
-        return view('hello.index_query_builder', compact('items'));
-    }
+    // public function index_query_builder(Request $request){
+    //     $items = DB::table('people')->get();
+    //     return view('hello.index_query_builder', compact('items'));
+    // }
 
-    public function show_query_builder(Request $request){
+    // public function show_query_builder(Request $request){
 
-        $item = DB::table('people')->where('id', $request->id)->first();
+    //     $item = DB::table('people')->where('id', $request->id)->first();
 
-        return view('hello.show_query_builder', compact('item'));
-    }
+    //     return view('hello.show_query_builder', compact('item'));
+    // }
 
-    public function index_query_builder_where(Request $request){
-        $items = DB::table('people')->where('id', "<=", $request->id)->get();
+    // public function index_query_builder_where(Request $request){
+    //     $items = DB::table('people')->where('id', "<=", $request->id)->get();
 
-        return view('hello.index_query_builder_where', compact('items'));
-    }
+    //     return view('hello.index_query_builder_where', compact('items'));
+    // }
 
-    public function index_query_builder_wherewhere(Request $request){
-        $items = DB::table('people')
-                        ->where('name', 'like', '%'. $request->name . '%')
-                        ->where('mail', 'like', '%'. $request->mail . '%')
-                        ->get();
+    // public function index_query_builder_wherewhere(Request $request){
+    //     $items = DB::table('people')
+    //                     ->where('name', 'like', '%'. $request->name . '%')
+    //                     ->where('mail', 'like', '%'. $request->mail . '%')
+    //                     ->get();
 
-        return view('hello.index_query_builder_wherewhere', compact('items'));
-    }
+    //     return view('hello.index_query_builder_wherewhere', compact('items'));
+    // }
 
-    public function index_query_builder_whereorwhere(Request $request){
-        $items = DB::table('people')
-                        ->where('name', 'like', '%'. $request->name . '%')
-                        ->orWhere('mail', 'like', '%'. $request->mail . '%')
-                        ->get();
+    // public function index_query_builder_whereorwhere(Request $request){
+    //     $items = DB::table('people')
+    //                     ->where('name', 'like', '%'. $request->name . '%')
+    //                     ->orWhere('mail', 'like', '%'. $request->mail . '%')
+    //                     ->get();
 
-        return view('hello.index_query_builder_whereorwhere', compact('items'));
-    }
+    //     return view('hello.index_query_builder_whereorwhere', compact('items'));
+    // }
 
-    public function index_query_builder_whereRaw(Request $request){
+    // public function index_query_builder_whereRaw(Request $request){
 
-        $min = $request->min;
-        $max = $request->max;
-        $items = DB::table('people')
-                        ->whereRaw('age >= ? and age <= ?', [$min, $max])
-                        ->get();
+    //     $min = $request->min;
+    //     $max = $request->max;
+    //     $items = DB::table('people')
+    //                     ->whereRaw('age >= ? and age <= ?', [$min, $max])
+    //                     ->get();
 
-        return view('hello.index_query_builder_whereRaw', compact('items'));
-    }
+    //     return view('hello.index_query_builder_whereRaw', compact('items'));
+    // }
 
-    public function index_query_builder_orderby(Request $request){
+    // public function index_query_builder_orderby(Request $request){
 
-        $min = $request->min;
-        $max = $request->max;
-        $items = DB::table('people')
-                        ->orderBy('age', 'asc')
-                        ->get();
+    //     $min = $request->min;
+    //     $max = $request->max;
+    //     $items = DB::table('people')
+    //                     ->orderBy('age', 'asc')
+    //                     ->get();
 
-        return view('hello.index_query_builder_orderby', compact('items'));
-    }
+    //     return view('hello.index_query_builder_orderby', compact('items'));
+    // }
 
-    public function index_query_builder_offsetLimit(Request $request){
+    // public function index_query_builder_offsetLimit(Request $request){
 
-        $page = $request->page;
-        $items = DB::table('people')
-                        ->offset($page * 3)
-                        ->limit(2)
-                        ->get();
+    //     $page = $request->page;
+    //     $items = DB::table('people')
+    //                     ->offset($page * 3)
+    //                     ->limit(2)
+    //                     ->get();
 
-        return view('hello.index_query_builder_offsetLimit', compact('items'));
-    }
+    //     return view('hello.index_query_builder_offsetLimit', compact('items'));
+    // }
 
-    public function add_insert(Request $request){
-        return view('hello.add_insert');
-    }
+    // public function add_insert(Request $request){
+    //     return view('hello.add_insert');
+    // }
 
-    public function create_insert(Request $request){
+    // public function create_insert(Request $request){
 
-        $param = [
-            'name' => $request->name,
-            'mail' => $request->mail,
-            'age' => $request->age,
-        ];
+    //     $param = [
+    //         'name' => $request->name,
+    //         'mail' => $request->mail,
+    //         'age' => $request->age,
+    //     ];
 
-        DB::table('people')->insert($param);
-        return redirect('/hello/index_db');
-    }
+    //     DB::table('people')->insert($param);
+    //     return redirect('/hello/index_db');
+    // }
 
-    public function edit_query_builder(Request $request){
-        $item = DB::table('people')
-                        ->where('id', $request->id)
-                        ->first();
+    // public function edit_query_builder(Request $request){
+    //     $item = DB::table('people')
+    //                     ->where('id', $request->id)
+    //                     ->first();
 
-        return view('hello.edit_query_builder', compact('item'));
-    }
+    //     return view('hello.edit_query_builder', compact('item'));
+    // }
 
-    public function update_query_builder(Request $request){
+    // public function update_query_builder(Request $request){
 
-        $param = [
-            'name' => $request->name,
-            'mail' => $request->mail,
-            'age' => $request->age,
-        ];
+    //     $param = [
+    //         'name' => $request->name,
+    //         'mail' => $request->mail,
+    //         'age' => $request->age,
+    //     ];
 
-        DB::table('people')
-                ->where('id', $request->id)
-                ->update($param);
-        return redirect('/hello/index_db');
-    }
+    //     DB::table('people')
+    //             ->where('id', $request->id)
+    //             ->update($param);
+    //     return redirect('/hello/index_db');
+    // }
 
-    public function remove_query_builder(Request $request){
-        $item = DB::table('people')
-                        ->where('id', $request->id)
-                        ->first();
+    // public function remove_query_builder(Request $request){
+    //     $item = DB::table('people')
+    //                     ->where('id', $request->id)
+    //                     ->first();
 
-        return view('hello.remove_query_builder', compact('item'));
-    }
+    //     return view('hello.remove_query_builder', compact('item'));
+    // }
 
-    public function del_query_builder(Request $request){
+    // public function del_query_builder(Request $request){
 
-        DB::table('people')
-                ->where('id', $request->id)
-                ->delete();
-        return redirect('/hello/index_db');
-    }
+    //     DB::table('people')
+    //             ->where('id', $request->id)
+    //             ->delete();
+    //     return redirect('/hello/index_db');
+    // }
+
+
+
 }

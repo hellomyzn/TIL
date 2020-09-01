@@ -104,34 +104,38 @@
 // Route::post('hello/index_cookie', 'HelloController@post_cookie');
 
 
-# Section 5.2
-Route::get('hello/index_db', "HelloController@index_db");
-Route::get('hello/index_db_combine', "HelloController@index_db_combine");
+// # Section 5.2
+// Route::get('hello/index_db', "HelloController@index_db");
+// Route::get('hello/index_db_combine', "HelloController@index_db_combine");
 
-Route::get('hello/add', 'HelloController@add');
-Route::post('hello/add', "HelloController@store");
+// Route::get('hello/add', 'HelloController@add');
+// Route::post('hello/add', "HelloController@store");
 
-Route::get('hello/edit', 'HelloController@edit');
-Route::post('hello/update', 'HelloController@update');
+// Route::get('hello/edit', 'HelloController@edit');
+// Route::post('hello/update', 'HelloController@update');
 
-Route::get('hello/del', 'HelloController@del');
-Route::post('hello/del', "HelloCOntroller@remove");
+// Route::get('hello/del', 'HelloController@del');
+// Route::post('hello/del', "HelloCOntroller@remove");
 
-Route::get('hello/index_query_builder', "HelloController@index_query_builder");
-Route::get('hello/show_query_builder', "HelloController@show_query_builder");
-Route::get('hello/index_query_builder_where', "HelloController@index_query_builder_where");
+// Route::get('hello/index_query_builder', "HelloController@index_query_builder");
+// Route::get('hello/show_query_builder', "HelloController@show_query_builder");
+// Route::get('hello/index_query_builder_where', "HelloController@index_query_builder_where");
 
-Route::get('hello/index_query_builder_wherewhere', "HelloController@index_query_builder_wherewhere");
-Route::get('hello/index_query_builder_whereorwhere', "HelloController@index_query_builder_whereorwhere");
-Route::get('hello/index_query_builder_whereRaw', "HelloController@index_query_builder_whereRaw");
-Route::get('hello/index_query_builder_orderby', "HelloController@index_query_builder_orderby");
-Route::get('hello/index_query_builder_offsetLimit', "HelloController@index_query_builder_offsetLimit");
+// Route::get('hello/index_query_builder_wherewhere', "HelloController@index_query_builder_wherewhere");
+// Route::get('hello/index_query_builder_whereorwhere', "HelloController@index_query_builder_whereorwhere");
+// Route::get('hello/index_query_builder_whereRaw', "HelloController@index_query_builder_whereRaw");
+// Route::get('hello/index_query_builder_orderby', "HelloController@index_query_builder_orderby");
+// Route::get('hello/index_query_builder_offsetLimit', "HelloController@index_query_builder_offsetLimit");
 
-Route::get('hello/add_insert', "HelloController@add_insert");
-Route::post('hello/add_insert', "HelloController@create_insert");
+// Route::get('hello/add_insert', "HelloController@add_insert");
+// Route::post('hello/add_insert', "HelloController@create_insert");
 
-Route::get('hello/edit_query_builder', "HelloController@edit_query_builder");
-Route::post('hello/update_query_builder', "HelloController@update_query_builder");
+// Route::get('hello/edit_query_builder', "HelloController@edit_query_builder");
+// Route::post('hello/update_query_builder', "HelloController@update_query_builder");
 
-Route::get('hello/remove_query_builder', 'HelloController@remove_query_builder');
-Route::post('hello/remove_query_builder', "HelloCOntroller@del_query_builder");
+// Route::get('hello/remove_query_builder', 'HelloController@remove_query_builder');
+// Route::post('hello/remove_query_builder', "HelloCOntroller@del_query_builder");
+
+
+# Section 6
+Route::get('person/index', 'PersonController@index');
