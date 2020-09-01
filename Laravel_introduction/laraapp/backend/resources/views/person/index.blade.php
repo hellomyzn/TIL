@@ -11,6 +11,7 @@
         <th>Mail: </th>
         <th>Age: </th>
         <th>get data method</th>
+        <th>Board</th>
     </tr>
         @foreach ($items as $item)
         <tr>
@@ -18,6 +19,12 @@
             <td>{{$item->mail}}</td>
             <td>{{$item->age}}</td>
             <td>{{$item->getData()}}</td>
+            <td>
+                @if ($item->board != null)
+                    {{ $item->board->getData() }}
+                @endif
+
+            </td>
         </tr>
 
         @endforeach

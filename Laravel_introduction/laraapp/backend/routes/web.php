@@ -163,3 +163,8 @@ Route::post('person/edit', "PersonController@update");
 
 Route::get('person/delete', "PersonController@delete");
 Route::post('person/delete', "PersonController@remove");
+
+Route::get('board/index', "BoardController@index");
+
+Route::get('board/add', "BoardController@add");
+Route::post('board/add', "BoardController@store");
