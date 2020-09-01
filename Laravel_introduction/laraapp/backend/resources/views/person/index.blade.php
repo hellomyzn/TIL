@@ -24,6 +24,14 @@
                     {{ $item->board->getData() }}
                 @endif
 
+                @if($item->boards != null)
+                    <table>
+                        @foreach($item->boards as $obj)
+                            <tr><td>{{ $obj->getData() }}</td></tr>
+                        @endforeach
+                    </table>
+                @endif
+
             </td>
         </tr>
 
