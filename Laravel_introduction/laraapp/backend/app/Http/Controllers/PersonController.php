@@ -102,4 +102,16 @@ class PersonController extends Controller
 
         return redirect('person/index');
     }
+
+    public function delete(Request $request){
+        $item = Person::find($request->id);
+        return view('person.delete', compact('item'));
+    }
+
+    public function remove(Request $request){
+
+        Person::find($request->id)->delete();
+
+        return redirect('person/index');
+    }
 }
