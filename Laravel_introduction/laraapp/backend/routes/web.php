@@ -157,3 +157,6 @@ Route::post('person/find_grobal_scope', 'PersonController@search_grobal_scope');
 
 Route::get('person/add', "PersonController@add");
 Route::post('person/add', "PersonController@store");
+
+Route::get('person/edit', "PersonController@edit");
+Route::post('person/edit', "PersonController@update");
