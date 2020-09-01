@@ -25,4 +25,26 @@
 
 
 </table>
+
+With
+<table>
+    <tr>
+        <th>person id: </th>
+        <th>title: </th>
+        <th>message: </th>
+        <th>Get Data: </th>
+    </tr>
+        @foreach ($with as $item)
+        <tr>
+            <td>{{$item->person_id}}</td>
+            <td>{{$item->title}}</td>
+            <td>{{$item->message}}</td>
+            <td>{{$item->getData()}}</td>
+        </tr>
+
+        @endforeach
+
+
+
+</table>
 @endsection
