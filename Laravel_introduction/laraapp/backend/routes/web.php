@@ -145,3 +145,12 @@ Route::post('person/find', 'PersonController@search');
 
 Route::get('person/find_where', 'PersonController@find_where');
 Route::post('person/find_where', 'PersonController@search_where');
+
+Route::get('person/find_scope', 'PersonController@find_scope');
+Route::post('person/find_scope', 'PersonController@search_scope');
+
+Route::get('person/find_name_scope', 'PersonController@find_name_scope');
+Route::post('person/find_name_scope', 'PersonController@search_name_scope');
+
+Route::get('person/find_grobal_scope', 'PersonController@find_grobal_scope');
+Route::post('person/find_grobal_scope', 'PersonController@search_grobal_scope');
