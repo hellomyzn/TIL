@@ -142,3 +142,6 @@ Route::get('person/index', 'PersonController@index');
 
 Route::get('person/find', 'PersonController@find');
 Route::post('person/find', 'PersonController@search');
+
+Route::get('person/find_where', 'PersonController@find_where');
+Route::post('person/find_where', 'PersonController@search_where');
