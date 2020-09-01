@@ -598,4 +598,20 @@ class HelloController extends Controller
                 ->update($param);
         return redirect('/hello/index_db');
     }
+
+    public function remove_query_builder(Request $request){
+        $item = DB::table('people')
+                        ->where('id', $request->id)
+                        ->first();
+
+        return view('hello.remove_query_builder', compact('item'));
+    }
+
+    public function del_query_builder(Request $request){
+
+        DB::table('people')
+                ->where('id', $request->id)
+                ->delete();
+        return redirect('/hello/index_db');
+    }
 }

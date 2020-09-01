@@ -132,3 +132,6 @@ Route::post('hello/add_insert', "HelloController@create_insert");
 
 Route::get('hello/edit_query_builder', "HelloController@edit_query_builder");
 Route::post('hello/update_query_builder', "HelloController@update_query_builder");
+
+Route::get('hello/remove_query_builder', 'HelloController@remove_query_builder');
+Route::post('hello/remove_query_builder', "HelloCOntroller@del_query_builder");
