@@ -73,4 +73,18 @@ class PersonController extends Controller
         $input = $request->input;
         return view('person.find_grobal_scope', compact('item', 'input'));
     }
+
+    public function add(){
+        return view('person.add');
+    }
+
+    public function store(Request $request){
+        $this->validate($request, Person::$rules);
+        $person = new Person;
+        $form = $request->all();
+        unset($form['_token']);
+        $person->fill($form)->save();
+
+        return redirect('person/index');
+    }
 }

@@ -7,14 +7,22 @@ use Illuminate\Database\Eloquent\Builder;
 
 class Person extends Model
 {
-    protected static function boot()
-    {
-        parent::boot();
+    // protected static function boot()
+    // {
+    //     parent::boot();
 
-        static::addGrobalScope('age', function(Builder $builder){
-            $builder->where('age', '>', 20);
-        });
-    }
+    //     static::addGrobalScope('age', function(Builder $builder){
+    //         $builder->where('age', '>', 20);
+    //     });
+    // }
+
+    protected $guarded = array('id');
+
+    public static $rules = array(
+        'name' => 'required',
+        'mail' => 'email',
+        'age' => 'integer|min:0|max:150',
+    );
 
     public function getData(){
         return $this->id . ': ' . $this->name . ' (' . $this->age . ")";
