@@ -8,9 +8,10 @@
 @section('content')
 <table>
     <tr>
-        <th>Name: </th>
-        <th>Mail: </th>
-        <th>Age: </th>
+        <th><a href="/hello/index_pagenation?sort=name">Name: </a></th>
+        <th><a href="/hello/index_pagenation?sort=mail">Mail: </a></th>
+        <th><a href="/hello/index_pagenation?sort=age">Age: </a></th>
+
 
     </tr>
         @foreach ($items as $item)
@@ -24,5 +25,7 @@
 
 
 </table>
+
+{{ $items->appends(['sord' => $sort])->links() }}
 
 @endsection

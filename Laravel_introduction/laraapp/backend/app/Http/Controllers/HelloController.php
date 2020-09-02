@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Validator;
 use Illuminate\Support\Facades\DB;
+use App\Person;
 
 class HelloController extends Controller
 {
@@ -631,8 +632,10 @@ class HelloController extends Controller
     }
 
     public function index_pagenation(Request $request){
-        $items= DB::table('people')->simplePaginate(5);
-        return view('hello.index_pagenation', compact('items'));
+        // $items= DB::table('people')->orderBy('age', 'asc')->simplePaginate(5);
+        $sort = $request->sort;
+        $items = Person::orderBy($sort, 'asc')->simplePaginate(5);
+        return view('hello.index_pagenation', compact('items', 'sort'));
     }
 
 
