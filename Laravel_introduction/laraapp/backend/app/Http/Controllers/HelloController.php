@@ -630,5 +630,11 @@ class HelloController extends Controller
         return redirect('hello/index_session');
     }
 
+    public function index_pagenation(Request $request){
+        $items= DB::table('people')->simplePaginate(5);
+        return view('hello.index_pagenation', compact('items'));
+    }
+
+
 
 }

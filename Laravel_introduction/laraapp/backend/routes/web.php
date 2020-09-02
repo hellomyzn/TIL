@@ -173,3 +173,4 @@
 Route::resource('rest', 'RestappController');
 Route::get('hello/index_session', 'HelloController@index_session');
 Route::post('hello/index_session', 'HelloController@put_session');
+Route::get('hello/index_pagenation', 'HelloController@index_pagenation');
