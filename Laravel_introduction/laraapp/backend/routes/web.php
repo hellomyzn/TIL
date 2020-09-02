@@ -138,33 +138,36 @@
 
 
 # Section 6
-Route::get('person/index', 'PersonController@index');
+// Route::get('person/index', 'PersonController@index');
 
-Route::get('person/find', 'PersonController@find');
-Route::post('person/find', 'PersonController@search');
+// Route::get('person/find', 'PersonController@find');
+// Route::post('person/find', 'PersonController@search');
 
-Route::get('person/find_where', 'PersonController@find_where');
-Route::post('person/find_where', 'PersonController@search_where');
+// Route::get('person/find_where', 'PersonController@find_where');
+// Route::post('person/find_where', 'PersonController@search_where');
 
-Route::get('person/find_scope', 'PersonController@find_scope');
-Route::post('person/find_scope', 'PersonController@search_scope');
+// Route::get('person/find_scope', 'PersonController@find_scope');
+// Route::post('person/find_scope', 'PersonController@search_scope');
 
-Route::get('person/find_name_scope', 'PersonController@find_name_scope');
-Route::post('person/find_name_scope', 'PersonController@search_name_scope');
+// Route::get('person/find_name_scope', 'PersonController@find_name_scope');
+// Route::post('person/find_name_scope', 'PersonController@search_name_scope');
 
-Route::get('person/find_grobal_scope', 'PersonController@find_grobal_scope');
-Route::post('person/find_grobal_scope', 'PersonController@search_grobal_scope');
+// Route::get('person/find_grobal_scope', 'PersonController@find_grobal_scope');
+// Route::post('person/find_grobal_scope', 'PersonController@search_grobal_scope');
 
-Route::get('person/add', "PersonController@add");
-Route::post('person/add', "PersonController@store");
+// Route::get('person/add', "PersonController@add");
+// Route::post('person/add', "PersonController@store");
 
-Route::get('person/edit', "PersonController@edit");
-Route::post('person/edit', "PersonController@update");
+// Route::get('person/edit', "PersonController@edit");
+// Route::post('person/edit', "PersonController@update");
 
-Route::get('person/delete', "PersonController@delete");
-Route::post('person/delete', "PersonController@remove");
+// Route::get('person/delete', "PersonController@delete");
+// Route::post('person/delete', "PersonController@remove");
 
-Route::get('board/index', "BoardController@index");
+// Route::get('board/index', "BoardController@index");
 
-Route::get('board/add', "BoardController@add");
-Route::post('board/add', "BoardController@store");
+// Route::get('board/add', "BoardController@add");
+// Route::post('board/add', "BoardController@store");
+
+# Section 7
+Route::resource('rest', 'RestappController');
