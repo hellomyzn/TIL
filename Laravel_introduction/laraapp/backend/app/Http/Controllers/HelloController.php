@@ -616,5 +616,19 @@ class HelloController extends Controller
     // }
 
 
+    # Section7
+
+    public function index_session(Request $request){
+        $session_data = $request->session()->get('msg');
+        return view('hello.index_session', compact('session_data'));
+    }
+
+    public function put_session(Request $request){
+        $msg = $request->input;
+        $request->session()->put('msg', $msg);
+
+        return redirect('hello/index_session');
+    }
+
 
 }
