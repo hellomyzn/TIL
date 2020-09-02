@@ -1,6 +1,7 @@
 <html>
     <head>
         <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+
         @yield('css')
     </head>
     <body>

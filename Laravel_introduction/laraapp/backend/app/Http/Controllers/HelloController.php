@@ -634,7 +634,7 @@ class HelloController extends Controller
     public function index_pagenation(Request $request){
         // $items= DB::table('people')->orderBy('age', 'asc')->simplePaginate(5);
         $sort = $request->sort;
-        $items = Person::orderBy($sort, 'asc')->simplePaginate(5);
+        $items = Person::orderBy($sort, 'asc')->Paginate(5);
         return view('hello.index_pagenation', compact('items', 'sort'));
     }
 
