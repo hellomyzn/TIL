@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\SUpport\Facades\Auth;
 use App\Http\Requests\HelloRequest;
 use Validator;
 use Illuminate\Support\Facades\DB;
@@ -638,6 +639,9 @@ class HelloController extends Controller
         return view('hello.index_pagenation', compact('items', 'sort'));
     }
 
-
+    public function index_auth(){
+        $user = Auth::user();
+        return view('hello.index_auth',compact('user'));
+    }
 
 }

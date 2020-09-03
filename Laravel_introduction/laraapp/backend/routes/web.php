@@ -174,3 +174,9 @@ Route::resource('rest', 'RestappController');
 Route::get('hello/index_session', 'HelloController@index_session');
 Route::post('hello/index_session', 'HelloController@put_session');
 Route::get('hello/index_pagenation', 'HelloController@index_pagenation');
+
+Route::get('hello/index_auth', 'HelloController@index_auth')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
