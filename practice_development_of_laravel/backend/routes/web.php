@@ -24,3 +24,5 @@ Route::get('/hello/index_name', 'HelloController@index_name')->name('HI');
 Route::get('/hello/other', "HelloController@index_other");
 
 Route::get('hello/index_id/{id}', 'HelloController@index_id')->where('id', '[0-9]+');
+Route::get('hello/index_hello', 'HelloController@index_hello')->middleware('hello');
+Route::get('hello/index_bye', 'HelloController@index_bye')->middleware('hello');

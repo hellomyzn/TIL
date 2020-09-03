@@ -28,4 +28,14 @@ class HelloController extends Controller
     public function index_id($id){
         return view('hello.index_id', compact('id'));
     }
+
+    public function index_hello(Request $request){
+        $hello = $request->hello;
+        return view('hello.index_hello', compact('hello'));
+    }
+
+    public function index_bye(Request $request){
+        $bye = $request->bye;
+        return view('hello.index_bye', compact('bye'));
+    }
 }
