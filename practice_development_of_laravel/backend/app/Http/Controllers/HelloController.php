@@ -24,4 +24,8 @@ class HelloController extends Controller
     public function index_other(){
         return redirect()->route('HI');
     }
+
+    public function index_id($id){
+        return view('hello.index_id', compact('id'));
+    }
 }

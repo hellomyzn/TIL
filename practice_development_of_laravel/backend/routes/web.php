@@ -22,3 +22,5 @@ Route::get('hello/', 'HelloController@index');
 
 Route::get('/hello/index_name', 'HelloController@index_name')->name('HI');
 Route::get('/hello/other', "HelloController@index_other");
+
+Route::get('hello/index_id/{id}', 'HelloController@index_id')->where('id', '[0-9]+');
