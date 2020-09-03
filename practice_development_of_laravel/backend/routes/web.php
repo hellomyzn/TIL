@@ -15,4 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+# Section 1
+
 Route::get('hello/', 'HelloController@index');
+
+Route::get('/hello/index_name', 'HelloController@index_name')->name('HI');
+Route::get('/hello/other', "HelloController@index_other");

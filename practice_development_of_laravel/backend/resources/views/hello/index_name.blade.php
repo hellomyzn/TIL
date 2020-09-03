@@ -7,7 +7,6 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>Hello/Index</h1>
-    <p>{{ $data['msg'] }}</p>
+    <h1>Hello/Index_name</h1>
 </body>
 </html>
