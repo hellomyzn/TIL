@@ -1,5 +1,4 @@
 <?php
-use App\Http\Middleware\HelloMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +14,3 @@ use App\Http\Middleware\HelloMiddleware;
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-Route::get('/hello', 'HelloController@index')->name('hello');
-Route::get('/hello/{msg}', 'HelloController@other');
-Route::get('/sample', "Sample\SampleController@index")->name('sample');
-
-Route::get('/hello/{id}', 'HelloController@index')->where('id', '[0-9]+');
