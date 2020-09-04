@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Person;
 
 class HelloController extends Controller
 {
@@ -37,5 +38,9 @@ class HelloController extends Controller
     public function index_bye(Request $request){
         $bye = $request->bye;
         return view('hello.index_bye', compact('bye'));
+    }
+
+    public function index_model(Person $person){
+        return view('hello.index_model',compact('person'));
     }
 }
