@@ -43,4 +43,8 @@ class HelloController extends Controller
     public function index_model(Person $person){
         return view('hello.index_model',compact('person'));
     }
+
+    public function index_config(){
+        return view('hello.index_config');
+    }
 }
