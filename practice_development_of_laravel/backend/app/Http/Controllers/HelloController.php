@@ -65,4 +65,9 @@ class HelloController extends Controller
         $sample_msg = Storage::get('sample.txt');
         return view('hello.index_storage', compact('sample_msg'));
     }
+
+    public function index_public(){
+        $sample_msg = Storage::disk('public')->get('sample.txt');
+        return view('hello.index_public', compact('sample_msg'));
+    }
 }

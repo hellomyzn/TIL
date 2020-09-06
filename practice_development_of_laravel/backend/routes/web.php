@@ -37,3 +37,4 @@ Route::get('hello/index_model/{person}', 'HelloController@index_model');
 Route::get('hello/index_config', 'HelloController@index_config');
 Route::get('hello/index_env', 'HelloController@index_env');
 Route::get('hello/index_storage', 'HelloController@index_storage');
+Route::get('hello/index_public', 'HelloController@index_public');
