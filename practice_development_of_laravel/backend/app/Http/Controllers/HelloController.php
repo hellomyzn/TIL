@@ -52,4 +52,10 @@ class HelloController extends Controller
         $sample_data = config('sample.data');
         return view('hello.index_config', compact('sample_msg', 'sample_data'));
     }
+
+    public function index_env(){
+        $sample_msg = env('SAMPLE_MESSAGE');
+        $sample_data = explode(',', env('SAMPLE_DATA'));
+        return view('hello.index_env', compact('sample_msg', 'sample_data'));
+    }
 }
