@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Person;
+
 
 class HelloController extends Controller
 {
@@ -57,5 +59,10 @@ class HelloController extends Controller
         $sample_msg = env('SAMPLE_MESSAGE');
         $sample_data = explode(',', env('SAMPLE_DATA'));
         return view('hello.index_env', compact('sample_msg', 'sample_data'));
+    }
+
+    public function index_storage(){
+        $sample_msg = Storage::get('sample.txt');
+        return view('hello.index_storage', compact('sample_msg'));
     }
 }
