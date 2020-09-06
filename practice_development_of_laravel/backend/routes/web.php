@@ -29,6 +29,7 @@ Route::get('hello/index_bye', 'HelloController@index_bye')->middleware('hello');
 
 Route::namespace('Sample')->group(function() {
     Route::get('/sample', "SampleController@index");
+    Route::get('sample/index_config', 'SampleController@index_config');
 });
 
 Route::get('hello/index_model/{person}', 'HelloController@index_model');
