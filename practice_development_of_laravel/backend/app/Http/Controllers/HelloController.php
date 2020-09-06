@@ -45,6 +45,8 @@ class HelloController extends Controller
     }
 
     public function index_config(){
-        return view('hello.index_config');
+        $sample_msg = config('sample.message');
+        $sample_data = config('sample.data');
+        return view('hello.index_config', compact('sample_msg', 'sample_data'));
     }
 }
