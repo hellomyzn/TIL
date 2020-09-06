@@ -9,6 +9,9 @@ class HelloController extends Controller
 {
 
     # Section1
+    function __construct(){
+        config(['sample.message' => 'This message is from hello controller construct through config/sample.php']);
+    }
 
     public function index(){
         $data = [
