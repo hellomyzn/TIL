@@ -110,7 +110,7 @@ class HelloController extends Controller
 
     public function index_allfiles(){
         $dir = '/';
-        $all = Storage::disk('local')->allfiles($dir);
+        $all = Storage::disk('logs')->allfiles($dir);
 
 
         return view('hello/index_allfiles', compact('all'));
