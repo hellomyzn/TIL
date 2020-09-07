@@ -38,3 +38,5 @@ Route::get('hello/index_config', 'HelloController@index_config');
 Route::get('hello/index_env', 'HelloController@index_env');
 Route::get('hello/index_storage', 'HelloController@index_storage');
 Route::get('hello/index_public', 'HelloController@index_public');
+
+Route::get('hello/index_storage_delete', 'HelloController@index_storage_delete');

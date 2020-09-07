@@ -67,7 +67,22 @@ class HelloController extends Controller
     }
 
     public function index_public(){
-        $sample_msg = Storage::disk('public')->get('sample.txt');
+        $sample_msg = Storage::disk('public')->url('sample.txt');
         return view('hello.index_public', compact('sample_msg'));
+    }
+
+    public function index_storage_delete(){
+        if (Storage::disk('public')->exists('bk_sample.txt'))
+        {
+            Storage::disk('public')->delete('bk_sample.txt');
+        }
+        Storage::disk('public')->copy('sample.txt','bk_sample.txt');
+
+        if (Storage::disk('local')->exists('bk_sample.txt'))
+        {
+            Storage::disk('local')->delete('bk_sample.txt');
+        }
+        Storage::disk('local')->move('public/bk_sample.txt', 'bk_sample.txt');
+        return redirect('hello');
     }
 }
