@@ -107,4 +107,12 @@ class HelloController extends Controller
         Storage::disk('public')->putFileAs('files', $request->file('file'), 'uploaded' . $ext);
         return redirect('hello/index_upload');
     }
+
+    public function index_allfiles(){
+        $dir = '/';
+        $all = Storage::disk('local')->allfiles($dir);
+
+
+        return view('hello/index_allfiles', compact('all'));
+    }
 }

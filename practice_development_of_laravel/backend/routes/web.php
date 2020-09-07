@@ -46,3 +46,5 @@ Route::get('hello/index_download', 'HelloController@index_download');
 Route::get('hello/index_upload',"HelloController@index_upload");
 Route::post('hello/index_upload', 'HelloController@index_save');
 Route::post('hello/index_upload_as', 'HelloController@index_save_as');
+
+Route::get('hello/index_allfiles',"HelloController@index_allfiles");
