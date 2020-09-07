@@ -42,3 +42,6 @@ Route::get('hello/index_public', 'HelloController@index_public');
 Route::get('hello/index_storage_delete', 'HelloController@index_storage_delete');
 Route::get('hello/index_download_page', "HelloController@index_download_page");
 Route::get('hello/index_download', 'HelloController@index_download');
+
+Route::get('hello/index_upload',"HelloController@index_upload");
+Route::post('hello/index_upload', 'HelloController@index_save');

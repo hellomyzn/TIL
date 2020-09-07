@@ -93,4 +93,12 @@ class HelloController extends Controller
     public function index_download(){
         return Storage::disk('public')->download('sample.txt');
     }
+
+    public function index_upload(){
+        return view('hello.index_upload');
+    }
+    public function index_save(Request $request){
+        Storage::disk('local')->putFile('files', $request->file('file'));
+        return redirect('hello/index_upload');
+    }
 }
