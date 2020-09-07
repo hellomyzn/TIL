@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use App\Person;
 
@@ -114,5 +115,16 @@ class HelloController extends Controller
 
 
         return view('hello/index_allfiles', compact('all'));
+    }
+
+    public function index_request(Request $requset){
+        $msg = 'please input something';
+        if($requset->isMethod('post'))
+        {
+            $msg = 'yout tyepd: '. $requset->input('msg');
+        }
+
+
+        return view('hello/index_request', compact('msg'));
     }
 }
