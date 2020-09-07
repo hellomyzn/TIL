@@ -10,9 +10,9 @@
     <h1>{{ $msg }}</h1>
     <form action="/hello/index_old" method='post'>
         @csrf
-        MSAGE: <input type="text" name="msg"> <br>
-        MAIL: <input type="text" name="mail"> <br>
-        TELL: <input type="text" name="tel"> <br>
+        MSAGE: <input type="text" name="msg" value="{{ old('msg')}}"> <br>
+        MAIL: <input type="text" name="mail" value="{{ old('mail')}}"> <br>
+        TELL: <input type="text" name="tel" value="{{ old('tel')}}"> <br>
         <input type="submit"> <br>
     </form>
     <ol>
