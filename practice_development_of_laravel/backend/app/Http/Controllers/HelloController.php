@@ -85,4 +85,12 @@ class HelloController extends Controller
         Storage::disk('local')->move('public/bk_sample.txt', 'bk_sample.txt');
         return redirect('hello');
     }
+
+    public function index_download_page(){
+        return view('hello.index_download');
+    }
+
+    public function index_download(){
+        return Storage::disk('public')->download('sample.txt');
+    }
 }
