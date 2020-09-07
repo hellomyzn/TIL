@@ -101,4 +101,10 @@ class HelloController extends Controller
         Storage::disk('local')->putFile('files', $request->file('file'));
         return redirect('hello/index_upload');
     }
+
+    public function index_save_as(Request $request){
+        $ext = '.' . $request->file('file')->extension();
+        Storage::disk('public')->putFileAs('files', $request->file('file'), 'uploaded' . $ext);
+        return redirect('hello/index_upload');
+    }
 }
