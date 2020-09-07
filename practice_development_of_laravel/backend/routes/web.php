@@ -51,3 +51,6 @@ Route::get('hello/index_allfiles',"HelloController@index_allfiles");
 
 Route::get('hello/index_request', 'HelloController@index_request');
 Route::post('hello/index_request', 'HelloController@index_request');
+
+Route::get('hello/index_response', 'HelloController@index_response');
+

@@ -117,7 +117,24 @@ class HelloController extends Controller
         return view('hello/index_allfiles', compact('all'));
     }
 
-    public function index_request(Request $request){
+    public function index_request(Request $request, Response $response){
+        $msg = 'please input something';
+        $keys = [];
+        $values = [];
+        if($request->isMethod('post'))
+        {
+            $msg = 'yout tyepd: '. $request->input('msg');
+            // $form = $request->all();
+            $form = $request->only(['msg', 'mail']);
+            $keys = array_keys($form);
+            $values = array_values($form);
+        }
+
+
+        return view('hello/index_request', compact('msg', 'keys', 'values'));
+    }
+
+    public function index_response(Request $request, Response $response){
         $msg = 'please input something';
         $keys = [];
         $values = [];
@@ -125,8 +142,14 @@ class HelloController extends Controller
         {
             $msg = 'yout tyepd: '. $request->input('msg');
             $form = $request->all();
-            $keys = array_keys($form);
-            $values = array_values($form);
+            $result ='<html><body>';
+            foreach($form as $key => $value)
+            {
+                $result .= $key . ': ' . $value . '<br>';
+            }
+            $result .= '</body></html>';
+            $response->setContent($result);
+            return $response;
         }
 
 
