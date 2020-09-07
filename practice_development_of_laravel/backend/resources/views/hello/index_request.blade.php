@@ -10,8 +10,15 @@
     <h1>{{ $msg }}</h1>
     <form action="/hello/index_request" method='post'>
         @csrf
-        <input type="text" name="msg">
-        <input type="submit">
+        MSAGE: <input type="text" name="msg"> <br>
+        MAIL: <input type="text" name="mail"> <br>
+        TELL: <input type="text" name="tel"> <br>
+        <input type="submit"> <br>
     </form>
+    <ol>
+        @for ($i = 0; $i < count($keys); $i++)
+            <li> {{ $keys[$i] }} : {{ $values[$i]}} </li>
+        @endfor
+    </ol>
 </body>
 </html>

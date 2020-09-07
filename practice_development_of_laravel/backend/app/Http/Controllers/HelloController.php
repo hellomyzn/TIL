@@ -117,14 +117,19 @@ class HelloController extends Controller
         return view('hello/index_allfiles', compact('all'));
     }
 
-    public function index_request(Request $requset){
+    public function index_request(Request $request){
         $msg = 'please input something';
-        if($requset->isMethod('post'))
+        $keys = [];
+        $values = [];
+        if($request->isMethod('post'))
         {
-            $msg = 'yout tyepd: '. $requset->input('msg');
+            $msg = 'yout tyepd: '. $request->input('msg');
+            $form = $request->all();
+            $keys = array_keys($form);
+            $values = array_values($form);
         }
 
 
-        return view('hello/index_request', compact('msg'));
+        return view('hello/index_request', compact('msg', 'keys', 'values'));
     }
 }
