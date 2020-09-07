@@ -54,3 +54,6 @@ Route::post('hello/index_request', 'HelloController@index_request');
 
 Route::get('hello/index_response', 'HelloController@index_response');
 
+Route::get('hello/index_old', 'HelloController@index_old');
+Route::post('hello/index_old', 'HelloController@index_old');
+

@@ -155,4 +155,22 @@ class HelloController extends Controller
 
         return view('hello/index_request', compact('msg', 'keys', 'values'));
     }
+
+    public function index_old(Request $request, Response $response){
+        $msg = 'please input something';
+        $keys = [];
+        $values = [];
+        if($request->isMethod('post'))
+        {
+            $msg = 'yout tyepd: '. $request->input('msg');
+            // $form = $request->all();
+            $form = $request->only(['msg', 'mail', 'tel']);
+            $keys = array_keys($form);
+            $values = array_values($form);
+            $msg = old('msg') . ', ' . old('mail') . ', ' . old('tel') . ', ';
+        }
+
+        $request->flash();
+        return view('hello/index_old', compact('msg', 'keys', 'values'));
+    }
 }
