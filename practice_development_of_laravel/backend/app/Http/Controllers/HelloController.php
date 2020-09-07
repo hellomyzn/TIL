@@ -173,4 +173,18 @@ class HelloController extends Controller
         $request->flash();
         return view('hello/index_old', compact('msg', 'keys', 'values'));
     }
+
+    public function index_query(Request $request, Response $response)
+    {
+        $name = $request->query('name');
+        $mail = $request->query('mail');
+        $tel = $request->query('tel');
+        $msg = $name . ', '. $mail . ', '. $tel . ', ';
+
+        $keys = ['Name', 'Mail', 'Tell'];
+        $values = [$name, $mail, $tel];
+        $request->flash();
+
+        return view('hello.index_query', compact('msg', 'keys', 'values'));
+    }
 }
