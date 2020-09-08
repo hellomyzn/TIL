@@ -213,4 +213,12 @@ class HelloController extends Controller
         $data = $myservice->alldata();
         return view('hello.index_service', compact('msg', 'data'));
     }
+
+    public function index_service_clojure(Myservice $myservice, int $id=-1){
+        $myservice->setId($id);
+
+        $msg = $myservice->say($id);
+        $data = $myservice->alldata();
+        return view('hello.index_service', compact('msg', 'data'));
+    }
 }
