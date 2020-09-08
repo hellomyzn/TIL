@@ -206,4 +206,11 @@ class HelloController extends Controller
         $data = $myservice->data();
         return view('hello.index_service', compact('msg', 'data'));
     }
+
+    public function index_service_paramater(int $id=-1){
+        $myservice = app('App\Myclasses\Myservice', ['id' => $id]);
+        $msg = $myservice->say($id);
+        $data = $myservice->alldata();
+        return view('hello.index_service', compact('msg', 'data'));
+    }
 }

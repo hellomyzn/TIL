@@ -64,3 +64,4 @@ Route::get('/', function () {
 # Section2
 Route::get('hello/index_service', "HelloController@index_service");
 Route::get('hello/index_app', "HelloController@index_app");
+Route::get('hello/index_service_paramater/{id}', "HelloController@index_service_paramater");
