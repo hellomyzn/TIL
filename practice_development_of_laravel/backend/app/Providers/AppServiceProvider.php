@@ -41,22 +41,22 @@ class AppServiceProvider extends ServiceProvider
 
         // app()->bind('App\MyClasses\MyServiceInterface', 'App\MyClasses\PowerMyService');
 
-        app()->resolving(function ($obj, $app){
-            if (is_object($obj))
-            {
-                echo get_class($obj) . '<br>';
-            }
-            else{
-                echo $obj . '<br>';
-            }
-        });
+        // app()->resolving(function ($obj, $app){
+        //     if (is_object($obj))
+        //     {
+        //         echo get_class($obj) . '<br>';
+        //     }
+        //     else{
+        //         echo $obj . '<br>';
+        //     }
+        // });
 
-        app()->resolving(PowerMyService::class, function($obj, $app){
-            $newdata = ['Humberg', 'Curry rice', 'Karaage', 'Gyozae'];
-            $obj->setData($newdata);
-            $obj->setId(rand(0, count($newdata)));
-        });
+        // app()->resolving(PowerMyService::class, function($obj, $app){
+        //     $newdata = ['Humberg', 'Curry rice', 'Karaage', 'Gyozae'];
+        //     $obj->setData($newdata);
+        //     $obj->setId(rand(0, count($newdata)));
+        // });
 
-        app()->singleton('App\MyClasses\MyServiceInterface', 'App\MyClasses\PowerMyService');
+        // app()->singleton('App\MyClasses\MyServiceInterface', 'App\MyClasses\PowerMyService');
     }
 }

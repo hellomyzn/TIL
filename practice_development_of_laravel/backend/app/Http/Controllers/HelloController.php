@@ -247,4 +247,11 @@ class HelloController extends Controller
         $data = $myservice->alldata();
         return view('hello.index_singleton', compact('msg', 'data'));
     }
+
+    public function index_register_boot(MyServiceInterface $myservice, int $id = -1){
+        $myservice->setId($id);
+        $msg = $myservice->say($id);
+        $data = $myservice->alldata();
+        return view('hello.index_register_boot', compact('msg', 'data'));
+    }
 }
