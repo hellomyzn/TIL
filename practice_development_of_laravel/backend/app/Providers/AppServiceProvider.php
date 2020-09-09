@@ -28,10 +28,14 @@ class AppServiceProvider extends ServiceProvider
             'sample.data' => ['hoge','fuga','piyo'],
         ]);
 
-        app()->bind('App\MyClasses\Myservice', function($app){
-            $myservice = new MyService();
-            $myservice->setId(0);
-            return $myservice;
-        });
+        // app()->bind('App\MyClasses\Myservice', function($app){
+        //     $myservice = new MyService();
+        //     $myservice->setId(0);
+        //     return $myservice;
+        // });
+
+        app()->when('App\MyClasses\MyService')
+                ->needs('$id')
+                ->give(1);
     }
 }

@@ -192,9 +192,12 @@ class HelloController extends Controller
 
     # Section 2
 
-    // function __construct(MyService $myservice)
+    // function __construct(int $id)
     // {
-    //     $myservice = app('App\MyClasses\MyService');
+    //     $this->setId($id);
+    //     $this->serial = rand();
+    //     echo "[" . $this->serial . "]";
+
     // }
 
     public function index_service(MyService $myservice)
