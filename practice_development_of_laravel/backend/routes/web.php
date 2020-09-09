@@ -67,3 +67,4 @@ Route::get('hello/index_app', "HelloController@index_app");
 Route::get('hello/index_service_paramater/{id}', "HelloController@index_service_paramater");
 Route::get('hello/index_service_clojure/{id}', "HelloController@index_service_clojure");
 Route::get('hello/index_singleton', "HelloController@index_singleton");
+Route::get('hello/index_interface', "HelloController@index_interface");

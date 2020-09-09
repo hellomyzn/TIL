@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use App\Person;
 use App\MyClasses\MyService;
+use App\MyClasses\MyServiceInterface;
 
 
 class HelloController extends Controller
@@ -231,6 +232,15 @@ class HelloController extends Controller
     }
 
     public function index_singleton(MyService $myservice, int $id = -1){
+        $myservice->setId($id);
+
+        $msg = $myservice->say($id);
+        $data = $myservice->alldata();
+        return view('hello.index_singleton', compact('msg', 'data'));
+    }
+
+    public function index_interface(MyServiceInterface $myservice, int $id = -1)
+    {
         $myservice->setId($id);
 
         $msg = $myservice->say($id);
