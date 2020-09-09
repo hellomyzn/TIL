@@ -38,6 +38,6 @@ class AppServiceProvider extends ServiceProvider
         //         ->needs('$id')
         //         ->give(1);
 
-        app()->bind('App\MyClasses\MyServiceInterface', 'App\MyClasses\MyService');
+        app()->bind('App\MyClasses\MyServiceInterface', 'App\MyClasses\PowerMyService');
     }
 }
