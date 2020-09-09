@@ -30,6 +30,12 @@ class PowerMyservice implements MyServiceInterface{
         return $this->data[$id];
     }
 
+
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+
     public function alldata()
     {
         return $this->data;
