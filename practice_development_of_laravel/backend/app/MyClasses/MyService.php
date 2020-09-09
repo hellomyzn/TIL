@@ -6,6 +6,9 @@ class MyService
     private $id = -1;
     private $msg = 'no id...';
     private $data = ['Hello', 'Welcome', 'Bye'];
+    private $serial;
+
+
 
     // public function __construct(int $id = -1)
     // {
@@ -19,7 +22,8 @@ class MyService
 
     public function __construct()
     {
-
+        $this->serial = rand();
+        echo "[" . $this->serial . "]";
     }
 
 

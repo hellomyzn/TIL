@@ -192,6 +192,11 @@ class HelloController extends Controller
 
     # Section 2
 
+    // function __construct(MyService $myservice)
+    // {
+    //     $myservice = app('App\MyClasses\MyService');
+    // }
+
     public function index_service(MyService $myservice)
     {
         $msg = $myservice->say();
@@ -220,5 +225,13 @@ class HelloController extends Controller
         $msg = $myservice->say($id);
         $data = $myservice->alldata();
         return view('hello.index_service', compact('msg', 'data'));
+    }
+
+    public function index_singleton(MyService $myservice, int $id = -1){
+        $myservice->setId($id);
+
+        $msg = $myservice->say($id);
+        $data = $myservice->alldata();
+        return view('hello.index_singleton', compact('msg', 'data'));
     }
 }
