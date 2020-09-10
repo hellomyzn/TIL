@@ -71,5 +71,5 @@ Route::get('hello/index_interface', "HelloController@index_interface");
 Route::get('hello/index_register_boot', "HelloController@index_register_boot");
 Route::get('hello/index_facade', "HelloController@index_facade");
 
-Route::get('/hello/index_middleware', "HelloController@index_middleware")->middleware('App\Http\Middleware\MyMiddleware::class');
-Route::get('/hello/index_middleware/{id}', "HelloController@index_middleware")->middleware('App\Http\Middleware\MyMiddleware::class');
+Route::get('/hello/index_middleware', "HelloController@index_middleware")->middleware('hello');
+Route::get('/hello/index_middleware/{id}', "HelloController@index_middleware")->middleware('hello');
