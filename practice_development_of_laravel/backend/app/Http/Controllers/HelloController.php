@@ -262,4 +262,10 @@ class HelloController extends Controller
         $data = MyService::alldata();
         return view('hello.index_facade', compact('msg', 'data'));
     }
+
+    public function index_middleware(Request $request){
+        $msg = $request->msg;
+        $data = $request->alldata;
+        return view('hello.index_middleware', compact('msg', 'data'));
+    }
 }
