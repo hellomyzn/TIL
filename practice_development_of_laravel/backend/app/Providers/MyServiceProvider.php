@@ -14,7 +14,8 @@ class MyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        app()->singleton('App\MyClasses\MyServiceInterface', 'App\MyClasses\PowerMyService');
+        app()->singleton('myservice', 'App\MyClasses\PowerMyService');
+        // app()->singleton('App\MyClasses\MyServiceInterface', 'App\MyClasses\PowerMyService');
         echo "MyServiceProvider/register<br>";
     }
 
@@ -26,6 +27,6 @@ class MyServiceProvider extends ServiceProvider
     public function boot()
     {
         echo "<p>MyServiceProvider/boot</p><br>";
-        echo "fuga";
+
     }
 }

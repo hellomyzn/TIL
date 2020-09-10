@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use App\Person;
-use App\MyClasses\MyService;
+
 use App\MyClasses\MyServiceInterface;
+use App\Facades\Myservice;
 
 
 class HelloController extends Controller
@@ -253,5 +254,12 @@ class HelloController extends Controller
         $msg = $myservice->say($id);
         $data = $myservice->alldata();
         return view('hello.index_register_boot', compact('msg', 'data'));
+    }
+
+    public function index_facade(int $id = -1){
+        MyService::setId($id);
+        $msg = MyService::say($id);
+        $data = MyService::alldata();
+        return view('hello.index_facade', compact('msg', 'data'));
     }
 }

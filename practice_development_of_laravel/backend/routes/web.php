@@ -69,3 +69,4 @@ Route::get('hello/index_service_clojure/{id}', "HelloController@index_service_cl
 Route::get('hello/index_singleton', "HelloController@index_singleton");
 Route::get('hello/index_interface', "HelloController@index_interface");
 Route::get('hello/index_register_boot', "HelloController@index_register_boot");
+Route::get('hello/index_facade', "HelloController@index_facade");
