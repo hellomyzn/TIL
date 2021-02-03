@@ -35,6 +35,9 @@
                     @endauth
                 </div>
             @endif
+
+            {{-- Branch Test --}}
+            <h3>Let's release</h3>
             <h2>Test2</h2>
             <h1>Test1</h1>
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
