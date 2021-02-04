@@ -64,8 +64,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## What's features 
 ```
 - Test branch working on Github
-    - test1
-    - test2
-    - test3
-    - test4
+    - auth
+    - list of auth
 ```
