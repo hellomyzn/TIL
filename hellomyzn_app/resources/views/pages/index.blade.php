@@ -11,7 +11,7 @@
                 <a href="{{ route('users.show') }}">
                     <img src="https://randomuser.me/api/portraits/women/84.jpg" class="profile-img"/>
                     <p>
-                        test
+                        {{ $post->user->name }}
                     </p>
                 </a>
               </div>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="post-image">
-              <img src="https://c1.staticflickr.com/4/3851/14948376317_a97232356c_z.jpg" width="100%"/>
+              <img src="{{ $post->img_url }}" width="100%"/>
             </div>
 
             <div class="likes">
@@ -32,15 +32,15 @@
             </div>
 
             <div class="like-count">
-                <img src="https://image.flaticon.com/icons/svg/60/60993.svg"/>
+                <img src="://image.flaticon.com/icons/svg/60/60993.svg"/>
                 <p>24 likes</p>
             </div>
 
             <div class="comments">
                 <!-- auth user comment -->
                 <p>
-                    <span class="user-name">test</span>
-                    Looks great!!
+                    <span class="user-name">{{ $post->user->name }}</span>
+                    {{ $post->description }}
                 </p>
                 <!-- user comment -->
 
