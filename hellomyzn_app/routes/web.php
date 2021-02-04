@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,7 @@ Auth::routes();
 # For don't allow to access the pages without login
 Route::group(['middleware' => ['auth']], function(){
 
-    Route::get('/', function () {
-        return view('pages.index');
-    })->name('index');
+    Route::get('/', [IndexController::class, 'index' ])->name('index');
 
     Route::get('posts/create', function(){
         return view('pages.post.create');

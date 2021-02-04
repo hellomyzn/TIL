@@ -14,11 +14,11 @@
             </div>
 
             {{-- For Check
-            <? dd(auth::user())?> --}}
+            <? dd(Auth::user())?> --}}
 
             <div class="col-sm-4 text-right">
                 <a href="{{ route('users.show') }}">
-                    <img src="{{ auth::user()->logo_url }}" width="13%" style="border-radius: 50%;" />
+                    <img src="{{ Auth::user()->logo_url }}" width="13%" style="border-radius: 50%;" />
                 </a>
             </div>
         </div>
