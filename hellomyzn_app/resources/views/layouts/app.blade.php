@@ -23,7 +23,9 @@
 <body>
     <div id="app">
         <div>
-            @include('layouts._header')
+            @auth
+                @include('layouts._header')
+            @endauth
 
             <div class="container">
                 @yield('content')

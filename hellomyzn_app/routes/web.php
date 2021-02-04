@@ -14,16 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return view('pages.index');
-})->name('index');
 
-Route::get('posts/create', function(){
-    return view('pages.post.create');
-})->name('posts.create');
+# For don't allow to access the pages without login
+Route::group(['middleware' => ['auth']], function(){
 
-Route::get('users/1', function(){
-    return view('pages.user.show');
-})->name('users.show');
+    Route::get('/', function () {
+        return view('pages.index');
+    })->name('index');
+
+    Route::get('posts/create', function(){
+        return view('pages.post.create');
+    })->name('posts.create');
+
+    Route::get('users/1', function(){
+        return view('pages.user.show');
+    })->name('users.show');
+
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
