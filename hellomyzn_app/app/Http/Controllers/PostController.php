@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostStoreRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Auth;
@@ -13,7 +14,7 @@ class PostController extends Controller
         return view('pages.post.create');
     }
 
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
 
 
