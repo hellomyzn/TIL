@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PostController;
 
 
 /*
@@ -22,9 +23,7 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::get('/', [IndexController::class, 'index' ])->name('index');
 
-    Route::get('posts/create', function(){
-        return view('pages.post.create');
-    })->name('posts.create');
+    Route::resource('posts', PostController::class)->only(['create','store']);
 
     Route::get('users/1', function(){
         return view('pages.user.show');
