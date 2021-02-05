@@ -32,7 +32,7 @@
             </div>
 
             <div class="like-count">
-                <img src="://image.flaticon.com/icons/svg/60/60993.svg"/>
+                <img src="https://image.flaticon.com/icons/svg/60/60993.svg"/>
                 <p>24 likes</p>
             </div>
 
