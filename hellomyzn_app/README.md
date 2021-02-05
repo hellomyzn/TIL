@@ -63,16 +63,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## What's features 
 ```
-- Test branch working on Github
-    - auth
-    - list of auth
+- Post function (posts/create)
+Validation: 
+    - Description:      required, min:3
+    - img_url:          required
 ```
 
 ## Run the commands
 ```
-php composer install
-php artisan migrate:rollback
-php artisan migrate:refresh
-php artisan db:seed --class=PostSeeder
+N/A
 ```
 
