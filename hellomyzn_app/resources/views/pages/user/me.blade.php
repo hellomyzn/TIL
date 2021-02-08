@@ -14,7 +14,7 @@
 
           <div class="profile-user-settings">
 
-            <h1 class="profile-user-name">janedoe_</h1>
+            <h1 class="profile-user-name">{{ $authUser->name }} </h1>
 
             <button class="profile-edit-btn">Edit Profile</button>
 
@@ -39,7 +39,7 @@
           <div class="profile-stats">
 
             <ul>
-              <li><span class="profile-stat-count">164</span> posts</li>
+              <li><span class="profile-stat-count">{{ count($authUser->posts) }}</span> posts</li>
               <li><span class="profile-stat-count">188</span> followers</li>
               <li><span class="profile-stat-count">206</span> following</li>
             </ul>
@@ -58,12 +58,12 @@
 
     <div class="c-post-gallery">
       <div class="gallery">
-        @foreach ($collection as $item)
+        @foreach ($authUser->posts as $post)
 
 
           <div class="gallery-item" tabindex="0">
 
-            <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" class="gallery-image" alt="">
+            <img src={{ $post->img_url }} class="gallery-image" alt="">
 
             <div class="gallery-item-info">
 

@@ -11,7 +11,9 @@ class UserController extends Controller
     public function show($id)
     {
         if($id == Auth::user()->id){
-            return view('pages.user.me');
+            $authUser = Auth::user();
+            $authUser->load('posts');
+            return view('pages.user.me', compact('authUser'));
         } else{
             $user = User::where('id', $id)->first();
             $user->load('posts');
