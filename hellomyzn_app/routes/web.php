@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -22,13 +23,12 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function(){
 
     Route::get('/', [IndexController::class, 'index' ])->name('index');
+    Route::resource('posts', PostController::class)->only([
+        'create',
+        'store'
+    ]);
 
-    Route::resource('posts', PostController::class)->only(['create','store']);
-
-    Route::get('users/1', function(){
-        return view('pages.user.show');
-    })->name('users.show');
-
+    Route::resource('users', UserController::class )->only([
+        'show'
+    ]);
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
