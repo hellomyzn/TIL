@@ -56,10 +56,14 @@
             </div>
 
             <div class="comment-input">
-                <input type="text" name="comment" placeholder="コメントを追加">
-                <button class="btn btn-link">
-                    投稿する
-                </button>
+                <form action={{ route('comments.store') }} method="POST">
+                    @csrf
+                    <input type="hidden" name="post_id" value={{ $post->id }}>
+                    <input type="text" name="comment" placeholder="Comment">
+                    <button class="btn btn-link">
+                        投稿する
+                    </button>
+                </form>
             </div>
         </div>
 

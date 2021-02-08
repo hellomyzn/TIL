@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 
 
 /*
@@ -30,5 +31,9 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::resource('users', UserController::class )->only([
         'show'
+    ]);
+
+    Route::resource('comments', CommentController::class)->only([
+        'store'
     ]);
 });
