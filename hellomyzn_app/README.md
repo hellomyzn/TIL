@@ -63,10 +63,18 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## What's features 
 ```
-- Post function (posts/create)
-Validation: 
-    - Description:      required, min:3
-    - img_url:          required
+- Page/Index page
+    - Accessible to show page on post's avatar
+    - Accessible to me page on header avata
+
+- Me page
+    - Number of posts
+    - my posts
+
+- Show page
+    - Number of posts
+    - their posts
+
 ```
 
 ## Run the commands
