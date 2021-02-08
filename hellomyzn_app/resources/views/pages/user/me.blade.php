@@ -8,15 +8,15 @@
 
           <div class="profile-image">
 
-            <img src={{ $user->logo_url }} alt="">
+            <img src={{ auth::user()->logo_url }} alt="">
 
           </div>
 
           <div class="profile-user-settings">
 
-            <h1 class="profile-user-name">{{ $user->name }}</h1>
+            <h1 class="profile-user-name">{{ $authUser->name }} </h1>
 
-            <button class="m-btn" btn-type="follow">Follow</button>
+            <button class="profile-edit-btn">Edit Profile</button>
 
             <button aria-label="profile settings" class="btn profile-settings-btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
               <i class="fas fa-cog"></i>
@@ -39,7 +39,7 @@
           <div class="profile-stats">
 
             <ul>
-              <li><span class="profile-stat-count">{{ count($user->posts)}}</span> posts</li>
+              <li><span class="profile-stat-count">{{ count($authUser->posts) }}</span> posts</li>
               <li><span class="profile-stat-count">188</span> followers</li>
               <li><span class="profile-stat-count">206</span> following</li>
             </ul>
@@ -58,7 +58,7 @@
 
     <div class="c-post-gallery">
       <div class="gallery">
-        @foreach ($user->posts as $post)
+        @foreach ($authUser->posts as $post)
 
 
           <div class="gallery-item" tabindex="0">

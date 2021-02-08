@@ -17,7 +17,7 @@
             <? dd(Auth::user())?> --}}
 
             <div class="col-sm-4 text-right">
-                <a href="{{ route('users.show') }}">
+                <a href="{{ route('users.show', auth()->user()->id) }}">
                     <img src="{{ Auth::user()->logo_url }}" width="13%" style="border-radius: 50%;" />
                 </a>
             </div>
