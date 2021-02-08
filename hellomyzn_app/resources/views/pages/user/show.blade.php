@@ -14,9 +14,9 @@
 
           <div class="profile-user-settings">
 
-            <h1 class="profile-user-name">janedoe_</h1>
+            <h1 class="profile-user-name">{{ $user->name }}</h1>
 
-            <button class="profile-edit-btn">Edit Profile</button>
+            <button class="m-btn" btn-type="follow">Follow</button>
 
             <button aria-label="profile settings" class="btn profile-settings-btn" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
               <i class="fas fa-cog"></i>
