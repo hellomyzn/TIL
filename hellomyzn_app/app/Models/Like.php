@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
+
 
 class Like extends Model
 {
@@ -12,7 +14,6 @@ class Like extends Model
         'user_id',
         'post_id',
     ];
-
 
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query

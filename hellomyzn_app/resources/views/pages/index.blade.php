@@ -21,10 +21,19 @@
             <div class="post-image">
               <img src="{{ $post->img_url }}" width="100%"/>
             </div>
-
             <div class="likes">
                 <div class="left-icons">
                     {{-- Like trigger --}}
+                    @if ($post->is_like)
+                    <form action={{ route('likes.destroy', $post->like_id) }} method="POST">
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="post_id" value={{ $post->id }}>
+                        <button type="submit" style="display: contents;">
+                            <img src="https://image.flaticon.com/icons/svg/60/60993.svg"/>
+                        </button>
+                    </form>
+                    @else
                     <form action={{ route('likes.store') }} method="POST">
                         @csrf
                         <input type="hidden" name="post_id" value={{ $post->id }}>
@@ -32,6 +41,7 @@
                             <img src="https://image.flaticon.com/icons/svg/25/25424.svg"/>
                         </button>
                     </form>
+                    @endif
 
                     <img src="https://image.flaticon.com/icons/svg/54/54916.svg"/>
                     <img src="https://image.flaticon.com/icons/svg/126/126536.svg"/>
@@ -40,8 +50,7 @@
             </div>
 
             <div class="like-count">
-                <img src="https://image.flaticon.com/icons/svg/60/60993.svg"/>
-                <p>{{ count($post->likes)}} likes</p>
+                Like: <p>{{ count($post->likes)}}</p>
             </div>
 
             <div class="comments">

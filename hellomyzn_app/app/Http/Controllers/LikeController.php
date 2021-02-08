@@ -18,7 +18,11 @@ class LikeController extends Controller
     }
 
     public function destroy(Request $request){
-
+        $like = Like::buildQueryByUserIdAndPostId(
+            Auth::user()->id,
+            $request->input('post_id')
+        );
+        $like->delete();
         return redirect('/');
     }
 }
