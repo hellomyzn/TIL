@@ -24,7 +24,6 @@
 
             <div class="likes">
                 <div class="left-icons">
-
                     {{-- Like trigger --}}
                     <form action={{ route('likes.store') }} method="POST">
                         @csrf

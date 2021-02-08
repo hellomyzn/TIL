@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Post extends Model
 {
@@ -13,6 +14,22 @@ class Post extends Model
         'description',
         'user_id',
     ];
+
+    protected $appends = [
+        'like_id',
+        'is_like',
+    ];
+
+    public function getLikeIdAttribute()
+    {
+        return Like::buildQueryByUserIdAndPostId(Auth::user()->id, $this->id)->pluck('id');
+    }
+
+    public function getIsLikeAttribute()
+    {
+        return Like::buildQueryByUserIdAndPostId(Auth::user()->id, $this->id)->exists();
+    }
+
 
     // relation
 
