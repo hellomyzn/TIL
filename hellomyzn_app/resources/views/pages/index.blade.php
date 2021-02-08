@@ -24,7 +24,16 @@
 
             <div class="likes">
                 <div class="left-icons">
-                    <img src="https://image.flaticon.com/icons/svg/25/25424.svg"/>
+
+                    {{-- Like trigger --}}
+                    <form action={{ route('likes.store') }} method="POST">
+                        @csrf
+                        <input type="hidden" name="post_id" value={{ $post->id }}>
+                        <button type="submit" style="display: contents;">
+                            <img src="https://image.flaticon.com/icons/svg/25/25424.svg"/>
+                        </button>
+                    </form>
+
                     <img src="https://image.flaticon.com/icons/svg/54/54916.svg"/>
                     <img src="https://image.flaticon.com/icons/svg/126/126536.svg"/>
                 </div>
