@@ -63,10 +63,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## What's features 
 ```
-- Comment feature
-    - Post comment
-    - Show comment on time line
-
+Like function
+    - Like
+    - Unlike
 ```
 
 ## Run the commands
