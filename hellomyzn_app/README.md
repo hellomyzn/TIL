@@ -63,22 +63,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## What's features 
 ```
-- Page/Index page
-    - Accessible to show page on post's avatar
-    - Accessible to me page on header avata
-
-- Me page
-    - Number of posts
-    - my posts
-
-- Show page
-    - Number of posts
-    - their posts
+- Comment feature
+    - Post comment
+    - Show comment on time line
 
 ```
 
 ## Run the commands
 ```
-N/A
+php artisan migrate
 ```
 
