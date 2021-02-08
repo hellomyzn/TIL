@@ -9,7 +9,7 @@
             <div class="post">
               <div class="name">
                 <a href="{{ route('users.show', $post->user->id ) }}">
-                    <img src="https://randomuser.me/api/portraits/women/84.jpg" class="profile-img"/>
+                    <img src={{ $post->user->logo_url}} class="profile-img"/>
                     <p>
                         {{ $post->user->name }}
                     </p>
