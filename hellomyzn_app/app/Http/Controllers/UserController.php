@@ -12,11 +12,11 @@ class UserController extends Controller
     {
         if($id == Auth::user()->id){
             $authUser = Auth::user();
-            $authUser->load('posts');
+            $authUser->load('posts.likes', 'posts.comments');
             return view('pages.user.me', compact('authUser'));
         } else{
             $user = User::where('id', $id)->first();
-            $user->load('posts');
+            $user->load('posts.likes', 'posts.comments');
             return view('pages.user.show',compact('user'));
         }
     }
