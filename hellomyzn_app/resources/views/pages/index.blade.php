@@ -44,15 +44,12 @@
                 </p>
                 <!-- user comment -->
 
+                @foreach ($post->comments as $comment)
                 <p>
-                    <span class="user-name">test1</span>
-                    hahaha
+                    <span class="user-name">{{ $comment->user->name }}</span>
+                    {{ $comment->description}}
                 </p>
-
-                <p>
-                    <span class="user-name">test2</span>
-                    hahaha
-                </p>
+                @endforeach
             </div>
 
             <div class="comment-input">
