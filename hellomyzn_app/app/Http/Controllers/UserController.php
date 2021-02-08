@@ -14,6 +14,7 @@ class UserController extends Controller
             return view('pages.user.me');
         } else{
             $user = User::where('id', $id)->first();
+            $user->load('posts');
             return view('pages.user.show',compact('user'));
         }
     }
