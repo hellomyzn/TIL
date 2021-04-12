@@ -17,3 +17,8 @@ Route::get('/', function () {
     logger('welcome route.');
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    logger('home route.');
+    return view('home');
+});
