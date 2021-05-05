@@ -23,9 +23,19 @@ Route::get('posts', function(){
     return view('laracasts.posts');
 });
 
-Route::get('post', function(){
-    logger('welcome to laracasts/post page');
+Route::get('post/{post}', function($slug){    
+    $path = __DIR__ . "/../../resources/posts/$slug.html";
+
+    if (! file_exists($path)) {
+        logger("laracasts/post/$slug page is not exist");
+        // ddd("hoge");
+        abort(404);
+    }
+
+    logger("welcome to laracasts/post/$slug page");
+    $post = file_get_contents($path);
+
     return view('laracasts.post', [
-        'post' => '<h1>Hello World</h1>'
+        'post' => $post
     ]);
 });
