@@ -12,5 +12,7 @@
         <h1> <a href="/post"> My first post</a></h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quidem consectetur tenetur, illum hic accusamus numquam sequi officiis enim laudantium a? Cum debitis tempore in non quas adipisci quam magni?</p>
     </article>
+
+    <a href="/laracasts/posts">Go back</a>
 </body>
 </html>
