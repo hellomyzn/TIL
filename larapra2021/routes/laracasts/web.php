@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\post;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,19 +25,12 @@ Route::get('posts', function(){
     return view('laracasts.posts');
 });
 
-Route::get('post/{post}', function($slug){    
-    $path = __DIR__ . "/../../resources/posts/$slug.html";
+Route::get('post/{post}', function($slug){
+    
+    // Find a post by its slug and pass it to a view called "post"
 
-    if (! file_exists($path)) {
-        logger("laracasts/post/$slug page is not exist");
-        // ddd("hoge");
-        abort(404);
-    }
-
+    $post = Post::find($slug); 
+    
     logger("welcome to laracasts/post/$slug page");
-    $post = cache()->remember("posts.$slug", noW()->addMinutes(20), function() use ($path){
-        return file_get_contents($path);
-    });
-
     return view('laracasts.post', ['post' => $post]);
 });
