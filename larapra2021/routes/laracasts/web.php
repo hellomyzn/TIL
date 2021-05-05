@@ -14,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function(){
-    logger('welcome to laracasts/route');
-    return view('welcome');
+    logger('welcome to laracasts/welcome page');
+    return view('laracasts.welcome');
 });
