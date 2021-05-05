@@ -17,3 +17,8 @@ Route::get('/', function(){
     logger('welcome to laracasts/welcome page');
     return view('laracasts.welcome');
 });
+
+Route::get('post', function(){
+    logger('welcome to laracasts/post page');
+    return view('laracasts.post');
+});
