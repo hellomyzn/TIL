@@ -33,12 +33,9 @@ Route::get('post/{post}', function($slug){
     }
 
     logger("welcome to laracasts/post/$slug page");
-    
-    cache()->remember("posts.$slug", 5 function(){
+    $post = cache()->remember("posts.$slug", noW()->addMinutes(20), function() use ($path){
         return file_get_contents($path);
     });
 
-    return view('laracasts.post', [
-        'post' => $post
-    ]);
+    return view('laracasts.post', ['post' => $post]);
 });
