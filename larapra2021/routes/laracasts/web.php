@@ -25,5 +25,7 @@ Route::get('posts', function(){
 
 Route::get('post', function(){
     logger('welcome to laracasts/post page');
-    return view('laracasts.post');
+    return view('laracasts.post', [
+        'post' => '<h1>Hello World</h1>'
+    ]);
 });
