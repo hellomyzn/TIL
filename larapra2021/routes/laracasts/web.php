@@ -16,19 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function(){
+
+    
     logger('welcome to laracasts/welcome page');
     return view('laracasts.welcome');
 });
 
 Route::get('posts', function(){
+    $posts = Post::all();
+
     logger('welcome to laracasts/posts page');
-    return view('laracasts.posts');
+    return view('laracasts.posts', ['posts' => $posts]);
 });
 
 Route::get('post/{post}', function($slug){
-    
-    // Find a post by its slug and pass it to a view called "post"
-
     $post = Post::find($slug); 
     
     logger("welcome to laracasts/post/$slug page");

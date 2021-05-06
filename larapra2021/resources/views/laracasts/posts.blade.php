@@ -8,7 +8,12 @@
     <title>My Blog</title>
 </head>
 <body>
-    <article>
+    @foreach ($posts as $post)
+        <article>
+            <?= $post ?>
+        </article>
+    @endforeach
+    <!-- <article>
         <h1> <a href="post/my-first-post"> My first post</a></h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quidem consectetur tenetur, illum hic accusamus numquam sequi officiis enim laudantium a? Cum debitis tempore in non quas adipisci quam magni?</p>
     </article>
@@ -21,6 +26,6 @@
     <article>
         <h1> <a href="post/my-third-post"> My third post</a></h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quidem consectetur tenetur, illum hic accusamus numquam sequi officiis enim laudantium a? Cum debitis tempore in non quas adipisci quam magni?</p>
-    </article>
+    </article> -->
 </body>
 </html>
