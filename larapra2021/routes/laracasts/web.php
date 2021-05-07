@@ -2,6 +2,7 @@
 
 use App\Models\post;
 use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 
 /*
@@ -16,13 +17,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function(){
-
-    
     logger('welcome to laracasts/welcome page');
     return view('laracasts.welcome');
 });
 
 Route::get('posts', function(){
+    $document = YamlFrontMatter::parseFile(
+        resource_path('posts/my-forth-post.html')
+    );
+    ddd($document);
+     
+
     $posts = Post::all();
 
     logger('welcome to laracasts/posts page');
