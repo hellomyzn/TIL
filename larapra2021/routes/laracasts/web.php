@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\post;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -22,17 +22,27 @@ Route::get('/', function(){
 });
 
 Route::get('posts', function(){
-    $document = YamlFrontMatter::parseFile(
-        resource_path('posts/my-forth-post.html')
-    );
-    ddd($document);
-     
+    $files = File::files(resource_path("posts"));
+    $posts = [];
 
-    $posts = Post::all();
+    foreach($files as $file) {
+        $documents[] = YamlFrontMatter::parseFile($file);
+
+        $posts[] = new Post(
+            $documents[0]->title,
+            $documents[0]->excerpt,
+            $documents[0]->date,
+            $documents[0]->body(),
+            $documents[0]->slug
+        ); 
+    }
+
+    // $posts = Post::all();
 
     logger('welcome to laracasts/posts page');
     return view('laracasts.posts', ['posts' => $posts]);
 });
+
 
 Route::get('post/{post}', function($slug){
     $post = Post::find($slug); 

@@ -9,7 +9,8 @@
 </head>
 <body>
     <article>
-        <?= $post ?>
+        <h1></h1>
+        {{ $post->body}}
     </article>
 
     <a href="/laracasts/posts">Go back</a>
