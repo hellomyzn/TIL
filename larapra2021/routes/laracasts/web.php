@@ -29,7 +29,7 @@ Route::get('posts', function(){
 
 
 Route::get('post/{post}', function($slug){
-    $post = Post::find($slug); 
+    $post = Post::findOrFail($slug); 
     
     logger("welcome to laracasts/post/$slug page");
     return view('laracasts.post', ['post' => $post]);
