@@ -22,23 +22,7 @@ Route::get('/', function(){
 });
 
 Route::get('posts', function(){
-    $files = File::files(resource_path("posts"));
-    $posts = [];
-
-    foreach($files as $file) {
-        $documents[] = YamlFrontMatter::parseFile($file);
-
-        $posts[] = new Post(
-            $documents[0]->title,
-            $documents[0]->excerpt,
-            $documents[0]->date,
-            $documents[0]->body(),
-            $documents[0]->slug
-        ); 
-    }
-
-    // $posts = Post::all();
-
+    $posts = Post::all();
     logger('welcome to laracasts/posts page');
     return view('laracasts.posts', ['posts' => $posts]);
 });
