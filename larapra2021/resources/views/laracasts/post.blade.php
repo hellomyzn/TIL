@@ -1,7 +1,4 @@
-@extends('laracasts.layout')
-
-
-@section('content')
+<x-laracasts.layout>
 
     <article>
         <h1>{{ $post->title }}</h1>
@@ -10,4 +7,4 @@
 
     <a href="/laracasts/posts">Go back</a>
 
-@endsection
+</x-laracasts.layout>
