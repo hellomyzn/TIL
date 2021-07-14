@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Post;
+use App\Models\laracasts\Post;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 

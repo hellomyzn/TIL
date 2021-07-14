@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\laracasts;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
