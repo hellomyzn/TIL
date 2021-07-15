@@ -4,6 +4,7 @@
         <h1>{{ $post->title }}</h1>
         
         <p>
+            By <a href="#">Jeffy</a>
             <a href="/laracasts/categories/{{$post->laracasts_category->slug}}">{{ $post->laracasts_category->name }}</a>
         </p>
 
