@@ -2,7 +2,7 @@
     @foreach ($posts as $post)
     <article>
         <h1>
-            <a href="/laracasts/post/{{$post->slug}}">
+            <a href="/laracasts/post/{{$post->id}}">
                 {{ $post->title }}
             </a>
         </h1>

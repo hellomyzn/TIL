@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\laracasts\Post;
+use App\Models\laracasts\LaracastsPost;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -22,15 +22,15 @@ Route::get('/', function(){
 });
 
 Route::get('posts', function(){
-    $posts = Post::all();
+    $posts = LaracastsPost::all();
     logger('welcome to laracasts/posts page');
     return view('laracasts.posts', ['posts' => $posts]);
 });
 
 
-Route::get('post/{post}', function($slug){
-    $post = Post::findOrFail($slug); 
+Route::get('post/{post}', function($id){
+    $post = LaracastsPost::find($id); 
     
-    logger("welcome to laracasts/post/$slug page");
+    logger("welcome to laracasts/post/$id page");
     return view('laracasts.post', ['post' => $post]);
 });
