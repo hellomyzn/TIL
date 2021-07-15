@@ -2,6 +2,7 @@
 
 namespace App\Models\laracasts;
 
+use App\Models\laracasts\LaracastsPost;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +11,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class LaracastsUser extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
@@ -58,4 +59,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function laracasts_posts(){
+        return $this->hasMany(LaracastsPost::class);
+    }
 }

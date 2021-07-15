@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(LaracastsPostsSeeder::class);
         $this->call(LaracastsCategoriesSeeder::class);
+
+        \App\Models\laracasts\LaracastsUser::factory(10)->create();
     }
 }

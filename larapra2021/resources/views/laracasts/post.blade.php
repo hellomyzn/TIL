@@ -4,8 +4,8 @@
         <h1>{{ $post->title }}</h1>
         
         <p>
-            By <a href="#">Jeffy</a>
-            <a href="/laracasts/categories/{{$post->laracasts_category->slug}}">{{ $post->laracasts_category->name }}</a>
+            By <a href="#">{{ $post->laracasts_user->name}}</a>
+            in <a href="/laracasts/categories/{{$post->laracasts_category->slug}}">{{ $post->laracasts_category->name }}</a>
         </p>
 
         <div>{!! $post->body !!}</div>
