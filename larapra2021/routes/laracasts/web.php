@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\laracasts\LaracastsPost;
+use App\Models\laracasts\LaracastsCategory;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -28,9 +29,15 @@ Route::get('posts', function(){
 });
 
 
-Route::get('post/{post}', function($id){
-    $post = LaracastsPost::find($id); 
+Route::get('post/{post:slug}', function(LaracastsPost $post){
     
-    logger("welcome to laracasts/post/$id page");
+    logger("welcome to laracasts/post/$post->id page");
     return view('laracasts.post', ['post' => $post]);
+});
+
+
+Route::get('categories/{category:slug}', function(LaracastsCategory $category){
+    $posts = LaracastsCategory::all();
+    logger("welcome to laracasts/categories/$category page");
+    return view('laracasts.posts', ['posts' => $category->laracasts_posts]);
 });
