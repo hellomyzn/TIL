@@ -25,6 +25,11 @@ Route::get('/', function(){
 Route::get('posts', function(){
     $posts = LaracastsPost::all();
     logger('welcome to laracasts/posts page');
+
+    // Check how many sql were run
+    \Illuminate\Support\Facades\DB::listen(function ($query){
+        logger($query->sql, $query->bindings);
+    });
     return view('laracasts.posts', ['posts' => $posts]);
 });
 
