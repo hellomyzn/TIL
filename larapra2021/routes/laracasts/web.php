@@ -45,7 +45,7 @@ Route::get('post/{post:slug}', function(LaracastsPost $post){
 
 Route::get('categories/{category:slug}', function(LaracastsCategory $category){
 
-    logger("welcome to laracasts/categories/$category->name page");
+    logger("welcome to laracasts/categories/$category->slug page");
     return view('laracasts.posts', ['posts' => $category->laracasts_posts]);
 });
 
