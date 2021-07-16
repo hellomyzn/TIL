@@ -4,7 +4,7 @@
         <h1>{{ $post->title }}</h1>
         
         <p>
-            By <a href="#">{{ $post->laracasts_user->name}}</a>
+            By <a href="/laracasts/users/{{ $post->laracasts_user->username }}">{{ $post->laracasts_user->name}}</a>
             in <a href="/laracasts/categories/{{$post->laracasts_category->slug}}">{{ $post->laracasts_category->name }}</a>
         </p>
 

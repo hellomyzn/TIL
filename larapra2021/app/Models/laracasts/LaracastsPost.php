@@ -13,6 +13,8 @@ class LaracastsPost extends Model
 
     protected $guarded = [];
 
+    protected $with =['laracasts_category', 'laracasts_user'];
+
     public function laracasts_category(){
         return $this->belongsTo(LaracastsCategory::class);
     }

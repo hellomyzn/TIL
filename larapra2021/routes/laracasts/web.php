@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\laracasts\LaracastsUser;
 use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsCategory;
 use Illuminate\Support\Facades\Route;
@@ -23,15 +24,14 @@ Route::get('/', function(){
 });
 
 Route::get('posts', function(){
-    $posts = LaracastsPost::with('laracasts_category')->get();
+    $posts = LaracastsPost::latest('published_at')->get();
     logger('welcome to laracasts/posts page');
 
     // Check how many sql were run
-    \Illuminate\Support\Facades\DB::listen(function ($query){
-        logger($query->sql, $query->bindings);
-    });
-
-    clock($posts);
+    // \Illuminate\Support\Facades\DB::listen(function ($query){
+    //     logger($query->sql, $query->bindings);
+    // });
+    
     return view('laracasts.posts', ['posts' => $posts]);
 });
 
@@ -44,7 +44,14 @@ Route::get('post/{post:slug}', function(LaracastsPost $post){
 
 
 Route::get('categories/{category:slug}', function(LaracastsCategory $category){
-    $posts = LaracastsCategory::all();
-    logger("welcome to laracasts/categories/$category page");
+
+    logger("welcome to laracasts/categories/$category->name page");
     return view('laracasts.posts', ['posts' => $category->laracasts_posts]);
+});
+
+
+Route::get('users/{user:username}', function(LaracastsUser $user){
+
+    logger("welcome to laracasts/user/$user->name page");
+    return view('laracasts.posts', ['posts' => $user->laracasts_posts]);
 });

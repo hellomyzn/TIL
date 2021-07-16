@@ -33,6 +33,7 @@ class LaracastsPostFactory extends Factory
             'laracasts_user_id' => rand(1, LaracastsUser::count()),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
+            'published_at' => $this->faker->date,
         ];
     }
 }
