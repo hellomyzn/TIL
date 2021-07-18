@@ -9,9 +9,7 @@
         <div class="flex-1 flex flex-col justify-between">
             <header class="mt-8 lg:mt-0">
                 <div class="space-x-2">
-                    <a href="/laracasts/categories/{{ $post->laracasts_category->slug}}"
-                        class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
-                        style="font-size: 10px">{{ $post->laracasts_category->name}}</a>
+                    <x-laracasts.category-button :category="$post->laracasts_category"/>
                 </div>
 
                 <div class="mt-4">
@@ -38,7 +36,6 @@
                     <img src={{ asset('/images/laracasts/lary-avatar.svg' ) }} alt="Lary avatar">
                     <div class="ml-3">
                         <h5 class="font-bold">{{ $post->laracasts_user->name }}</h5>
-                        <h6>Mascot at Laracasts</h6>
                     </div>
                 </div>
 
