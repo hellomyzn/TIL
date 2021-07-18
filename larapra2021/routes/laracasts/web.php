@@ -25,6 +25,7 @@ Route::get('/', function(){
 
 Route::get('posts', function(){
     $posts = LaracastsPost::latest('published_at')->get();
+    $categories = LaracastsCategory::all();
     logger('welcome to laracasts/posts page');
 
     // Check how many sql were run
@@ -32,7 +33,7 @@ Route::get('posts', function(){
     //     logger($query->sql, $query->bindings);
     // });
     
-    return view('laracasts.posts', ['posts' => $posts]);
+    return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories]);
 });
 
 
