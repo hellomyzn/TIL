@@ -45,14 +45,19 @@ Route::get('post/{post:slug}', function(LaracastsPost $post){
 
 
 Route::get('categories/{category:slug}', function(LaracastsCategory $category){
+    $posts = $category->laracasts_posts;
+    $categories = LaracastsCategory::all();
+    $currentCategory = $category;
 
     logger("welcome to laracasts/categories/$category->slug page");
-    return view('laracasts.posts', ['posts' => $category->laracasts_posts]);
+    return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories, 'currentCategory' => $currentCategory ]);
 });
 
 
 Route::get('users/{user:username}', function(LaracastsUser $user){
+    $posts = $category->laracasts_posts;
+    $categories = LaracastsCategory::all();
 
     logger("welcome to laracasts/user/$user->name page");
-    return view('laracasts.posts', ['posts' => $user->laracasts_posts]);
+    return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories]);
 });
