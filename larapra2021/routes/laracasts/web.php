@@ -34,7 +34,7 @@ Route::get('posts', function(){
     // });
     
     return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories]);
-});
+})->name('laracasts.home');
 
 
 Route::get('post/{post:slug}', function(LaracastsPost $post){
@@ -51,7 +51,7 @@ Route::get('categories/{category:slug}', function(LaracastsCategory $category){
 
     logger("welcome to laracasts/categories/$category->slug page");
     return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories, 'currentCategory' => $currentCategory ]);
-});
+})->name('laracasts.category');
 
 
 Route::get('users/{user:username}', function(LaracastsUser $user){
