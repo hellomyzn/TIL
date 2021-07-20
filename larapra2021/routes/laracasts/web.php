@@ -24,16 +24,22 @@ Route::get('/', function(){
 });
 
 Route::get('posts', function(){
-    $posts = LaracastsPost::latest('published_at')->get();
+    $posts = LaracastsPost::latest('published_at');
     $categories = LaracastsCategory::all();
     logger('welcome to laracasts/posts page');
 
+    if (request('search')){
+        $posts
+            ->where('title', 'like', '%' . request('search') . '%')
+            ->orWhere('body', 'like', '%' . request('search') . '%');
+    }
+    // dd($posts);
     // Check how many sql were run
     // \Illuminate\Support\Facades\DB::listen(function ($query){
     //     logger($query->sql, $query->bindings);
     // });
     
-    return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories]);
+    return view('laracasts.posts', ['posts' => $posts->get(), 'categories' => $categories]);
 })->name('laracasts.home');
 
 
