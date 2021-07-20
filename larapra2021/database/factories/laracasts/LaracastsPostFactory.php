@@ -25,10 +25,10 @@ class LaracastsPostFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence,
-            'excerpt' => $this->faker->sentence,
-            'slug' => $this->faker->slug,
-            'body' => $this->faker->paragraph,
+            'title' => $this->faker->unique()->sentence,
+            'excerpt' => '<p>' . implode("</p><p>",  [$this->faker->paragraph(4)]) . '</p>',
+            'body' => '<p>' . implode("</p><p>",  [$this->faker->paragraph(12)]) . '</p>',
+            'slug' => $this->faker->unique()->slug,
             'laracasts_category_id' => rand(1,LaracastsCategory::count()),
             'laracasts_user_id' => rand(1, LaracastsUser::count()),
             'created_at' => date('Y-m-d H:i:s'),
