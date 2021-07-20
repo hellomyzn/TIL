@@ -3,8 +3,10 @@
 use App\Models\laracasts\LaracastsUser;
 use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsCategory;
+use App\Http\Controllers\Laracasts\LaracastsPostController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
+
 
 
 /*
@@ -23,31 +25,10 @@ Route::get('/', function(){
     return view('laracasts.welcome');
 });
 
-Route::get('posts', function(){
-    $posts = LaracastsPost::latest('published_at');
-    $categories = LaracastsCategory::all();
-    logger('welcome to laracasts/posts page');
-
-    if (request('search')){
-        $posts
-            ->where('title', 'like', '%' . request('search') . '%')
-            ->orWhere('body', 'like', '%' . request('search') . '%');
-    }
-    // dd($posts);
-    // Check how many sql were run
-    // \Illuminate\Support\Facades\DB::listen(function ($query){
-    //     logger($query->sql, $query->bindings);
-    // });
-    
-    return view('laracasts.posts', ['posts' => $posts->get(), 'categories' => $categories]);
-})->name('laracasts.home');
+Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
 
 
-Route::get('post/{post:slug}', function(LaracastsPost $post){
-    
-    logger("welcome to laracasts/post/$post->id page");
-    return view('laracasts.post', ['post' => $post]);
-});
+Route::get('post/{post:slug}', [LaracastsPostController::class, 'show']);
 
 
 Route::get('categories/{category:slug}', function(LaracastsCategory $category){
