@@ -14,14 +14,18 @@ class LaracastsPostController extends Controller
 
     public function index() {
         
+        logger('welcome to laracasts/posts page');
+
         $posts = LaracastsPost::latest()->filter(request()->only('search', 'category'))->get();
         $categories = LaracastsCategory::all();
-        logger('welcome to laracasts/posts page');
-    
-        // dd($posts);
-
+        $currentCategory = LaracastsCategory::firstWhere('slug', request('category'));
         
-        return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories]);
+        return view('laracasts.posts', [
+            'posts' => $posts, 
+            'categories' => $categories,
+            'currentCategory' => $currentCategory,
+            ]
+        );
     }
 
     
