@@ -19,7 +19,7 @@
                 <x-laracasts.dropdown-item href="/laracasts/posts">All</x-laracasts.dropdown-item>
                     @foreach ($categories as $category)
                         <x-laracasts.dropdown-item 
-                            href="/laracasts/categories/{{ $category->slug }}"
+                            href="/laracasts/posts?category={{ $category->slug }}"
                             :active="isset($currentCategory) && $currentCategory->is($category)"
                             >{{ ucwords($category->name) }} 
                         </x-laracasts.dropdown-item>

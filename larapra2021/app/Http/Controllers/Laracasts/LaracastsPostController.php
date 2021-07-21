@@ -13,7 +13,8 @@ class LaracastsPostController extends Controller
 {
 
     public function index() {
-        $posts = LaracastsPost::latest()->filter(request()->only('search'))->get();
+        
+        $posts = LaracastsPost::latest()->filter(request()->only('search', 'category'))->get();
         $categories = LaracastsCategory::all();
         logger('welcome to laracasts/posts page');
     

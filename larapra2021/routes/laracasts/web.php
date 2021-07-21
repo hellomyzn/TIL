@@ -31,14 +31,14 @@ Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.
 Route::get('post/{post:slug}', [LaracastsPostController::class, 'show']);
 
 
-Route::get('categories/{category:slug}', function(LaracastsCategory $category){
-    $posts = $category->laracasts_posts;
-    $categories = LaracastsCategory::all();
-    $currentCategory = $category;
+// Route::get('categories/{category:slug}', function(LaracastsCategory $category){
+//     $posts = $category->laracasts_posts;
+//     $categories = LaracastsCategory::all();
+//     $currentCategory = $category;
 
-    logger("welcome to laracasts/categories/$category->slug page");
-    return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories, 'currentCategory' => $currentCategory ]);
-})->name('laracasts.category');
+//     logger("welcome to laracasts/categories/$category->slug page");
+//     return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories, 'currentCategory' => $currentCategory ]);
+// })->name('laracasts.category');
 
 
 Route::get('users/{user:username}', function(LaracastsUser $user){
