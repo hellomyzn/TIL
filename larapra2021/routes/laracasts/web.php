@@ -26,5 +26,4 @@ Route::get('/', function(){
 });
 
 Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
-
 Route::get('post/{post:slug}', [LaracastsPostController::class, 'show']);
