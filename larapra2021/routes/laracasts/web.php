@@ -31,8 +31,7 @@ Route::get('post/{post:slug}', [LaracastsPostController::class, 'show']);
 
 Route::get('users/{user:username}', function(LaracastsUser $user){
     $posts = $category->laracasts_posts;
-    $categories = LaracastsCategory::all();
 
     logger("welcome to laracasts/user/$user->name page");
-    return view('laracasts.posts', ['posts' => $posts, 'categories' => $categories]);
+    return view('laracasts.posts', ['posts' => $posts]);
 });

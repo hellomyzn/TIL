@@ -15,15 +15,10 @@ class LaracastsPostController extends Controller
     public function index() {
         
         logger('welcome to laracasts/posts page');
-
         $posts = LaracastsPost::latest()->filter(request()->only('search', 'category'))->get();
-        $categories = LaracastsCategory::all();
-        $currentCategory = LaracastsCategory::firstWhere('slug', request('category'));
         
-        return view('laracasts.posts', [
+        return view('laracasts.posts.index', [
             'posts' => $posts, 
-            'categories' => $categories,
-            'currentCategory' => $currentCategory,
             ]
         );
     }
@@ -31,7 +26,7 @@ class LaracastsPostController extends Controller
     
     public function show(LaracastsPost $post) {
         logger("welcome to laracasts/post/$post->id page");
-        return view('laracasts.post', ['post' => $post]);
+        return view('laracasts.post.show', ['post' => $post]);
     }
 
 }
