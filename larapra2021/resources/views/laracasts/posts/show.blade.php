@@ -12,7 +12,9 @@
                     <div class="flex items-center lg:justify-center text-sm mt-4">
                         <img src={{ asset('/images/laracasts/lary-avatar.svg') }} alt="Lary avatar">
                         <div class="ml-3 text-left">
-                            <h5 class="font-bold">{{ $post->laracasts_user->name }}</h5>
+                            <h5 class="font-bold">
+                                <a href="/laracasts/posts/?user={{ $post->laracasts_user->username }}">{{ $post->laracasts_user->name }}</a>
+                            </h5>
                         </div>
                     </div>
                 </div>

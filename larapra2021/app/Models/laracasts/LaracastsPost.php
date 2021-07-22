@@ -33,7 +33,13 @@ class LaracastsPost extends Model
             $query->whereHas('laracasts_category', fn($query) => 
                 $query->where('slug', $category)
             )
-        );      
+        );
+
+        $query->when($filters['user'] ?? false, fn ($query, $user) =>  
+        $query->whereHas('laracasts_user', fn($query) => 
+            $query->where('username', $user)
+        )
+    );    
 
     }
 }

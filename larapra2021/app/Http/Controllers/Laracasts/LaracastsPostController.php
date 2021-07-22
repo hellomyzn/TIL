@@ -15,7 +15,7 @@ class LaracastsPostController extends Controller
     public function index() {
         
         logger('welcome to laracasts/posts page');
-        $posts = LaracastsPost::latest()->filter(request()->only('search', 'category'))->get();
+        $posts = LaracastsPost::latest()->filter(request()->only('search', 'category', 'user'))->get();
         
         return view('laracasts.posts.index', [
             'posts' => $posts, 
@@ -26,7 +26,7 @@ class LaracastsPostController extends Controller
     
     public function show(LaracastsPost $post) {
         logger("welcome to laracasts/post/$post->id page");
-        return view('laracasts.post.show', ['post' => $post]);
+        return view('laracasts.posts.show', ['post' => $post]);
     }
 
 }
