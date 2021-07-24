@@ -15,7 +15,10 @@ class LaracastsPostController extends Controller
     public function index() {
         logger('welcome to laracasts/posts page');
 
-        $posts = LaracastsPost::latest()->filter(request(['search', 'category', 'user']))->get();
+        $posts = LaracastsPost::latest()->filter(
+                request(['search', 'category', 'user'])
+                )->paginate(6)->withQueryString();
+        
         return view('laracasts.posts.index', [
             'posts' => $posts, 
             ]

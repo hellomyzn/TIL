@@ -8,11 +8,11 @@
         </button>
     </x-slot>
 
-    <x-laracasts.dropdown-item href="/laracasts/posts">All</x-laracasts.dropdown-item>
+    <x-laracasts.dropdown-item href="/laracasts/posts/?{{ http_build_query(request()->except('category', 'page')) }}" :active="request()->routeIs('laracasts.home')">All</x-laracasts.dropdown-item>
         @foreach ($categories as $category)
             
             <x-laracasts.dropdown-item 
-                href="/laracasts/posts?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}"
+                href="/laracasts/posts?category={{ $category->slug }}&{{ http_build_query(request()->except('category', 'page')) }}"
                 :active="isset($currentCategory) && $currentCategory->is($category)"
                 >{{ ucwords($category->name) }} 
             </x-laracasts.dropdown-item>
