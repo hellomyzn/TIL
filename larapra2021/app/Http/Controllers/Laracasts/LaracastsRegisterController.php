@@ -16,7 +16,7 @@ class LaracastsRegisterController extends Controller
 
     public function store()
     {
-        
+        // validation
         $attributes = request()->validate([
             'name' => 'required|max:255',
             'username' => 'required|min:3|max:255|unique:laracasts_users,username',
@@ -24,11 +24,10 @@ class LaracastsRegisterController extends Controller
             'password' => 'required|min:7|max:255'
         ]);
 
-
-        
+        // create user
         $user = LaracastsUser::create($attributes);
-        logger("Successed to register User id: {{ $user->id }} User name: {{ $user->name }} ");
+        logger("Success to register User id: {{ $user->id }} User name: {{ $user->name }} ");
 
-        return redirect('/laracasts/posts');
+        return redirect('/laracasts/posts')->with('success', 'Your account has been created.');
     }
 }

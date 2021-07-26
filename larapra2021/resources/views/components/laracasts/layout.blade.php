@@ -54,4 +54,5 @@
             </div>
         </footer>
     </section>
+    <x-laracasts.flash/>
 </body>
