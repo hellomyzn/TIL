@@ -4,6 +4,7 @@ use App\Models\laracasts\LaracastsUser;
 use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsCategory;
 use App\Http\Controllers\Laracasts\LaracastsPostController;
+use App\Http\Controllers\Laracasts\LaracastsRegisterController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -27,3 +28,6 @@ Route::get('/', function(){
 
 Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
 Route::get('post/{post:slug}', [LaracastsPostController::class, 'show']);
+
+Route::post('register', [LaracastsRegisterController::class, 'store']);
+Route::get('register', [LaracastsRegisterController::class, 'create']);
