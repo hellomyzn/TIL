@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'laracasts_users',
     ],
 
     /*
@@ -43,7 +43,7 @@ return [
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'laracasts_users',
             'hash' => false,
         ],
     ],
@@ -68,7 +68,8 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\laracasts\LaracastsUser::class,
+
         ],
 
         // 'users' => [
@@ -94,7 +95,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'laracasts_users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
