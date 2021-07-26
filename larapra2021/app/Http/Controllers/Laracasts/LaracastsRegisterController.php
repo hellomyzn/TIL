@@ -19,12 +19,12 @@ class LaracastsRegisterController extends Controller
         
         $attributes = request()->validate([
             'name' => 'required|max:255',
-            'username' => 'required|max:255|min:3',
-            'email' => 'required|email|max:255',
-            'password' => 'required|max:255|min:7'
+            'username' => 'required|min:3|max:255|unique:laracasts_users,username',
+            'email' => 'required|email|max:255|unique:laracasts_users,email',
+            'password' => 'required|min:7|max:255'
         ]);
 
-        
+
         
         $user = LaracastsUser::create($attributes);
         logger("Successed to register User id: {{ $user->id }} User name: {{ $user->name }} ");
