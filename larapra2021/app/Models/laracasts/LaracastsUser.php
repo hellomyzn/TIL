@@ -56,6 +56,12 @@ class LaracastsUser extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+        
+    }
+
     public function laracasts_posts(){
         return $this->hasMany(LaracastsPost::class);
     }
