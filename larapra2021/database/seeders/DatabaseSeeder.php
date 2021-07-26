@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\laracasts\LaracastsUser;
 use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsCategory;
+use App\Models\laracasts\LaracastsComment;
 use Illuminate\Database\Seeder;
 use Database\Seeders\laracasts\LaracastsPostsSeeder;
 use Database\Seeders\laracasts\LaracastsCategoriesSeeder;
@@ -24,5 +25,6 @@ class DatabaseSeeder extends Seeder
         LaracastsUser::factory(10)->create();
         LaracastsCategory::factory(5)->create();
         LaracastsPost::factory(30)->create();
+        LaracastsComment::factory(30)->create();
     }
 }
