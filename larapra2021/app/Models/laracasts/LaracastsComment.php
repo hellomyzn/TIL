@@ -13,7 +13,7 @@ class LaracastsComment extends Model
 
     protected $guarded = [];
 
-    protected $with =['laracasts_post', 'laracasts_user'];
+    protected $with =['laracasts_user'];
 
     public function laracasts_post(){
         return $this->belongsTo(LaracastsPost::class);

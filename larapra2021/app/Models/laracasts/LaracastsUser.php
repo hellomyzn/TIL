@@ -3,6 +3,7 @@
 namespace App\Models\laracasts;
 
 use App\Models\laracasts\LaracastsPost;
+use App\Models\laracasts\LaracastsComment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -64,5 +65,9 @@ class LaracastsUser extends Authenticatable
 
     public function laracasts_posts(){
         return $this->hasMany(LaracastsPost::class);
+    }
+
+    public function laracasts_comments(){
+        return $this->hasMany(LaracastsComment::class);
     }
 }

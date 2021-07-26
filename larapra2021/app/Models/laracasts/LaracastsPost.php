@@ -4,6 +4,7 @@ namespace App\Models\laracasts;
 
 use App\Models\laracasts\LaracastsCategory;
 use App\Models\laracasts\LaracastsUser;
+use App\Models\laracasts\LaracastsComment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +22,10 @@ class LaracastsPost extends Model
 
     public function laracasts_user(){
         return $this->belongsTo(LaracastsUser::class);
+    }
+
+    public function laracasts_comments(){
+        return $this->hasMany(LaracastsComment::class);
     }
 
     public static function scopeFilter($query, array $filters){

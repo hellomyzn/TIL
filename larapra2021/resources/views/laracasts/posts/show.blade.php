@@ -50,10 +50,11 @@
                     </div>
                 </div>
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                    <x-laracasts.comment/>
-                    <x-laracasts.comment/>
-                    <x-laracasts.comment/>
-                    <x-laracasts.comment/>
+                    @if ($post->laracasts_comments)
+                        @foreach ($post->laracasts_comments as $comment)
+                            <x-laracasts.comment :comment="$comment" />
+                        @endforeach    
+                    @endif
                 </section>
             </article>
         </main>
