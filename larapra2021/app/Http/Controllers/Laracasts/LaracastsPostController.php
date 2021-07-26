@@ -13,7 +13,7 @@ class LaracastsPostController extends Controller
 {
 
     public function index() {
-        logger('welcome to laracasts/posts page');
+        logger('Access to laracasts/posts page');
 
         $posts = LaracastsPost::latest()->filter(
                 request(['search', 'category', 'user'])
@@ -27,7 +27,7 @@ class LaracastsPostController extends Controller
 
     
     public function show(LaracastsPost $post) {
-        logger("welcome to laracasts/post/$post->id page");
+        logger("Access to laracasts/post/$post->id page");
 
         return view('laracasts.posts.show', ['post' => $post]);
     }
