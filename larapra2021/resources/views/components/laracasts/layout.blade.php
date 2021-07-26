@@ -15,10 +15,18 @@
                 </a>
             </div>
 
-            <div class="mt-8 md:mt-0">
-                @guest
+            <div class="mt-8 md:mt-0 flex items-center">
+                @auth
+                    <a class="text-xs font-bold uppercase">Wellcome, {{ auth()->user()->name}}</a>
+
+                    <form action="/laracasts/logout" method="POST" class="text-xs font-semibold text-blue-500 ml-6">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                @else
                     <a href="/laracasts/register" class="text-xs font-bold uppercase">Register</a>
-                @endguest
+                    <a href="/laracasts/login" class=" ml-3 text-xs font-bold uppercase">Log In</a>
+                @endauth
 
                 <a href="#" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     Subscribe for Updates
