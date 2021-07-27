@@ -6,6 +6,7 @@ use App\Models\laracasts\LaracastsCategory;
 use App\Http\Controllers\Laracasts\LaracastsPostController;
 use App\Http\Controllers\Laracasts\LaracastsRegisterController;
 use App\Http\Controllers\Laracasts\LaracastsCommentController;
+use App\Http\Controllers\Laracasts\NewslatterController;
 use App\Http\Controllers\Laracasts\SessionsController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
@@ -23,38 +24,6 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-
-
-Route::post('newslatter', function(){
-
-    request()->validate([
-        'email' => 'required|email'
-    ]);
-
-    $mailchimp = new \MailchimpMarketing\ApiClient();
-
-    $mailchimp->setConfig([
-        'apiKey' => config('services.mailchimp.key'),
-        'server' => 'us6'
-    ]);
-    
-    try {
-        $response = $mailchimp->lists->addListMember('ab69ba101c', [
-            'email_address' => request('email'),
-            'status' => 'subscribed'
-        ]);
-    
-    } catch (\Exception $e){
-        throw \Illuminate\Validation\ValidationException::withMessages([
-            'email' => 'This email could not added to our newslatter list'
-        ]);
-    }
-
-    return redirect('/laracasts/posts')
-        ->with('success', 'You are now signed up for our newslatter');
-});
-
-
 Route::get('/', function(){
     logger('welcome to laracasts/welcome page');
     return view('laracasts.welcome');
@@ -62,7 +31,9 @@ Route::get('/', function(){
 
 Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
 Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show']);
-Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store']);;
+Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store']);
+
+Route::post('newslatter', NewslatterController::class);
 
 Route::get('register', [LaracastsRegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [LaracastsRegisterController::class, 'store'])->middleware('guest');
