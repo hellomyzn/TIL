@@ -5,6 +5,7 @@ use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsCategory;
 use App\Http\Controllers\Laracasts\LaracastsPostController;
 use App\Http\Controllers\Laracasts\LaracastsRegisterController;
+use App\Http\Controllers\Laracasts\LaracastsCommentController;
 use App\Http\Controllers\Laracasts\SessionsController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
@@ -29,7 +30,7 @@ Route::get('/', function(){
 
 Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
 Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show']);
-Route::get('posts/comment');
+Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store']);;
 
 Route::get('register', [LaracastsRegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [LaracastsRegisterController::class, 'store'])->middleware('guest');
