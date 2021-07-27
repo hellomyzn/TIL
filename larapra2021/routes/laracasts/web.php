@@ -23,6 +23,21 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
+
+
+Route::get('ping', function(){
+    $mailchimp = new \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchimp.key'),
+        'server' => 'us6'
+    ]);
+
+    $response = $mailchimp->ping->get();
+    print_r($response);
+});
+
+
 Route::get('/', function(){
     logger('welcome to laracasts/welcome page');
     return view('laracasts.welcome');
