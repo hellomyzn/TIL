@@ -27,7 +27,7 @@ class LaracastsPostController extends Controller
 
     
     public function show(LaracastsPost $post) {
-        logger("Access to laracasts/post/$post->id page");
+        logger("Access to laracasts/posts/$post->id page");
 
         return view('laracasts.posts.show', ['post' => $post]);
     }

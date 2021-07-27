@@ -28,11 +28,13 @@ Route::get('/', function(){
 });
 
 Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
-Route::get('post/{post:slug}', [LaracastsPostController::class, 'show']);
+Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show']);
+Route::get('posts/comment');
 
 Route::get('register', [LaracastsRegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [LaracastsRegisterController::class, 'store'])->middleware('guest');
 
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
+
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
