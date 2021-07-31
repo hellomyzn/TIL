@@ -28,7 +28,7 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
       - run:
           name: migration
-          command: php artisan migrate
+          command: php artisan migrate --env=local
       - run:
           name: Run PHPUnit
           command: vendor/bin/phpunit
