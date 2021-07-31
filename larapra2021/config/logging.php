@@ -52,6 +52,7 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 14,
+            'tap' => [App\Logging\CustomFilenames::class],
         ],
         'slack' => [
             'driver' => 'slack',
