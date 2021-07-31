@@ -15,7 +15,7 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('laracasts.login');
+            return route('laracasts.auth.login.create');
         }
     }
 }

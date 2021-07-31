@@ -10,7 +10,6 @@ class LaracastsRegisterController extends Controller
 {
     public function create()
     {
-        logger('access to laracasts/register/create page');
         return view('laracasts.register.create');
     }
 

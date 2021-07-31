@@ -17,9 +17,10 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 */
 
 Route::group([
-    'as' => 'post.'
+    'as' => 'post.',
+    'middleware' => 'auth'
 ], function() {
     Route::get('posts', [LaracastsPostController::class, 'index'])->name('home');
     Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show'])->name('show');
-    Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store'])->name('store');    
+    Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store'])->name('comment.store');    
 });

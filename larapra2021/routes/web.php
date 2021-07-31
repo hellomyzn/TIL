@@ -36,3 +36,7 @@ Route::group([
             include_route_files(__DIR__."/laracasts/"); 
     }
 );
+
+Route::get('error_test', function(){
+    Log::error("hoge");
+});

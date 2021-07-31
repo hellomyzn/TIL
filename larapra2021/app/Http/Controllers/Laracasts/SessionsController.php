@@ -11,7 +11,6 @@ class SessionsController extends Controller
 
     public function create()
     {
-        logger('Access to laracasts/login page');
         return view('laracasts.sessions.create');
     }
 
