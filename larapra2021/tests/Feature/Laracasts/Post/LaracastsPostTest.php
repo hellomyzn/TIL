@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class LaracastsPostTest extends TestCase
 {
-    // use RefreshDatabase;
+    use RefreshDatabase;
 
 
     /**
@@ -26,6 +26,7 @@ class LaracastsPostTest extends TestCase
     {
         // Create User
         $user = LaracastsUser::factory(1)->create([
+            'id' => 1,
             'email' => 'hoge@hoge.com',
             'password' => 'password',
         ]);
@@ -44,7 +45,9 @@ class LaracastsPostTest extends TestCase
     /** @test */
     public function check_post()
     {
-        LaracastsUser::factory(3)->create();
+        LaracastsUser::factory(1)->create([
+            'id' => 1,
+        ]);
         LaracastsCategory::factory(3)->create();
         LaracastsPost::factory(10)->create();
 
