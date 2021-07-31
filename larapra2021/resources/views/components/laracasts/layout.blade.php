@@ -67,9 +67,11 @@
                         </button>
                     </form>
                 </div>
-                @error('email')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
+                @if (isset($errors))
+                    @error('email')
+                        <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
+                @endif
             </div>
         </footer>
     </section>
