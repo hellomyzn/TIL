@@ -27,5 +27,8 @@ jobs:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
       - run:
+          name: migration
+          command: php artisan migrate
+      - run:
           name: Run PHPUnit
           command: vendor/bin/phpunit
