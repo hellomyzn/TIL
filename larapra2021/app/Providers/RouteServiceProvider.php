@@ -48,7 +48,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             Route::prefix('laracasts')
-                ->middleware('web')
+                ->middleware('laracasts')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/laracasts/web.php'));
         });

@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\Laracasts\LaracastsPostController;
+use App\Http\Controllers\Laracasts\LaracastsCommentController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
-
-
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +15,6 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function(){
-    logger('welcome to laracasts/welcome page');
-    return view('laracasts.welcome');
-});
-
-Route::group(['namespace' => 'Laracasts', 'as' => 'laracasts.'], function () {
-    include_route_files(__DIR__);
-});
-
+Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
+Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show']);
+Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store']);

@@ -1,5 +1,7 @@
+
 <?php
 
+use App\Http\Controllers\Laracasts\NewslatterController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -16,12 +18,5 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-Route::get('/', function(){
-    logger('welcome to laracasts/welcome page');
-    return view('laracasts.welcome');
-});
-
-Route::group(['namespace' => 'Laracasts', 'as' => 'laracasts.'], function () {
-    include_route_files(__DIR__);
-});
+Route::post('newslatter', NewslatterController::class);
 

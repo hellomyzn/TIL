@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 
 class LaracastsPostController extends Controller
 {
+    // public function __construct(){
+    //     $this->middleware('auth');
+    //   }
 
     public function index() {
         logger('Access to laracasts/posts page');
