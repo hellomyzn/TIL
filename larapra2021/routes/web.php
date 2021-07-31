@@ -26,3 +26,13 @@ Route::get('/home', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+// For Laracasts
+Route::group([
+        'namespace'     => 'Laracasts', 
+        'as'            => 'laracasts.',
+        'prefix'        => 'laracasts',
+    ], function (){
+            include_route_files(__DIR__."/laracasts/"); 
+    }
+);

@@ -20,8 +20,3 @@ Route::get('/', function(){
     logger('welcome to laracasts/welcome page');
     return view('laracasts.welcome');
 });
-
-Route::group(['namespace' => 'Laracasts', 'as' => 'laracasts.'], function () {
-    include_route_files(__DIR__);
-});
-

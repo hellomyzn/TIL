@@ -14,10 +14,9 @@ if (! function_exists('include_files_in_folder')) {
             $it = new RecursiveIteratorIterator($rdi);
 
             while ($it->valid()) {
-                if (! $it->isDot() && $it->isFile() && $it->isReadable() && $it->current()->getExtension() === 'php') {
+                if (! $it->isDot() && $it->isFile() && $it->isReadable() && $it->current()->getExtension() === 'php'){   
                     require $it->key();
                 }
-
                 $it->next();
             }
         } catch (Exception $e) {
@@ -34,7 +33,7 @@ if (! function_exists('include_route_files')) {
      * @param $folder
      */
     function include_route_files($folder)
-    {
+    {  
         include_files_in_folder($folder);
     }
 }

@@ -15,6 +15,11 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('posts', [LaracastsPostController::class, 'index'])->name('laracasts.home');
-Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show']);
-Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store']);
+
+Route::group([
+    'as' => 'post.'
+], function() {
+    Route::get('posts', [LaracastsPostController::class, 'index'])->name('home');
+    Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show'])->name('show');
+    Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store'])->name('store');    
+});

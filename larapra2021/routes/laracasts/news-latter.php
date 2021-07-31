@@ -1,4 +1,3 @@
-
 <?php
 
 use App\Http\Controllers\Laracasts\NewslatterController;
@@ -18,5 +17,4 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-Route::post('newslatter', NewslatterController::class);
-
+// Route::post('newslatter', NewslatterController::class);
