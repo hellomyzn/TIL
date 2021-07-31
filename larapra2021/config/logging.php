@@ -109,4 +109,9 @@ return [
     'request' => [
         'enable' => env('LOG_REQUEST_ENABLE', false),
     ],
+
+    // For DataBaseQueryServiceProvider
+    'sql' => [
+        'enable' => env('LOG_SQL_ENABLE', false),
+    ],
 ];

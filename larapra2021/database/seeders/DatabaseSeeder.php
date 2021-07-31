@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
         LaracastsUser::factory(10)->create();
         LaracastsCategory::factory(5)->create();
         LaracastsPost::factory(30)->create();
-        LaracastsComment::factory(5000)->create();
+        LaracastsComment::factory(100)->create();
     }
 }
