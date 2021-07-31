@@ -38,5 +38,6 @@ Route::group([
 );
 
 Route::get('error_test', function(){
-    Log::error("hoge");
+    Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");
+    return "Success to push Test Error Log";
 });
