@@ -26,6 +26,7 @@ class LaracastsPostFactory extends Factory
     {
         return [
             'title' => $this->faker->unique()->sentence,
+            'thumbnail' => 'illustration-1.png',
             'excerpt' => '<p>' . implode("</p><p>",  [$this->faker->paragraph(4)]) . '</p>',
             'body' => '<p>' . implode("</p><p>",  [$this->faker->paragraph(12)]) . '</p>',
             'slug' => $this->faker->unique()->slug,

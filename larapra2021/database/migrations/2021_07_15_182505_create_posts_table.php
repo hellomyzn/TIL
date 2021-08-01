@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->foreignId('laracasts_user_id')->constrained()->cascadeOnDelete();
             $table->unsignedBigInteger('laracasts_category_id')->constrained()->cascadeOnDelete();
             $table->string('title');
+            $table->string('thumbnail');
             $table->string('slug')->unique() ;
             $table->text('excerpt');
             $table->text('body');

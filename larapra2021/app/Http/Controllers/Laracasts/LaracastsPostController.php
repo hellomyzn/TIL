@@ -43,6 +43,7 @@ class LaracastsPostController extends Controller
 
         request()->validate([
             'title'                 => 'required|max:255',
+            'thumbnail'             => 'required|image',
             'slug'                  => ['required', Rule::unique('laracasts_posts', 'slug')],
             'excerpt'               => 'required|max:255',
             'body'                  => 'required|max:255',
@@ -52,6 +53,7 @@ class LaracastsPostController extends Controller
 
         $post = LaracastsPost::create([
             'title'                 => request()->title,
+            'thumbnail'             => request()->file('thumbnail')->store('thumbnail'),
             'slug'                  => request()->slug,
             'excerpt'               => request()->excerpt,
             'body'                  => request()->body,
