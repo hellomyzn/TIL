@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
 
         LaracastsUser::factory(10)->create();
         LaracastsUser::factory(1)->create([
+            'name' => 'hoge',
+            'username' => 'hoge',
             'email' => "hoge@hoge.com",
             'password' => 'password',
         ]);

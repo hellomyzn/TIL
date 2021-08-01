@@ -30,6 +30,8 @@ class LaracastsPostController extends Controller
 
 
     public function create (){
+
+
         return view('laracasts.posts.create');
     }
 
