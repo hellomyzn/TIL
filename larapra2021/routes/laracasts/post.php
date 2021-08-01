@@ -23,11 +23,11 @@ Route::group([
     Route::get('posts', [LaracastsPostController::class, 'index'])->name('home');
     Route::get('posts/{post:slug}', [LaracastsPostController::class, 'show'])->name('show');
     Route::post('posts/{post:slug}/comments', [LaracastsCommentController::class, 'store'])->name('comment.store');
-
 });
 Route::group([
     'as' => 'post.',
     'middleware' => 'admin'
 ], function() {
     Route::get('admin/posts/create', [LaracastsPostController::class, 'create'])->name('create');
+    Route::post('admin/posts', [LaracastsPostController::class, 'store'])->name('store');
 });

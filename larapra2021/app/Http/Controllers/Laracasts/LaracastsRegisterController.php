@@ -20,7 +20,7 @@ class LaracastsRegisterController extends Controller
             'name' => 'required|max:255',
             'username' => 'required|min:3|max:255|unique:laracasts_users,username',
             'email' => 'required|email|max:255|unique:laracasts_users,email',
-            'password' => 'required|min:7|max:255'
+            'password' => 'required|min:7|max:255',
         ]);
 
         // create user
