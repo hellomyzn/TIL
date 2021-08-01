@@ -38,10 +38,7 @@ jobs:
       - run:
           name: migration
           command: php artisan migrate --env=circle
-
-      - run: # envファイルをcircleci用のものに変更
-          name: env_copy
-          command: rm .env.testing && ln -s .env.circle .env.testing
+          
       - run:
           name: test_run
           command: ./vendor/bin/phpunit --testdox
