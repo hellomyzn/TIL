@@ -61,4 +61,44 @@ class LaracastsPostTest extends TestCase
         $view->assertSee('Laravel');
         $view->assertSee($first->title);        
     }
+
+    /** @test */
+    public function success_admin_middleware()
+    {
+        LaracastsUser::factory(1)->create([
+            'name' => 'hoge',
+            'username' => 'hoge',
+            'email' => "hoge@hoge.com",
+            'password' => 'password',
+        ]);
+
+        // Login
+        $this->post(route('laracasts.auth.login.create'),[
+            'email' => 'hoge@hoge.com',
+            'password' => 'password',
+        ]);
+
+        // Access Home page
+        $this->get(route('laracasts.post.create'))->assertStatus(200);
+    }
+
+    /** @test */
+    public function failure_admin_middleware()
+    {
+
+        LaracastsUser::factory(1)->create([
+            'name' => 'fuga',
+            'username' => 'fuga',
+            'email' => "fuga@fuga.com",
+            'password' => 'password',
+        ]);
+        // Login
+        $this->post(route('laracasts.auth.login.create'),[
+            'email' => "fuga@fuga.com",
+            'password' => 'password',
+        ]);
+
+        // Access Home page
+        $this->get(route('laracasts.post.create'))->assertStatus(403);       
+    }
 }
