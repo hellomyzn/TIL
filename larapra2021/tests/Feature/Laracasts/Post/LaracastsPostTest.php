@@ -63,7 +63,7 @@ class LaracastsPostTest extends TestCase
     }
 
     /** @test */
-    public function success_admin_middleware()
+    public function create_post_route_exist()
     {
         LaracastsUser::factory(1)->create([
             'name' => 'hoge',
@@ -100,5 +100,74 @@ class LaracastsPostTest extends TestCase
 
         // Access Home page
         $this->get(route('laracasts.post.create'))->assertStatus(403);       
+    }
+
+
+    /** @test */
+    public function store_post()
+    {
+        // create category
+        $category = LaracastsCategory::factory(1)->create();
+
+        // create user
+        $user = LaracastsUser::factory(1)->create([
+            'name' => 'hoge',
+            'username' => 'hoge',
+            'email' => "hoge@hoge.com",
+            'password' => 'password',
+        ]);        
+
+        // Login
+        $this->post(route('laracasts.auth.login.create'),[
+            'email' => 'hoge@hoge.com',
+            'password' => 'password',
+        ]);
+
+        // create post
+        $this->post(route('laracasts.post.store'), [
+            'title'                 => "hoge",
+            'slug'                  => "hoge",
+            'excerpt'               => "hoge",
+            'body'                  => "hoge",
+            'laracasts_category_id' => $category->toArray()[0]['id'],
+            'laracasts_user_id'     => $user->toArray()[0]['id'],
+        ])->assertStatus(302);
+
+        
+        // check database
+        $this->assertDatabaseHas('laracasts_posts', ['title' => 'hoge']);
+    }
+
+    /** @test */
+    public function validate_store_post()
+    {
+        // create category
+        $category = LaracastsCategory::factory(1)->create();
+
+        // create user
+        $user = LaracastsUser::factory(1)->create([
+            'name' => 'hoge',
+            'username' => 'hoge',
+            'email' => "hoge@hoge.com",
+            'password' => 'password',
+        ]);        
+
+        // Login
+        $this->post(route('laracasts.auth.login.create'),[
+            'email' => 'hoge@hoge.com',
+            'password' => 'password',
+        ]);
+
+        // create post
+        $response = $this->post(route('laracasts.post.store'), [
+            'title'                 => Null,
+            'slug'                  => "hoge",
+            'excerpt'               => "hoge",
+            'body'                  => "hoge",
+            'laracasts_category_id' => $category->toArray()[0]['id'],
+            'laracasts_user_id'     => $user->toArray()[0]['id'],
+        ])->assertStatus(302);
+
+        $response->assertSessionHasErrors(['title']);
     }
 }
