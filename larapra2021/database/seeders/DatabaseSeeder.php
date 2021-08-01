@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
         // $this->call(LaracastsCategoriesSeeder::class);
 
         LaracastsUser::factory(10)->create();
+        LaracastsUser::factory(1)->create([
+            'email' => "hoge@hoge.com",
+            'password' => 'password',
+        ]);
         LaracastsCategory::factory(5)->create();
         LaracastsPost::factory(30)->create();
         LaracastsComment::factory(100)->create();

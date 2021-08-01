@@ -28,4 +28,9 @@ class LaracastsPostController extends Controller
         return view('laracasts.posts.show', ['post' => $post]);
     }
 
+
+    public function create (){
+        return view('laracasts.posts.create');
+    }
+
 }

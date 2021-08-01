@@ -22,16 +22,17 @@ class AuthenticationTest extends TestCase
     public function test_users_can_authenticate_using_the_login_screen()
     {
         $email = 'hoge@hoge.com';
+        $password = 'password';
 
         $user = LaracastsUser::factory(1)->create([
             'email' => $email,
-            'password' => 'password',
+            'password' => $password,
         ]);
 
         // Login
         $response = $this->post(route('laracasts.auth.login.create'),[
             'email' => $email,
-            'password' => 'password',
+            'password' => $password,
         ]);
 
         $this->assertAuthenticated();
