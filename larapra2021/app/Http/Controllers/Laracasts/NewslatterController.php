@@ -16,7 +16,7 @@ class NewslatterController extends Controller
         ]);
         
         try {
-            (new Newslatter())->subscribe(request('email'));
+            $newslatter->subscribe(request('email'));
         } catch (\Exception $e){
             throw ValidationException::withMessages([
                 'email' => 'This email could not added to our newslatter list'
@@ -26,4 +26,5 @@ class NewslatterController extends Controller
         return redirect('/laracasts/posts')
             ->with('success', 'You are now signed up for our newslatter');
     }
+    
 }

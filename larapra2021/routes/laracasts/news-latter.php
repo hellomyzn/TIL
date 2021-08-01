@@ -17,4 +17,9 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 |
 */
 
-// Route::post('newslatter', NewslatterController::class);
+Route::group([
+    'as' => 'newslatter.',
+    'middleware' => 'auth'
+], function() {
+    Route::post('newslatter', NewslatterController::class)->name('post');
+});

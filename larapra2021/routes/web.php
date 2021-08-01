@@ -29,7 +29,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // For Laracasts
 Route::group([
-        'namespace'     => 'Laracasts', 
         'as'            => 'laracasts.',
         'prefix'        => 'laracasts',
     ], function (){
