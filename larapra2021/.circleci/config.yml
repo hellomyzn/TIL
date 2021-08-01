@@ -16,12 +16,11 @@ jobs:
       - checkout
 
       - run:
-          name: test_setup # テストを行うために必要なライブラリなどのインストール
-          command: |
-            sudo apt-get update && sudo apt-get install -y libpng-dev libjpeg-dev |
-            sudo docker-php-ext-configure gd --with-png-dir=/usr/include --with-jpeg-dir=/usr/include |
-            sudo docker-php-ext-install pdo_mysql gd
-      
+          name: Update apt-get
+          command: sudo apt-get update
+      - run:  
+          name: Docker php extensions install
+          command: sudo docker-php-ext-install pdo_mysql
       - restore_cache: # composer.jsonのキャッシュがあれば利用
           keys:
           - v1-dependencies-{{ checksum "composer.json" }}
