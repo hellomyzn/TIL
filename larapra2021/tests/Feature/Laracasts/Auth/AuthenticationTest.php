@@ -12,14 +12,14 @@ class AuthenticationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_login_screen_can_be_rendered()
+    public function login_screen_can_be_rendered()
     {
         $response = $this->get(route('laracasts.auth.login.create'));
 
         $response->assertStatus(200);
     }
 
-    public function test_users_can_authenticate_using_the_login_screen()
+    public function users_can_authenticate_using_the_login_screen()
     {
         $email = 'hoge@hoge.com';
         $password = 'password';
@@ -39,7 +39,7 @@ class AuthenticationTest extends TestCase
         $response->assertRedirect(RouteServiceProvider::HOME);
     }
 
-    public function test_users_can_not_authenticate_with_invalid_password()
+    public function users_can_not_authenticate_with_invalid_password()
     {
         $user = User::factory()->create();
 

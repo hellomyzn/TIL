@@ -22,7 +22,7 @@ class LaracastsUserRegisterTest extends TestCase
         $this->get('/laracasts/register')->assertStatus(200);
     }
     
-    /** @test */
+    
     public function register_account()
     {
         $email = 'hoge@hoge.com';
@@ -39,7 +39,7 @@ class LaracastsUserRegisterTest extends TestCase
         $this->assertDatabaseHas('laracasts_users', ['email' => $email]);
     }
 
-    /** @test */
+    
     public function name_is_required()
     {
         $response = $this->post(route('laracasts.auth.register.store'), [
@@ -51,7 +51,7 @@ class LaracastsUserRegisterTest extends TestCase
         $response->assertSessionHasErrors('name');
     }
 
-    /** @test */
+    
     public function username_is_required()
     {
         $response = $this->post(route('laracasts.auth.register.store'), [
@@ -63,7 +63,7 @@ class LaracastsUserRegisterTest extends TestCase
         $response->assertSessionHasErrors('username');
     }
     
-    /** @test */
+    
     public function email_is_required()
     {
         $response = $this->post(route('laracasts.auth.register.store'), [
@@ -75,7 +75,7 @@ class LaracastsUserRegisterTest extends TestCase
         $response->assertSessionHasErrors('email');
     }
 
-    /** @test */
+    
     public function password_is_required()
     {
         $response = $this->post(route('laracasts.auth.register.store'), [
@@ -87,7 +87,7 @@ class LaracastsUserRegisterTest extends TestCase
         $response->assertSessionHasErrors('password');
     }
 
-    /** @test */
+    
     public function it_redirects_to_posts_after_successful_registration()
     {
         

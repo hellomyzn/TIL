@@ -23,7 +23,7 @@ class LaracastsPostTest extends TestCase
      * @return void
      */
      
-     /** @test */
+     
     public function home_post_route_exist()
     {
         // Create User
@@ -44,7 +44,7 @@ class LaracastsPostTest extends TestCase
     }
 
 
-    /** @test */
+    
     public function check_post()
     {
         LaracastsUser::factory(1)->create([
@@ -64,7 +64,7 @@ class LaracastsPostTest extends TestCase
         $view->assertSee($first->title);        
     }
 
-    /** @test */
+    
     public function create_post_route_exist()
     {
         LaracastsUser::factory(1)->create([
@@ -84,7 +84,7 @@ class LaracastsPostTest extends TestCase
         $this->get(route('laracasts.post.create'))->assertStatus(200);
     }
 
-    /** @test */
+    
     public function failure_admin_middleware()
     {
 
@@ -105,7 +105,7 @@ class LaracastsPostTest extends TestCase
     }
 
 
-    /** @test */
+    
     public function store_post()
     {
         // create category
@@ -141,7 +141,7 @@ class LaracastsPostTest extends TestCase
         $this->assertDatabaseHas('laracasts_posts', ['title' => 'hoge']);
     }
 
-    // /** @test */
+    
     public function validate_store_post()
     {
         // create category
