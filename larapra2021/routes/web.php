@@ -27,7 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-// For Laracasts
+// for Laracasts
 Route::group([
         'as'            => 'laracasts.',
         'prefix'        => 'laracasts',
@@ -36,10 +36,18 @@ Route::group([
     }
 );
 
+// for Simablog
+Route::group([
+    'as'            => 'simablog.',
+    'prefix'        => 'simablog',
+], function (){
+        include_route_files(__DIR__."/simablog/"); 
+}
+);
+
 Route::get('error_test', function(){
     Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");
     return "Success to push Test Error Log";
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
