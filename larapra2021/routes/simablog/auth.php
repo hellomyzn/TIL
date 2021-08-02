@@ -15,7 +15,7 @@ Route::group([
     Route::post('members/logout', [LoginController::class,'logout'])->name('logout');
     
     Route::get('members/register', [RegisterController::class,'showRegistrationForm'])->name('register');
-    Route::post('members/register', [RegisterController::class,'register']);
+    Route::post('members/register', [RegisterController::class,'register'])->name('register.store');
     
     Route::get('members/password/reset', [ForgotPasswordController::class,'showLinkRequestForm'])->name('password.request');
     Route::post('members/password/email', [ForgotPasswordController::class,'sendResetLinkEmail'])->name('password.email');

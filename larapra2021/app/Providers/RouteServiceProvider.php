@@ -18,7 +18,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/laracasts/posts';
+    public const HOME = '/';
+    public const LARACASTS_HOME = '/laracasts/posts';
+    public const SIMABLOG_HOME = '/simablog';
 
     /**
      * The controller namespace for the application.
