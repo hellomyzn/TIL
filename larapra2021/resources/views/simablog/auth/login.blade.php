@@ -3,6 +3,7 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
+        <h1>Simablog Login</h1>
 
         <x-jet-validation-errors class="mb-4" />
 

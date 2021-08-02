@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'laracasts_users',
+        'passwords' => 'users',
     ],
 
     /*
@@ -43,7 +43,7 @@ return [
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'laracasts_users',
+            'provider' => 'users',
             'hash' => false,
         ],
     ],
@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\laracasts\LaracastsUser::class,
+            'model' => App\Models\simablog\SimablogUser::class,
 
         ],
 
@@ -95,7 +95,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'laracasts_users',
+            'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
