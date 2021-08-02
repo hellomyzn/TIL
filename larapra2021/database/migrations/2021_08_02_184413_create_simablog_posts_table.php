@@ -16,7 +16,7 @@ class CreateSimablogPostsTable extends Migration
         Schema::create('simablog_posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('simablog_user_id');
-            $table->string('body');
+            $table->text('body');
             $table->timestamps();
         });
     }
