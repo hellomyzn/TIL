@@ -1,6 +1,3 @@
-<h1>User</h1>
-
-{{ $user->name }}
-
+Edit
 <h1>Posts</h1>
 {!! $post->body !!}

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::group([
-        'as' => 'post'
+        'as' => 'post.'
 ], function (){
     Route::resource('posts', SimablogPostController::class, [
         'only' => ['index','show', 'create', 'store'],
