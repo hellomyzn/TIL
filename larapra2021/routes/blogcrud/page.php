@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Blogcrud\PagesController;
+use App\Http\Controllers\Blogcrud\BlogcrudPagesController;
 
 Route::group([
-        'as' => 'page'
+        'as' => 'page.'
     ], function (){
-        Route::get('index', [PagesController::class, 'index'])->name('index');
+        Route::get('pages', [BlogcrudPagesController::class, 'index'])->name('index');
     }
 );
