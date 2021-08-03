@@ -44,8 +44,8 @@ class SimablogPostController extends Controller
 
     public function edit($id)
     {
+        
         $post = SimablogPost::findOrFail($id);
-
         return view('simablog.posts.edit', compact(['post']));
     }
 
