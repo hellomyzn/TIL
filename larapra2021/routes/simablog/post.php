@@ -16,7 +16,7 @@ Route::group([
             'store' => 'store'       
         ]
     ]);
-    Route::get('posts/edit/{id}', [SimablogPostController::class, 'edit']);
-    Route::post('posts/edit',[SimablogPostController::class, 'update']);
-    Route::post('posts/delete/{id}', [SimablogPostController::class, 'destroy']);
+    Route::get('posts/edit/{id}', [SimablogPostController::class, 'edit'])->name('edit');
+    Route::post('posts/edit',[SimablogPostController::class, 'update'])->name('update');
+    Route::post('posts/delete/{id}', [SimablogPostController::class, 'destroy'])->name('delete');
 });
