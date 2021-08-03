@@ -28,7 +28,7 @@ class SimablogPostController extends Controller
         $post = new SimablogPost();
         
         $post->body = $request->body;
-        $post->user_id = $id;
+        $post->simablog_user_id = $id;
 
         $post->save();
 
