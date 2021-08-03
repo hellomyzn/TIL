@@ -42,7 +42,16 @@ Route::group([
     'prefix'        => 'simablog',
 ], function (){
         include_route_files(__DIR__."/simablog/"); 
-}
+    }
+);
+
+// for Blog Crud
+Route::group([
+    'as'            => 'blogcrud.',
+    'prefix'        => 'blogcrud',
+], function (){
+        include_route_files(__DIR__."/blogcrud/"); 
+    }
 );
 
 Route::get('error_test', function(){
