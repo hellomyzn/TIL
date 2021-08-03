@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     logger('welcome route.');
     return view('welcome');
@@ -58,5 +60,5 @@ Route::get('error_test', function(){
     Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");
     return "Success to push Test Error Log";
 });
-Auth::routes();
+
 
