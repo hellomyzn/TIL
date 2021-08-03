@@ -7,22 +7,22 @@
 
             <ul class="py-4 sm:text-s pt-4 text-gray-400">
                 <li class="pb-1">
-                    <a href="/">
+                    <a href={{ route('blogcrud.post.home') }} >
                         Home
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/blog">
+                    <a href={{ route('blogcrud.post.home') }} >
                         Blog
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/login">
+                    <a href={{ route('blogcrud.auth.login') }}>
                         Login
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href="/register">
+                    <a href={{ route('blogcrud.auth.register') }}>
                         Register
                     </a>
                 </li>
