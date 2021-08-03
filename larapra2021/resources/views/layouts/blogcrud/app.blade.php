@@ -20,13 +20,13 @@
         <header class="bg-gray-800 py-6">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
-                    <a href={{ route('blogcrud.post.home') }} class="text-lg font-semibold text-gray-100 no-underline">
+                    <a href={{ route('blogcrud.home') }} class="text-lg font-semibold text-gray-100 no-underline">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
-                    <a class="no-underline hover:underline" href={{ route('blogcrud.post.home') }} >Home</a>
-                    <a class="no-underline hover:underline" href={{ route('blogcrud.post.home') }} >Blog</a>
+                    <a class="no-underline hover:underline" href={{ route('blogcrud.home') }} >Home</a>
+                    <a class="no-underline hover:underline" href={{ route('blogcrud.home') }} >Blog</a>
                     @guest
                         <a class="no-underline hover:underline" href={{ route('blogcrud.auth.login') }}>{{ __('Login') }}</a>
                         @if (Route::has('register'))

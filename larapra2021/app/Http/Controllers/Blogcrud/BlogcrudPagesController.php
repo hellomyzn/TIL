@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class BlogcrudPagesController extends Controller
 {
+
+    public function home(){
+        return view('blogcrud/index');
+    }
+
     public function index(){
         return view('blogcrud/pages/index');
     }

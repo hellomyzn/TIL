@@ -11,7 +11,7 @@ Route::group(
         [
             'only' => ['index','show', 'create', 'store'],
             'names' => [
-                'index' => 'home',
+                'index' => 'index',
                 'show' => 'show',
                 'create' => 'create',
                 'store' => 'store'       
