@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Blogcrud;
 use App\Models\blogcrud\BlogcrudPost;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Cviebrock\EloquentSluggable\Services\SlugService;
+
 
 class BlogcrudPostsController extends Controller
 {
@@ -26,7 +28,7 @@ class BlogcrudPostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogcrud.posts.create');
     }
 
     /**
@@ -37,7 +39,26 @@ class BlogcrudPostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
+        ]);
+
+        $newImageName = uniqid() . '-' . $request->title . '.' . 
+        $request->image->extension();
+
+        $slug = SlugService::createSlug(BlogcrudPost::class, 'slug', request()->title);
+
+        $posts = BlogcrudPost::create([
+            'slug' => $slug,
+            'title' => request()->title,
+            'description' => request()->description,
+            'image_path'  => request()->file('image')->store('image'),
+            'blogcrud_user_id' => auth()->user()->id
+        ]);
+
+        return redirect()->route('blogcrud.post.index');
     }
 
     /**

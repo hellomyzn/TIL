@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.blogcrud.app')
 
 @section('content')
 <div class="w-4/5 m-auto text-left">
@@ -23,7 +23,7 @@
 
 <div class="w-4/5 m-auto pt-20">
     <form 
-        action="/blog"
+        action={{ route('blogcrud.post.store') }}
         method="POST"
         enctype="multipart/form-data">
         @csrf
