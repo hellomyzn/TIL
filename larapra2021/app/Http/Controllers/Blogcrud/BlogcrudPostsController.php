@@ -117,8 +117,11 @@ class BlogcrudPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        $post = BlogcrudPost::where('slug', $slug)->first();
+        $post->delte();
+
+        return redirect()->route('blogcrud.post.index')->with('message', 'successed to delete your post');
     }
 }
