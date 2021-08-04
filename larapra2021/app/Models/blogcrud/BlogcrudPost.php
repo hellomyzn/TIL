@@ -12,9 +12,9 @@ class BlogcrudPost extends Model
 
     protected $guarded = [];
 
-    protected $with =['laracasts_user'];
+    protected $with =['blogcrud_user'];
 
-    public function laracasts_user(){
+    public function blogcrud_user(){
         return $this->belongsTo(BlogcrudUser::class);
     }
 }
