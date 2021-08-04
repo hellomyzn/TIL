@@ -67,9 +67,11 @@ class BlogcrudPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $post = BlogcrudPost::where('slug', $slug)->first();
+        
+        return view('blogcrud.posts.show', compact(['post']));
     }
 
     /**
