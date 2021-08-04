@@ -14,8 +14,12 @@ Route::group(
                 'index' => 'index',
                 'show' => 'show',
                 'create' => 'create',
-                'store' => 'store'       
+                'store' => 'store',
             ],
         ]);
+
+        Route::get('edit/{post:slug}', [BlogcrudPostsController::class, 'edit'])->name('edit');
+        Route::post('edit/{post:slug}', [BlogcrudPostsController::class, 'update'])->name('update');
+        Route::post('delete/{post:slug}', [BlogcrudPostsController::class, 'destroy'])->name('delete');
     }
 );

@@ -58,7 +58,7 @@ class BlogcrudPostsController extends Controller
             'blogcrud_user_id' => auth()->user()->id
         ]);
 
-        return redirect()->route('blogcrud.post.index');
+        return redirect()->route('blogcrud.post.index')->with('message', 'successed to create your post');
     }
 
     /**
@@ -80,9 +80,11 @@ class BlogcrudPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $post = BlogcrudPost::where('slug', $slug)->first();
+        
+        return view('blogcrud.posts.edit', compact(['post'])); 
     }
 
     /**
@@ -92,9 +94,21 @@ class BlogcrudPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $post = BlogcrudPost::where('slug', $slug)->first();
+
+        $post->update([
+            'title' => request()->title,
+            'description' => request()->description,
+        ]);
+
+        return redirect()->route('blogcrud.post.index')->with('message', 'successed to update your post');
     }
 
     /**

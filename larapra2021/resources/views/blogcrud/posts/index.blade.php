@@ -48,10 +48,10 @@
                 Keep Reading
             </a>
 
-            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+            @if (isset(Auth::user()->id) && Auth::user()->id == $post->blogcrud_user_id)
                 <span class="float-right">
                     <a 
-                        href="/blog/{{ $post->slug }}/edit"
+                        href="edit/{{$post->slug}}"
                         class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
                         Edit
                     </a>
@@ -59,7 +59,7 @@
 
                 <span class="float-right">
                      <form 
-                        action="/blog/{{ $post->slug }}"
+                        action="delete/{{$post->slug}}"
                         method="POST">
                         @csrf
                         @method('delete')

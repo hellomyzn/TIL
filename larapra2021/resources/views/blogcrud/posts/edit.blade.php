@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.blogcrud.app')
 
 @section('content')
 <div class="w-4/5 m-auto text-left">
@@ -23,11 +23,11 @@
 
 <div class="w-4/5 m-auto pt-20">
     <form 
-        action="/blog/{{ $post->slug }}"
+        action={{route('blogcrud.post.update', [$post->slug])}}
         method="POST"
         enctype="multipart/form-data">
         @csrf
-        @method('PUT')
+        
 
         <input 
             type="text"
