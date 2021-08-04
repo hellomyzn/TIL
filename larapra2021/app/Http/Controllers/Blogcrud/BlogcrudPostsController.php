@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blogcrud;
 
+use App\Models\blogcrud\BlogcrudPost;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class BlogcrudPostsController extends Controller
      */
     public function index()
     {
-        return view('blogcrud.posts.index');
+        $posts = BlogcrudPost::all();
+        return view('blogcrud.posts.index', compact(['posts']));
     }
 
     /**
