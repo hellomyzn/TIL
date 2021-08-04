@@ -28,7 +28,7 @@ class BlogcrudPostFactory extends Factory
             'slug' => $this->faker->unique()->slug,
             'title' => $this->faker->unique()->sentence,
             'description' => '<p>' . implode("</p><p>",  [$this->faker->paragraph(12)]) . '</p>',
-            'image_path' => $this->faker->unique()->sentence,
+            'image_path' => '6034f2b4ac8f1-This is my title.jpg',
             'blogcrud_user_id' => rand(1, BlogcrudUser::count()),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
