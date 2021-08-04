@@ -12,7 +12,7 @@
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href={{ route('blogcrud.home') }} >
+                    <a href={{ route('blogcrud.post.index') }}>
                         Blog
                     </a>
                 </li>

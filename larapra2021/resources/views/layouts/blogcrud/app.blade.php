@@ -26,7 +26,7 @@
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     <a class="no-underline hover:underline" href={{ route('blogcrud.home') }} >Home</a>
-                    <a class="no-underline hover:underline" href={{ route('blogcrud.home') }} >Blog</a>
+                    <a class="no-underline hover:underline" href={{ route('blogcrud.post.index') }} >Blog</a>
                     @guest
                         <a class="no-underline hover:underline" href={{ route('blogcrud.auth.login') }}>{{ __('Login') }}</a>
                         @if (Route::has('register'))
