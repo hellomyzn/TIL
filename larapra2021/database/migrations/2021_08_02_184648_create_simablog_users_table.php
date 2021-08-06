@@ -16,11 +16,8 @@ class CreateSimablogUsersTable extends Migration
         Schema::create('simablog_users', function (Blueprint $table) {
             
             $table->id();
+            $table->unsignedBigInteger('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

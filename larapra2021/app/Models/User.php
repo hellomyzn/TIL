@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\blogcrud\BlogcrudUser;
+use App\Models\blogcrud\SimablogUser;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -67,5 +68,10 @@ class User extends Authenticatable
     public function blogcrud_users() 
     {
         return $this->hasOne(BlogcrudUser::class);
+    }
+
+    public function simablog_users() 
+    {
+        return $this->hasOne(SimablogUser::class);
     }
 }

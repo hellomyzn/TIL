@@ -2,6 +2,7 @@
 
 namespace App\Models\simablog;
 
+use App\Models\User;
 use App\Models\simablog\SimablogPost;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,7 +26,10 @@ class SimablogUser extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'user_id',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -59,5 +63,9 @@ class SimablogUser extends Authenticatable
 
     public function simablog_posts(){
         return $this->hasMany(SimablogPost::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
