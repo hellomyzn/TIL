@@ -3,7 +3,7 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
-        <h1>Simablog Login</h1>
+        <h1>Blogcrud Login</h1>
 
         <x-jet-validation-errors class="mb-4" />
 
@@ -13,7 +13,7 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('blogcrud.auth.login') }}">
+        <form method="POST" action="{{ route('blogcrud.login') }}">
             @csrf
 
             <div>

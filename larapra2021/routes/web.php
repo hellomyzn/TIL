@@ -30,11 +30,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::group([
-    'as'         => 'auth.'
-], function () {
-    require __DIR__."/auth.php";
-});
+// Route::group([
+//     'as'         => 'auth.'
+// ], function () {
+//     require __DIR__."/auth.php";
+// });
 
 
 // for Laracasts

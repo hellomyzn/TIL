@@ -2,25 +2,24 @@
 
 use App\Http\Controllers\Blogcrud\BlogcrudRegisterController;
 use App\Http\Controllers\Blogcrud\BlogcrudLoginController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
+Route::group([
+    'middleware' => 'guest'
+], function () {
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('show-login-form');
+    Route::post('login', [LoginController::class, 'login'])->name('login');
+
+    Route::get('register', [BlogcrudRegisterController::class, 'showRegistrationForm'])->name('show-register-form');
+    Route::post('register', [BlogcrudRegisterController::class, 'register'])->name('register');
+});
 
 Route::group([
-        'namespace'     => 'Auth', 
-        'as'            => 'auth.',
-    ], function () {
-        Route::group(['middleware' => 'guest'], function(){
-            Route::get('register', [BlogcrudRegisterController::class, 'create'])->name('register');
-            Route::post('register', [BlogcrudRegisterController::class, 'store'])->name('register.store');
-            
-            Route::get('login', [BlogcrudLoginController::class, 'create'])->name('login');
-            Route::post('login', [BlogcrudLoginController::class, 'store'])->name('login.store');
-        });
-        Route::group(['middleware' => 'auth'], function(){
-            Route::post('logout', [BlogcrudLoginController::class, 'destroy'])->name('logout');
-        });
-    }
-);    
+    'middleware' => 'auth'
+], function () {
+    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+});
     
 
