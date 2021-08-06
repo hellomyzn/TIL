@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\simablog\SimablogUser::class,
+            'model' => App\Models\User::class,
         ],
 
         // 'users' => [
