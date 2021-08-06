@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/', function () {
     logger('welcome route.');
@@ -28,6 +28,14 @@ Route::get('/home', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::group([
+    'as'         => 'auth.'
+], function () {
+    require __DIR__."/auth.php";
+});
+
 
 // for Laracasts
 Route::group([
