@@ -2,6 +2,7 @@
 
 namespace Database\Factories\blogcrud;
 
+use App\Models\User;
 use App\Models\blogcrud\BlogcrudUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -24,6 +25,7 @@ class BlogcrudUserFactory extends Factory
     public function definition()
     {
         return [
+            'user_id' => rand(1, User::count()),
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),

@@ -40,6 +40,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return "hoge";
+        return view('auth.login');
     }
+
 }

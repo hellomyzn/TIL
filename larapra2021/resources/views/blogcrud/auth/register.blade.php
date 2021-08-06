@@ -5,8 +5,8 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-        <h1>Simablog Register</h1>
-        <form method="POST" action="{{ route('blogcrud.auth.register.store') }}">
+        <h1>Blogcrud Register</h1>
+        <form method="POST" action="{{ route('auth.register') }}">
             @csrf
 
             <div>

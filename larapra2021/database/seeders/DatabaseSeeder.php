@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\laracasts\LaracastsUser;
 use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsCategory;
@@ -25,6 +26,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(LaracastsPostsSeeder::class);
         // $this->call(LaracastsCategoriesSeeder::class);
+
+        User::factory(10)->create();
 
         LaracastsUser::factory(10)->create();
         LaracastsUser::factory(1)->create([

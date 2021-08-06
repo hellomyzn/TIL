@@ -2,6 +2,7 @@
 
 namespace App\Models\blogcrud;
 
+use App\Models\User;
 use App\Models\blogcrud\BlogcrudUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -65,4 +66,10 @@ class BlogcrudUser extends Authenticatable
     public function blogcrud_posts(){
         return $this->hasMany(BlogcrudPost::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

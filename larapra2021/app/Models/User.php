@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\blogcrud\BlogcrudUser;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -58,4 +60,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    const USER_ROLE_ADMIN = 'administrator';
+    const USER_ROLE_BLOGCRUD = 'blogcrud';
+    const USER_ROLE_STUDENT = 'student';
+
+    public function blogcrud_users() 
+    {
+        return $this->hasOne(BlogcrudUser::class);
+    }
 }
