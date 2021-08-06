@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Hello!
+@extends('layouts.app')
 
-    @auth
-        {{ Auth::user()->name }}
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
-                {{ __('Log Out') }}
-            </a>
-        </form>
-    @else
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-            @endif
-    @endauth
-</body>
-</html>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
