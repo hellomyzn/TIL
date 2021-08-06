@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Blogcrud;
+namespace App\Http\Controllers\Blogcrud\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\blogcrud\BlogcrudUser;

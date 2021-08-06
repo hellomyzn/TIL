@@ -46,10 +46,11 @@ class BlogcrudUserService
     public function createBlogcrudAccount($requestData)
     {
         try {
-            return DB::transaction(function () use ($requestData) {
+            return DB::transaction(function () use ($requestData) {                
                 // create or update on user side
                 $userInstance = $this->user->create($requestData);
                 $requestData['user_id'] = $userInstance->id;
+                
 
                 // create on student table
                 $blogcrudUser = $this->blogcrud->create($requestData);

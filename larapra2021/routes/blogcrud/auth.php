@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Blogcrud\BlogcrudRegisterController;
-use App\Http\Controllers\Blogcrud\BlogcrudLoginController;
+use App\Http\Controllers\Blogcrud\Auth\BlogcrudRegisterController;
+use App\Http\Controllers\Blogcrud\Auth\BlogcrudLoginController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 

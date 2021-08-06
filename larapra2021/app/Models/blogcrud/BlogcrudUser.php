@@ -25,7 +25,11 @@ class BlogcrudUser extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'user_id',
+    ];
+
 
     /**
      * The attributes that should be hidden for arrays.

@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Repositories\BaseRepository;
 use App\Services\Blogcrud\BlogcrudUserService;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 
 class UserRepository extends BaseRepository
 {
@@ -35,7 +37,7 @@ class UserRepository extends BaseRepository
             $requestData = [
                 'name' => $data['name'] ?? '',
                 'email' => $data['email'] ?? '',
-                'password' => $data['password'] ?? '',
+                'password' => Hash::make($data['password']) ?? '',
             ];
 
             // create user data by role
