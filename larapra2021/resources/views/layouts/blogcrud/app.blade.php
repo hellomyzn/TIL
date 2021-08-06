@@ -10,10 +10,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/blogcrud/app.js') }}" defer></script>
     
+    
     <!-- Styles -->
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/blogcrud/app.css') }}" rel="stylesheet">
+    
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-sans">
     <div id="app">
@@ -28,14 +32,14 @@
                     <a class="no-underline hover:underline" href={{ route('blogcrud.home') }} >Home</a>
                     <a class="no-underline hover:underline" href={{ route('blogcrud.post.index') }} >Blog</a>
                     @guest
-                        <a class="no-underline hover:underline" href={{ route('blogcrud.auth.login') }}>{{ __('Login') }}</a>
+                        <a class="no-underline hover:underline" href={{ route('blogcrud.show-login-form') }}>{{ __('Login') }}</a>
                         @if (Route::has('register'))
-                            <a class="no-underline hover:underline" href={{ route('blogcrud.auth.register') }}>{{ __('Register') }}</a>
+                            <a class="no-underline hover:underline" href={{ route('blogcrud.show-register-form') }}>{{ __('Register') }}</a>
                         @endif
                     @else
                         <span>{{ Auth::user()->name }}</span>
 
-                        <a href="{{ route('logout') }}"
+                        <a href="{{ route('blogcrud.logout') }}"
                            class="no-underline hover:underline"
                            onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>

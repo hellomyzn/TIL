@@ -17,12 +17,12 @@
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href={{ route('blogcrud.auth.login') }}>
+                    <a href={{ route('blogcrud.show-login-form') }}>
                         Login
                     </a>
                 </li>
                 <li class="pb-1">
-                    <a href={{ route('blogcrud.auth.register') }}>
+                    <a href={{ route('blogcrud.show-register-form') }}>
                         Register
                     </a>
                 </li>

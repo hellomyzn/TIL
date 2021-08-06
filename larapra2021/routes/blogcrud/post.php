@@ -4,6 +4,7 @@ use App\Http\Controllers\Blogcrud\BlogcrudPostsController;
 
 Route::group(
     [
+        'middleware' => 'blogcrud.auth',
         'as' => 'post.'
     ], function ()
     {

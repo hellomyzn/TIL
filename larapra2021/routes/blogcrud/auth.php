@@ -2,15 +2,14 @@
 
 use App\Http\Controllers\Blogcrud\BlogcrudRegisterController;
 use App\Http\Controllers\Blogcrud\BlogcrudLoginController;
-use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::group([
     'middleware' => 'guest'
 ], function () {
-    Route::get('login', [LoginController::class, 'showLoginForm'])->name('show-login-form');
-    Route::post('login', [LoginController::class, 'login'])->name('login');
+    Route::get('login', [BlogcrudLoginController::class, 'showLoginForm'])->name('show-login-form');
+    Route::post('login', [BlogcrudLoginController::class, 'login'])->name('login');
 
     Route::get('register', [BlogcrudRegisterController::class, 'showRegistrationForm'])->name('show-register-form');
     Route::post('register', [BlogcrudRegisterController::class, 'register'])->name('register');
@@ -19,7 +18,7 @@ Route::group([
 Route::group([
     'middleware' => 'auth'
 ], function () {
-    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('logout', [BlogcrudLoginController::class, 'logout'])->name('logout');
 });
     
 
