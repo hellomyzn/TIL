@@ -8,7 +8,7 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 Route::group([
     'middleware' => 'guest'
 ], function () {
-    Route::get('login', [SimablogLoginController::class, 'showLoginFrom'])->name('showLoginForm');
+    Route::get('login', [SimablogLoginController::class, 'showLoginForm'])->name('showLoginForm');
     Route::post('login', [SimablogLoginController::class, 'login'])->name('login');
 
     Route::get('register', [SimablogRegisterController::class, 'showRegisterForm'])->name('showRegisterForm');
@@ -18,5 +18,5 @@ Route::group([
 Route::group([
     'middleware' => 'auth'
 ], function () {
-    Route::get('logout', [SimablogLoginController::class, 'logout'])->name('logout')
+    Route::get('logout', [SimablogLoginController::class, 'logout'])->name('logout');
 });

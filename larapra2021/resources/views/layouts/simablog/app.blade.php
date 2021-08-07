@@ -10,6 +10,7 @@
     <title>App掲示板 - @yield('title')</title>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/simablog/app.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
@@ -19,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/simablog/app.css') }}" rel="stylesheet">
 </head>
 
@@ -46,11 +48,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('simablog.auth.login') }}">{{ __('ログイン') }}</a>
+                                <a class="nav-link" href="{{ route('simablog.showLoginForm') }}">{{ __('ログイン') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('simablog.auth.register') }}">{{ __('新規登録') }}</a>
+                                    <a class="nav-link" href="{{ route('simablog.showRegisterForm') }}">{{ __('新規登録') }}</a>
                                 </li>
                             @endif
                         @else
@@ -63,13 +65,13 @@
                                     <a class="dropdown-item" href="{{ route('simablog.post.index') }}">
                                         {{ __('Home') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('simablog.auth.logout') }}"
+                                    <a class="dropdown-item" href="{{ route('simablog.logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('simablog.auth.logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('simablog.logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                                 </div>

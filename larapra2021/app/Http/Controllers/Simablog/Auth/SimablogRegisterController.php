@@ -36,43 +36,37 @@ class SimablogRegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+
+    public function __construct(
+        UserRepository $userRepository
+    ) {
         $this->middleware('guest');
+        $this->userRepository = $userRepository;
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\SimablogUser
-     */
-    protected function create(array $data)
-    {
-        return SimablogUser::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
 
     public function registerShow()
     {
         return view('simablog.auth.register');
+    }
+
+
+    public function showRegistrationForm()
+    {
+        return view('blogcrud.auth.register');
+    }
+
+    public function register () {
+        // validation
+        $attributes = request()->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:laracasts_users,email',
+            'password' => 'required|min:7|max:255',
+        ]);
+        
+        $user = $this->userRepository->create($attributes, User::USER_ROLE_BLOGCRUD);
+
+        auth()->login($user);
+        return redirect()->route('blogcrud.post.index')->with('success', 'Your account has been created.');
     }
 }

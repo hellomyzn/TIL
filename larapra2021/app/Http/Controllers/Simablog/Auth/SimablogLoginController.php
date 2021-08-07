@@ -37,4 +37,9 @@ class SimablogLoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm()
+    {
+        return view('simablog.auth.login');
+    }
 }
