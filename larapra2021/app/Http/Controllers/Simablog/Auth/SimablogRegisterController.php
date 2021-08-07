@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Simablog\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\simablog\SimablogUser;
+use App\Models\User;
+use App\Repositories\Auth\UserRepository;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -64,7 +66,7 @@ class SimablogRegisterController extends Controller
             'password' => 'required|min:7|max:255',
         ]);
         
-        $user = $this->userRepository->create($attributes, User::USER_ROLE_BLOGCRUD);
+        $user = $this->userRepository->create($attributes, User::USER_ROLE_SIMABLOG);
 
         auth()->login($user);
         return redirect()->route('blogcrud.post.index')->with('success', 'Your account has been created.');

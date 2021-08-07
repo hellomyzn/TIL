@@ -40,8 +40,11 @@ class UserRepository extends BaseRepository
                 'password' => Hash::make($data['password']) ?? '',
             ];
 
-            // create user data by role
             if ($userRole == User::USER_ROLE_BLOGCRUD) {
+                $user = $this->blogcrudUserService->createBlogcrudAccount($requestData);
+            }
+
+            if ($userRole == User::USER_ROLE_SIMABLOG) {
                 $user = $this->blogcrudUserService->createBlogcrudAccount($requestData);
             }
 

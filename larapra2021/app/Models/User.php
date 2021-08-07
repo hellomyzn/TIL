@@ -63,7 +63,7 @@ class User extends Authenticatable
 
     const USER_ROLE_ADMIN = 'administrator';
     const USER_ROLE_BLOGCRUD = 'blogcrud';
-    const USER_ROLE_STUDENT = 'student';
+    const USER_ROLE_SIMABLOG = 'simablog';
 
     public function blogcrud_users() 
     {
