@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Repositories\BaseRepository;
 use App\Services\Blogcrud\BlogcrudUserService;
 use App\Services\Simablog\SimablogUserService;
+use App\Services\Laracasts\LaracastsUserService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -21,17 +22,25 @@ class UserRepository extends BaseRepository
      * @var
      */
     protected $simablogUserService;
+
+    /**
+     * @var
+     */
+    protected $laracastsUserService;
+
     /**
      * UserRepository constructor.
      */
     public function __construct(
         User $model, 
         BlogcrudUserService $blogcrudUserService,
-        SimablogUserService $simablogUserService
+        SimablogUserService $simablogUserService,
+        LaracastsUserService $laracastsUserService
     ) {
         $this->model = $model;
         $this->blogcrudUserService = $blogcrudUserService;
         $this->simablogUserService = $simablogUserService;
+        $this->laracastsUserService = $laracastsUserService;
     }
 
     /**
@@ -53,6 +62,10 @@ class UserRepository extends BaseRepository
                 $user = $this->blogcrudUserService->createBlogcrudAccount($requestData);
             }else if ($userRole == User::USER_ROLE_SIMABLOG) {
                 $user = $this->simablogUserService->createSimablogAccount($requestData);
+            }else if ($userRole == User::USER_ROLE_LARACASTS) {
+                $requestData['username'] = $data['username'];
+
+                $user = $this->laracastsUserService->createSimablogAccount($requestData);
             }
 
             // Return the user object

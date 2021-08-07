@@ -3,11 +3,30 @@
 namespace App\Http\Controllers\Laracasts;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\laracasts\LaracastsUser;
+use App\Repositories\Auth\UserRepository;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 
 class LaracastsRegisterController extends Controller
 {
+    use RegistersUsers;
+
+    /**
+     * @var UserRepository
+     */
+    protected $userRepository;
+
+    /**
+     * StudentRegisterController constructor.
+     */
+    public function __construct(
+        UserRepository $userRepository
+    ) {
+        $this->userRepository = $userRepository;
+    }
+
     public function create()
     {
         return view('laracasts.register.create');
@@ -19,13 +38,14 @@ class LaracastsRegisterController extends Controller
         $attributes = request()->validate([
             'name' => 'required|max:255',
             'username' => 'required|min:3|max:255|unique:laracasts_users,username',
-            'email' => 'required|email|max:255|unique:laracasts_users,email',
+            'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:7|max:255',
         ]);
 
+        
         // create user
-        $user = LaracastsUser::create($attributes);
-        logger("Success to register User id: {{ $user->id }} User name: {{ $user->name }} ");
+        $user = $this->userRepository->create($attributes, User::USER_ROLE_LARACASTS);
+        logger("Success to register User id: {{ $user->id }} User name: {{ $user->laracasts_user->name }} ");
 
         // Login
         auth()->login($user);
