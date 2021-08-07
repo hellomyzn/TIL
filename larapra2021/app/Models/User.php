@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\laracasts\LaracastsUser;
 use App\Models\blogcrud\BlogcrudUser;
 use App\Models\simablog\SimablogUser;
 
@@ -62,8 +63,14 @@ class User extends Authenticatable
     ];
 
     const USER_ROLE_ADMIN = 'administrator';
+    const USER_ROLE_LARACASTS = 'laracasts';
     const USER_ROLE_BLOGCRUD = 'blogcrud';
     const USER_ROLE_SIMABLOG = 'simablog';
+
+    public function laracasts_user() 
+    {
+        return $this->hasOne(LaracastsUser::class);
+    }
 
     public function blogcrud_user() 
     {

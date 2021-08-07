@@ -31,10 +31,8 @@ class DatabaseSeeder extends Seeder
 
         LaracastsUser::factory(10)->create();
         LaracastsUser::factory(1)->create([
-            'name' => 'hoge',
-            'username' => 'hoge',
-            'email' => "hoge@hoge.com",
-            'password' => 'password',
+            'name' => 'laracasts',
+            'username' => 'laracasts',
         ]);
         LaracastsCategory::factory(5)->create();
         LaracastsPost::factory(30)->create();
@@ -43,13 +41,13 @@ class DatabaseSeeder extends Seeder
 
         SimablogUser::factory(10)->create();
         SimablogUser::factory(1)->create([
-            'name' => 'hoge',
+            'name' => 'simablog',
         ]);
         SimablogPost::factory(30)->create();
 
         BlogcrudUser::factory(10)->create();
         BlogcrudUser::factory(1)->create([
-            'name' => 'hoge',
+            'name' => 'blogcrud',
         ]);
         BlogcrudPost::factory(30)->create();
 

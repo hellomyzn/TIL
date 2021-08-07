@@ -2,6 +2,7 @@
 
 namespace App\Models\laracasts;
 
+use App\Models\User;
 use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsComment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -25,7 +26,11 @@ class LaracastsUser extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'username',
+        'user_id',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -61,6 +66,11 @@ class LaracastsUser extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
         
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function laracasts_posts(){
