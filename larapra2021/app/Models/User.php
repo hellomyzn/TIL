@@ -67,6 +67,7 @@ class User extends Authenticatable
     const USER_ROLE_LARACASTS = 'laracasts';
     const USER_ROLE_BLOGCRUD = 'blogcrud';
     const USER_ROLE_SIMABLOG = 'simablog';
+    const USER_ROLE_SIMPLENOTE = 'simplenote';
 
     public function laracasts_user() 
     {

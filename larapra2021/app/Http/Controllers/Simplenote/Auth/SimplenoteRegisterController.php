@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Blogcrud\Auth;
+namespace App\Http\Controllers\Simplenote\Auth;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
@@ -9,8 +9,7 @@ use App\Repositories\Auth\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-
-class BlogcrudRegisterController extends Controller
+class SimplenoteRegisterController extends Controller
 {
     use RegistersUsers;
 
@@ -31,20 +30,19 @@ class BlogcrudRegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('blogcrud.auth.register');
+        return view('simplenote.auth.register');
     }
 
     public function register () {
         // validation
         $attributes = request()->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:laracasts_users,email',
+            'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:7|max:255',
         ]);
-        
-        $user = $this->userRepository->create($attributes, User::USER_ROLE_BLOGCRUD);
+        $user = $this->userRepository->create($attributes, User::USER_ROLE_SIMPLENOTE);
 
         auth()->login($user);
-        return redirect()->route('blogcrud.post.index')->with('success', 'Your account has been created.');
+        return redirect()->route('simplenote.hoge')->with('success', 'Your account has been created.');
     }
 }

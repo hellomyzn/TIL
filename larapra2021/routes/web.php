@@ -41,8 +41,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::group([
         'as'            => 'laracasts.',
         'prefix'        => 'laracasts',
-    ], function (){
-            include_route_files(__DIR__."/laracasts/"); 
+], function (){
+        include_route_files(__DIR__."/laracasts/"); 
     }
 );
 
@@ -63,6 +63,17 @@ Route::group([
         include_route_files(__DIR__."/blogcrud/"); 
     }
 );
+
+
+// for SimpelNote
+Route::group([
+    'as'            => 'simplenote.',
+    'prefix'        => 'simplenote',
+], function (){
+        include_route_files(__DIR__."/simplenote/"); 
+    }
+);
+
 
 Route::get('error_test', function(){
     Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");

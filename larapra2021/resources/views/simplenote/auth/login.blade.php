@@ -1,14 +1,14 @@
-@extends('layouts.simablog.app')
+@extends('layouts.simplenote.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Blogcrud's {{ __('Login') }}</div>
+                <div class="card-header">Simplenote's {{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('simablog.login') }}">
+                    <form method="POST" action="{{ route('simplenote.login') }}">
                         @csrf
 
                         <div class="form-group row">
