@@ -48,11 +48,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('simablog.showLoginForm') }}">{{ __('ログイン') }}</a>
+                                <a class="nav-link" href="{{ route('simablog.show-login-form') }}">{{ __('ログイン') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('simablog.showRegisterForm') }}">{{ __('新規登録') }}</a>
+                                    <a class="nav-link" href="{{ route('simablog.show-register-form') }}">{{ __('新規登録') }}</a>
                                 </li>
                             @endif
                         @else

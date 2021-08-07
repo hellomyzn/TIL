@@ -42,9 +42,7 @@ class UserRepository extends BaseRepository
 
             if ($userRole == User::USER_ROLE_BLOGCRUD) {
                 $user = $this->blogcrudUserService->createBlogcrudAccount($requestData);
-            }
-
-            if ($userRole == User::USER_ROLE_SIMABLOG) {
+            }else if ($userRole == User::USER_ROLE_SIMABLOG) {
                 $user = $this->blogcrudUserService->createBlogcrudAccount($requestData);
             }
 

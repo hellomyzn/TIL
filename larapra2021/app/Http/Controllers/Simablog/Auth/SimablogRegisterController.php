@@ -46,16 +46,9 @@ class SimablogRegisterController extends Controller
         $this->userRepository = $userRepository;
     }
 
-
-    public function registerShow()
-    {
-        return view('simablog.auth.register');
-    }
-
-
     public function showRegistrationForm()
     {
-        return view('blogcrud.auth.register');
+        return view('simablog.auth.register');
     }
 
     public function register () {

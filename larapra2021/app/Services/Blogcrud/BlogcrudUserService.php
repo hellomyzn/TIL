@@ -19,7 +19,7 @@ class BlogcrudUserService
         /**
      * @var BlogcrudUser
      */
-    protected $blogcrud;
+    protected $blogcrudUser;
 
     /**
      * StudentService constructor.
@@ -28,10 +28,10 @@ class BlogcrudUserService
      * @param User                 $user           user model
      */
     public function __construct(
-        BlogcrudUser $blogcrud,
+        BlogcrudUser $blogcrudUser,
         User $user
     ) {
-        $this->blogcrud = $blogcrud;
+        $this->blogcrudUser = $blogcrudUser;
         $this->user = $user;
     }
 
@@ -53,7 +53,7 @@ class BlogcrudUserService
                 
 
                 // create on student table
-                $blogcrudUser = $this->blogcrud->create($requestData);
+                $blogcrudUser = $this->blogcrudUser->create($requestData);
 
                 return $userInstance;
             });

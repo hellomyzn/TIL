@@ -19,7 +19,7 @@ class SimablogUserService
         /**
      * @var BlogcrudUser
      */
-    protected $simablog;
+    protected $simablogUser;
 
     /**
      * StudentService constructor.
