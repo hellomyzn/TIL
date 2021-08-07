@@ -11,6 +11,8 @@ use App\Models\simablog\SimablogUser;
 use App\Models\simablog\SimablogPost;
 use App\Models\blogcrud\BlogcrudPost;
 use App\Models\blogcrud\BlogcrudUser;
+use App\Models\simplenote\SimplenoteUser;
+use App\Models\simplenote\SimplenoteMemo;
 use Illuminate\Database\Seeder;
 use Database\Seeders\laracasts\LaracastsPostsSeeder;
 use Database\Seeders\laracasts\LaracastsCategoriesSeeder;
@@ -50,6 +52,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'blogcrud',
         ]);
         BlogcrudPost::factory(30)->create();
+
+        SimplenoteUser::factory(10)->create();
+        SimplenoteUser::factory(1)->create([
+            'name' => 'simplenote',
+        ]);
+        SimplenoteMemo::factory(10)->create();
 
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\laracasts\LaracastsUser;
 use App\Models\blogcrud\BlogcrudUser;
 use App\Models\simablog\SimablogUser;
+use App\Models\simplenote\SimplenoteUser;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -80,5 +81,10 @@ class User extends Authenticatable
     public function simablog_user() 
     {
         return $this->hasOne(SimablogUser::class);
+    }
+
+    public function simplenote_user() 
+    {
+        return $this->hasOne(SimplenoteUser::class);
     }
 }
