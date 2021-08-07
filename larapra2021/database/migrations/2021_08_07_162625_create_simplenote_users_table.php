@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSimpleNoteUsersTable extends Migration
+class CreateSimplenoteUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSimpleNoteUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('simple_note_users', function (Blueprint $table) {
+        Schema::create('simplenote_users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
@@ -28,6 +28,6 @@ class CreateSimpleNoteUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('simple_note_users');
+        Schema::dropIfExists('simplenote_users');
     }
 }

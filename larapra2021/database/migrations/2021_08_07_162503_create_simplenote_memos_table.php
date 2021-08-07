@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSimpleNoteMemosTable extends Migration
+class CreateSimplenoteMemosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSimpleNoteMemosTable extends Migration
      */
     public function up()
     {
-        Schema::create('simple_note_memos', function (Blueprint $table) {
+        Schema::create('simplenote_memos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->longText('content');
-            $table->unsignedBigInteger('simple_note_user_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('simplenote_user_id')->constrained()->cascadeOnDelete();
             $table->integer('status')->default('1');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateSimpleNoteMemosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('simple_note_memos');
+        Schema::dropIfExists('simplenote_memos');
     }
 }

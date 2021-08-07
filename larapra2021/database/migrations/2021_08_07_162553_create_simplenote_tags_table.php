@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSimpleNoteTagsTable extends Migration
+class CreateSimplenoteTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateSimpleNoteTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('simple_note_tags', function (Blueprint $table) {
+        Schema::create('simplenote_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 100);
-            $table->unsignedBigInteger('simple_note_user_id')->constrained()->cascadeOnDelete();
+            $table->unsignedBigInteger('simplenote_user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateSimpleNoteTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('simple_note_tags');
+        Schema::dropIfExists('simplenote_tags');
     }
 }
