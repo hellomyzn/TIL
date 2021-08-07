@@ -22,7 +22,7 @@
 
             <div class="mt-8 md:mt-0 flex items-center">
                 @auth
-                    <a class="text-xs font-bold uppercase">Wellcome, {{ auth()->user()->name}}</a>
+                    <a class="text-xs font-bold uppercase">Wellcome, {{ auth()->user()->laracasts_user->name}}</a>
 
                     <form action="/laracasts/logout" method="POST" class="text-xs font-semibold text-blue-500 ml-6">
                         @csrf

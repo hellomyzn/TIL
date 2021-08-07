@@ -2,12 +2,14 @@
 
 namespace Tests\Feature\Laracasts\Post;
 
+use App\Models\User;
 use App\Models\laracasts\LaracastsUser;
 use App\Models\laracasts\LaracastsPost;
 use App\Models\laracasts\LaracastsCategory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 
@@ -23,24 +25,26 @@ class LaracastsPostTest extends TestCase
      * @return void
      */
      
-     
+    
     public function home_post_route_exist()
     {
         // Create User
-        $user = LaracastsUser::factory(1)->create([
+        $user = User::factory(1)->create([
             'id' => 1,
             'email' => 'hoge@hoge.com',
-            'password' => 'password',
+            'password' => Hash::make('password'),
         ]);
 
         // Login
-        $this->post(route('laracasts.auth.login.create'),[
+        $this->post(route('laracasts.auth.login.store'),[
             'email' => 'hoge@hoge.com',
             'password' => 'password',
         ]);
 
         // Access Home page
-        $this->get(route('laracasts.post.home'))->assertStatus(200);
+        $this->get(route('laracasts.post.show'))->assertStatus(200);
+        // $this->view('laracasts.posts.show', ['post' => $post])->assertStatus(200);
+        // $this->get('laracasts/posts')->assertStatus(200);
     }
 
 

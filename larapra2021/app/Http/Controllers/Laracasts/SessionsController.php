@@ -33,10 +33,10 @@ class SessionsController extends Controller
         // based on the provided credentials
         session()->regenerate();
 
-        $user = auth()->user();
+        $user = auth()->user()->laracasts_user;
         logger("Success to login User id: {{ $user->id }} User name: {{ $user->name }} ");
-
-        return redirect('/laracasts/posts')->with('success', 'Welcome Back');
+        
+        return redirect()->route('laracasts.post.home')->with('success', 'Welcome Back');
 
 
     }
