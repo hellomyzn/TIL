@@ -18,5 +18,5 @@ Route::group([
 Route::group([
     'middleware' => 'auth'
 ], function () {
-    Route::get('logout', [SimablogLoginController::class, 'logout'])->name('logout');
+    Route::post('logout', [SimablogLoginController::class, 'logout'])->name('logout');
 });

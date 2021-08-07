@@ -18,7 +18,7 @@ Route::group([
 Route::group([
     'middleware' => 'auth'
 ], function () {
-    Route::get('logout', [BlogcrudLoginController::class, 'logout'])->name('logout');
+    Route::post('logout', [BlogcrudLoginController::class, 'logout'])->name('logout');
 });
     
 
