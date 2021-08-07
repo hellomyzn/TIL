@@ -62,6 +62,6 @@ class SimablogRegisterController extends Controller
         $user = $this->userRepository->create($attributes, User::USER_ROLE_SIMABLOG);
 
         auth()->login($user);
-        return redirect()->route('blogcrud.post.index')->with('success', 'Your account has been created.');
+        return redirect()->route('simablog.post.index')->with('success', 'Your account has been created.');
     }
 }

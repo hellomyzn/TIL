@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Blogcrud;
+namespace App\Services\Simablog;
 
 use App\Models\User;
 use App\Models\simablog\SimablogUser;
