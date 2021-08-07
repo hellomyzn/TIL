@@ -68,13 +68,3 @@ Route::get('error_test', function(){
     Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");
     return "Success to push Test Error Log";
 });
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
