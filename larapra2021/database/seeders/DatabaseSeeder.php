@@ -13,6 +13,7 @@ use App\Models\blogcrud\BlogcrudPost;
 use App\Models\blogcrud\BlogcrudUser;
 use App\Models\simplenote\SimplenoteUser;
 use App\Models\simplenote\SimplenoteMemo;
+use App\Models\simplenote\SimplenoteTag;
 use Illuminate\Database\Seeder;
 use Database\Seeders\laracasts\LaracastsPostsSeeder;
 use Database\Seeders\laracasts\LaracastsCategoriesSeeder;
@@ -58,6 +59,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'simplenote',
         ]);
         SimplenoteMemo::factory(10)->create();
+        SimplenoteTag::factory(5)->create();
 
     }
 }

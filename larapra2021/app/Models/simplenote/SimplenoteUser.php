@@ -4,6 +4,7 @@ namespace App\Models\simplenote;
 
 use App\Models\User;
 use App\Models\simplenote\SimplenoteMemo;
+use App\Models\simplenote\SimplenoteTag;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,6 +24,10 @@ class SimplenoteUser extends Model
 
     public function simplenote_memos(){
         return $this->hasMany(SimplenoteMemo::class);
+    }
+
+    public function simplenote_tags(){
+        return $this->hasMany(SimplenoteTag::class);
     }
 
     public function user()
