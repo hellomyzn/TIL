@@ -1,4 +1,4 @@
-@extends('layouts.simplenote.app')
+@extends('layouts.simplenote.auth')
 
 @section('content')
 <div class="container">
