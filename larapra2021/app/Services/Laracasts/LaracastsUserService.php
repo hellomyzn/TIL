@@ -43,7 +43,7 @@ class LaracastsUserService
      * @return array
      * @return array on error
      */
-    public function createSimablogAccount($requestData)
+    public function createLaracastsAccount($requestData)
     {
         try {
             return DB::transaction(function () use ($requestData) {                

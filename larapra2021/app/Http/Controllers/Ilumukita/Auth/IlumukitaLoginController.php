@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Ilumukita;
+namespace App\Http\Controllers\Ilumukita\Auth;
 
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class IlumukitaLoginController extends Controller
 {
@@ -38,6 +41,6 @@ class IlumukitaLoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('simplenote.auth.login');
+        return view('ilumukita.auth.login');
     }
 }

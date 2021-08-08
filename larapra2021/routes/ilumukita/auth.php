@@ -12,8 +12,8 @@ Route::group([
     Route::get('login', [IlumukitaLoginController::class, 'showLoginForm'])->name('show-login-form');
     Route::post('login', [IlumukitaLoginController::class, 'login'])->name('login');
 
-    Route::get('register', [IlumukitaLoginController::class, 'showRegistrationForm'])->name('show-register-form');
-    Route::post('register', [IlumukitaLoginController::class, 'register'])->name('register');
+    Route::get('register', [IlumukitaRegisterController::class, 'showRegistrationForm'])->name('show-register-form');
+    Route::post('register', [IlumukitaRegisterController::class, 'register'])->name('register');
 });
 
 Route::group([

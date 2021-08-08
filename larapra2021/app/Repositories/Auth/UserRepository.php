@@ -37,6 +37,11 @@ class UserRepository extends BaseRepository
      */
     protected $simplenoteUserService;
 
+        /**
+     * @var
+     */
+    protected $ilumukitaUserService;
+
     /**
      * UserRepository constructor.
      */
@@ -77,11 +82,11 @@ class UserRepository extends BaseRepository
             }else if ($userRole == User::USER_ROLE_LARACASTS) {
                 $requestData['username'] = $data['username'];
 
-                $user = $this->laracastsUserService->createSimablogAccount($requestData);
+                $user = $this->laracastsUserService->createLaracastsAccount($requestData);
             }else if ($userRole == User::USER_ROLE_SIMPLENOTE){
-                $user = $this->simplenoteUserService->createSimablogAccount($requestData);
+                $user = $this->simplenoteUserService->createSimplenoteAccount($requestData);
             }else if ($userRole == User::USER_ROLE_ILUMUKITA){
-                $user = $this->ilumukitaUserService->createSimablogAccount($requestData);
+                $user = $this->ilumukitaUserService->createIlumukitaAccount($requestData);
             }
 
             // Return the user object

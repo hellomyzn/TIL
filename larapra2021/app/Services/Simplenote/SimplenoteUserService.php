@@ -43,7 +43,7 @@ class SimplenoteUserService
      * @return array
      * @return array on error
      */
-    public function createSimablogAccount($requestData)
+    public function createSimplenoteAccount($requestData)
     {
         try {
             return DB::transaction(function () use ($requestData) {                

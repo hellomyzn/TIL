@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth\Ilumukita;
+namespace App\Http\Controllers\Ilumukita\Auth;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
@@ -42,6 +42,6 @@ class IlumukitaRegisterController extends Controller
         $user = $this->userRepository->create($attributes, User::USER_ROLE_ILUMUKITA);
 
         auth()->login($user);
-        return redirect()->route('simplenote.memos.home')->with('success', 'Your account has been created.');
+        return redirect()->route('ilumukita/')->with('success', 'Your account has been created.');
     }
 }

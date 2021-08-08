@@ -43,7 +43,7 @@ class IlumukitaUserService
      * @return array
      * @return array on error
      */
-    public function createSimablogAccount($requestData)
+    public function createIlumukitaAccount($requestData)
     {
         try {
             return DB::transaction(function () use ($requestData) {                
@@ -53,7 +53,7 @@ class IlumukitaUserService
                 
 
                 // create on student table
-                $simplenoteUser = $this->IlumukitaUser->create($requestData);
+                $ilumukitaUser = $this->ilumukitaUser->create($requestData);
 
                 return $userInstance;
             });
