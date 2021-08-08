@@ -14,6 +14,8 @@ use App\Models\blogcrud\BlogcrudUser;
 use App\Models\simplenote\SimplenoteUser;
 use App\Models\simplenote\SimplenoteMemo;
 use App\Models\simplenote\SimplenoteTag;
+use App\Models\ilumukita\IlumukitaUser;
+
 use Illuminate\Database\Seeder;
 use Database\Seeders\laracasts\LaracastsPostsSeeder;
 use Database\Seeders\laracasts\LaracastsCategoriesSeeder;
@@ -61,5 +63,6 @@ class DatabaseSeeder extends Seeder
         SimplenoteMemo::factory(10)->create();
         SimplenoteTag::factory(5)->create();
 
+        IlumukitaUser::factory(10)->create();
     }
 }
