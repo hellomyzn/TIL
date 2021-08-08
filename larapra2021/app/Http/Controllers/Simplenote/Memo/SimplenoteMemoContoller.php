@@ -41,13 +41,24 @@ class SimplenoteMemoContoller extends Controller
         $data = $request->all();
 
         request()->validate([
-            'content'                 => 'required|max:255',
+            'content' => 'required|max:255',
         ]);
 
-        $tag_id = SimplenoteTag::insertGetId([
-            'name' => $data['tag'],
-            'simplenote_user_id' => $simplenote_user->id,
-        ]);
+        $exist_tag = SimplenoteTag::where('name', $data['tag'])
+            ->where('simplenote_user_id', $simplenote_user->id)
+            ->first();
+        
+
+        if (empty($exist_tag))
+        {
+            $tag_id = SimplenoteTag::insertGetId([
+                'name' => $data['tag'],
+                'simplenote_user_id' => $simplenote_user->id,
+            ]);
+        } else{
+            $tag_id = $exist_tag->id;
+        }
+
 
         $memo_id = SimplenoteMemo::insertGetId([
             'content' => $data['content'],
@@ -95,6 +106,6 @@ class SimplenoteMemoContoller extends Controller
         $memo_id = $memo->delete();
 
         logger("Success to delete memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo_id }}");
-        return redirect()->route('simplenote.memos.home');
+        return redirect()->route('simplenote.memos.home')->with('success', 'success to delte memo');
     }
 }
