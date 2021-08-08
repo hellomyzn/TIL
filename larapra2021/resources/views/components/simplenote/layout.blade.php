@@ -87,9 +87,9 @@
               <div class="card h-100">
               <div class="card-header">タグ一覧</div>
               <div class="card-body py-2 px-4">
-                <a class='d-block' href='/'>全て表示</a>
+                <a class='d-block' href={{ route('simplenote.memos.home') }}>全て表示</a>
         @foreach($tags as $tag)
-                  <a href="/?tag={{ $tag['name'] }}" class='d-block'>{{ $tag['name'] }}</a>
+                  <a href="/simplenote/memo?tag={{ $tag['name'] }}" class='d-block'>{{ $tag['name'] }}</a>
         @endforeach
             　　</div>
               </div>
