@@ -4,10 +4,13 @@ namespace App\Repositories\Auth;
 
 use App\Models\User;
 use App\Repositories\BaseRepository;
+
 use App\Services\Blogcrud\BlogcrudUserService;
 use App\Services\Simablog\SimablogUserService;
 use App\Services\Laracasts\LaracastsUserService;
 use App\Services\Simplenote\SimplenoteUserService;
+use App\Services\Ilumukita\IlumukitaUserService;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -42,13 +45,14 @@ class UserRepository extends BaseRepository
         BlogcrudUserService $blogcrudUserService,
         SimablogUserService $simablogUserService,
         LaracastsUserService $laracastsUserService,
-        SimplenoteUserService $simplenoteUserService
+        SimplenoteUserService $simplenoteUserService,
+        IlumukitaUserService $ilumukitaUserService
     ) {
         $this->model = $model;
         $this->blogcrudUserService = $blogcrudUserService;
         $this->simablogUserService = $simablogUserService;
         $this->laracastsUserService = $laracastsUserService;
-        $this->simplenoteUserService = $simplenoteUserService;
+        $this->ilumukitaUserService = $ilumukitaUserService;
     }
 
     /**
@@ -76,6 +80,8 @@ class UserRepository extends BaseRepository
                 $user = $this->laracastsUserService->createSimablogAccount($requestData);
             }else if ($userRole == User::USER_ROLE_SIMPLENOTE){
                 $user = $this->simplenoteUserService->createSimablogAccount($requestData);
+            }else if ($userRole == User::USER_ROLE_ILUMUKITA){
+                $user = $this->ilumukitaUserService->createSimablogAccount($requestData);
             }
 
             // Return the user object

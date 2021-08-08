@@ -6,6 +6,7 @@ use App\Models\laracasts\LaracastsUser;
 use App\Models\blogcrud\BlogcrudUser;
 use App\Models\simablog\SimablogUser;
 use App\Models\simplenote\SimplenoteUser;
+use App\Models\ilumukita\IlumukitaUser;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -68,6 +69,7 @@ class User extends Authenticatable
     const USER_ROLE_BLOGCRUD = 'blogcrud';
     const USER_ROLE_SIMABLOG = 'simablog';
     const USER_ROLE_SIMPLENOTE = 'simplenote';
+    const USER_ROLE_ILUMUKITA = 'ilumukita';
 
     public function laracasts_user() 
     {
@@ -87,5 +89,10 @@ class User extends Authenticatable
     public function simplenote_user() 
     {
         return $this->hasOne(SimplenoteUser::class);
+    }
+
+    public function ilumukita_user() 
+    {
+        return $this->hasOne(IlumukitaUser::class);
     }
 }
