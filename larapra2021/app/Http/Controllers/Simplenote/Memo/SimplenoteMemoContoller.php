@@ -79,9 +79,10 @@ class SimplenoteMemoContoller extends Controller
         request()->validate([
             'content'                 => 'required|max:255',
         ]);
-
+        
         $memo_id = $memo->update([
             'content' => $data['content'],
+            'simplenote_tag_id' => $data['tag_id'],
         ]);
 
         logger("Success to edit memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo_id }}");
