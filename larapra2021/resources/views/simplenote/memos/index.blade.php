@@ -1,6 +1,4 @@
-@extends('layouts.simplenote.app')
-
-@section('content')
+<x-simplenote.layout>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -20,4 +18,4 @@
         </div>
     </div>
 </div>
-@endsection
+</x-simplenote.layout>

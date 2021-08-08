@@ -1,6 +1,4 @@
-@extends('layouts.simplenote.app')
-
-@section('content')
+<x-simplenote.layout>
 <div class="row justify-content-center ml-0 mr-0 h-100">
     <div class="card w-100">
         <div class="card-header">新規メモ作成</div>
@@ -19,4 +17,4 @@
         </div>
     </div>
 </div>
-@endsection
+</x-simplenote.layout>

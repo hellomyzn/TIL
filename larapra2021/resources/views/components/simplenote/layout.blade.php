@@ -105,7 +105,7 @@
               </div>    
             </div> <!-- col-md-3 -->
             <div class="col-md-6 p-0">
-              @yield('content')
+              {{ $slot }}
             </div>
           </div> <!-- row justify-content-center -->
         </main>

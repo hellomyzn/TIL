@@ -19,22 +19,19 @@ class SimplenoteMemoContoller extends Controller
     public function index ()
     {
         $simplenote_user = auth()->user()->simplenote_user;        
-        $tags = $simplenote_user->simplenote_tags;
-        $memos = $simplenote_user->simplenote_memos;
 
         logger("Success to access memo index: User name: {{ $simplenote_user->name }} ");
-        return view('simplenote.memos.index', compact(['tags', 'memos']));
+        return view('simplenote.memos.create', compact(['tags', 'memos']));
     }
 
     public function create ()
     {
-        $simplenote_user = auth()->user()->simplenote_user;        
-        $tags = $simplenote_user->simplenote_tags;
-        $memos = $simplenote_user->simplenote_memos;
+        $simplenote_user = auth()->user()->simplenote_user;
 
         logger("Success to access memo create: User name: {{ $simplenote_user->name }} ");
-        return view('simplenote.memos.create', compact(['tags', 'memos']));
+        return view('simplenote.memos.create');
     }
+
     public function store (Request $request)
     {
         $simplenote_user = auth()->user()->simplenote_user;
@@ -77,10 +74,9 @@ class SimplenoteMemoContoller extends Controller
     {
         $simplenote_user = auth()->user()->simplenote_user;        
         $tags = $simplenote_user->simplenote_tags;
-        $memos = $simplenote_user->simplenote_memos;
 
         logger("Success to access memo edit: User name: {{ $simplenote_user->name }} ");
-        return view('simplenote.memos.edit', compact(['tags', 'memos', 'memo']));
+        return view('simplenote.memos.edit', compact(['memo', 'tags']));
     }
 
     public function update(Request $request, SimplenoteMemo $memo)
@@ -103,9 +99,9 @@ class SimplenoteMemoContoller extends Controller
     public function destroy(SimplenoteMemo $memo)
     {
         $simplenote_user = auth()->user()->simplenote_user;
-        $memo_id = $memo->delete();
+        $memo = $memo->delete();
 
-        logger("Success to delete memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo_id }}");
+        logger("Success to delete memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo }}");
         return redirect()->route('simplenote.memos.home')->with('success', 'success to delte memo');
     }
 }
