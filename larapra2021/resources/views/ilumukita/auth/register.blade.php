@@ -1,4 +1,4 @@
-@extends('layouts.ilumukita.app')
+@extends('layouts.ilumukita.auth')
 
 @section('content')
 <div class="container">
