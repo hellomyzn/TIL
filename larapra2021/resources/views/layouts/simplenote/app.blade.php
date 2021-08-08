@@ -99,7 +99,7 @@
                 <div class="card-header d-flex">メモ一覧 <a class='ml-auto' href={{ route('simplenote.memos.create') }}><i class="fas fa-plus-circle"></i></a></div>
                 <div class="card-body p-2">
         @foreach($memos as $memo)
-                  <a href={{ route('simplenote.memos.edit', ['id' => $post->id]) }} class='d-block'>{!! $memo['content'] !!}</a>
+                  <a href={{ route('simplenote.memos.edit', ['memo' => $memo]) }} class='d-block'>{!! $memo['content'] !!}</a>
         @endforeach
                 </div>
               </div>    

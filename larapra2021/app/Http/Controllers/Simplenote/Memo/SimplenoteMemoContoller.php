@@ -51,4 +51,39 @@ class SimplenoteMemoContoller extends Controller
         logger("Success to create a new memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo_id }}");
         return redirect()->route('simplenote.memos.home');
     }
+
+    public function edit(SimplenoteMemo $memo)
+    {
+        $simplenote_user = auth()->user()->simplenote_user;        
+        $tags = $simplenote_user->simplenote_tags;
+        $memos = $simplenote_user->simplenote_memos;
+
+        logger("Success to access memo edit: User name: {{ $simplenote_user->name }} ");
+        return view('simplenote.memos.edit', compact(['tags', 'memos', 'memo']));
+    }
+
+    public function update(Request $request, SimplenoteMemo $memo)
+    {
+        $simplenote_user = auth()->user()->simplenote_user;
+        $data = $request->all();
+        request()->validate([
+            'content'                 => 'required|max:255',
+        ]);
+
+        $memo_id = $memo->update([
+            'content' => $data['content'],
+        ]);
+
+        logger("Success to edit memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo_id }}");
+        return redirect()->route('simplenote.memos.home');
+    }
+
+    public function destroy(SimplenoteMemo $memo)
+    {
+        $simplenote_user = auth()->user()->simplenote_user;
+        $memo_id = $memo->delete();
+
+        logger("Success to delete memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo_id }}");
+        return redirect()->route('simplenote.memos.home');
+    }
 }
