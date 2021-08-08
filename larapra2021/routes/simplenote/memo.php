@@ -9,11 +9,13 @@ Route::group([
 ], function () {
     Route::resource('memo', SimplenoteMemoContoller::class, 
     [
-        'only' => ['index', 'create', 'store'],
+        'only' => ['index', 'create', 'store', 'edit', 'update'],
         'names' => [
             'index' => 'home',
             'create' => 'create',
             'store' => 'store',
+            'edit' => 'edit',
+            'update' => 'update',
         ],
     ]);
 });
