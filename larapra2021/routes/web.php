@@ -75,6 +75,16 @@ Route::group([
 );
 
 
+// for SimpelNote
+Route::group([
+    'as'            => 'ilumukita.',
+    'prefix'        => 'ilumukita',
+], function (){
+        include_route_files(__DIR__."/ilumukita/"); 
+    }
+);
+
+
 Route::get('error_test', function(){
     Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");
     return "Success to push Test Error Log";
