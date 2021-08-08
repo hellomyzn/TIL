@@ -6,6 +6,7 @@ use App\Models\simplenote\SimplenoteTag;
 use App\Models\simplenote\SimplenoteMemo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class SimplenoteMemoContoller extends Controller
 {
@@ -43,10 +44,19 @@ class SimplenoteMemoContoller extends Controller
             'content'                 => 'required|max:255',
         ]);
 
+        $tag_id = SimplenoteTag::insertGetId([
+            'name' => $data['tag'],
+            'simplenote_user_id' => $simplenote_user->id,
+        ]);
+
         $memo_id = SimplenoteMemo::insertGetId([
             'content' => $data['content'],
             'simplenote_user_id' => $simplenote_user->id,
+            'simplenote_tag_id' => $tag_id,
+            'status' => 1,
         ]);
+        
+        
 
         logger("Success to create a new memo : User name: {{ $simplenote_user->name }}, Memo id: {{ $memo_id }}");
         return redirect()->route('simplenote.memos.home');

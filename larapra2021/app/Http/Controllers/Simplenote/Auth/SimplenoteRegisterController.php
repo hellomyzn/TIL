@@ -43,6 +43,6 @@ class SimplenoteRegisterController extends Controller
         $user = $this->userRepository->create($attributes, User::USER_ROLE_SIMPLENOTE);
 
         auth()->login($user);
-        return redirect()->route('simplenote.home')->with('success', 'Your account has been created.');
+        return redirect()->route('simplenote.memos.home')->with('success', 'Your account has been created.');
     }
 }
