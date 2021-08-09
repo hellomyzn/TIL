@@ -10,16 +10,17 @@
        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="language" href="#" role="button" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
-             <i class="fas fa-globe"></i>
-             <!-- lang:id -->
-             <i class="flag-icon flag-icon-id"></i>
-             <!-- lang:en -->
-             <!-- <i class="flag-icon flag-icon-gb"></i> -->
+             
+             {{ app()->getLocale() }}
+             <i class="flag-icon flag-icon-{{ app()->getLocale() }}"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="language">
-             <a class="dropdown-item" href="#">1st language</a>
-             <a class="dropdown-item" href="#">2nd language</a>
-             <a class="dropdown-item" href="#">etc...</a>
+             <a class="dropdown-item" href={{ route('ilumukita.localization.switch', ['language' => 'us']) }}>
+               {{ __("localization.us") }}
+            </a>
+             <a class="dropdown-item" href={{ route('ilumukita.localization.switch', ['language' => 'jp']) }}>
+               {{ __("localization.jp") }}
+            </a>
           </div>
        </li>
        <li class="nav-item dropdown">
