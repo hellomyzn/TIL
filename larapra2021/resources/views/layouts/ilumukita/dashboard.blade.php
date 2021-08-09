@@ -11,6 +11,7 @@
    <!-- my-dashboard -->
    <link href="{{ asset('vendor/ilumukita/my-dashboard/css/dashboard.css') }}" rel="stylesheet">
    <!-- fontawesome -->
+   <script src="{{ asset('vendor/ilumukita/fontawesome-free/js/all.min.js') }}" defer></script>
    <link href="{{ asset('vendor/ilumukita/fontawesome-free/css/fontawesome.min.css') }}" rel="stylesheet">
    <!-- icon flag -->
    <link href="{{ asset('vendor/ilumukita/flag-icon-css/css/flag-icon.min.css') }}" rel="stylesheet">
