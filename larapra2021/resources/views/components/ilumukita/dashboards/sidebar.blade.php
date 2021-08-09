@@ -50,8 +50,9 @@
        </div>
     </div>
     <div class="sb-sidenav-footer">
-       <div class="small">Logged in as:</div>
+       <div class="small">Logged in as: </div>
        <!-- show username -->
+       {{ Auth::user()->ilumukita_user->name}}
     </div>
  </nav>
  

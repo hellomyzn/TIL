@@ -42,6 +42,6 @@ class IlumukitaRegisterController extends Controller
         $user = $this->userRepository->create($attributes, User::USER_ROLE_ILUMUKITA);
 
         auth()->login($user);
-        return redirect()->route('ilumukita/')->with('success', 'Your account has been created.');
+        return redirect()->route('ilumukita.dashboard.home')->with('success', 'Your account has been created.');
     }
 }

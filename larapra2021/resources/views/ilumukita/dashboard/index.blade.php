@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2>Select</h2>
+            <h2>Select</h2> {{ Auth::user()->ilumukita_user->name}}
         </div>
     </div>
 </x-ilumukita.dashboards.layout>
