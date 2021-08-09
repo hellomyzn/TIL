@@ -41,6 +41,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::group([
         'as'            => 'laracasts.',
         'prefix'        => 'laracasts',
+        'middleware'    => 'laracasts',
 ], function (){
         include_route_files(__DIR__."/laracasts/"); 
     }
@@ -79,6 +80,7 @@ Route::group([
 Route::group([
     'as'            => 'ilumukita.',
     'prefix'        => 'ilumukita',
+    'middleware'    => 'ilumukita',
 ], function (){
         include_route_files(__DIR__."/ilumukita/"); 
     }
