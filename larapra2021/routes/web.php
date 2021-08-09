@@ -89,3 +89,7 @@ Route::get('error_test', function(){
     Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");
     return "Success to push Test Error Log";
 });
+
+Route::get('test', function (){
+    return view('layouts.ilumukita.dashboard');
+});
