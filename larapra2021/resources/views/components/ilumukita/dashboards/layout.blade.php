@@ -32,9 +32,9 @@
             <div class="container-fluid">
                <h2 class="mt-2">
                   <!-- title -->
-                  <x-ilumukita.dashboards.title/>
+                  {{ $title }}
                </h2>     
-               <x-ilumukita.dashboards.breadcrumbs/>
+               {{ $breadcrumbs }}
 
                {{ $slot }}
             </div>

@@ -27,7 +27,7 @@ class IlumukitaLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::ILUMUKITA_HOME;
+    protected $redirectTo = RouteServiceProvider::ILUMUKITA_DASHBOARD_HOME;
 
     /**
      * Create a new controller instance.

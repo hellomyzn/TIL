@@ -30,7 +30,16 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
              <a class="dropdown-item" href="#">Profile</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="login.html">Logout</a>
+            
+            {{-- Logout --}}
+            <a class="dropdown-item" href={{ route('ilumukita.logout') }}
+               onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+                  Logout
+            </a>
+            <form id="logout-form" action="{{ route('ilumukita.logout') }}" method="POST" style="display: none;">
+               @csrf
+            </form>
           </div>
        </li>
     </ul>

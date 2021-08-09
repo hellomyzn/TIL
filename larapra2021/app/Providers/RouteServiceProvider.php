@@ -23,7 +23,9 @@ class RouteServiceProvider extends ServiceProvider
     public const SIMABLOG_HOME = '/simablog';
     public const BLOGCRUD_HOME = '/blogcrud';
     public const SIMPLENOTE_HOME = '/simplenote';
+
     public const ILUMUKITA_HOME = '/ilumukita';
+    public const ILUMUKITA_DASHBOARD_HOME = '/ilumukita/dashboard';
 
     /**
      * The controller namespace for the application.
