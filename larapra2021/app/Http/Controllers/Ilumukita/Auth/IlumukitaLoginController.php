@@ -20,7 +20,9 @@ class IlumukitaLoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as preformLogout;
+    }
 
     /**
      * Where to redirect users after login.
@@ -42,5 +44,11 @@ class IlumukitaLoginController extends Controller
     public function showLoginForm()
     {
         return view('ilumukita.auth.login');
+    }
+
+    public function logout(Request $request)
+    {
+        $this->preformLogout($request);
+        return redirect()->route('ilumukita.login');
     }
 }
