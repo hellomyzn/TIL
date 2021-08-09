@@ -32,11 +32,11 @@
             <div class="container-fluid">
                <h2 class="mt-2">
                   <!-- title -->
-                  @yeild('title')         
+                  <x-ilumukita.dashboards.title/>
                </h2>     
-               @yeild('breadcrumbs')         
+               <x-ilumukita.dashboards.breadcrumbs/>
 
-               @yeild('content')         
+               {{ $slot }}
             </div>
          </main>
          <x-ilumukita.dashboards.footer>
