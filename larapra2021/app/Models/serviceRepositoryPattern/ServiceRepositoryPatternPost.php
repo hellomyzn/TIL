@@ -5,7 +5,7 @@ namespace App\Models\serviceRepositoryPattern;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ServiceRepositoryPattern extends Model
+class ServiceRepositoryPatternPost extends Model
 {
     use HasFactory;
 

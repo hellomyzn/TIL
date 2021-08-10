@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiceRepositoryPatternsTable extends Migration
+class CreateServiceRepositoryPatternPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateServiceRepositoryPatternsTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_repository_patterns', function (Blueprint $table) {
-            $table->id();
+        Schema::create('service_repository_pattern_posts', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateServiceRepositoryPatternsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('service_repository_patterns');
+        Schema::dropIfExists('service_repository_pattern_posts');
     }
 }

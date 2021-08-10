@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\serviceRepositoryPattern;
 
-use App\Models\ServiceRepositoryPattern;
+use App\Models\serviceRepositoryPattern\ServiceRepositoryPatternPost;
 use Illuminate\Http\Request;
 
-class ServiceRepositoryPatternController extends Controller
+class ServiceRepositoryPatternPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,7 +44,7 @@ class ServiceRepositoryPatternController extends Controller
      * @param  \App\Models\ServiceRepositoryPattern  $serviceRepositoryPattern
      * @return \Illuminate\Http\Response
      */
-    public function show(ServiceRepositoryPattern $serviceRepositoryPattern)
+    public function show(ServiceRepositoryPatternPost $post)
     {
         //
     }
@@ -55,7 +55,7 @@ class ServiceRepositoryPatternController extends Controller
      * @param  \App\Models\ServiceRepositoryPattern  $serviceRepositoryPattern
      * @return \Illuminate\Http\Response
      */
-    public function edit(ServiceRepositoryPattern $serviceRepositoryPattern)
+    public function edit(ServiceRepositoryPatternPost $post)
     {
         //
     }
@@ -67,7 +67,7 @@ class ServiceRepositoryPatternController extends Controller
      * @param  \App\Models\ServiceRepositoryPattern  $serviceRepositoryPattern
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServiceRepositoryPattern $serviceRepositoryPattern)
+    public function update(Request $request, ServiceRepositoryPatternPost $post)
     {
         //
     }
@@ -78,7 +78,7 @@ class ServiceRepositoryPatternController extends Controller
      * @param  \App\Models\ServiceRepositoryPattern  $serviceRepositoryPattern
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ServiceRepositoryPattern $serviceRepositoryPattern)
+    public function destroy(ServiceRepositoryPatternPost $post)
     {
         //
     }
