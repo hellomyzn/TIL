@@ -86,6 +86,16 @@ Route::group([
     }
 );
 
+// for Service Repository Pattern
+Route::group([
+    'as'            => 'service-repository-pattern.',
+    'prefix'        => 'service-repository-pattern',
+    'middleware'    => 'web',
+], function (){
+        include_route_files(__DIR__."/serviceRepositoryPattern/"); 
+    }
+);
+
 
 Route::get('error_test', function(){
     Log::error("!!!!!!!!!!!!!! Test Error Log !!!!!!!!!!!!!!");
