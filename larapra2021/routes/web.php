@@ -90,7 +90,7 @@ Route::group([
 Route::group([
     'as'            => 'service-repository-pattern.',
     'prefix'        => 'service-repository-pattern',
-    'middleware'    => 'web',
+    'middleware'    => 'postman',
 ], function (){
         include_route_files(__DIR__."/serviceRepositoryPattern/"); 
     }

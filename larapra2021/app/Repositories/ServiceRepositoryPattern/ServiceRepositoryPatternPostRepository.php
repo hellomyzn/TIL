@@ -18,4 +18,37 @@ class ServiceRepositoryPatternPostRepository extends BaseRepository
         $this->post = $post;
     }
 
+    public function getAllPost()
+    {
+        return $this->post->get();
+    }
+
+    public function save($data)
+    {
+        $post = $this->post->create([
+            'title' => $data['title'],
+            'description' => $data['description']
+        ]);
+
+        return $post->fresh();
+    }
+
+    public function getById($id)
+    {
+        return $this->post
+            ->where('id', $id)
+            ->get();
+    }
+
+    public function update($data, $id)
+    {
+        $post = $this->post->find($id);
+        $post->update([
+            'title' => $data['title'],
+            'description' => $data['description']
+        ]);
+
+        return $post;
+    }
+
 }

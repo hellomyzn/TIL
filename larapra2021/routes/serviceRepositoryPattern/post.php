@@ -1,7 +1,7 @@
 <?php 
 
 use App\Http\Controllers\Simablog\SimablogPostController;
-use App\Http\Controllers\serviceRepositoryPattern\ServiceRepositoryPatternPostController;
+use App\Http\Controllers\ServiceRepositoryPattern\ServiceRepositoryPatternPostController;
 use Illuminate\Support\Facades\Route;
 
 Route::group([
@@ -16,7 +16,7 @@ Route::group([
             'store' => 'store'       
         ]
     ]);
-    Route::get('posts/edit/{id}', [ServiceRepositoryPatternPostController::class, 'edit'])->name('edit');
-    Route::post('posts/edit',[ServiceRepositoryPatternPostController::class, 'update'])->name('update');
-    Route::post('posts/delete/{id}', [ServiceRepositoryPatternPostController::class, 'destroy'])->name('delete');
+    Route::get('post/edit/{post}', [ServiceRepositoryPatternPostController::class, 'edit'])->name('edit');
+    Route::post('post/edit/{post}',[ServiceRepositoryPatternPostController::class, 'update'])->name('update');
+    Route::post('post/delete/{post}', [ServiceRepositoryPatternPostController::class, 'destroy'])->name('delete');
 });
