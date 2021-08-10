@@ -83,4 +83,22 @@ class ServiceRepositoryPatternPostService
 
     }
 
+    public function deleteByID($id)
+    {
+        DB::beginTransaction();
+
+        try {
+            $post = $this->postRepository->delete($id);
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::info($e->getMessage());
+
+            throw new InvalidArgumentException('unable to delete post data');
+        }
+
+        DB::commit();
+
+        return $post;
+    }
+
 }

@@ -157,6 +157,18 @@ class ServiceRepositoryPatternPostController extends Controller
      */
     public function destroy(ServiceRepositoryPatternPost $post)
     {
-        //
+        $id = $post['id'];
+        $result = ['status' => 200];
+
+        try {
+            $result['data'] = $this->postService->deleteByID($id);
+        } catch (Exception $e) {
+            $result = [
+                'status' => 500,
+                'error' => $e->getMessage()
+            ];
+        }
+
+        return $result;
     }
 }

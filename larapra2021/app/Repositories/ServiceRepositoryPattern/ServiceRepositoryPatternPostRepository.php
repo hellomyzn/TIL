@@ -51,4 +51,12 @@ class ServiceRepositoryPatternPostRepository extends BaseRepository
         return $post;
     }
 
+    public function delete($id)
+    {
+        $post = $this->post->find($id);
+        $post->delete();
+
+        return $post;
+    }
+
 }
