@@ -3,11 +3,13 @@
 namespace App\Repositories\ServiceRepositoryPattern;
 
 use App\Models\serviceRepositoryPattern\ServiceRepositoryPatternPost;
+use App\Repositories\ServiceRepositoryPattern\PostRepositoryInterface;
 use App\Repositories\BaseRepository;
 
 
-class ServiceRepositoryPatternPostRepository extends BaseRepository
+class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
 {
+    protected $post;
 
     /**
      * UserRepository constructor.
@@ -18,9 +20,16 @@ class ServiceRepositoryPatternPostRepository extends BaseRepository
         $this->post = $post;
     }
 
-    public function getAllPost()
+    public function getAll()
     {
         return $this->post->get();
+    }
+
+    public function getById($id)
+    {
+        return $this->post
+            ->where('id', $id)
+            ->get();
     }
 
     public function save($data)
@@ -31,13 +40,6 @@ class ServiceRepositoryPatternPostRepository extends BaseRepository
         ]);
 
         return $post->fresh();
-    }
-
-    public function getById($id)
-    {
-        return $this->post
-            ->where('id', $id)
-            ->get();
     }
 
     public function update($data, $id)

@@ -31,7 +31,7 @@ class ServiceRepositoryPatternPostService
 
     public function getAll()
     {
-        return $this->postRepository->getAllPost();
+        return $this->postRepository->getAll();
     }
 
     public function savePostData($data)

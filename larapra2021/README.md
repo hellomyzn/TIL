@@ -69,3 +69,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 # Articles
 - [Laravel Service-Repository Pattern](https://dev.to/jsf00/implement-crud-with-laravel-service-repository-pattern-1dkl)
+- [Implement CRUD with Laravel Service-Repository Pattern (with Interface)](https://josafebalili.com/posts/service-repository-pattern-v2/)

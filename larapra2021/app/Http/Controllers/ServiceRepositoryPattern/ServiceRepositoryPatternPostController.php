@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 
 class ServiceRepositoryPatternPostController extends Controller
 {
+
     public function __construct(
-        ServiceRepositoryPatternPostService $postService
-    ) {
+        ServiceRepositoryPatternPostService  $postService
+    ){
         $this->postService = $postService;
     }
     
