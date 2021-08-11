@@ -178,7 +178,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
         App\Providers\DataBaseQueryServiceProvider::class,
-        // App\Providers\ServiceRepositoryPattern\RepositoryServiceProvider::class,
+        App\Providers\ServiceRepositoryPattern\RepositoryServiceProvider::class
 
     ],
 

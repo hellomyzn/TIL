@@ -33,7 +33,6 @@ class ServiceRepositoryPatternPostController extends Controller
                 'error' => $e->getMessage()
             ];
         }
-
         return $result;
     }
 

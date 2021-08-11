@@ -2,10 +2,8 @@
 
 namespace App\Providers\ServiceRepositoryPattern;
 
-use App\Models\serviceRepositoryPattern\ServiceRepositoryPatternPost;
 use App\Repositories\ServiceRepositoryPattern\PostRepositoryInterface;
 use App\Repositories\ServiceRepositoryPattern\ServiceRepositoryPatternPostRepository;
-use App\Services\ServiceRepositoryPattern\ServiceRepositoryPatternPostService;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -17,9 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // $this->app->bind(PostRepositoryInterface::class, function ($app) {
-        //     return new ServiceRepositoryPatternPostService(new ServiceRepositoryPatternPostRepository(new ServiceRepositoryPatternPost()));
-        // });
+        $this->app->bind(PostRepositoryInterface::class, ServiceRepositoryPatternPostRepository::class);
     }
 
     /**

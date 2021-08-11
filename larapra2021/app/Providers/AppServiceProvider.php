@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-// use App\Providers\ServiceRepositoryPattern\RepositoryServiceProvider;
+use App\Providers\ServiceRepositoryPattern\RepositoryServiceProvider;
 use App\Services\Laracasts\Newslatter;
 use App\Services\Laracasts\MailchimpNewslatter;
 use MailchimpMarketing\ApiClient;
@@ -26,8 +26,6 @@ class AppServiceProvider extends ServiceProvider
 
             return new MailchimpNewslatter($client);
         });
-
-        // $this->app->register(RepositoryServiceProvider::class);
     }
 
     /**

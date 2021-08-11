@@ -2,7 +2,7 @@
 
 namespace App\Services\ServiceRepositoryPattern;
 
-use App\Repositories\ServiceRepositoryPattern\ServiceRepositoryPatternPostRepository;
+use App\Repositories\ServiceRepositoryPattern\PostRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
@@ -14,17 +14,17 @@ class ServiceRepositoryPatternPostService
 {
 
     /**
-     * @var ServiceRepositoryPatternPostRepository
+     * @var PostRepositoryInterface
      */
     protected $postRepository;
 
     /**
      * StudentService constructor.
      *
-     * @param ServiceRepositoryPatternPostRepository                       
+     * @param PostRepositoryInterface                       
      */
     public function __construct(
-        ServiceRepositoryPatternPostRepository $postRepository
+        PostRepositoryInterface $postRepository
     ) {
         $this->postRepository = $postRepository;
     }
