@@ -5,6 +5,7 @@ namespace App\Repositories\ServiceRepositoryPattern;
 use App\Models\serviceRepositoryPattern\ServiceRepositoryPatternPost;
 use App\Repositories\ServiceRepositoryPattern\PostRepositoryInterface;
 use App\Repositories\BaseRepository;
+use Illuminate\Support\Facades\DB;
 
 
 class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
@@ -34,30 +35,52 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
 
     public function save($data)
     {
-        $post = $this->post->create([
-            'title' => $data['title'],
-            'description' => $data['description']
-        ]);
+        DB::beginTransaction();
+        try {      
+            $post = $this->post->create($data);
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::info($e->getMessage());
 
-        return $post->fresh();
+            throw new InvalidArgumentException('unable to update post data');
+        }
+
+        return $post;
     }
 
     public function update($data, $id)
     {
-        $post = $this->post->find($id);
-        $post->update([
-            'title' => $data['title'],
-            'description' => $data['description']
-        ]);
+        DB::beginTransaction();
+        try {            
+            $post = $this->post->find($id);        
+            $post->fill($data)->save();    
+            DB::commit();
+            
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::info($e->getMessage());
+
+            throw new InvalidArgumentException('unable to update post data');
+        }
 
         return $post;
     }
 
     public function delete($id)
     {
-        $post = $this->post->find($id);
-        $post->delete();
+        DB::beginTransaction();
+        try {
+            $post = $this->post->find($id);
+            $post->delete();
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::info($e->getMessage());
 
+            throw new InvalidArgumentException('unable to delete post data');
+        }
+        
         return $post;
     }
 

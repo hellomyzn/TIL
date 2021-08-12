@@ -36,6 +36,7 @@ class ServiceRepositoryPatternPostService
 
     public function savePostData($data)
     {
+        // TODO: Use request
         $validator = Validator::make($data, [
             'title' => 'required',
             'description' => 'required'
@@ -57,6 +58,7 @@ class ServiceRepositoryPatternPostService
 
     public function updatePostData($data, $id)
     {
+        // TODO: Use request
         $validator = Validator::make($data, [
             'title' => 'required',
             'description' => 'required'
@@ -66,18 +68,7 @@ class ServiceRepositoryPatternPostService
             throw new InvalidArgumentException($validator->error()->first());
         }
 
-        DB::beginTransaction();
-
-        try {
-            $post = $this->postRepository->update($data, $id);
-        } catch (Exception $e) {
-            DB::rollback();
-            Log::info($e->getMessage());
-
-            throw new InvalidArgumentException('unable to update post data');
-        }
-
-        DB::commit();
+        $post = $this->postRepository->update($data, $id);
 
         return $post;
 
@@ -85,19 +76,7 @@ class ServiceRepositoryPatternPostService
 
     public function deleteByID($id)
     {
-        DB::beginTransaction();
-
-        try {
-            $post = $this->postRepository->delete($id);
-        } catch (Exception $e) {
-            DB::rollback();
-            Log::info($e->getMessage());
-
-            throw new InvalidArgumentException('unable to delete post data');
-        }
-
-        DB::commit();
-
+        $post = $this->postRepository->delete($id);
         return $post;
     }
 
