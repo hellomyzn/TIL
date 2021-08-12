@@ -6,14 +6,14 @@ use App\Models\serviceRepositoryPattern\ServiceRepositoryPatternPost;
 use App\Repositories\ServiceRepositoryPattern\PostRepositoryInterface;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Collection;
 
 class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
 {
     protected $post;
 
     /**
-     * UserRepository constructor.
+     * ServiceRepositoryPatternPostRepository constructor.
      */
     public function __construct(
         ServiceRepositoryPatternPost $post
@@ -21,19 +21,39 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
         $this->post = $post;
     }
 
-    public function getAll()
+    /**
+     * Get all ServiceRepositoryPatternPost function
+     *
+     * @return Collection|null
+     */
+    public function getAll(): ?Collection
     {
         return $this->post->get();
     }
 
-    public function getById($id)
+    /**
+     * Get one ServiceRepositoryPatternPost function
+     *
+     * @param int $id
+     * @return Collection|null
+     */
+    public function getById($id): ?Collection
     {
+        // dd($this->post
+        // ->where('id', $id)
+        // ->get());
         return $this->post
             ->where('id', $id)
             ->get();
     }
 
-    public function save($data)
+    /**
+     * Store ServiceRepositoryPatternPost function
+     *
+     * @param array $data
+     * @return Collection|null
+     */
+    public function save($data): ?Collection
     {
         DB::beginTransaction();
         try {      
@@ -49,7 +69,14 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
         return $post;
     }
 
-    public function update($data, $id)
+    /**
+     * Update ServiceRepositoryPatternPost function
+     *
+     * @param array $data
+     * @param id $id
+     * @return Collection|null
+     */
+    public function update($data, $id): ?Collection
     {
         DB::beginTransaction();
         try {            
@@ -67,7 +94,13 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
         return $post;
     }
 
-    public function delete($id)
+    /**
+     * Delete ServiceRepositoryPatternPost function
+     *
+     * @param id $id
+     * @return Collection|null
+     */
+    public function delete($id): ?Collection
     {
         DB::beginTransaction();
         try {

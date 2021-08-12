@@ -2,7 +2,6 @@
 
 namespace App\Repositories\ServiceRepositoryPattern;
 
-
 interface PostRepositoryInterface
 {
     /**
@@ -18,7 +17,7 @@ interface PostRepositoryInterface
      * @param int $id
      * @return void
      */
-    public function getById($id);
+    public function getById(int $id);
 
     /**
      * Undocumented function
@@ -26,7 +25,7 @@ interface PostRepositoryInterface
      * @param array $data
      * @return void
      */
-    public function save($data);
+    public function save(array $data);
 
     /**
      * Undocumented function
@@ -35,7 +34,7 @@ interface PostRepositoryInterface
      * @param int $id
      * @return void
      */
-    public function update($data, $id);
+    public function update(array $data, int $id);
 
     /**
      * Undocumented function
@@ -43,5 +42,5 @@ interface PostRepositoryInterface
      * @param int $id
      * @return void
      */
-    public function delete($id);
+    public function delete(int $id);
 }
