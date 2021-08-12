@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ServiceRepositoryPattern;
 
 use App\Models\serviceRepositoryPattern\ServiceRepositoryPatternPost;
 use App\Services\ServiceRepositoryPattern\ServiceRepositoryPatternPostService;
+use App\Http\Requests\ServiceRepositoryPattern\ServiceRepositoryPatternPost as RequestPost;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -55,7 +56,7 @@ class ServiceRepositoryPatternPostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RequestPost $request)
     {
         $data = $request->only([
             'title',
@@ -127,7 +128,7 @@ class ServiceRepositoryPatternPostController extends Controller
      * @param  \App\Models\ServiceRepositoryPattern  $serviceRepositoryPattern
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServiceRepositoryPatternPost $post)
+    public function update(RequestPost $request, ServiceRepositoryPatternPost $post)
     {
         $id = $post['id'];
         $data = $request->only([
