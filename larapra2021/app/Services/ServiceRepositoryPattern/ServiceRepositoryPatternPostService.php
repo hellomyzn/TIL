@@ -36,16 +36,6 @@ class ServiceRepositoryPatternPostService
 
     public function savePostData($data)
     {
-        // TODO: Use request
-        $validator = Validator::make($data, [
-            'title' => 'required',
-            'description' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            throw new InvalidArgumentException($validator->error()->first());
-        }
-
         $result = $this->postRepository->save($data);
 
         return $result;
@@ -58,20 +48,9 @@ class ServiceRepositoryPatternPostService
 
     public function updatePostData($data, $id)
     {
-        // TODO: Use request
-        $validator = Validator::make($data, [
-            'title' => 'required',
-            'description' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            throw new InvalidArgumentException($validator->error()->first());
-        }
-
         $post = $this->postRepository->update($data, $id);
 
         return $post;
-
     }
 
     public function deleteByID($id)

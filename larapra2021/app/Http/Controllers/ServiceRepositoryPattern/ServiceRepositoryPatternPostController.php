@@ -46,7 +46,6 @@ class ServiceRepositoryPatternPostController extends Controller
     {
         $result = ['status' => 200];
 
-        
         return $result;
     }
 
@@ -135,7 +134,6 @@ class ServiceRepositoryPatternPostController extends Controller
             'title',
             'description'
         ]);
-
         $result = ['status' => 200];
 
         try {
