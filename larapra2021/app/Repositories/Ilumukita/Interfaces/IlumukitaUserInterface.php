@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\ServiceRepositoryPattern;
+namespace App\Repositories\Ilumukita\Interfaces;
 
-interface PostRepositoryInterface
+interface IlumukitaUserInterface
 {
     /**
      * Undocumented function
@@ -23,7 +23,7 @@ interface PostRepositoryInterface
      * Undocumented function
      *
      * @param array $data
-     * @return voCollection|nullid
+     * @return Collection|null
      */
     public function save(array $data);
 

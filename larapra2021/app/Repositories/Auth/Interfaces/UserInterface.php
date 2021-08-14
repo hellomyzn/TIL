@@ -1,46 +1,46 @@
 <?php
 
-namespace App\Repositories\ServiceRepositoryPattern;
+namespace App\Repositories\Auth\Interfaces;
 
-interface PostRepositoryInterface
+interface UserInterface
 {
     /**
-     * Undocumented function
+     * Get all user data function
      *
-     * @return Collection|null
+     * @return void|null
      */
     public function getAll();
 
     /**
-     * Undocumented function
+     * Get specific user data function
      *
      * @param int $id
-     * @return Collection|null
+     * @return void|null
      */
     public function getById(int $id);
 
     /**
-     * Undocumented function
+     * Store specific user function
      *
      * @param array $data
-     * @return voCollection|nullid
+     * @return void|null
      */
     public function save(array $data);
 
     /**
-     * Undocumented function
+     * Update specific user function
      *
      * @param array $data
      * @param int $id
-     * @return Collection|null
+     * @return void|null
      */
     public function update(array $data, int $id);
 
     /**
-     * Undocumented function
+     * Delete specific user function
      *
      * @param int $id
-     * @return Collection|null
+     * @return void|null
      */
     public function delete(int $id);
 }

@@ -1,23 +1,21 @@
 <?php
 
-namespace App\Repositories\Auth;
+namespace App\Repositories\Ilumukita;
 
 use App\Models\User;
-use App\Repositories\Auth\Interfaces\UserInterface;
-use App\Repositories\BaseRepository;
-
-use App\Services\Blogcrud\BlogcrudUserService;
-use App\Services\Simablog\SimablogUserService;
-use App\Services\Laracasts\LaracastsUserService;
-use App\Services\Simplenote\SimplenoteUserService;
-use App\Services\Ilumukita\IlumukitaUserService;
-
-
+use App\Models\ilumukita\IlumukitaUser;
+use App\Repositories\Ilumukita\Interfaces\IlumukitaUserInterface;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Collection;
 
-class UserRepository implements UserInterface
+class IlumukitaUserRepository implements IlumukitaUserInterface
 {
+    /**
+     * Undocumented variable
+     *
+     * @var IlumukitaUser
+     */
+    protected $ilumukitaUser;
 
     /**
      * @var User
@@ -28,30 +26,32 @@ class UserRepository implements UserInterface
      * IlumukitaUserRepository constructor.
      */
     public function __construct(
+        IlumukitaUser $ilumukitaUser,
         User $user
     ) {
+        $this->ilumukitaUser = $ilumukitaUser;
         $this->user = $user;
     }
 
     /**
      * Get all IlumukitaUserRepository function
      *
-     * @return User|null
+     * @return IlumukitaUser|null
      */
-    public function getAll(): ?User
+    public function getAll(): ?IlumukitaUser
     {
-        return $this->user->get();
+        return $this->ilumukitaUser->get();
     }
 
     /**
      * Get one IlumukitaUserRepository function
      *
      * @param int $id
-     * @return User|null
+     * @return IlumukitaUser|null
      */
-    public function getById($id): ?User
+    public function getById($id): ?IlumukitaUser
     {
-        return $this->user
+        return $this->ilumukitaUser
             ->where('id', $id)
             ->get();
     }
@@ -60,13 +60,13 @@ class UserRepository implements UserInterface
      * Store IlumukitaUserRepository function
      *
      * @param array $data
-     * @return User|null
+     * @return IlumukitaUser|null
      */
-    public function save($data): User
+    public function save($data): ?IlumukitaUser
     {
         DB::beginTransaction();
         try {      
-            $user = $this->user->create($data);
+            $ilumukitaUser = $this->ilumukitaUser->create($data);
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
@@ -75,7 +75,7 @@ class UserRepository implements UserInterface
             throw new InvalidArgumentException('unable to update post data');
         }
 
-        return $user;
+        return $ilumukitaUser;
     }
 
     /**
@@ -83,14 +83,14 @@ class UserRepository implements UserInterface
      *
      * @param array $data
      * @param id $id
-     * @return User|null
+     * @return IlumukitaUser|null
      */
-    public function update($data, $id): ?User
+    public function update($data, $id): ?IlumukitaUser
     {
         DB::beginTransaction();
         try {            
-            $user = $this->user->find($id);        
-            $user->fill($data)->save();    
+            $ilumukitaUser = $this->ilumukitaUser->find($id);        
+            $ilumukitaUser->fill($data)->save();    
             DB::commit();
             
         } catch (Exception $e) {
@@ -100,21 +100,21 @@ class UserRepository implements UserInterface
             throw new InvalidArgumentException('unable to update post data');
         }
 
-        return $user;
+        return $ilumukitaUser;
     }
 
     /**
      * Delete IlumukitaUserRepository function
      *
      * @param id $id
-     * @return User|null
+     * @return IlumukitaUser|null
      */
-    public function delete($id): ?User
+    public function delete($id): ?IlumukitaUser
     {
         DB::beginTransaction();
         try {
-            $user = $this->user->find($id);
-            $user->delete();
+            $ilumukitaUser = $this->ilumukitaUser->find($id);
+            $ilumukitaUser->delete();
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
@@ -123,7 +123,7 @@ class UserRepository implements UserInterface
             throw new InvalidArgumentException('unable to delete post data');
         }
         
-        return $user;
+        return $ilumukitaUser;
     }
 
 }

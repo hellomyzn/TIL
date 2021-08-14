@@ -39,9 +39,6 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
      */
     public function getById($id): ?Collection
     {
-        // dd($this->post
-        // ->where('id', $id)
-        // ->get());
         return $this->post
             ->where('id', $id)
             ->get();

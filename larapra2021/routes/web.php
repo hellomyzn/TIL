@@ -80,7 +80,8 @@ Route::group([
 Route::group([
     'as'            => 'ilumukita.',
     'prefix'        => 'ilumukita',
-    'middleware'    => 'ilumukita',
+    // 'middleware'    => 'ilumukita',
+    'middleware'    => 'postman',
 ], function (){
         include_route_files(__DIR__."/ilumukita/"); 
     }
