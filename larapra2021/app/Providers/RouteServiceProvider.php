@@ -22,7 +22,7 @@ class RouteServiceProvider extends ServiceProvider
     public const LARACASTS_HOME = '/laracasts/posts';
     public const SIMABLOG_HOME = '/simablog/posts';
     public const BLOGCRUD_HOME = '/blogcrud';
-    public const SIMPLENOTE_HOME = '/simplenote';
+    public const SIMPLENOTE_HOME = '/simplenote/memo';
 
     public const ILUMUKITA_HOME = '/ilumukita';
     public const ILUMUKITA_DASHBOARD_HOME = '/ilumukita/dashboard';
