@@ -11,6 +11,7 @@ use App\Services\Laracasts\LaracastsUserService;
 use App\Services\Simplenote\SimplenoteUserService;
 use App\Repositories\Auth\UserRepository;
 use App\Repositories\Ilumukita\IlumukitaUserRepository;
+use App\Repositories\Blogcrud\BlogcrudUserRepository;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -49,6 +50,11 @@ class UserService extends BaseRepository
     protected $ilumukitaUserRepository;
 
     /**
+     * @var
+     */
+    protected $blogcrudUserRepository;
+
+    /**
      * UserRepository constructor.
      */
     public function __construct(
@@ -58,7 +64,8 @@ class UserService extends BaseRepository
         SimablogUserService $simablogUserService,
         LaracastsUserService $laracastsUserService,
         SimplenoteUserService $simplenoteUserService,
-        IlumukitaUserRepository $ilumukitaUserRepository
+        IlumukitaUserRepository $ilumukitaUserRepository,
+        BlogcrudUserRepository $blogcrudUserRepository
     ) {
         $this->model = $model;
         $this->userRepository = $userRepository;
@@ -66,6 +73,7 @@ class UserService extends BaseRepository
         $this->simablogUserService = $simablogUserService;
         $this->laracastsUserService = $laracastsUserService;
         $this->ilumukitaUserRepository = $ilumukitaUserRepository;
+        $this->blogcrudUserRepository = $blogcrudUserRepository;
     }
 
     /**
@@ -81,7 +89,7 @@ class UserService extends BaseRepository
             $user = $this->createUser($attributes);
 
             if ($userRole == User::USER_ROLE_BLOGCRUD) {
-                $user = $this->blogcrudUserService->createBlogcrudAccount($attributes);
+                $user = $this->createBlogcrudUser($attributes, $user['id']);
             }else if ($userRole == User::USER_ROLE_SIMABLOG) {
                 $user = $this->simablogUserService->createSimablogAccount($attributes);
             }else if ($userRole == User::USER_ROLE_LARACASTS) {
@@ -99,6 +107,12 @@ class UserService extends BaseRepository
         });
     }
 
+    /**
+     * Arrange data, give data to repository function
+     *
+     * @param array $attributes
+     * @return void
+     */
     private function createUser($attributes){
         $data = [
             'email' => $attributes['email'] ?? '',
@@ -108,6 +122,13 @@ class UserService extends BaseRepository
         return $this->userRepository->save($data);
     }
 
+    /**
+     * Arrange data, give data to repository function
+     *
+     * @param array $attributes
+     * @param int $user_id
+     * @return void
+     */
     private function createIlumukitaUser($attributes, $user_id)
     {
         $data = [
@@ -116,5 +137,22 @@ class UserService extends BaseRepository
         ];
 
         return $this->ilumukitaUserRepository->save($data);
+    }
+
+    /**
+     * Arrange data, give data to repository function
+     *
+     * @param array $attributes
+     * @param int $user_id
+     * @return void
+     */
+    private function createBlogcrudUser($attributes, $user_id)
+    {
+        $data = [
+            'name' => $attributes['name'] ?? '',
+            'user_id' => $user_id ?? '',
+        ];
+
+        return $this->blogcrudUserRepository->save($data);
     }
 }

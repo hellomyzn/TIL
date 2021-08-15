@@ -23,7 +23,7 @@ interface PostRepositoryInterface
      * Undocumented function
      *
      * @param array $data
-     * @return voCollection|nullid
+     * @return void|null
      */
     public function save(array $data);
 
@@ -32,7 +32,7 @@ interface PostRepositoryInterface
      *
      * @param array $data
      * @param int $id
-     * @return Collection|null
+     * @return void|null
      */
     public function update(array $data, int $id);
 
@@ -40,7 +40,7 @@ interface PostRepositoryInterface
      * Undocumented function
      *
      * @param int $id
-     * @return Collection|null
+     * @return void|null
      */
     public function delete(int $id);
 }

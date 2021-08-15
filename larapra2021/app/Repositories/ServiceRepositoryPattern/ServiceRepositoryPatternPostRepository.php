@@ -48,9 +48,9 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
      * Store ServiceRepositoryPatternPost function
      *
      * @param array $data
-     * @return Collection|null
+     * @return ServiceRepositoryPatternPost|null
      */
-    public function save($data): ?Collection
+    public function save($data): ?ServiceRepositoryPatternPost
     {
         DB::beginTransaction();
         try {      
@@ -62,6 +62,7 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
 
             throw new InvalidArgumentException('unable to update post data');
         }
+        dd($post);
 
         return $post;
     }
@@ -71,9 +72,9 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
      *
      * @param array $data
      * @param id $id
-     * @return Collection|null
+     * @return ServiceRepositoryPatternPost|null
      */
-    public function update($data, $id): ?Collection
+    public function update($data, $id): ?ServiceRepositoryPatternPost
     {
         DB::beginTransaction();
         try {            
@@ -95,9 +96,9 @@ class ServiceRepositoryPatternPostRepository implements PostRepositoryInterface
      * Delete ServiceRepositoryPatternPost function
      *
      * @param id $id
-     * @return Collection|null
+     * @return ServiceRepositoryPatternPost|null
      */
-    public function delete($id): ?Collection
+    public function delete($id): ?ServiceRepositoryPatternPost
     {
         DB::beginTransaction();
         try {

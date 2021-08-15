@@ -15,7 +15,7 @@ class BlogcrudAuthenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
-            return route('blogcrud.login');
+            return route('blogcrud.show-login-form');
         }
     }
 }

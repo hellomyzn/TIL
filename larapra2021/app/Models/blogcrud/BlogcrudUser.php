@@ -3,7 +3,7 @@
 namespace App\Models\blogcrud;
 
 use App\Models\User;
-use App\Models\blogcrud\BlogcrudUser;
+use App\Models\blogcrud\BlogcrudPost;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;

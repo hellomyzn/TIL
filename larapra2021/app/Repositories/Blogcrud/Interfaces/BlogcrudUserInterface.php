@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Ilumukita\Interfaces;
+namespace App\Repositories\Blogcrud\Interfaces;
 
-interface IlumukitaUserInterface
+interface BlogcrudUserInterface
 {
     /**
      * Undocumented function

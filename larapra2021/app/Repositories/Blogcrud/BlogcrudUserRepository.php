@@ -1,65 +1,65 @@
 <?php
 
-namespace App\Repositories\Ilumukita;
+namespace App\Repositories\Blogcrud;
 
-use App\Models\ilumukita\IlumukitaUser;
-use App\Repositories\Ilumukita\Interfaces\IlumukitaUserInterface;
+use App\Models\blogcrud\BlogcrudUser;
+use App\Repositories\Blogcrud\Interfaces\BlogcrudUserInterface;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 
-class IlumukitaUserRepository implements IlumukitaUserInterface
+class BlogcrudUserRepository implements BlogcrudUserInterface
 {
     /**
-     * Undocumented variable
+     * variable
      *
-     * @var IlumukitaUser
+     * @var BlogcrudUser
      */
-    protected $ilumukitaUser;
+    protected $blogcrudUser;
 
 
     /**
-     * IlumukitaUserRepository constructor.
+     * constructor.
      */
     public function __construct(
-        IlumukitaUser $ilumukitaUser
+        BlogcrudUser $blogcrudUser
     ) {
-        $this->ilumukitaUser = $ilumukitaUser;
+        $this->blogcrudUser = $blogcrudUser;
     }
 
     /**
-     * Get all IlumukitaUserRepository function
+     * Get all function
      *
      * @return Collection|null
      */
     public function getAll(): ?Collection
     {
-        return $this->ilumukitaUser->get();
+        return $this->blogcrudUser->get();
     }
 
     /**
-     * Get one IlumukitaUserRepository function
+     * Get one function
      *
      * @param int $id
      * @return Collection|null
      */
     public function getById($id): ?Collection
     {
-        return $this->ilumukitaUser
+        return $this->blogcrudUser
             ->where('id', $id)
             ->get();
     }
 
     /**
-     * Store IlumukitaUserRepository function
+     * Store function
      *
      * @param array $data
-     * @return IlumukitaUser|null
+     * @return BlogcrudUser|null
      */
-    public function save($data): ?IlumukitaUser
+    public function save($data): ?BlogcrudUser
     {
         DB::beginTransaction();
         try {      
-            $ilumukitaUser = $this->ilumukitaUser->create($data);
+            $blogcrudUser = $this->blogcrudUser->create($data);
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
@@ -68,22 +68,22 @@ class IlumukitaUserRepository implements IlumukitaUserInterface
             throw new InvalidArgumentException('unable to update post data');
         }
 
-        return $ilumukitaUser;
+        return $blogcrudUser;
     }
 
     /**
-     * Update IlumukitaUserRepository function
+     * Update function
      *
      * @param array $data
      * @param id $id
-     * @return IlumukitaUser|null
+     * @return BlogcrudUser|null
      */
-    public function update($data, $id): ?IlumukitaUser
+    public function update($data, $id): ?BlogcrudUser
     {
         DB::beginTransaction();
         try {            
-            $ilumukitaUser = $this->ilumukitaUser->find($id);        
-            $ilumukitaUser->fill($data)->save();    
+            $blogcrudUser = $this->blogcrudUser->find($id);        
+            $blogcrudUser->fill($data)->save();    
             DB::commit();
             
         } catch (Exception $e) {
@@ -93,21 +93,21 @@ class IlumukitaUserRepository implements IlumukitaUserInterface
             throw new InvalidArgumentException('unable to update post data');
         }
 
-        return $ilumukitaUser;
+        return $blogcrudUser;
     }
 
     /**
-     * Delete IlumukitaUserRepository function
+     * Delete function
      *
      * @param id $id
-     * @return IlumukitaUser|null
+     * @return BlogcrudUser|null
      */
-    public function delete($id): ?IlumukitaUser
+    public function delete($id): ?BlogcrudUser
     {
         DB::beginTransaction();
         try {
-            $ilumukitaUser = $this->ilumukitaUser->find($id);
-            $ilumukitaUser->delete();
+            $blogcrudUser = $this->blogcrudUser->find($id);
+            $blogcrudUser->delete();
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
@@ -116,7 +116,7 @@ class IlumukitaUserRepository implements IlumukitaUserInterface
             throw new InvalidArgumentException('unable to delete post data');
         }
         
-        return $ilumukitaUser;
+        return $blogcrudUser;
     }
 
 }
