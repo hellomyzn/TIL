@@ -12,6 +12,7 @@ use App\Services\Simplenote\SimplenoteUserService;
 use App\Repositories\Auth\UserRepository;
 use App\Repositories\Ilumukita\IlumukitaUserRepository;
 use App\Repositories\Blogcrud\BlogcrudUserRepository;
+use App\Repositories\Simablog\SimablogUserRepository;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -55,6 +56,11 @@ class UserService extends BaseRepository
     protected $blogcrudUserRepository;
 
     /**
+     * @var
+     */
+    protected $simablogUserRepository;
+
+    /**
      * UserRepository constructor.
      */
     public function __construct(
@@ -65,7 +71,8 @@ class UserService extends BaseRepository
         LaracastsUserService $laracastsUserService,
         SimplenoteUserService $simplenoteUserService,
         IlumukitaUserRepository $ilumukitaUserRepository,
-        BlogcrudUserRepository $blogcrudUserRepository
+        BlogcrudUserRepository $blogcrudUserRepository,
+        SimablogUserRepository $simablogUserRepository
     ) {
         $this->model = $model;
         $this->userRepository = $userRepository;
@@ -74,13 +81,15 @@ class UserService extends BaseRepository
         $this->laracastsUserService = $laracastsUserService;
         $this->ilumukitaUserRepository = $ilumukitaUserRepository;
         $this->blogcrudUserRepository = $blogcrudUserRepository;
+        $this->simablogUserRepository = $simablogUserRepository;
     }
 
     /**
-     * @throws \Exception
-     * @throws \Throwable
+     * Undocumented function
      *
-     * @return \Illuminate\Database\Eloquent\Model|mixed
+     * @param array $attributes
+     * @param User $userRole
+     * @return User
      */
     public function create(array $attributes, $userRole)
     {
@@ -91,7 +100,7 @@ class UserService extends BaseRepository
             if ($userRole == User::USER_ROLE_BLOGCRUD) {
                 $user = $this->createBlogcrudUser($attributes, $user['id']);
             }else if ($userRole == User::USER_ROLE_SIMABLOG) {
-                $user = $this->simablogUserService->createSimablogAccount($attributes);
+                $user = $this->createSimablogUser($attributes, $user['id']);
             }else if ($userRole == User::USER_ROLE_LARACASTS) {
                 $attributes['username'] = $data['username'];
 
@@ -113,7 +122,8 @@ class UserService extends BaseRepository
      * @param array $attributes
      * @return void
      */
-    private function createUser($attributes){
+    private function createUser($attributes)
+    {
         $data = [
             'email' => $attributes['email'] ?? '',
             'password' => Hash::make($attributes['password']) ?? '',
@@ -154,5 +164,22 @@ class UserService extends BaseRepository
         ];
 
         return $this->blogcrudUserRepository->save($data);
+    }
+
+    /**
+     * Arrange data, give data to repository function
+     *
+     * @param array $attributes
+     * @param int $user_id
+     * @return void
+     */
+    private function createSimablogUser($attributes, $user_id)
+    {
+        $data = [
+            'name' => $attributes['name'] ?? '',
+            'user_id' => $user_id ?? '',
+        ];
+
+        return $this->simablogUserRepository->save($data);
     }
 }

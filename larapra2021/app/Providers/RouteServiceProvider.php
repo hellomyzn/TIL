@@ -20,7 +20,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/';
     public const LARACASTS_HOME = '/laracasts/posts';
-    public const SIMABLOG_HOME = '/simablog';
+    public const SIMABLOG_HOME = '/simablog/posts';
     public const BLOGCRUD_HOME = '/blogcrud';
     public const SIMPLENOTE_HOME = '/simplenote';
 

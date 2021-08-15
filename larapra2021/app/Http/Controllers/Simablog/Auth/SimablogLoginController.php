@@ -26,7 +26,7 @@ class SimablogLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::SIMABLOG_HOME;
 
     /**
      * Create a new controller instance.

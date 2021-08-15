@@ -11,17 +11,17 @@
 
     @auth
         {{ Auth::user()->name }}
-        <form method="POST" action="{{ route('simablog.auth.logout') }}">
+        <form method="POST" action="{{ route('simablog.logout') }}">
             @csrf
 
-            <a href="{{ route('simablog.auth.logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+            <a href="{{ route('simablog.logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
                 {{ __('Log Out') }}
             </a>
         </form>
     @else
             @if (Route::has('register'))
-                <a href="{{ route('simablog.auth.register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                <a href="{{ route('simablog.auth.login') }}" class="text-sm text-gray-700 underline">Log in</a>
+                <a href="{{ route('simablog.show-register-form') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                <a href="{{ route('simablog.show-login-form') }}" class="text-sm text-gray-700 underline">Log in</a>
             @endif
     @endauth
 </body>

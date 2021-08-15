@@ -4,12 +4,9 @@ namespace App\Http\Controllers\Simablog\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\simablog\SimablogUser;
 use App\Models\User;
-use App\Repositories\Auth\UserRepository;
+use App\Services\Auth\UserService;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class SimablogRegisterController extends Controller
 {
@@ -40,10 +37,10 @@ class SimablogRegisterController extends Controller
      */
 
     public function __construct(
-        UserRepository $userRepository
+        UserService $userService
     ) {
         $this->middleware('guest');
-        $this->userRepository = $userRepository;
+        $this->userService = $userService;
     }
 
     public function showRegistrationForm()
@@ -55,11 +52,11 @@ class SimablogRegisterController extends Controller
         // validation
         $attributes = request()->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:laracasts_users,email',
+            'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|min:7|max:255',
         ]);
         
-        $user = $this->userRepository->create($attributes, User::USER_ROLE_SIMABLOG);
+        $user = $this->userService->create($attributes, User::USER_ROLE_SIMABLOG);
 
         auth()->login($user);
         return redirect()->route('simablog.post.index')->with('success', 'Your account has been created.');
