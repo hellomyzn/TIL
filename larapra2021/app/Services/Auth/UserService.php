@@ -14,6 +14,7 @@ use App\Repositories\Ilumukita\IlumukitaUserRepository;
 use App\Repositories\Blogcrud\BlogcrudUserRepository;
 use App\Repositories\Simablog\SimablogUserRepository;
 use App\Repositories\Simplenote\SimplenoteUserRepository;
+use App\Repositories\Laracasts\LaracastsUserRepository;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -27,26 +28,6 @@ class UserService extends BaseRepository
     protected $userRepository;
 
     /**
-     * @var
-     */
-    protected $blogcrudUserService;
-
-    /**
-     * @var
-     */
-    protected $simablogUserService;
-
-    /**
-     * @var
-     */
-    protected $laracastsUserService;
-
-    /**
-     * @var
-     */
-    protected $simplenoteUserService;
-
-        /**
      * @var
      */
     protected $ilumukitaUserRepository;
@@ -67,29 +48,29 @@ class UserService extends BaseRepository
     protected $simplenoteUserRepository;
 
     /**
+     * @var
+     */
+    protected $laracastsUserRepository;
+
+    /**
      * UserRepository constructor.
      */
     public function __construct(
         User $model, 
         UserRepository $userRepository,
-        BlogcrudUserService $blogcrudUserService,
-        SimablogUserService $simablogUserService,
-        LaracastsUserService $laracastsUserService,
-        SimplenoteUserService $simplenoteUserService,
         IlumukitaUserRepository $ilumukitaUserRepository,
         BlogcrudUserRepository $blogcrudUserRepository,
         SimablogUserRepository $simablogUserRepository,
-        SimplenoteUserRepository $simplenoteUserRepository
+        SimplenoteUserRepository $simplenoteUserRepository,
+        LaracastsUserRepository $laracastsUserRepository
     ) {
         $this->model = $model;
         $this->userRepository = $userRepository;
-        $this->blogcrudUserService = $blogcrudUserService;
-        $this->simablogUserService = $simablogUserService;
-        $this->laracastsUserService = $laracastsUserService;
         $this->ilumukitaUserRepository = $ilumukitaUserRepository;
         $this->blogcrudUserRepository = $blogcrudUserRepository;
         $this->simablogUserRepository = $simablogUserRepository;
         $this->simplenoteUserRepository = $simplenoteUserRepository;
+        $this->laracastsUserRepository = $laracastsUserRepository;
     }
 
     /**
@@ -110,11 +91,9 @@ class UserService extends BaseRepository
             }else if ($userRole == User::USER_ROLE_SIMABLOG) {
                 $simalogUser = $this->createSimablogUser($attributes, $user['id']);
             }else if ($userRole == User::USER_ROLE_LARACASTS) {
-                $attributes['username'] = $data['username'];
-
-                $user = $this->laracastsUserService->createLaracastsAccount($attributes);
+                $laracastsUser = $this->createLaracastsUser($attributes, $user['id']);
             }else if ($userRole == User::USER_ROLE_SIMPLENOTE){
-                $simpleBloguser = $this->createSimplenoteUser($attributes, $user['id']);
+                $simplenoteuser = $this->createSimplenoteUser($attributes, $user['id']);
             }else if ($userRole == User::USER_ROLE_ILUMUKITA){
                 $ilumukitaUser = $this->createIlumukitaUser($attributes, $user['id']);
             }
@@ -206,5 +185,23 @@ class UserService extends BaseRepository
         ];
 
         return $this->simplenoteUserRepository->save($data);
+    }
+
+    /**
+     * Arrange data, give data to repository function
+     *
+     * @param array $attributes
+     * @param int $user_id
+     * @return void
+     */
+    private function createLaracastsUser($attributes, $user_id)
+    {
+        $data = [
+            'name' => $attributes['name'] ?? '',
+            'username' => $attributes['username'] ?? '',
+            'user_id' => $user_id ?? '',
+        ];
+
+        return $this->laracastsUserRepository->save($data);
     }
 }

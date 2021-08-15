@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Laracasts;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\laracasts\LaracastsUser;
-use App\Repositories\Auth\UserRepository;
+use App\Services\Auth\UserService;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 
@@ -22,9 +21,9 @@ class LaracastsRegisterController extends Controller
      * StudentRegisterController constructor.
      */
     public function __construct(
-        UserRepository $userRepository
+        UserService $userService
     ) {
-        $this->userRepository = $userRepository;
+        $this->userService = $userService;
     }
 
     public function create()
@@ -44,7 +43,7 @@ class LaracastsRegisterController extends Controller
 
         
         // create user
-        $user = $this->userRepository->create($attributes, User::USER_ROLE_LARACASTS);
+        $user = $this->userService->create($attributes, User::USER_ROLE_LARACASTS);
         logger("Success to register User id: {{ $user->id }} User name: {{ $user->laracasts_user->name }} ");
 
         // Login
