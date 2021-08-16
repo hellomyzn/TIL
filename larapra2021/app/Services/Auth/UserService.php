@@ -5,10 +5,6 @@ namespace App\Services\Auth;
 use App\Models\User;
 use App\Repositories\BaseRepository;
 
-use App\Services\Blogcrud\BlogcrudUserService;
-use App\Services\Simablog\SimablogUserService;
-use App\Services\Laracasts\LaracastsUserService;
-use App\Services\Simplenote\SimplenoteUserService;
 use App\Repositories\Auth\UserRepository;
 use App\Repositories\Ilumukita\IlumukitaUserRepository;
 use App\Repositories\Blogcrud\BlogcrudUserRepository;
