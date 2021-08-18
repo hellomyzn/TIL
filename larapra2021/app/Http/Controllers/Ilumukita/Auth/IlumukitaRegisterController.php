@@ -32,7 +32,8 @@ class IlumukitaRegisterController extends Controller
         return view('ilumukita.auth.register');
     }
 
-    public function register () {
+    public function register()
+    {
         // validation
         $attributes = request()->validate([
             'name' => 'required|max:255',
