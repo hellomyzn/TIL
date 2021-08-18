@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Repositories\BaseRepository;
 
 use App\Repositories\Auth\UserRepository;
-use App\Repositories\Ilumukita\IlumukitaUserRepository;
+use App\Repositories\Ilumukita\Interfaces\IlumukitaUserInterface;
 use App\Repositories\Blogcrud\BlogcrudUserRepository;
 use App\Repositories\Simablog\SimablogUserRepository;
 use App\Repositories\Simplenote\SimplenoteUserRepository;
@@ -54,7 +54,7 @@ class UserService extends BaseRepository
     public function __construct(
         User $model, 
         UserRepository $userRepository,
-        IlumukitaUserRepository $ilumukitaUserRepository,
+        IlumukitaUserInterface $ilumukitaUserRepository,
         BlogcrudUserRepository $blogcrudUserRepository,
         SimablogUserRepository $simablogUserRepository,
         SimplenoteUserRepository $simplenoteUserRepository,
