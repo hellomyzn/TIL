@@ -58,7 +58,7 @@ class IlumukitaUserRepository implements IlumukitaUserInterface
     public function save($data): ?IlumukitaUser
     {
         DB::beginTransaction();
-        try {      
+        try {
             $ilumukitaUser = $this->ilumukitaUser->create($data);
             DB::commit();
         } catch (Exception $e) {
@@ -81,11 +81,10 @@ class IlumukitaUserRepository implements IlumukitaUserInterface
     public function update($data, $id): ?IlumukitaUser
     {
         DB::beginTransaction();
-        try {            
-            $ilumukitaUser = $this->ilumukitaUser->find($id);        
-            $ilumukitaUser->fill($data)->save();    
+        try {
+            $ilumukitaUser = $this->ilumukitaUser->find($id);
+            $ilumukitaUser->fill($data)->save();
             DB::commit();
-            
         } catch (Exception $e) {
             DB::rollback();
             Log::info($e->getMessage());
@@ -115,8 +114,7 @@ class IlumukitaUserRepository implements IlumukitaUserInterface
 
             throw new InvalidArgumentException('unable to delete post data');
         }
-        
+
         return $ilumukitaUser;
     }
-
 }
