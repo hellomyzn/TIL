@@ -19,7 +19,7 @@ class SimplenoteMemoContoller extends Controller
     public function index ()
     {
         $simplenote_user = auth()->user()->simplenote_user;        
-
+        
         logger("Success to access memo index: User name: {{ $simplenote_user->name }} ");
         return view('simplenote.memos.create');
     }

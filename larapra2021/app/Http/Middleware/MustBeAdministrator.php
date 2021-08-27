@@ -17,7 +17,7 @@ class MustBeAdministrator
     public function handle(Request $request, Closure $next)
     {
         
-        if (auth()->guest() || auth()->user()->username !== 'hoge' ){
+        if (auth()->guest() || auth()->user()->laracasts_user->username !== 'laracasts' ){
             abort(403);
         }
         return $next($request);
