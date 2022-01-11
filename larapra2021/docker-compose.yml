@@ -55,7 +55,7 @@ services:
     image: schemaspy/schemaspy
     volumes:
       - ./infra/schemaspy/output:/output
-      - ./docker/schemaspy/config/schemaspy.properties:/app/schemaspy.properties:ro
+      - ./infra/schemaspy/config/schemaspy.properties:/app/schemaspy.properties:ro
     command: "java -jar schemaspy.jar"
     depends_on:
       - db
