@@ -16,6 +16,9 @@ $ docker-compose logs
 
 # specific service
 $ docker-compose logs -f app
+
+# generalte erd
+docker-compose up schemaspy
 ```
 
 ### Seeder Command

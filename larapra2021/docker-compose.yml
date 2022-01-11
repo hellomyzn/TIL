@@ -28,6 +28,7 @@ services:
     build: ./infra/mysql
     ports:
       - 33060:3306
+    container_name: larapra_db
     volumes:
       - db-store:/var/lib/mysql
 
@@ -55,15 +56,26 @@ services:
     image: schemaspy/schemaspy
     volumes:
       - ./infra/schemaspy/output:/output
-      - ./infra/schemaspy/config/schemaspy.properties:/app/schemaspy.properties:ro
-    command: "java -jar schemaspy.jar"
+      - ./infra/schemaspy/drivers:/drivers
+    command: >
+      java -jar schemaspy.jar
+      -t mysql
+      -dp /drivers
+      -host db
+      -port 3306
+      -db ${DB_NAME:-laravel_local}
+      -u ${DB_USER:-phper}
+      -p ${DB_PASS:-secret}
+      -s ${DB_NAME:-laravel_local}
+      -o /output
+      -connprops allowPublicKeyRetrieval\\=false useSSL\\=false
     depends_on:
       - db
 
   nginx_schemaspy:
     image: nginx:1.19.5-alpine
     volumes:
-      - ./infra/schemaspy/output:/usr/share/nginx/html:ro
+      - ./infra/schemaspy/output:/usr/share/nginx/html
     ports:
       - ${NGINX_SCHEMASPY_PORT:-8081}:80
       
