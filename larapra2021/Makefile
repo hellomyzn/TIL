@@ -51,6 +51,8 @@ app:
 	docker-compose exec app bash
 node:
 	docker-compose exec node ash
+schemaspy:
+	docker-compose up schemaspy
 migrate:
 	docker-compose exec app php artisan migrate
 fresh:

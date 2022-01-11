@@ -1,12 +1,14 @@
 version: "3.8"
 services:
   app:
+    container_name: larapra_app
     build: ./infra/php
     volumes:
       - ./backend:/work
 
   web:
-    image: nginx:1.18-alpine
+    container_name: larapra_web
+    image: nginx:1.19.5-alpine
     ports:
       - 8080:80
     volumes:
@@ -15,6 +17,7 @@ services:
     working_dir: /work
 
   node:
+    container_name: larapra_node
     build: ./infra/node
     ports:
       - 3000:3000
@@ -24,15 +27,16 @@ services:
     working_dir: /work
 
   db:
+    container_name: larapra_db
     platform: linux/x86_64
     build: ./infra/mysql
     ports:
       - 33060:3306
-    container_name: larapra_db
     volumes:
       - db-store:/var/lib/mysql
 
   phpmyadmin:
+    container_name: larapra_phpmyadmin
     image: phpmyadmin/phpmyadmin:latest
     ports:
       - 8888:80
@@ -40,6 +44,7 @@ services:
       - db
         
   ngrok:
+    container_name: larapra_ngrok
     image: wernight/ngrok
     ports:
       - ${WEB_PORT:-4040}:4040
@@ -52,6 +57,7 @@ services:
       # NGROK_PORT: web:443
       
   schemaspy:
+    container_name: larapra_schemaspy
     build: ./infra/schemaspy
     image: schemaspy/schemaspy
     volumes:
@@ -73,6 +79,7 @@ services:
       - db
 
   nginx_schemaspy:
+    container_name: larapra_nginx_schemaspy
     image: nginx:1.19.5-alpine
     volumes:
       - ./infra/schemaspy/output:/usr/share/nginx/html
