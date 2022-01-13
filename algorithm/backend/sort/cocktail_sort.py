@@ -3,7 +3,7 @@ from typing import List
 def cocktail_sort(numbers: List[int]) -> List[int]:
     line = "=" * 80
     print(f"\n\n{line}")
-    print(f"cocktail_sort  | [INFO] - Start: {numbers}\n")
+    print(f"{__name__}  | [INFO] - Start: {numbers}\n")
     len_numbers = len(numbers)
     swapped = True
     trials_num = 0
@@ -35,9 +35,9 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
 
         start = start + 1
     
-    print(f"cocktail_sort  | [INFO] - Result of List: {numbers}")
-    print(f"cocktail_sort  | [INFO] - Number of traials: {trials_num}")
-    print(f"cocktail_sort  | [INFO] - Number of sorts:  {sorts_num}")
+    print(f"{__name__}  | [INFO] - Result of List: {numbers}")
+    print(f"{__name__}  | [INFO] - Number of traials: {trials_num}")
+    print(f"{__name__}  | [INFO] - Number of sorts:  {sorts_num}")
     print(f"{line}\n\n")
 
 

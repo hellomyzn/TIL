@@ -1,6 +1,6 @@
 from typing import List
 
-def comb_sort(numbers: List[int]) -> List[int]:
+def gnome_sort(numbers: List[int]) -> List[int]:
     line = "=" * 80
     print(f"\n\n{line}")
     print(f"{__name__}  | [INFO] - Start: {numbers}\n")
@@ -35,4 +35,4 @@ def comb_sort(numbers: List[int]) -> List[int]:
 if __name__ == "__main__":
     import random
     nums = [random.randint(0, 1000) for i in range(10)]
-    comb_sort(nums)
+    gnome_sort(nums)

@@ -25,7 +25,7 @@ from typing import List
 def selection_sort(numbers: List[int]) -> List[int]:
     line = "=" * 80
     print(f"\n\n{line}")
-    print(f"selection_sort  | [INFO] - Start: {numbers}")
+    print(f"{__name__}  | [INFO] - Start: {numbers}")
     sorts_num = 0
     trials_num = 0
     len_numbers = len(numbers)
@@ -42,9 +42,9 @@ def selection_sort(numbers: List[int]) -> List[int]:
         numbers[i], numbers[min_idx] = numbers[min_idx], numbers[i]
         sorts_num = sorts_num + 1
     
-    print(f"selection_sort  | [INFO] - Result of List: {numbers}\n")
-    print(f"selection_sort  | [INFO] - Number of traials: {trials_num}")
-    print(f"selection_sort  | [INFO] - Number of sorts:  {sorts_num}")    
+    print(f"{__name__}  | [INFO] - Result of List: {numbers}\n")
+    print(f"{__name__}  | [INFO] - Number of traials: {trials_num}")
+    print(f"{__name__}  | [INFO] - Number of sorts:  {sorts_num}")    
     print(f"{line}\n\n")
 
     return numbers

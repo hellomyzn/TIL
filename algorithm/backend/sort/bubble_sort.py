@@ -33,7 +33,7 @@ def bubbleSort(A=None, N=1):
 def bubble_sort(numbers: list[int]) -> list[int]:
     line = "=" * 80
     print(f"\n\n{line}")
-    print(f"bubble_sort  | [INFO] - Start: {numbers}\n")
+    print(f"{__name__}  | [INFO] - Start: {numbers}\n")
     
     trials_num = 0
     sorts_num = 0
@@ -46,9 +46,9 @@ def bubble_sort(numbers: list[int]) -> list[int]:
                 sorts_num = sorts_num + 1
                 numbers[j+1], numbers[j] = numbers[j], numbers[j+1]
 
-    print(f"bubble_sort  | [INFO] - Result of List: {numbers}\n")
-    print(f"bubble_sort  | [INFO] - Number of traials: {trials_num}")
-    print(f"bubble_sort  | [INFO] - Number of sorts:  {sorts_num}")
+    print(f"{__name__}  | [INFO] - Result of List: {numbers}\n")
+    print(f"{__name__}  | [INFO] - Number of traials: {trials_num}")
+    print(f"{__name__}  | [INFO] - Number of sorts:  {sorts_num}")
     print(f"{line}\n\n")
 
     return numbers
