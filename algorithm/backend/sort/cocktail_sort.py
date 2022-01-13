@@ -1,15 +1,15 @@
 from typing import List
 
 def cocktail_sort(numbers: List[int]) -> List[int]:
-    print(f"[START] - Cocktail sort: {numbers}")
+    line = "=" * 80
+    print(f"\n\n{line}")
+    print(f"cocktail_sort  | [INFO] - Start: {numbers}\n")
     len_numbers = len(numbers)
     swapped = True
     trials_num = 0
     sorts_num = 0
     start = 0
     end = len_numbers - 1
-    print(f"[INFO] - Start_limit: {start}")
-    print(f"[INFO] - End_limit: {end}")
 
     while swapped:
         swapped = False
@@ -26,7 +26,6 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
         
         swapped = False
         end = end - 1
-        print(f"[INFO] -    End limit is updated: {end}")
 
         for i in range(end-1, start-1, -1):
             trials_num = trials_num + 1
@@ -35,11 +34,12 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
                 swapped = True
 
         start = start + 1
-        print(f"[INFO] -    Start limit is updated: {start}")
     
+    print(f"cocktail_sort  | [INFO] - Result of List: {numbers}")
+    print(f"cocktail_sort  | [INFO] - Number of traials: {trials_num}")
+    print(f"cocktail_sort  | [INFO] - Number of sorts:  {sorts_num}")
+    print(f"{line}\n\n")
 
-    print(f"[RESULT] - Number of traials: {trials_num}")
-    print(f"[RESULT] - Number of sorts:  {sorts_num}")
 
     return numbers
 
@@ -47,4 +47,4 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
 if __name__ == "__main__":
     import random
     nums = [random.randint(0, 1000) for i in range(10)]
-    print(f"[RESULT] - Cocktail_sort: {cocktail_sort(nums)}")
+    cocktail_sort(nums)
