@@ -18,7 +18,7 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
             trials_num = trials_num + 1
             if numbers[i] > numbers[i + 1]:
                 numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
-                sorts_num = sorts_num + 1
+                sorts_num += 1
                 swapped = True
 
         if not swapped:
@@ -31,6 +31,7 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
             trials_num = trials_num + 1
             if numbers[i] > numbers[i + 1]:
                 numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
+                sorts_num += 1
                 swapped = True
 
         start = start + 1

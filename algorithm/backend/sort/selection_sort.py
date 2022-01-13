@@ -34,13 +34,13 @@ def selection_sort(numbers: List[int]) -> List[int]:
         min_idx = i
 
         for j in range(i+1, len_numbers):
-            trials_num = trials_num + 1
+            trials_num += 1
 
             if numbers[min_idx] > numbers[j]:
                 min_idx = j
 
         numbers[i], numbers[min_idx] = numbers[min_idx], numbers[i]
-        sorts_num = sorts_num + 1
+        sorts_num += 1
     
     print(f"{__name__}  | [INFO] - Result of List: {numbers}\n")
     print(f"{__name__}  | [INFO] - Number of traials: {trials_num}")

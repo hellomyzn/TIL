@@ -41,9 +41,9 @@ def bubble_sort(numbers: list[int]) -> list[int]:
 
     for i in range(len_numbers):
         for j in range(len_numbers -1 -i):
-            trials_num = trials_num + 1
+            trials_num += 1
             if numbers[j] > numbers[j+1]:
-                sorts_num = sorts_num + 1
+                sorts_num += 1
                 numbers[j+1], numbers[j] = numbers[j], numbers[j+1]
 
     print(f"{__name__}  | [INFO] - Result of List: {numbers}\n")

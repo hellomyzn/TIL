@@ -19,10 +19,10 @@ def comb_sort(numbers: List[int]) -> List[int]:
         swapped = False
 
         for i in range(0, len_numbers - gap):
-            trials_num = trials_num + 1
+            trials_num += 1
             if numbers[i] > numbers[i + gap]:
                  numbers[i], numbers[i + gap] = numbers[i + gap], numbers[i]
-                 sorts_num = sorts_num + 1
+                 sorts_num += 1
                  swapped = True
 
     print(f"{__name__}  | [INFO] - Result of List: {numbers}\n")
