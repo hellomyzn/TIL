@@ -1,4 +1,4 @@
-import random
+from typing import List
 
 
 """
@@ -31,11 +31,21 @@ def bubbleSort(A=None, N=1):
 
 # from Jun Sakai lesson
 def bubble_sort(numbers: list[int]) -> list[int]:
+    print(f"[START] - Bubble sort: {numbers}")
+    trials_num = 0
+    sorts_num = 0
     len_numbers = len(numbers)
+
     for i in range(len_numbers):
         for j in range(len_numbers -1 -i):
+            trials_num = trials_num + 1
             if numbers[j] > numbers[j+1]:
+                sorts_num = sorts_num + 1
                 numbers[j+1], numbers[j] = numbers[j], numbers[j+1]
+
+    print(f"[RESULT] - Number of traials: {trials_num}")
+    print(f"[RESULT] - Number of sorts:  {sorts_num}")
+
     return numbers
 
 
@@ -54,6 +64,7 @@ if __name__ == "__main__":
 
 
     # FROM JUN SAKAI LESSON
+    import random
     nums = [random.randint(0,1000) for _ in range(10)] 
     print(bubble_sort(nums))
 

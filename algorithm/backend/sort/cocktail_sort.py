@@ -1,7 +1,7 @@
 from typing import List
 
 def cocktail_sort(numbers: List[int]) -> List[int]:
-    print(f"[INFO] - List: {numbers}")
+    print(f"[START] - Cocktail sort: {numbers}")
     len_numbers = len(numbers)
     swapped = True
     trials_num = 0
@@ -12,11 +12,10 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
     print(f"[INFO] - End_limit: {end}")
 
     while swapped:
-        trials_num = trials_num + 1
-        print(f"[INFO] - # {trials_num}: {numbers}")
         swapped = False
 
         for i in range(start, end):
+            trials_num = trials_num + 1
             if numbers[i] > numbers[i + 1]:
                 numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
                 sorts_num = sorts_num + 1
@@ -30,6 +29,7 @@ def cocktail_sort(numbers: List[int]) -> List[int]:
         print(f"[INFO] -    End limit is updated: {end}")
 
         for i in range(end-1, start-1, -1):
+            trials_num = trials_num + 1
             if numbers[i] > numbers[i + 1]:
                 numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
                 swapped = True

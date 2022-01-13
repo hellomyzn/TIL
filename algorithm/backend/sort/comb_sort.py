@@ -1,7 +1,7 @@
 from typing import List
 
 def comb_sort(numbers: List[int]) -> List[int]:
-    print(f"[INFO] - List: {numbers}")
+    print(f"[START] - Comb sort: {numbers}")
     len_numbers = len(numbers)
     trials_num = 0
     sorts_num = 0
@@ -10,9 +10,6 @@ def comb_sort(numbers: List[int]) -> List[int]:
     swapped = True
 
     while gap != 1 or swapped:
-        trials_num = trials_num + 1
-        print(f"[INFO] - # {trials_num}: {numbers}")
-
         gap = int(gap / 1.3)
         print(f"[INFO] -    Gap is updated: {gap}")
         
@@ -22,6 +19,7 @@ def comb_sort(numbers: List[int]) -> List[int]:
         swapped = False
 
         for i in range(0, len_numbers - gap):
+            trials_num = trials_num + 1
             if numbers[i] > numbers[i + gap]:
                  numbers[i], numbers[i + gap] = numbers[i + gap], numbers[i]
                  sorts_num = sorts_num + 1
@@ -29,7 +27,6 @@ def comb_sort(numbers: List[int]) -> List[int]:
 
     print(f"[RESULT] - Number of traials: {trials_num}")
     print(f"[RESULT] - Number of sorts:  {sorts_num}")
-    print(f"[RESULT] - List:  {numbers}")
 
     return numbers
 
