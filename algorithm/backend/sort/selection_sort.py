@@ -25,7 +25,7 @@ from typing import List
 def selection_sort(numbers: List[int]) -> List[int]:
     line = "=" * 80
     print(f"\n\n{line}")
-    print(f"{__name__}  | [INFO] - Start: {numbers}")
+    print(f"{__name__}  | [INFO] - Start: {numbers}\n")
     sorts_num = 0
     trials_num = 0
     len_numbers = len(numbers)
