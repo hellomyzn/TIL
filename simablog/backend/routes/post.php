@@ -17,4 +17,4 @@ use App\Http\Controllers\PostController;
 Route::resource('posts', PostController::class)->only([
     'index', 'show', 'create', 'store', 'destroy'
 ]);
-Route::post('posts/edit/{id}', [PostController::class, 'update']);
+Route::post('posts/edit/{id}', [PostController::class, 'update'])->name('update');
