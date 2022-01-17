@@ -1,6 +1,0 @@
-personal_access_tokens
-password_resets
-migrations
-failed_jobs
-posts
-users
