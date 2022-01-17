@@ -21,7 +21,7 @@
                         <td>
                             <a href={{ route('posts.show',['post' => $post]) }} class="btn btn-success">詳細</a>
                         @auth
-                            <form action={{route('posts.destroy', ['post' => $post])}} method="POST">
+                            <form action={{route('posts.delete', ['id' => $post->id])}} method="POST">
                                 {{ csrf_field() }}
                                 <input type="submit" value="削除" class="btn btn-danger post_del_btn">
                             </form>

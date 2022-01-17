@@ -46,7 +46,7 @@ class PostController extends Controller
         $post->user_id = $id;
 
         $post->save();
-        return redirect()->to('/posts');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -69,8 +69,10 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
-    {
+    public function edit($id)
+    {   
+        
+        $post = Post::findOrFail($id);
         return view('posts.edit', compact(['post']));
     }
 
@@ -87,7 +89,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->to('/posts');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -96,10 +98,11 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
+        $post = Post::findOrFail($id);
         $post->delete();
 
-        return redirect()->to('/posts');
+        return redirect()->route('posts.index');
     }
 }

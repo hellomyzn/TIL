@@ -14,7 +14,7 @@
                     <p class="card-text">{{ $post->body }}</p>
                     <div class="card-footer bg-transparent"><span class="font-weight-bold">by:</span> {{ $user->name }}</div>
                     @auth
-                        <a href={{ route('posts.store', ['post' => $post]) }} class="btn btn-dark">編集する</a>
+                        <a href={{ route('posts.edit', ['id' => $post->id]) }} class="btn btn-dark">編集する</a>
                     @endauth
                 </div>
             </div>

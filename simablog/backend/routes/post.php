@@ -14,7 +14,19 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::resource('posts', PostController::class)->only([
-    'index', 'show', 'create', 'store', 'destroy'
-]);
-Route::post('posts/edit/{id}', [PostController::class, 'update'])->name('update');
+Route::group([
+    'as' => 'posts.'
+],function(){
+    Route::resource('posts', PostController::class, [
+        'only' => ['index', 'show', 'create', 'store'],
+        'names' => [
+            'index'=> 'index',
+            'show'=> 'show',
+            'create'=> 'create',
+            'store'=> 'store'
+        ]
+    ]);
+    Route::get('posts/edit/{id}', [PostController::class, 'edit'])->name('edit');
+    Route::post('posts/edit',[PostController::class, 'update'])->name('update');
+    Route::post('posts/delete/{id}', [PostController::class, 'destroy'])->name('delete');
+});
