@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('posts.index', compact(['posts']))
     }
 
     /**
@@ -24,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create')
     }
 
     /**
@@ -35,7 +38,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id = Auth::id();
+
+        $post = new Post();
+
+        $post->boddy = $request->boddy;
+        $post->user_id = $id;
+
+        $post->save();
+        return redirect()->to('/posts');
     }
 
     /**
@@ -46,7 +57,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $user_id = $post->user_id;
+        $user = DB::table('users')->where('id', $user_id)->first();
+
+        return view('posts.detail', compact(["post", 'user']));
     }
 
     /**
@@ -57,7 +71,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact(['post']));
     }
 
     /**
@@ -69,7 +83,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->boddy = $request->boddy;
+
+        $post->save();
+
+        return redirect()->to('/posts');
     }
 
     /**
@@ -80,6 +98,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->to('/posts');
     }
 }
