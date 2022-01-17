@@ -6,7 +6,7 @@
         <!-- メイン -->
         <div class="col-10 col-md-6 offset-1 offset-md-3">
             <div class="card">
-                <form action={{ route('posts.store')}} method="post">
+                <form action={{ route('posts.update', ['id' => $post->id])}} method="post">
                 {{ csrf_field() }}
                 <div class="card-body">
                     <p class="card-text">

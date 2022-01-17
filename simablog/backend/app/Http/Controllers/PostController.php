@@ -83,10 +83,14 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request)
     {
-        $post->body = $request->body;
 
+        $id = $request->post_id;
+        $post = Post::findOrFail($id);
+        
+        $post->body = $request->body;
+        
         $post->save();
 
         return redirect()->route('posts.index');
