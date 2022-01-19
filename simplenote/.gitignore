@@ -4,7 +4,7 @@ npm-debug.log
 yarn-error.log
 *psysh
 *.bash_history
-./infra/schmaspy/output/*
+./infra/schemaspy/output/*
 
 # Laravel 4 specific
 bootstrap/compiled.php
