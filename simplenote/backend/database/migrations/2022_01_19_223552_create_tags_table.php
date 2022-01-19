@@ -19,6 +19,10 @@ class CreateTagsTable extends Migration
             $table->string('name', 100);
             $table->timestamps();
         });
+
+        Schema::table('memos', function (Blueprint $table) {
+            $table->foreignId('tag_id')->constrained('tags')->cascadeOnDelete()->nullable();
+        });
     }
 
     /**
@@ -28,6 +32,7 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('memos');
         Schema::dropIfExists('tags');
     }
 }
