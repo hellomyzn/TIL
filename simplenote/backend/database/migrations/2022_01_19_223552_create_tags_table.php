@@ -21,7 +21,7 @@ class CreateTagsTable extends Migration
         });
 
         Schema::table('memos', function (Blueprint $table) {
-            $table->foreignId('tag_id')->constrained('tags')->cascadeOnDelete()->nullable()->after('user_id');;
+            $table->foreignId('tag_id')->after('user_id')->constrained('tags')->cascadeOnDelete()->nullable();
         });
     }
 
