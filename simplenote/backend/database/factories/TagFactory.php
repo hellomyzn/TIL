@@ -2,7 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 class TagFactory extends Factory
 {
@@ -14,7 +17,8 @@ class TagFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->unique()->word,
+            'user_id' => rand(1, User::count()),
         ];
     }
 }
