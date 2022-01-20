@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', function () {
+    return 'welcome get' . PHP_EOL;
+});
+
+Route::post('/', function () {
+    return 'welcome post' . PHP_EOL;
+});
+
