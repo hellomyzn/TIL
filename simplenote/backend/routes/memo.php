@@ -22,15 +22,15 @@ Route::group([
     'as' => 'memos.'
 ],function(){
     Route::resource('memos', MemoController::class, [
-        'only' => ['index', 'show', 'create', 'store', 'update'],
+        'only' => ['index', 'show', 'create', 'store', 'edit'],
         'names' => [
             'index'=> 'index',
             'show'=> 'show',
             'create'=> 'create',
             'store'=> 'store',
-            'update'=> 'update'
+            'edit'=> 'edit'
         ]
     ]);
-    Route::get('memos/edit/{memo}', [MemoController::class, 'edit'])->name('edit');
+    Route::post('memos/edit/{memo}', [MemoController::class, 'update'])->name('update');
     Route::post('memos/delete/{memo}', [MemoController::class, 'destroy'])->name('destroy');
 });

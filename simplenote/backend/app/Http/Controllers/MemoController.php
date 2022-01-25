@@ -118,9 +118,19 @@ class MemoController extends Controller
      */
     public function update(UpdateMemoRequest $request, Memo $memo)
     {
+        $user = auth()->user();
+        $validated_data = $request->validated();
+
+        $memo_id = $memo->update([
+            'content' => $validated_data['content'],
+            'tag_id' => $validated_data['tag_id'],
+        ]);
+
         Log::debug('ACCESS', ['url' => \Request::fullUrl(), 
         'user_id' => auth()->user()->id, 
         'user_name' => auth()->user()->name ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -131,6 +141,13 @@ class MemoController extends Controller
      */
     public function destroy(Memo $memo)
     {
-        //
+        $user = auth()->user();
+        $memo_id = $memo->delete();
+
+        Log::debug('ACCESS', ['url' => \Request::fullUrl(), 
+        'user_id' => auth()->user()->id, 
+        'user_name' => auth()->user()->name ]);
+
+        return redirect()->route('memos.index')->with('success', 'success to delte memo');
     }
 }
