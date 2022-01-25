@@ -18,12 +18,8 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes();
 

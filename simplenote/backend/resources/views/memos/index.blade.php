@@ -19,4 +19,4 @@
         </div>
     </div>
     </x-layouts.app>
-    
+    hoge
