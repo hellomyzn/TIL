@@ -96,7 +96,7 @@
             </div>
             <div class="col-md-4 p-0">
               <div class="card h-100">
-                {{-- <div class="card-header d-flex">メモ一覧 <a class='ml-auto' href={{ route('simplenote.memos.create') }}><i class="fas fa-plus-circle"></i></a></div> --}}
+                <div class="card-header d-flex">メモ一覧 <a class='ml-auto' href={{ route('memos.create') }}><i class="fas fa-plus-circle"></i></a></div>
                 <div class="card-body p-2">
         @foreach($memos as $memo)
                   <a href={{ route('memos.edit', ['memo' => $memo]) }} class='d-block'>{!! $memo['content'] !!}</a>

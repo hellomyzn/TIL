@@ -74,12 +74,14 @@ class MemoController extends Controller
             'tag_id' => $tag_id,
             'status' => 1,
         ]);
+
+        $memo = Memo::find($memo_id);
         
         Log::debug('STORE', ['url' => \Request::fullUrl(), 
                     'user_id' => auth()->user()->id, 
                     'user_name' => auth()->user()->name ]);
 
-        return redirect()->route('memos.index');
+        return redirect()->route('memos.edit', ['memo', $memo]);
     }
 
     /**
@@ -130,7 +132,7 @@ class MemoController extends Controller
         'user_id' => auth()->user()->id, 
         'user_name' => auth()->user()->name ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'success to update memo');
     }
 
     /**
