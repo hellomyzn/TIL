@@ -18,18 +18,19 @@ use App\Models\User;
 */
 
 Route::group([
+    'middleware' => 'auth',
     'as' => 'memos.'
 ],function(){
     Route::resource('memos', MemoController::class, [
-        'only' => ['index', 'show', 'create', 'store'],
+        'only' => ['index', 'show', 'create', 'store', 'update'],
         'names' => [
             'index'=> 'index',
             'show'=> 'show',
             'create'=> 'create',
-            'store'=> 'store'
+            'store'=> 'store',
+            'update'=> 'update'
         ]
     ]);
-    Route::get('memos/edit/{id}', [MemoController::class, 'edit'])->name('edit');
-    Route::post('memos/edit',[MemoController::class, 'update'])->name('update');
-    Route::post('memos/delete/{id}', [MemoController::class, 'destroy'])->name('delete');
+    Route::get('memos/edit/{memo}', [MemoController::class, 'edit'])->name('edit');
+    Route::post('delete/{memo}', [MemoController::class, 'destroy'])->name('destroy');
 });

@@ -58,7 +58,9 @@ class MemoController extends Controller
      */
     public function edit(Memo $memo)
     {
-        //
+        $user = auth()->user();
+        $tags = $user->tags;
+        return view('memos.edit', compact(['memo', 'tags']));
     }
 
     /**
