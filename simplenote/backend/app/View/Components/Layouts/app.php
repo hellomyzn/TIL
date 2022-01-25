@@ -1,11 +1,14 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Layouts;
 
+use App\Models\Memo;
+use App\Models\Tag;
 use Illuminate\View\Component;
 
-class App extends Component
+class app extends Component
 {
+
     /**
      * Create a new component instance.
      *
@@ -13,7 +16,9 @@ class App extends Component
      */
     public function __construct()
     {
-        //
+        $user = auth()->user();  
+        $tags = $user->tags;
+        $memos = $user->memos;
     }
 
     /**
@@ -23,11 +28,10 @@ class App extends Component
      */
     public function render()
     {
-        $user = auth()->user();        
-        // $tags = $user->$tags;
-        $tags = ['hoge', 'fuga'];
         // $memos = $this->simplenoteMemoRepository->myMemos($simplenote_user->id);
-        $memos = ['hoge', 'fuga'];
+        $user = auth()->user();  
+        $tags = $user->tags;
+        $memos = $user->memos;
         return view('components.layouts.app', compact(['tags', 'memos']));
     }
 }

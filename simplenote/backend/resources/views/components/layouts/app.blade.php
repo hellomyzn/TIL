@@ -88,9 +88,9 @@
               <div class="card-header">タグ一覧</div>
               <div class="card-body py-2 px-4">
                 <a class='d-block' href={{ route('home') }}>全て表示</a>
-        {{-- @foreach($tags as $tag)
+        @foreach($tags as $tag)
                   <a href="/simplenote/memo?tag={{ $tag['name'] }}" class='d-block'>{{ $tag['name'] }}</a>
-        @endforeach --}}
+        @endforeach
                 </div>
               </div>
             </div>
@@ -98,9 +98,9 @@
               <div class="card h-100">
                 {{-- <div class="card-header d-flex">メモ一覧 <a class='ml-auto' href={{ route('simplenote.memos.create') }}><i class="fas fa-plus-circle"></i></a></div> --}}
                 <div class="card-body p-2">
-        {{-- @foreach($memos as $memo)
-                  <a href={{ route('simplenote.memos.edit', ['memo' => $memo]) }} class='d-block'>{!! $memo['content'] !!}</a>
-        @endforeach --}}
+        @foreach($memos as $memo)
+                  <a href={{ route('memos.edit', ['memo' => $memo]) }} class='d-block'>{!! $memo['content'] !!}</a>
+        @endforeach
                 </div>
               </div>    
             </div> <!-- col-md-3 -->
