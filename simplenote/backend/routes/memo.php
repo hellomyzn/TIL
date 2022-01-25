@@ -32,5 +32,5 @@ Route::group([
         ]
     ]);
     Route::get('memos/edit/{memo}', [MemoController::class, 'edit'])->name('edit');
-    Route::post('delete/{memo}', [MemoController::class, 'destroy'])->name('destroy');
+    Route::post('memos/delete/{memo}', [MemoController::class, 'destroy'])->name('destroy');
 });

@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMemoRequest;
 use App\Http\Requests\UpdateMemoRequest;
+use Log; 
 use App\Models\Memo;
+use App\Models\Tag;
 
 class MemoController extends Controller
 {
+    public function __contruct(){
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +21,10 @@ class MemoController extends Controller
      */
     public function index()
     {
+        Log::debug('ACCESS', ['url' => \Request::fullUrl(), 
+                    'user_id' => auth()->user()->id, 
+                    'user_name' => auth()->user()->name ]);
+
         return view('memos.index');
     }
 
@@ -25,6 +35,10 @@ class MemoController extends Controller
      */
     public function create()
     {
+        Log::debug('ACCESS', ['url' => \Request::fullUrl(), 
+                    'user_id' => auth()->user()->id, 
+                    'user_name' => auth()->user()->name ]);
+
         return view('memos.create');
     }
 
@@ -36,7 +50,36 @@ class MemoController extends Controller
      */
     public function store(StoreMemoRequest $request)
     {
-        //
+        $user = auth()->user();
+        $validated_data = $request->validated();
+
+        $exist_tag = Tag::where('name', $validated_data['tag'])
+        ->where('user_id', $user->id)
+        ->first();
+    
+
+        if (empty($exist_tag)){
+            $tag_id = Tag::insertGetId([
+                'name' => $validated_data['tag'],
+                'user_id' => $user->id,
+            ]);
+        } else{
+            $tag_id = $exist_tag->id;
+        }
+
+
+        $memo_id = Memo::insertGetId([
+            'content' => $validated_data['content'],
+            'user_id' => $user->id,
+            'tag_id' => $tag_id,
+            'status' => 1,
+        ]);
+        
+        Log::debug('STORE', ['url' => \Request::fullUrl(), 
+                    'user_id' => auth()->user()->id, 
+                    'user_name' => auth()->user()->name ]);
+
+        return redirect()->route('memos.index');
     }
 
     /**
@@ -58,8 +101,11 @@ class MemoController extends Controller
      */
     public function edit(Memo $memo)
     {
-        $user = auth()->user();
+        $user = auth()->user();  
         $tags = $user->tags;
+        Log::debug('ACCESS', ['url' => \Request::fullUrl(), 
+                    'user_id' => auth()->user()->id, 
+                    'user_name' => auth()->user()->name ]);
         return view('memos.edit', compact(['memo', 'tags']));
     }
 
@@ -72,7 +118,9 @@ class MemoController extends Controller
      */
     public function update(UpdateMemoRequest $request, Memo $memo)
     {
-        //
+        Log::debug('ACCESS', ['url' => \Request::fullUrl(), 
+        'user_id' => auth()->user()->id, 
+        'user_name' => auth()->user()->name ]);
     }
 
     /**

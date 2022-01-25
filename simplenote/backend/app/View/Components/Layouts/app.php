@@ -16,9 +16,6 @@ class app extends Component
      */
     public function __construct()
     {
-        $user = auth()->user();  
-        $tags = $user->tags;
-        $memos = $user->memos;
     }
 
     /**
