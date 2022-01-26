@@ -17,6 +17,8 @@ use App\Models\User;
 |
 */
 
+Route::get('/', [MemoController::class, 'index']);
+
 Route::group([
     'middleware' => 'auth',
     'as' => 'memos.'

@@ -4,6 +4,7 @@ namespace App\View\Components\Layouts;
 
 use App\Models\Memo;
 use App\Models\Tag;
+use App\Services\MemoService;
 use Illuminate\View\Component;
 
 class app extends Component
@@ -14,8 +15,11 @@ class app extends Component
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(
+        MemoService $memoService
+    )
     {
+        $this->memoService = $memoService;
     }
 
     /**
@@ -25,10 +29,9 @@ class app extends Component
      */
     public function render()
     {
-        // $memos = $this->simplenoteMemoRepository->myMemos($simplenote_user->id);
         $user = auth()->user();  
         $tags = $user->tags;
-        $memos = $user->memos;
+        $memos = $this->memoService->myMemos($user->id);
         return view('components.layouts.app', compact(['tags', 'memos']));
     }
 }

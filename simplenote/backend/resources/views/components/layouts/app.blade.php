@@ -27,7 +27,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href={{ route('home') }}>
+                <a class="navbar-brand" href={{ route('memos.index') }}>
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -87,9 +87,9 @@
               <div class="card h-100">
               <div class="card-header">タグ一覧</div>
               <div class="card-body py-2 px-4">
-                <a class='d-block' href={{ route('home') }}>全て表示</a>
+                <a class='d-block' href={{ route('memos.index') }}>全て表示</a>
         @foreach($tags as $tag)
-                  <a href="/simplenote/memo?tag={{ $tag['name'] }}" class='d-block'>{{ $tag['name'] }}</a>
+                  <a href="/memos?tag={{ $tag['name'] }}" class='d-block'>{{ $tag['name'] }}</a>
         @endforeach
                 </div>
               </div>
