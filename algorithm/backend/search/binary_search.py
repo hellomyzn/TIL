@@ -42,10 +42,38 @@ def binary_search(numbers: List[int], value: int) -> IndexNum:
     print(f"I couldn't find")
     return -1
 
+# Recursive function
+def binary_search_recursive(numbers: List[int], value: int) -> IndexNum:
+    line = "=" * 80
+    print(f"\n\n{line}")
+    print(f"{__name__}  | [INFO] - Start: {numbers}\n")
+    print(f"Value: {value}")
+    left, right = 0, len(numbers) -1
+    def _binary_search_recursive(numbers: List[int], 
+                                    value: int,
+                                    left: IndexNum,
+                                    right: IndexNum) -> IndexNum:
+        if left > right:
+            print(f"I couldn't find")
+            return -1
+
+        mid = (left + right) //2
+        if numbers[mid] == value:
+            print(f"Index: {mid}")
+            return mid
+        elif numbers[mid] < value:
+            return _binary_search_recursive(numbers, value, mid +1, right)
+        else:
+            return _binary_search_recursive(numbers, value, left, right -1)
+    
+    return _binary_search_recursive(numbers, value, 0, len(numbers) -1)
+
+
+
 if __name__ == '__main__':
     
     import random
     nums = [random.randint(0, 1000) for i in range(10)]
     nums = bubble_sort(nums)
-    value = nums[random.randint(0, 10)]
-    binary_search(nums, value)
+    value = nums[random.randint(0, 9)]
+    binary_search_recursive(nums, value)
