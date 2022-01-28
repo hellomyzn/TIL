@@ -1,9 +1,10 @@
+from __future__ import annotations
 from typing import Any
 from typing import Optional
 
 
 class Node(object):
-    def __init__(self, data: Any, next_node: None =None):
+    def __init__(self, data: Any, next_node: Node =None):
         self.data = data
         self.next = next_node
 
