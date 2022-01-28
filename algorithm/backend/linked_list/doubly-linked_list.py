@@ -123,25 +123,25 @@ class DoublyLinkedList(object):
 
     def reverse_recursive(self) -> None:
         """
-        List: [1,2,3]
-        _reverse_recursive(Node(1)):
-            previous_node = None
-            Node(1).prev = Node(2)
-            Node(1.).next = None
+            List: [1,2,3]
+            _reverse_recursive(Node(1)):
+                previous_node = None
+                Node(1).prev = Node(2)
+                Node(1.).next = None
 
-            _reverse_recursive(Node(2)):
-                previous_node = Node(1)
-                Node(2).prev = Node(3)
-                Node(2.).next = None(1)
+                _reverse_recursive(Node(2)):
+                    previous_node = Node(1)
+                    Node(2).prev = Node(3)
+                    Node(2.).next = None(1)
 
-                _reverse_recursive(Node(3)):
-                    previous_node = Node(2)
-                    Node(3).prev = None
-                    Node(3.).next = Node(2)
+                    _reverse_recursive(Node(3)):
+                        previous_node = Node(2)
+                        Node(3).prev = None
+                        Node(3.).next = Node(2)
 
-                    if Node(3).prev is None:
-                        return Node(3)
-        self.head = Node(3)
+                        if Node(3).prev is None:
+                            return Node(3)
+            self.head = Node(3)
         """
         def _reverse_recursive(current_node: Node) -> Optional[Node]:
             if not current_node:
@@ -158,16 +158,58 @@ class DoublyLinkedList(object):
 
         self.head = _reverse_recursive(self.head)
 
+
+    def sort(self) -> None:
+        """
+            List: [6,5,9,2,4,0]
+            current_node = Node(6)
+
+            while Node(5):
+                next_node = Node(5)
+                while Node(5):
+                    if Node(6) > Node(5):
+                        Node(6).data, Node(5).data = Node(5).data, Node(6).data
+                    next_data = Node(9)
+                    [5,6,9,2,4,0]
+                while Node(9):
+                    next_data = Node(2)
+                while Node(2):
+                    if Node(6) > Node(2):
+                        Node(6).data, Node(2).data = Node(2).data, Node(6).data
+                    next_data = Node(4)
+                    [2,6,9,5,4,0]
+                ...
+                current_node = Node(5)
+        """
+
+        if self.head is None:
+            return
+
+        current_node = self.head
+
+        while current_node.next:
+            next_node = current_node.next
+            while next_node:
+                if current_node.data > next_node.data:
+                    current_node.data, next_node.data = next_node.data, current_node.data
+                next_node = next_node.next
+            
+            current_node = current_node.next
+
+        
+
 if __name__ == '__main__':
     d = DoublyLinkedList()
-    d.append(1)
-    d.append(2)
-    d.append(3)
+    d.append(6)
+    d.append(5)
+    d.append(9)
+    d.insert(2)
     d.insert(4)
+    d.insert(0)
     d.print()
 
-    print('removed')
-    d.remove(2)
+    print('removed 0')
+    d.remove(0)
     d.print()
 
     print('reverse_iterative')
@@ -176,4 +218,8 @@ if __name__ == '__main__':
 
     print('reverse_recursive')
     d.reverse_recursive()
+    d.print()
+
+    print('sort')
+    d.sort()
     d.print()
