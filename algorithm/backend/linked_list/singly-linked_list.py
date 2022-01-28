@@ -1,4 +1,6 @@
 from typing import Any
+from typing import Optional
+
 
 class Node(object):
     def __init__(self, data: Any, next_node: None =None):
@@ -180,7 +182,7 @@ class LinkedList(object):
                 self.head = Node(3)
                          
         """
-        def _reverse_recursive(current_node: Node, previous_node: Node):
+        def _reverse_recursive(current_node: Node, previous_node: Node) -> Node:
             if not current_node:
                 return previous_node
             
@@ -192,6 +194,74 @@ class LinkedList(object):
 
         self.head = _reverse_recursive(self.head, None)
 
+    def reverse_even(self) -> None:
+        """
+            l.append(2): new_node =  Node(2)
+                         self.head = Node(2)
+            l.append(4): new_node =  Node(4)
+                         last_node = Node(2)
+                         Node(2).next = Node(4)
+            l.append(6): new_node =  Node(6)
+                         last_node = Node(4)
+                         Node(4).next = Node(6)
+            l.append(1): new_node =  Node(1)
+                         last_node = Node(6)
+                         Node(6).next = Node(1)
+            ... [2,4,6,1]
+            l.reverse_even():
+                _reverse_even(Node(2), None):
+                    current_node = Node(2)
+                    while Node(1) and Node(2).data % 2 == 0
+                        next_node = Node(4)
+                        Node(2).next = None
+                        previous_node = Node(2)
+                        current_node = Node(4)
+                        [2]
+                    while Node(4) and Node(4).data % 2 == 0     
+                        next_node = Node(6)
+                        Node(4).next = Node(2)
+                        previous_node = Node(4)
+                        current_node = Node(6)
+                        [4, 2]
+                    while Node(6) and Node(6).data % 2 == 0     
+                        next_node = Node(1)
+                        Node(6).next = Node(4)
+                        previous_node = Node(6)
+                        current_node = Node(1)
+                        [6, 4, 2]
+                    if Node(1) != Node(2):
+                        Node(2).next = Node(1)
+                        [6, 4, 2, 1]
+                        _reverse_even(Node(1), None):
+                            _reverse_even(Node(1).next=None, Node(1)):
+                        return previous_node = Node(6)
+                self.head = Node(6)
+
+        """
+
+        def _reverse_even(head: Node, previous_node: Node) -> Optional[Node]:
+            if head is None:
+                return None
+            
+            current_node = head
+            while current_node and current_node.data % 2 == 0:
+                next_node = current_node.next
+                current_node.next = previous_node
+                previous_node = current_node
+                current_node = next_node
+            
+            if current_node != head:
+                head.next = current_node
+                _reverse_even(current_node, None)
+                return previous_node
+            else:
+                head.next = _reverse_even(head.next, head)
+                return head
+
+        self.head = _reverse_even(self.head, None)
+
+
+
 if __name__ == '__main__':
     l = LinkedList()
     l.append(1)
@@ -200,12 +270,20 @@ if __name__ == '__main__':
     l.insert(9)
     l.print()
     l.remove(2)
-    print('#########')
+    print('Remove: 2')
     l.print()
     l.reverse_iterative()
-    print('#########')
+    print('reverse_iterative')
     l.print()
     l.reverse_recursive()
+    print('reverse_recursive')
+    l.print()
+    l.append(2)
+    l.append(4)
+    l.append(6)
+    l.append(9)
     print('#########')
     l.print()
-
+    print('reverse_even')
+    l.reverse_even()
+    l.print()
