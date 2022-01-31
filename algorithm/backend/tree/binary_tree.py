@@ -26,6 +26,16 @@ def inorder(node: Node) -> None:
         inorder(node.right)
 
 
+def search(node: Node, value: int) -> bool:
+    if node is None:
+        return False
+    
+    if node.value == value:
+        return True
+    elif node.value > value:
+        return search(node.left, value)
+    elif node.value < value:
+        return search(node.right, value)
 
 if __name__ == '__main__':
     root = None
@@ -40,3 +50,5 @@ if __name__ == '__main__':
     # print(root.value)
     # print(root.right.value)
     # print(root.right.left.value)
+
+    print(search(root, 90))
