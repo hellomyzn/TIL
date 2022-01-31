@@ -12,6 +12,12 @@ class Queue(object):
         if self.queue:
             return self.queue.pop(0)
 
+    def reverse(self):
+        new_queue = Queue()
+        while self.queue:
+            new_queue.enqueue(self.queue.pop())
+        return new_queue
+
 if __name__ == '__main__':
     q = Queue()
     q.enqueue(1)
@@ -19,6 +25,9 @@ if __name__ == '__main__':
     q.enqueue(3)
     q.enqueue(4)
     print(q.queue)
+    q = q.reverse()
+    print(q.queue)
+    q = q.reverse()
     print(q.dequeue())
     print(q.dequeue())
     print(q.dequeue())
@@ -31,6 +40,9 @@ if __name__ == '__main__':
     dq.append(3)
     dq.append(4)
     print(dq)
+    dq.reverse()
+    print(dq)
+    dq.reverse()
     print(dq.popleft())
     print(dq.popleft())
     print(dq.popleft())
