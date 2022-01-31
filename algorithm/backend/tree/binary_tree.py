@@ -16,6 +16,17 @@ def insert(node: Node, value: int) -> Node:
     return node
 
 
+def inorder(node: Node) -> None:
+    # Inorder Left, Root, Right
+    # Preorder Root, Left, Right
+    # Postorder Left, Right, Root
+    if node is not None:
+        inorder(node.left)
+        print(node.value)
+        inorder(node.right)
+
+
+
 if __name__ == '__main__':
     root = None
     root = insert(root, 3)
@@ -25,6 +36,7 @@ if __name__ == '__main__':
     root = insert(root, 1)
     root = insert(root, 10)
     root = insert(root, 2)
-    print(root.value)
-    print(root.right.value)
-    print(root.right.left.value)
+    inorder(root)
+    # print(root.value)
+    # print(root.right.value)
+    # print(root.right.left.value)
