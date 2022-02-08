@@ -20,9 +20,9 @@ def get_max_sequence_sum(numbers: List[int]) -> int:
         #     sum_sequence = temp_sum_sequence
         # else:
         #     sum_sequence = num
-        sum_sequence = max(num, sum_sequence + num)
         # if result_sequence < sum_sequence:
         #     result_sequence = sum_sequence
+        sum_sequence = max(num, sum_sequence + num)
         result_sequence = max(result_sequence, sum_sequence)
     return result_sequence
 
