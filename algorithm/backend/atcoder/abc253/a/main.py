@@ -5,7 +5,7 @@ def main():
     a, b, c = map(int, input().split())
     median = a + b + c - max(a, b, c) - min(a, b, c)
     if median == b:
-        print("yes")
+        print("Yes")
     else:
         print("No")
 
