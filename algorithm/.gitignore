@@ -10,3 +10,4 @@ backend/.config/*
 !backend/.config/atcoder-cli-nodejs/
 backend/.config/atcoder-cli-nodejs/*
 !backend/.config/atcoder-cli-nodejs/cpp
+!backend/.config/atcoder-cli-nodejs/config.json

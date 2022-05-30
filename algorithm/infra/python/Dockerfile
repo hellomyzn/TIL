@@ -22,4 +22,3 @@ RUN python -m pip install \
     online-judge-tools
 
 RUN npm install -g atcoder-cli
-RUN acc config default-template cpp
