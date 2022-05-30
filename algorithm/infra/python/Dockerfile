@@ -13,6 +13,7 @@ ENV TERM xterm
 RUN apt-get install -y vim \
     less \
     curl \
+    time \
     npm
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
