@@ -6,5 +6,7 @@
 *.local
 *.bashrc
 *.viminfo
-backend/.config/
+backend/.config/*
+!backend/.config/atcoder-cli-nodejs/
+backend/.config/atcoder-cli-nodejs/*
 !backend/.config/atcoder-cli-nodejs/cpp
