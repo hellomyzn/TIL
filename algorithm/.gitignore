@@ -4,3 +4,7 @@
 *.DS_Store
 *.cache
 *.local
+*.bashrc
+*.viminfo
+.npm
+.config

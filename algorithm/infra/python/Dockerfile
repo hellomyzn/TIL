@@ -10,10 +10,15 @@ ENV LC_ALL ja_JP.UTF-8
 ENV TZ JST-9
 ENV TERM xterm
 
-RUN apt-get install -y vim less
+RUN apt-get install -y vim \
+    less \
+    curl \
+    npm
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 
 RUN python -m pip install \
     jupyterlab \
     online-judge-tools
+
+RUN npm install -g atcoder-cli
