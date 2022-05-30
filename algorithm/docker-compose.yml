@@ -8,3 +8,4 @@ services:
     tty: true
     volumes:
       - ./backend/:/root
+      - ./infra/python/cpp/:/root/.config/atcoder-cli-nodejs/cpp
