@@ -15,7 +15,7 @@ def main():
     x1, y1 = tokens[0]
     x2, y2 = tokens[1]
 
-    print(abs(x1 - y1) + abs(x2 - y2))
+    print(abs(x1 - x2) + abs(y1 - y2))
 
 if __name__ == "__main__":
     main()
