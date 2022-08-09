@@ -21,5 +21,8 @@
             <button type='submit'>Send</button>
         </form>
     </div>
+    @foreach ($tweets as $tweet)
+        <p> {{ $tweet->content }} </p>
+    @endforeach
 </body>
 </html>
