@@ -24,7 +24,7 @@ class IndexController extends Controller
         // return $factory->make('tweet.index', ['name' => 'laravel']);
         // return view('tweet.index')->with('name', 'laravel');
         // return view('tweet.index')->with('name', 'laravel')->with('version', '8');
-        $tweets = Tweet::all();
+        $tweets = Tweet::orderBy('created_at', 'DESC')->get();
         return view('tweet.index')->with('tweets', $tweets);
     }
 }
