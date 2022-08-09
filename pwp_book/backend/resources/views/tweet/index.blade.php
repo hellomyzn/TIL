@@ -9,9 +9,17 @@
 <body>
     <h1>Tweets</h1>
     <div>
-        @foreach ($tweets as $tweet)
-            <p>{{ $tweet->content }}</p>
-        @endforeach
+        <p>Tweet Form</p>
+        <form action="{{ route('tweet.create') }}" method="post">
+            @csrf
+            <label for="tweet-content">Tweet</label>
+            <span>*Until 140 characters</span>
+            <textarea name="tweet" id="tweet-content" type='text' placeholder='Write down here.'></textarea>
+            @error('tweet')
+                <p style="color: red;"> {{ $message }} </p>
+            @enderror
+            <button type='submit'>Send</button>
+        </form>
     </div>
 </body>
 </html>
