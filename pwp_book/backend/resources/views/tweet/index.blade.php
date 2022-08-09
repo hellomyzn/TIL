@@ -10,6 +10,9 @@
     <h1>Tweets</h1>
     <div>
         <p>Tweet Form</p>
+        @if (session('feedback.success'))
+            <p style='color: green'> {{ session('feedback.success') }} </p>
+        @endif
         <form action="{{ route('tweet.create') }}" method="post">
             @csrf
             <label for="tweet-content">Tweet</label>
@@ -26,6 +29,11 @@
             <summary>{{ $tweet->content }}</summary>
             <div>
                 <a href="{{ route('tweet.update.index', ['tweetId' => $tweet->id])}}">Edit</a>
+                <form action="{{ route('tweet.delete', ['tweetId' => $tweet->id])}}" method="post">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit">Delete</button>
+                </form>
             </div>
         </details>
     @endforeach
