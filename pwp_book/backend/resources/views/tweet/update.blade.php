@@ -11,6 +11,9 @@
     <div>
         <a href="{{ route('tweet.index') }}"> < Back </a>
         <p>Tweet Form</p>
+        @if (session('feedback.success'))
+            <p style="color: green">{{ session('feedback.success') }}</p>
+        @endif
         <form action="{{ route('tweet.update.put', ['tweetId' => $tweet->id]) }}" method="post">
             @method('PUT')
             @csrf
