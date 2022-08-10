@@ -24,7 +24,6 @@ class IndexController extends Controller
         // return $factory->make('tweet.index', ['name' => 'laravel']);
         // return view('tweet.index')->with('name', 'laravel');
         // return view('tweet.index')->with('name', 'laravel')->with('version', '8');
-        
         $tweets = $tweetService->getTweets();
         return view('tweet.index')->with('tweets', $tweets);
     }
