@@ -10,4 +10,14 @@ class Tweet extends Model
     use HasFactory;
 
     // protected $table = 'tweet';
+    
+    /**
+     * user
+     *
+     * @return void
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
