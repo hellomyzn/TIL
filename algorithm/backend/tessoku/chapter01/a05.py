@@ -8,3 +8,4 @@ for i in range(1, N+1):
             Answer += 1
 
 print(Answer)
+
