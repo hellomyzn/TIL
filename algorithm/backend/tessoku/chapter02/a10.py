@@ -6,15 +6,15 @@ R = [ None ] * D
 for i in range(D):
     L[i], R[i] = map(int, input().split())
 
-P = [ None ] * N
-P[0] = A[0]
+left_max = [ None ] * N
+left_max[0] = A[0]
 for i in range(1, N):
-    P[i] = max(P[i-1], A[i])
+    left_max[i] = max(left_max[i-1], A[i])
 
-Q = [ None ] * N
-Q[N-1] = A[N-1]
+right_max = [ None ] * N
+right_max[N-1] = A[N-1]
 for i in reversed(range(0, N-1)):
-    Q[i] = max(Q[i+1], A[i])
+    right_max[i] = max(right_max[i+1], A[i])
     
 for i in range(D):
-    print(max(P[(L[i]-1) -1], Q[(R[i]+1) -1]))
+    print(max(left_max[(L[i]-1) -1], right_max[(R[i]+1) -1]))
