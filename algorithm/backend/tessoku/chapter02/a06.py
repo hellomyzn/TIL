@@ -5,10 +5,10 @@ R = [ None ] * Q
 for i in range(Q):
     L[i], R[i] = map(int, input().split())
 
-S = [ None ] * (N + 1)
-S[0] = 0
+cumulative_sum = [ None ] * (N + 1)
+cumulative_sum[0] = 0
 for i in range(N):
-    S[i + 1] = S[i] + A[i]
+    cumulative_sum[i + 1] = cumulative_sum[i] + A[i]
 
 for i in range(Q):
-    print(S[R[i]] - S[L[i] - 1])
+    print(cumulative_sum[R[i]] - cumulative_sum[L[i] - 1])
