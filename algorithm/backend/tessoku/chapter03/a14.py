@@ -22,6 +22,7 @@ for i in range(N):
 # 配列 Q を小さい順にソート
 Q.sort()
 
+# # O(n^2)
 # for i in Q:
 #     for j in P:
 #         if K - i == j:
