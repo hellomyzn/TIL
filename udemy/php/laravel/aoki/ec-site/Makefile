@@ -14,6 +14,9 @@ install:
 	docker compose exec app php artisan storage:link
 	docker compose exec app chmod -R 777 storage bootstrap/cache
 	@make fresh
+	@make npm-install 
+packages:
+	docker-compose exec app composer require --dev barryvdh/laravel-debugbar
 up:
 	docker compose up -d
 build:
@@ -60,6 +63,12 @@ app:
 	docker-compose exec app bash
 node:
 	docker-compose exec node ash
+npm-install:
+	docker-compose exec node npm install
+npm-dev:
+	docker-compose exec node npm run dev
+npm-build:
+	docker-compose exec node npm run build
 schemaspy:
 	docker-compose up schemaspy
 db:

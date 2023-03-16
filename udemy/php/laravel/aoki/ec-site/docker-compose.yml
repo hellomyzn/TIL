@@ -45,21 +45,21 @@ services:
         source: ./src
         target: /workspace
 
-  # node:
-  #   build:
-  #     context: .
-  #     dockerfile: ./infra/docker/node
-  #   ports:
-  #     - target: 5173
-  #       published: ${NODE_PUBLISHED_PORT:-5173}
-  #       protocol: tcp
-  #       mode: host
-  #   ports:
-  #     - 5173:5173
-  #   tty: true
-  #   volumes:
-  #     - ./backend:/work
-  #   working_dir: /work
+  node:
+    build:
+      context: .
+      dockerfile: ./infra/docker/node/Dockerfile
+    ports:
+      - target: 5173
+        published: ${NODE_PUBLISHED_PORT:-5173}
+        protocol: tcp
+        mode: host
+    tty: true
+    volumes:
+      - type: bind
+        source: ./src
+        target: /workspace
+    working_dir: /workspace
 
   db:
     build:
