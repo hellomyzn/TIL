@@ -1,0 +1,160 @@
+version: "3.9"
+volumes:
+  db-store:
+  db-test-store:
+  psysh-store:
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./infra/docker/php/Dockerfile
+      target: ${APP_BUILD_TARGET:-development}
+    volumes:
+      - type: bind
+        source: ./src
+        target: /workspace
+      - type: volume
+        source: psysh-store
+        target: /root/.config/psysh
+        volume:
+          nocopy: true
+    environment:
+      - APP_DEBUG=${APP_DEBUG:-true}
+      - APP_ENV=${APP_ENV:-local}
+      - APP_URL=${APP_URL:-http://localhost}
+      - LOG_CHANNEL=${LOG_CHANNEL:-stderr}
+      - LOG_STDERR_FORMATTER=${LOG_STDERR_FORMATTER:-Monolog\Formatter\JsonFormatter}
+      - DB_CONNECTION=${DB_CONNECTION:-mysql}
+      - DB_HOST=${DB_HOST:-db}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_DATABASE=${DB_DATABASE:-laravel}
+      - DB_USERNAME=${DB_USERNAME:-phper}
+      - DB_PASSWORD=${DB_PASSWORD:-secret}
+
+  web:
+    build:
+      context: .
+      dockerfile: ./infra/docker/nginx/Dockerfile
+    ports:
+      - target: 80
+        published: ${WEB_PUBLISHED_PORT:-80}
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: bind
+        source: ./src
+        target: /workspace
+
+  # node:
+  #   build:
+  #     context: .
+  #     dockerfile: ./infra/docker/node
+  #   ports:
+  #     - target: 5173
+  #       published: ${NODE_PUBLISHED_PORT:-5173}
+  #       protocol: tcp
+  #       mode: host
+  #   ports:
+  #     - 5173:5173
+  #   tty: true
+  #   volumes:
+  #     - ./backend:/work
+  #   working_dir: /work
+
+  db:
+    build:
+      context: .
+      dockerfile: ./infra/docker/mysql/Dockerfile
+    ports:
+      - target: 3306
+        published: ${DB_PUBLISHED_PORT:-3306}
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: volume
+        source: db-store
+        target: /var/lib/mysql
+        volume:
+          nocopy: true
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE:-laravel}
+      - MYSQL_USER=${DB_USERNAME:-phper}
+      - MYSQL_PASSWORD=${DB_PASSWORD:-secret}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-secret}
+
+  db-test:
+    build:
+      context: .
+      dockerfile: ./infra/docker/mysql/Dockerfile
+    ports:
+      - target: 3306
+        published: ${DB_TEST_PUBLISHED_PORT:-33061}
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: volume
+        source: db-test-store
+        target: /var/lib/mysql
+        volume:
+          nocopy: true
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE:-laravel}
+      - MYSQL_USER=${DB_USERNAME:-phper}
+      - MYSQL_PASSWORD=${DB_PASSWORD:-secret}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-secret}
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - target: 8025
+        published: ${MAILHOG_PUBLISHED_PORT:-8025}
+        protocol: tcp
+        mode: host
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8888:80
+    depends_on:
+      - db
+
+  ngrok:
+    image: wernight/ngrok
+    ports:
+      - ${NGROK_PORT:-4040}:4040
+    environment:
+      NGROK_AUTH: ${NGROK_AUTH}
+      NGROK_PROTOCOL: http
+      NGROK_PORT: web:80
+      # SSLの場合
+      # NGROK_PROTOCOL: https
+      # NGROK_PORT: web:443
+
+  schemaspy:
+    build: ./infra/docker/schemaspy
+    image: schemaspy/schemaspy
+    volumes:
+      - ./infra/docker/schemaspy/output:/output
+      - ./infra/docker/schemaspy/drivers:/drivers
+    command: >
+      java -jar schemaspy.jar
+      -t mysql
+      -dp /drivers
+      -host db
+      -port 3306
+      -db ${DB_DATABASE:-laravel}
+      -u ${DB_USERNAME:-phper} 
+      -p ${DB_PASSWORD:-secret}
+      -s ${DB_DATABASE:-laravel}
+      -o /output
+      -connprops allowPublicKeyRetrieval\\=false useSSL\\=false
+    depends_on:
+      - db
+
+  # nginx_schemaspy:
+  #   image: nginx:1.19.5-alpine
+  #   volumes:
+  #     - ./infra/docker/schemaspy/output:/usr/share/nginx/html
+  #   ports:
+  #     - ${NGINX_SCHEMASPY_PORT:-8081}:80
+
