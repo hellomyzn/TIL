@@ -191,3 +191,46 @@ if (favorite === 23) {
 }
 
 if (favorite !== 23) console.log("why not 23?");
+
+
+// ep: 23
+// ep: 24
+const hasDriverLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriverLicense && hasGoodVision);
+console.log(hasDriverLicense || hasGoodVision);
+console.log(!hasDriverLicense);
+
+const shouldDrive = hasDriverLicense && hasGoodVision;
+if (shouldDrive) {
+    console.log("Sarah is able to drive");
+} else {
+    console.log('Someone else should drive...');
+}
+
+const isTired = true;
+console.log(hasDriverLicense || hasGoodVision || !isTired);
+
+// ep: 25
+// const averageDolphins = Number((96 + 108 + 89) / 3);
+// const averageKoalas = Number((88 + 91 + 110) / 3);
+const minScore = Number(100);
+const averageDolphins = Number((97 + 112 + 101) / 3);
+const averageKoalas = Number((109 + 95 + 123) / 3);
+const averageDolphins = Number((97 + 112 + 101) / 3);
+const averageKoalas = Number((109 + 95 + 106) / 3);
+
+
+if (averageDolphins > averageKoalas && averageDolphins >= minScore ) {
+    console.log("Dolphins team wins");
+} else if (averageKoalas > averageDolphins && averageKoalas>= minScore) {
+    console.log("Koalas team wins");
+} else if (averageKoalas === averageDolphins && averageKoalas >= minScore) {
+    console.log("It's draw");
+} else {
+    console.log("No one wins");
+}
+
+// ep: 26
+
