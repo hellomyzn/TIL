@@ -1,0 +1,147 @@
+h1, h2, p {
+    font-family: heisei-maru-gothic-std, sans-serif;
+}
+
+p {
+    font-size: 12px;
+    font-weight: w4;
+    line-height: 16px;
+    color: #483E3E;
+}
+
+.container {
+    display: grid;
+    width: 375px;
+    grid-template-columns: 375px;
+    grid-template-rows: 20px 160px auto auto auto;
+    margin: 0 auto;
+    gap: 30px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header h1 {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: w8;
+    color: #81A238;
+    padding-top: 19px;
+}
+
+.header ul {
+    display: flex;
+    list-style-type: none;
+    width: 140px;
+    justify-content: space-between;
+    margin-right: 5px;
+}
+
+.header ul li {
+    margin-top: 20px;
+}
+
+.header ul a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.TopPhoto img {
+    width: 375px;
+}
+
+.header ul a:hover {
+    color: red;
+}
+
+.main {
+    display: grid;
+}
+
+h2 {
+    width: 300px;
+    font-size: 22px;
+    font-weight: w8;
+    color: #6C4747;
+    margin: 0 0 15px 20px;
+}
+
+.photo {
+    margin-bottom: 20px;
+}
+
+.photo img {
+    width: 375px;
+    margin-bottom: 4px;
+}
+
+.photo .mejiros {
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo .mejiros img {
+    width: 117px;
+    height: 117px;
+}
+
+.main-text {
+    width: 315px;
+    margin: 0 auto;
+}
+
+.main-text .p1 {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.main-text .button_back {
+    width: 50px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.SNS .SNS_Logo {
+    width: 251px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 12px;
+    border-top: 1px solid #000;
+}
+
+.SNS_Logo img {
+    width: 44px;
+}
+
+.footer {
+    background-color: #fff;
+}
+
+.footer .footer_title {
+    height: 25px;
+    color: #fff;
+    background-color: #B4AEAE;
+    padding-left: 30px;
+    padding-top: 5px;
+    margin-bottom: 20px;
+}
+
+.footer .footer_textbox {
+    margin-left: 30px;
+}
+
+.footer .footer_textbox p {
+    line-height: 22px; 
+}
+
+
+
+
