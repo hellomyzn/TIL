@@ -1,0 +1,41 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    height: 120px;
+    background-color: #fff1ac;
+    margin-bottom: 5px;
+}
+
+nav {
+    height: 50px; 
+    background-color: #f9bcdd; 
+    margin-bottom: 5px;
+}
+
+main {
+    height: 300px;
+    margin-bottom: 5px;
+}
+
+.news1 {
+    width: 390px; 
+    height: 300px;
+    float: left;
+    background-color: #d5a4cf;
+}
+
+.news2 {
+    width: 390px; 
+    height: 300px; 
+    background-color: #b689b0;
+    float: right;
+}
+
+footer {
+    width: 800px;
+    height: 100px; 
+    background-color: #ff6768;
+}

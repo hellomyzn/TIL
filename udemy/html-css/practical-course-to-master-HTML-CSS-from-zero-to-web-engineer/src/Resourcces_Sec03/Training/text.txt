@@ -1,0 +1,13 @@
+ヘッダーブロック。ここにはタイトル、ロゴ、メインビジュアル、製品紹介などが入ります。　height: 120px; background-color: #fff1ac; margin-bottom: 5px;
+
+
+ナビゲーションバー。ここはリンクボタンなどナビゲーション項目を集めたバーです。　 height: 50px; background-color: #f9bcdd; margin-bottom: 5px;
+
+
+記事1　ここにはコンテンツの記事1が入ります。　width: 390px; height: 300px; background-color: #d5a4cf; float: left;
+
+
+記事2　ここにはコンテンツの記事2が入ります。　 width: 390px; height: 300px; background-color: #b689b0; float: right;
+
+
+フッターブロック　ここにはfooter情報が入ります。　width: 800px; height: 200px; background-color: #ff6768;
