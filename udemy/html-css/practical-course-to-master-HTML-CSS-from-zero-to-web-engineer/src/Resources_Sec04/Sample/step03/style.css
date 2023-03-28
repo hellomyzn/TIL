@@ -1,0 +1,30 @@
+.container {
+    display: grid;
+    width: 800px;
+    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-rows: 140px 500px 120px;
+    margin: 0 auto;
+    gap: 30px 20px;
+}
+
+.header {
+    grid-column: 1 / 4;
+    background-color: #eedcb3;
+}
+
+.aside1 {
+    background-color: #00ffff;
+}
+
+.main {
+    background-color: #00ffff;
+}
+
+.aside2 {
+    background-color: #00ffff;
+}
+
+.footer {
+    grid-column: 1 / 4;
+    background-color: #eedcb3;
+}
