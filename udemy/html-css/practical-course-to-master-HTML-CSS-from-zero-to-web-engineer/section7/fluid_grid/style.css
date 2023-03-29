@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+
+body {
+    width:100%; 
+}
+
+.container {
+    display: grid;
+    gap: 30px;
+}
+
+.header h1 {
+    font-size: 1.5em;
+    height: 38px;
+    text-align: center;
+    color: #fff;
+    background-color: #3fc;
+    padding-top: 7px;
+}
+
+.main {
+    width: 85%;
+    margin: 0 auto;
+    line-height: 1.3em;
+}
+
+aside {
+    margin-bottom: 40px;
+}
+
+aside h2 {
+    height: 130px;
+    text-align: center;
+    font-size: 1.3em;
+    background-color: #0ff;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+article {
+    line-height: 1.3em;
+}
+
+article section {
+    border-bottom: 1px solid #666;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    width: 100%;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+}
+
+
