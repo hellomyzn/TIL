@@ -75,12 +75,12 @@ nav ul li {
     font-size: 0.9em;
 }
 
-.news {
+.news, .watching{
     padding: 0 30px 0 30px;
     margin-bottom: 20px;
 }
 
-.news h2 {
+.news h2, .watching h2 {
     font-size: 17px;
     color: #6C4B4B;
     margin-bottom: 10px;
@@ -111,14 +111,42 @@ nav ul li {
     padding-top: 2px;
 }
 
-.news .text {
+.text {
     color: #676262;
     margin-bottom: 5px;
 }
 
-.news .more {
+.more {
     grid-column: 2;
     text-align: right;
+}
+
+.watching {
+    background-color: #F5F4F4;
+    padding-top: 20px;
+}
+
+.watch {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0 30px;
+    margin-bottom: 20px;
+}
+
+.watch_photo {
+    grid-column: 1;
+    grid-row: 1 / 4;
+}
+
+.watch_photo img {
+    width: 100%;
+}
+
+.watch_title {
+    font-size: 15px;
+    color: #8D8A8A;
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .SNS {
