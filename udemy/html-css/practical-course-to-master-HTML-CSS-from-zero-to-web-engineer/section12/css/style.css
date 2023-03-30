@@ -116,9 +116,12 @@ h2 {
     padding-top: 12px;
     border-top: 1px solid #000;
 }
+.SNS_Logo a {
+    display: block;
+}
 
-.SNS_Logo img {
-    width: 11.73%;
+.SNS_Logo a img {
+    width: 40%;
 }
 
 .footer {

@@ -221,8 +221,13 @@ h2 {
     border-top: 1px solid #000;
 }
 
-.SNS_Logo img {
-    width: 11.73%;
+.SNS_Logo a {
+    display: block;
+    width: 20%;
+}
+
+.SNS_Logo a img {
+    width: 100%;
 }
 
 .footer {
