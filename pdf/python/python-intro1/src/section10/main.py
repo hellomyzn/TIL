@@ -11,4 +11,4 @@ for ix in ary:
 
 # pra10_2
 selected_name = '' or 'aoki' or 'inoue' or 'ueda'
-print(selected_name) # aoki
+print(selected_name)
