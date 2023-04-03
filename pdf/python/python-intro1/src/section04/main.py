@@ -27,4 +27,3 @@ total = 0
 total = sum(any)
 print(f'合計は{total}です')
 
-
