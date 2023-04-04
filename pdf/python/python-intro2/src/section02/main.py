@@ -1,5 +1,6 @@
 # コンストラクタとフィールド
 
+# pra2
 class Neko:
     family_name = '磯野家'
     def __init__(self, name, age):
