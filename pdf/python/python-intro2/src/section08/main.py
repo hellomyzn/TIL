@@ -51,7 +51,7 @@ class Book:
 
     def __eq__(self, other):
         return self.isbn == other.isbn
-    
+
     def __add__(self, other):
         book = Book(self.title + ',' + other.title)
         return book
