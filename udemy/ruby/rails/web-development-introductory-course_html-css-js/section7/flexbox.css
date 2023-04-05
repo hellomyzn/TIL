@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    flex-flow: row, nowrap;
+}
+
+.item {
+    background-color: #ffa61c;
+    margin: 10px;
+    padding: 20px;
+}
+
+
