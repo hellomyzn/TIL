@@ -12,7 +12,6 @@
 ## 俊敏性
 ![image](https://user-images.githubusercontent.com/20104403/231078346-06ff23c8-15ac-466f-8935-506f44a3cea0.png)
 
-
 ## スケーラビリティ
 ![image](https://user-images.githubusercontent.com/20104403/231078738-2ebeb025-9016-425b-946b-266d29648d8f.png)
 ![image](https://user-images.githubusercontent.com/20104403/231078806-3c766ecf-ac76-46d9-a8bd-58e2abce5e19.png)
@@ -26,5 +25,5 @@ AWSでは簡単にリソースを増やしたり減らしたりすることが�
 ## Desgin for failure
 ![image](https://user-images.githubusercontent.com/20104403/231082062-2e8c5c21-2cc7-42b0-a3d0-5898e8a76a52.png)
 
-
 ## 並列化
+![image](https://user-images.githubusercontent.com/20104403/231082382-97859a05-d693-495f-a0e4-3b0f7edc0ed4.png)
