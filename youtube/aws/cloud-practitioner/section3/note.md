@@ -11,8 +11,14 @@
 ![image](https://user-images.githubusercontent.com/20104403/231099858-82d308ea-e26d-4710-a344-a7b07aeaf0e7.png)
 ![image](https://user-images.githubusercontent.com/20104403/231099909-06432878-aa0b-4b63-8679-5aefc7be5d21.png)
 
-
 ## AMI
+![image](https://user-images.githubusercontent.com/20104403/231100232-210f2851-5d05-4f48-92d7-6a3347f3092a.png)
+![image](https://user-images.githubusercontent.com/20104403/231100466-84b434aa-155f-4bac-b476-409add3e5b90.png)
+![image](https://user-images.githubusercontent.com/20104403/231100522-dda014a5-1f15-4d07-8c33-ab9d6b541213.png)
+![image](https://user-images.githubusercontent.com/20104403/231100635-c94f4911-4209-416c-bf1a-d8ce7a2e3e55.png)
+![image](https://user-images.githubusercontent.com/20104403/231100721-3f906313-ace0-4b83-9ec3-92e0bbe08178.png)
+
+
 ## ELB
 ## Lambda
 ## Auto Scaling
