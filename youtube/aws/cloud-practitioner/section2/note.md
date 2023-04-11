@@ -25,6 +25,7 @@
 ![image](https://user-images.githubusercontent.com/20104403/231095989-7c847fa5-1daf-4dca-985c-3e2a5d00f54c.png)
 ![image](https://user-images.githubusercontent.com/20104403/231096067-c44cf143-ca94-42ac-8484-2f12e35dabcf.png)
 
-
 ## Inspector
+![image](https://user-images.githubusercontent.com/20104403/231096553-0d77107c-806d-45f2-b7a1-170817d16600.png)
+
 ## Artifact
