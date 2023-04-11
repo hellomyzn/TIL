@@ -21,6 +21,8 @@
 AWSでは簡単にリソースを増やしたり減らしたりすることが可能ですので、`水平スケーリング`の設計が良い
 
 ## 疎結合
+![image](https://user-images.githubusercontent.com/20104403/231080948-cb6a4e48-d3d8-4b09-a01f-9e2ebf140120.png)
+
 
 ## Desgin for 
 
