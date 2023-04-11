@@ -9,3 +9,19 @@
 ![image](https://user-images.githubusercontent.com/20104403/231077679-13b60f79-374e-4200-846b-f71383dfdc85.png)
 ![image](https://user-images.githubusercontent.com/20104403/231077748-a7be960d-4597-43a5-9eea-75ae6c23d9b1.png)
 
+## 俊敏性
+![image](https://user-images.githubusercontent.com/20104403/231078346-06ff23c8-15ac-466f-8935-506f44a3cea0.png)
+
+
+## スケーラビリティ
+![image](https://user-images.githubusercontent.com/20104403/231078738-2ebeb025-9016-425b-946b-266d29648d8f.png)
+![image](https://user-images.githubusercontent.com/20104403/231078806-3c766ecf-ac76-46d9-a8bd-58e2abce5e19.png)
+![image](https://user-images.githubusercontent.com/20104403/231078866-7d5fe223-89bc-457f-be3f-c043136e1924.png)
+![image](https://user-images.githubusercontent.com/20104403/231078910-dc9e4606-f99b-4397-bcbf-86b028821ad4.png)
+AWSでは簡単にリソースを増やしたり減らしたりすることが可能ですので、`水平スケーリング`の設計が良い
+
+## 疎結合
+
+## Desgin for 
+
+## 並列化
