@@ -23,7 +23,8 @@ AWSでは簡単にリソースを増やしたり減らしたりすることが�
 ## 疎結合
 ![image](https://user-images.githubusercontent.com/20104403/231080948-cb6a4e48-d3d8-4b09-a01f-9e2ebf140120.png)
 
+## Desgin for failure
+![image](https://user-images.githubusercontent.com/20104403/231082062-2e8c5c21-2cc7-42b0-a3d0-5898e8a76a52.png)
 
-## Desgin for 
 
 ## 並列化
