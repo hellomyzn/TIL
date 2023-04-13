@@ -27,6 +27,13 @@
 
 
 ## Lambda
+![image](https://user-images.githubusercontent.com/20104403/231667571-b39727db-c106-4f12-b4b6-cb5bdf61a54d.png)
+![image](https://user-images.githubusercontent.com/20104403/231667634-cfa73120-0065-4782-96d8-c8ff3d6798c6.png)
+![image](https://user-images.githubusercontent.com/20104403/231667702-3dc9bc07-e0c6-4633-9681-d5c73133af77.png)
+![image](https://user-images.githubusercontent.com/20104403/231667796-a2773ee4-7fe1-499d-92fe-b4a06ae1084b.png)
+![image](https://user-images.githubusercontent.com/20104403/231667854-71874978-a4b7-405b-8b96-96188d6ee0fa.png)
+
+
 ## Auto Scaling
 ## S3
 ## EFS / Storage Gateway Snowball
