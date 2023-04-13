@@ -1,8 +1,46 @@
 # Bootstrap
+> レスポンシブ対応のWebサイトのレイアウトを簡単に素早く作成できることから、CSSフレームワークとも呼ばれる
 
 - [Bootstrap.com](https://getbootstrap.com/)
+- [Bootstrap Theme](https://themes.getbootstrap.com/)
+- [Creative TIm](https://www.creative-tim.com/)
 - [cheatsheet](https://bootstrap-cheatsheet.themeselection.com/)
 
 
+## Set up
+CSSとJSをCDNで読み込む
+```
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
+```
+
+## Button
+- [doc](https://getbootstrap.com/docs/5.3/components/buttons/)
+- [code](./button.html)
+
+## Navbar
+- [doc](https://getbootstrap.com/docs/5.3/components/navbar/)
+- [code](./navbar.html)
+
 ## Grid System
+- [doc](https://getbootstrap.com/docs/5.3/layout/grid/)
+- [code](./grid.html)
 ![image](https://user-images.githubusercontent.com/20104403/231893961-eb717ea7-81a5-4853-8b0d-9c1ce8b006fe.png)
+
+## Jumbotron
+- [code](./jumbotron.html)
+
+## Form
+- [doc](https://getbootstrap.com/docs/5.3/forms/overview/)
+- [code](./form.html)
