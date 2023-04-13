@@ -70,9 +70,10 @@
 ![image](https://user-images.githubusercontent.com/20104403/231671621-ad4c7055-c267-4a92-ac5c-fbbfd0c76da9.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671739-afedec89-bf0d-4735-b794-c61f560cea62.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671796-ab567fa8-af1e-4f78-a65c-281743567cae.png)
-
-
-
+![image](https://user-images.githubusercontent.com/20104403/231672678-fde98702-990b-4fd2-8dca-e142c7962e68.png)
+![image](https://user-images.githubusercontent.com/20104403/231672773-43fd575e-13dc-4957-ab72-3410d92e28f3.png)
+![image](https://user-images.githubusercontent.com/20104403/231673008-8eaa7e58-f64b-416e-b918-b058e76b8c3e.png)
+![image](https://user-images.githubusercontent.com/20104403/231673065-c08b7659-5796-4250-83b5-ac4d24c7511a.png)
 
 ## VPCピアリングダイレクトコネクト
 ## Route53
