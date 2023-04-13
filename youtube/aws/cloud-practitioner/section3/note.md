@@ -113,6 +113,12 @@
 ![image](https://user-images.githubusercontent.com/20104403/231680165-6bea4f09-692b-40cd-a087-dde5ab6d0ec8.png)
 
 ## DynamoDB
+![image](https://user-images.githubusercontent.com/20104403/231680373-b3cb6bca-c8ff-44ed-9edf-6a4c5756769d.png)
+![image](https://user-images.githubusercontent.com/20104403/231686044-5b9f5e00-9d30-4477-8bc8-5b4a071c1e3e.png)
+![image](https://user-images.githubusercontent.com/20104403/231686109-d621b670-4729-4fc4-bdfb-4110942f2aa0.png)
+![image](https://user-images.githubusercontent.com/20104403/231686177-9a0630ef-9424-407d-ae29-affa204f86e2.png)
+![image](https://user-images.githubusercontent.com/20104403/231686345-285c8a60-0eee-43ec-a8c8-a9e42349c992.png)
+
 ## Redshift
 ## CloudTrail
 ## CloudWatch
