@@ -61,11 +61,12 @@
 ![image](https://user-images.githubusercontent.com/20104403/231670881-74731ab2-9f00-4958-9d54-e41a64804e05.png)
 ![image](https://user-images.githubusercontent.com/20104403/231670921-06c13ef9-8e2a-4ca7-ad5e-6666c87562b0.png)
 ![image](https://user-images.githubusercontent.com/20104403/231670979-f2c29145-fe1e-41ce-a555-85bdebae40c2.png)
+![image](https://user-images.githubusercontent.com/20104403/231672406-b4e9b7a5-2ff0-4e57-aeb0-88ee1b377e17.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671208-58ac5013-1800-4341-8bb1-8ac248f991fb.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671298-b25c2948-74a8-4608-b399-a541e5ae6eac.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671343-89b9fe98-3127-48cf-b973-e95852d7ec22.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671418-283bf392-4714-4b61-bf01-7413f56e2b63.png)
-インターネットゲートウェイはVPCに一つのみ作成可能
+### インターネットゲートウェイはVPCに一つのみ作成可能
 ![image](https://user-images.githubusercontent.com/20104403/231671621-ad4c7055-c267-4a92-ac5c-fbbfd0c76da9.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671739-afedec89-bf0d-4735-b794-c61f560cea62.png)
 ![image](https://user-images.githubusercontent.com/20104403/231671796-ab567fa8-af1e-4f78-a65c-281743567cae.png)
