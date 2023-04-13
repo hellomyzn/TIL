@@ -123,6 +123,13 @@
 ![image](https://user-images.githubusercontent.com/20104403/231686604-fa7fc9c1-bf51-4b19-9cde-3c19f3f5258d.png)
 
 ## CloudTrail
+![image](https://user-images.githubusercontent.com/20104403/231687009-d5814f1e-ee19-464e-9a16-1c9494c54c6e.png)
+![image](https://user-images.githubusercontent.com/20104403/231687084-75f65592-b2cb-4626-8c1f-7e115705432f.png)
+![image](https://user-images.githubusercontent.com/20104403/231688974-b45f2383-2a19-4b2c-9c5a-4e23df0d2f20.png)
+![image](https://user-images.githubusercontent.com/20104403/231689085-b9af5034-6afc-4fba-8813-e44d26425a30.png)
+![image](https://user-images.githubusercontent.com/20104403/231689173-ca70c0ce-acfa-43e2-baa5-8f602729de64.png)
+
+
 ## CloudWatch
 ## Trusted Advisor
 ## CloudFormation
