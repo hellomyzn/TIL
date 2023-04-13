@@ -50,9 +50,13 @@
 ![image](https://user-images.githubusercontent.com/20104403/231669951-1cf33e9c-9759-4e77-85b0-b242453e7e5d.png)
 ![image](https://user-images.githubusercontent.com/20104403/231669992-dc6210d1-9e02-4160-b4d0-b35581e5c040.png)
 
-
-
 ## EFS / Storage Gateway Snowball
+![image](https://user-images.githubusercontent.com/20104403/231670139-f50bf5d1-3b7f-4a36-85fe-9dbeb434ad25.png)
+![image](https://user-images.githubusercontent.com/20104403/231670245-562d114d-d6f0-4ead-947c-37b4cbae51c5.png)
+![image](https://user-images.githubusercontent.com/20104403/231670294-c5d7b49b-99f1-4987-aae8-de8419951d85.png)
+![image](https://user-images.githubusercontent.com/20104403/231670354-ea73f97d-a68c-4f9d-8016-18ff3b257a66.png)
+![image](https://user-images.githubusercontent.com/20104403/231670407-d55bb811-9c4b-47d5-8812-ceda38c71652.png)
+
 ## VPC
 ## VPCピアリングダイレクトコネクト
 ## Route53
