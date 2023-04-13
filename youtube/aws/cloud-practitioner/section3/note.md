@@ -24,8 +24,6 @@
 ![image](https://user-images.githubusercontent.com/20104403/231107333-336dfd9a-c6fd-4312-b1a6-ca4d3858adb8.png)
  ![image](https://user-images.githubusercontent.com/20104403/231107400-adb8399e-9864-470a-bd3e-b3804308ef84.png)
 
-
-
 ## Lambda
 ![image](https://user-images.githubusercontent.com/20104403/231667571-b39727db-c106-4f12-b4b6-cb5bdf61a54d.png)
 ![image](https://user-images.githubusercontent.com/20104403/231667634-cfa73120-0065-4782-96d8-c8ff3d6798c6.png)
@@ -33,8 +31,15 @@
 ![image](https://user-images.githubusercontent.com/20104403/231667796-a2773ee4-7fe1-499d-92fe-b4a06ae1084b.png)
 ![image](https://user-images.githubusercontent.com/20104403/231667854-71874978-a4b7-405b-8b96-96188d6ee0fa.png)
 
-
 ## Auto Scaling
+![image](https://user-images.githubusercontent.com/20104403/231668380-61de708f-20a1-4915-bff3-6f90bc26b6c5.png)
+![image](https://user-images.githubusercontent.com/20104403/231668787-9b30b667-dcd9-4d23-9bb4-26968bb16fbb.png)
+![image](https://user-images.githubusercontent.com/20104403/231668843-adea06c3-e17d-4c15-83f6-b62eeff5e415.png)
+![image](https://user-images.githubusercontent.com/20104403/231668876-0bc8db3b-3065-4ce0-a3af-e4163ff7355d.png)
+![image](https://user-images.githubusercontent.com/20104403/231668930-e8679427-c87e-4d3c-b74a-ccff6f513f3a.png)
+![image](https://user-images.githubusercontent.com/20104403/231668977-26da7050-3399-49af-af9e-0d54d9c7003e.png)
+![image](https://user-images.githubusercontent.com/20104403/231669037-520da2a4-18ef-4214-94b9-44b5ed066839.png)
+
 ## S3
 ## EFS / Storage Gateway Snowball
 ## VPC
