@@ -120,6 +120,8 @@
 ![image](https://user-images.githubusercontent.com/20104403/231686345-285c8a60-0eee-43ec-a8c8-a9e42349c992.png)
 
 ## Redshift
+![image](https://user-images.githubusercontent.com/20104403/231686604-fa7fc9c1-bf51-4b19-9cde-3c19f3f5258d.png)
+
 ## CloudTrail
 ## CloudWatch
 ## Trusted Advisor
