@@ -83,8 +83,13 @@
 ![image](https://user-images.githubusercontent.com/20104403/231674089-6d69c474-b32c-49b5-91fa-4f146509a1fe.png)
 ![image](https://user-images.githubusercontent.com/20104403/231674129-202f4cf5-d213-465a-af64-97e071931621.png)
 
-
 ## Route53
+![image](https://user-images.githubusercontent.com/20104403/231674388-8799e390-dc7d-49f0-b2b4-9402f1a70b1c.png)
+![image](https://user-images.githubusercontent.com/20104403/231675996-e80e9775-d8b9-40e9-b3ce-2777fd4795b3.png)
+![image](https://user-images.githubusercontent.com/20104403/231676090-163dd756-c5ed-48ed-b72d-471e5c761d5f.png)
+![image](https://user-images.githubusercontent.com/20104403/231676164-faf10535-db5f-4480-b2ad-59001951276e.png)
+### プライマリとセカンダリを設定しておくと、ルート53のヘルスチェックでプライマリに障害が発生した場合は、ルーティング先を自動的にセカンダリへフェールオーバーすることができます。このようにヘルスチェックとフェールオーバーを使用することで、システムの可用性を向上させることができます。
+
 ## Cloud Frongt
 ## RDS
 ## DynamoDB
