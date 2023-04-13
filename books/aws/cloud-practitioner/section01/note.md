@@ -12,10 +12,10 @@
 ## 学習方法
 ![image](https://user-images.githubusercontent.com/20104403/231704060-5e84df8f-339b-495c-b836-5c94cbf768fa.png)
 
-[AWSホワイトペーパー](https://aws.amazon.com/jp/whitepapers/)
-[AWSサポートのプラン比較](https://aws.amazon.com/jp/premiumsupport/plans/)
+- [AWSホワイトペーパー](https://aws.amazon.com/jp/whitepapers/)
+- [AWSサポートのプラン比較](https://aws.amazon.com/jp/premiumsupport/plans/)
 
 
 ![image](https://user-images.githubusercontent.com/20104403/231704970-ff02d916-d74d-499b-a211-d6b084e60384.png)
 
-[AWS認定クラウドプラクティショナー](https://aws.amazon.com/jp/certification/certified-cloud-practitioner/)
+- [AWS認定クラウドプラクティショナー](https://aws.amazon.com/jp/certification/certified-cloud-practitioner/)
