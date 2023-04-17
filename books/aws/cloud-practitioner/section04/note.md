@@ -1,4 +1,4 @@
-# Section3 AWSのテクノロジー
+# Section4 AWSのテクノロジー
 
 ## TL;DR
 ![image](./images/01.png)
