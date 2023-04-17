@@ -42,6 +42,37 @@
 ![image](./images/27.png)
 
 ### AWS Artifact
+![image](./images/43.png)
 ![image](./images/28.png)
 ![image](./images/29.png)
 ![image](./images/30.png)
+
+## IAM
+![image](./images/31.png)
+![image](./images/32.png)
+![image](./images/33.png)
+![image](./images/34.png)
+
+## セキュリティグループ
+![image](./images/35.png)
+![image](./images/36.png)
+
+## AWS Shield
+
+![image](./images/37.png)
+![image](./images/38.png)
+![image](./images/39.png)
+
+## AWS WAF
+![image](./images/40.png)
+![image](./images/41.png)
+![image](./images/42.png)
+
+## Inspector
+![image](./images/44.png)
+![image](./images/45.png)
+![image](./images/46.png)
+
+## AWS Key Management Service (KMS)
+![image](./images/47.png)
+
