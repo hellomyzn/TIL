@@ -23,4 +23,25 @@
 ![image](./images/15.png)
 ![image](./images/16.png)
 
-## AWSの責任共有モデル
+## AWSクラウドのセキュリティ
+### AWSの責任
+![image](./images/17.png)
+![image](./images/18.png)
+![image](./images/19.png)
+![image](./images/20.png)
+![image](./images/21.png)
+
+### Userの責任
+![image](./images/22.png)
+![image](./images/23.png)
+![image](./images/24.png)
+![image](./images/25.png)
+
+### セキュリティのベストプラクティス
+![image](./images/26.png)
+![image](./images/27.png)
+
+### AWS Artifact
+![image](./images/28.png)
+![image](./images/29.png)
+![image](./images/30.png)
