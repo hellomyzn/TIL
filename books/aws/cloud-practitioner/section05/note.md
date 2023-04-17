@@ -91,4 +91,35 @@
 ![image](./images/78.png)
 
 ## Auto Scaling
+![image](./images/79.png)
+![image](./images/80.png)
+![image](./images/81.png)
+![image](./images/82.png)
+![image](./images/83.png)
+![image](./images/84.png)
+![image](./images/85.png)
+![image](./images/86.png)
+![image](./images/87.png)
+![image](./images/88.png)
+![image](./images/89.png)
+![image](./images/90.png)
+![image](./images/91.png)
+![image](./images/92.png)
+![image](./images/93.png)
+
+## Lambda
+![image](./images/95.png)
+![image](./images/96.png)
+![image](./images/97.png)
+![image](./images/98.png)
+![image](./images/99.png)
+![image](./images/100.png)
+![image](./images/101.png)
+![image](./images/102.png)
+![image](./images/103.png)
+![image](./images/104.png)
+![image](./images/105.png)
+
+## その他コンピューティングサービス
+![image](./images/106.png)
 
