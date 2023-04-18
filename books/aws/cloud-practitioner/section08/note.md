@@ -34,3 +34,13 @@
 ![image](./images/27.png)
 ![image](./images/28.png)
 ![image](./images/29.png)
+
+## DynamoDB
+![image](./images/30.png)
+![image](./images/31.png)
+![image](./images/32.png)
+![image](./images/33.png)
+![image](./images/34.png)
+
+## その他のデータベースサービス
+![image](./images/35.png)
