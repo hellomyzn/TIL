@@ -1,4 +1,4 @@
-# Section7 データベースサービス
+# Section8 データベースサービス
 
 ## TL;DR
 ![image](./images/01.png)
