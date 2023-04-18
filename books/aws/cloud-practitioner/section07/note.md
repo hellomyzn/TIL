@@ -59,4 +59,13 @@
 ![image](./images/50.png)
 
 ## Route53
-
+![image](./images/51.png)
+![image](./images/52.png)
+![image](./images/53.png)
+![image](./images/54.png)
+![image](./images/55.png)
+![image](./images/56.png)
+![image](./images/57.png)
+![image](./images/58.png)
+![image](./images/59.png)
+![image](./images/60.png)
