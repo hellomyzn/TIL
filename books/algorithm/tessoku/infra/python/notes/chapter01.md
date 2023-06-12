@@ -45,6 +45,19 @@ N, X = map(int, input().split())
 A = list(map(int, input().split()))
 ```
 
+## 03 Two Cards
+### Properties
+- [Task](https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_c)
+- [Answer](https://github.com/E869120/kyopro-tessoku/blob/main/codes/python/chap01/answer_A03.py)
+
+### Note
+**計算量**
+```
+O(N2)
+100^2 = 10^4
+```
+
+
 ## 05 Three Cardsh
 ### Properties
 - [Task](https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_e)
@@ -81,6 +94,6 @@ N^10より小さい数になる。
 赤、青を全探索し、白の数が`1 <= X <= N` であればOK
 計算量も
 ```
-N^2 = 4 * 10^6
+N^2 = 27 * 10^6
 ```
 N^7より小さい数になるからOK
