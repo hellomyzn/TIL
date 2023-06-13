@@ -57,6 +57,37 @@ O(N2)
 100^2 = 10^4
 ```
 
+## 04 Binary Representation
+### Properties
+- [Task](https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_d)
+- [Answer](https://github.com/E869120/kyopro-tessoku/blob/main/codes/python/chap01/answer_A04.py)
+
+### Note
+**解き方**
+A: 入力から２で割っていく
+入力 % 2 = 余り兼2進数の変換値
+1. 13 % 2 = 1
+2. 6 % 2 = 0
+3. 3 % 2 = 1 
+4. 1 % 2 = 1
+0になるまで行い、`1101`　と２進数になる
+
+
+B: 2進数の大きい桁数から特定の数Nを引き、
+- マイナスにならなければ`1`で、Nは引かれた数になる
+- マイナスになった場合`0`で、Nの値は変わらない
+
+N - 2進数の桁数 = 2進数の変換値
+1. 13 - 32 = 0
+2. 13 - 16 = 0
+3. 13 - 8  = 1
+4. 5  - 4  = 1
+5. 1  - 2  = 0
+6. 1  - 1  = 1
+
+
+出力の桁数が決まっている場合はBを使う
+
 
 ## 05 Three Cardsh
 ### Properties
