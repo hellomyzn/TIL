@@ -1,6 +1,0 @@
-Hi $name.
-
-$contents
-
-Hace a good day cd
-  
