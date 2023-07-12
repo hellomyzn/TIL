@@ -1,4 +1,5 @@
 print('hello')
+print('hoge')
 print("hello")
 print("I don't know")
 print('I don\'t know')
@@ -17,8 +18,11 @@ line3\
 print('############')
 
 print('Hi.' * 3 + 'Mike')
-print('Py' 'thon')
+print("Py" "thon")
 
-s = ('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' 
-    'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+s = ('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+     'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+     'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+     'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+     'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
 print(s)
