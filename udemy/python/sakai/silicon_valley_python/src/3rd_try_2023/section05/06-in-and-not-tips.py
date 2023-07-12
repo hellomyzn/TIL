@@ -1,4 +1,7 @@
-y = [1,2,3]
+
+
+
+y = [1, 2, 3]
 x = 1
 
 if x in y:
@@ -10,7 +13,7 @@ if 100 not in y:
 a = 1
 b = 2
 
-if not a == b:
+if a != b:
     print('not equal')
 
 if a < b:
@@ -19,5 +22,4 @@ if a < b:
 is_ok = True
 
 if is_ok:
-    print('hello')
-
+    print('')

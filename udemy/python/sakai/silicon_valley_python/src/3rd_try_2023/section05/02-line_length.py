@@ -1,8 +1,13 @@
-s = ('aaaaaaaaaa'
-    + 'bbbbbbbbbbbbbb')
-print(s)
 
-x = (1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
-    + 1 + 1 + 1 + 1 + 1)
+def main():
+    sss = ('aaaaaaaaaa'
+         + 'bbbbbbbbbbbbbb')
+    print(sss)
 
-print(x)
+    xxx = (1 + 1 + 1 + 1 + 1 + 1 + 1 + 1
+         + 1 + 1 + 1 + 1 + 1)
+    print(xxx)
+
+
+if __name__ == '__main__':
+    main()

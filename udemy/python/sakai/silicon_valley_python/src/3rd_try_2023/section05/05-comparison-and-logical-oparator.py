@@ -1,3 +1,4 @@
+
 a = 1
 b = 1
 
@@ -27,6 +28,3 @@ elif b > 0:
 
 if a > 0 or b > 0:
     print('a or b are positive')
-
-
-
