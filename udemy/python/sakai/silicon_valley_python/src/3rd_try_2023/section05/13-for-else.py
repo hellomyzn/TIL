@@ -5,4 +5,3 @@ for f in ['apple', 'banana', 'orange']:
     print(f)
 else:
     print('I ate all')
-

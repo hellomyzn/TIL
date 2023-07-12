@@ -3,13 +3,16 @@ while count < 5:
     print(count)
     count += 1
 
-c = 0
-while True:
-    if c >= 5:
-        break
-    if c == 2:
-        c += 1
-        continue
+def hoge():
+    """furnction
+    """
+    cc = 0
+    while True:
+        if cc >= 5:
+            break
+        if cc == 2:
+            cc += 1
+            continue
 
-    print(c)
-    c += 1
+        print(cc)
+        cc += 1
