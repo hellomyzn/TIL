@@ -1,3 +1,4 @@
+
 print('###########')
 """
 test
@@ -8,4 +9,4 @@ test
 print('###########')
 
 # comments
-same_value = 100 
+same_value = 100
