@@ -5,6 +5,7 @@ def f():
     global animal
     print(animal)
     animal = 'dog'
+
     print('after', animal)
 
 f()
