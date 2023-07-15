@@ -6,6 +6,6 @@ ranking = {
     'C': 94,
 }
 
-print(sorted(ranking))
+print(sorted(ranking.values()))
 print(sorted(ranking, key=ranking.get))
 print(sorted(ranking, key=ranking.get, reverse=True))
