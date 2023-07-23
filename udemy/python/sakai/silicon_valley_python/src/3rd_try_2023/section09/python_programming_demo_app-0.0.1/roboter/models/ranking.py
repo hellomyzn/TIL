@@ -15,6 +15,7 @@ RANKING_CSV_FILE_PATH = 'ranking.csv'
 
 class CsvModel(object):
     """Base csv model."""
+
     def __init__(self, csv_file):
         self.csv_file = csv_file
         if not os.path.exists(csv_file):
@@ -23,6 +24,7 @@ class CsvModel(object):
 
 class RankingModel(CsvModel):
     """Definition of class that generates ranking model to write to CSV"""
+
     def __init__(self, csv_file=None, *args, **kwargs):
         if not csv_file:
             csv_file = self.get_csv_file_path()
