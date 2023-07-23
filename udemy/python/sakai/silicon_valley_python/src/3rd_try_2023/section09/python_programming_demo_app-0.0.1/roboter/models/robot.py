@@ -36,6 +36,7 @@ class RestaurantRobot(Robot):
 
     def _hello_decorator(func):
         """Decorator to say a greeting if you are not greeting the user."""
+
         def wrapper(self):
             if not self.user_name:
                 self.hello()
@@ -59,6 +60,7 @@ class RestaurantRobot(Robot):
             }))
 
             if is_yes.lower() == 'y' or is_yes.lower() == 'yes':
+                self.ranking_model.increment(new_recommend_restaurant)
                 break
 
             if is_yes.lower() == 'n' or is_yes.lower() == 'no':
