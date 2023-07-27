@@ -1,8 +1,10 @@
 import logging
 
+
+formatter = '%(asctime)s %(levelname)s  %(message)s'
 logging.basicConfig(
-    filename='test.log',
-    level=logging.WARNING
+    level=logging.WARNING,
+    format=formatter
 )
 
 logging.critical('critical')
