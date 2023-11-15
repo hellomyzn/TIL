@@ -1,0 +1,8 @@
+*.pyc
+*.DS_Store
+*poetry.lock
+
+/src/src/**
+!/src/src/**/
+!/src/src/**/.gitkeep
+src/common/config/config.ini
