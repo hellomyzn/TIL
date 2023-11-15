@@ -1,8 +1,9 @@
 *.pyc
 *.DS_Store
 *poetry.lock
+*__pycache__
 
-/src/src/**
-!/src/src/**/
+/src/src/logs
+!/src/src/sample-code/**
 !/src/src/**/.gitkeep
 src/common/config/config.ini
