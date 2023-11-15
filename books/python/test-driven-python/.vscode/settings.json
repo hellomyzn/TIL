@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "src/.venv/bin/python3.11",
+    "python.venvFolders": [
+        "src/.venv"
+    ]
+}
