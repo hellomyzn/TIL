@@ -6,7 +6,8 @@
   "cSpell.ignoreWords": ["hoge"],
   "cSpell.words": [],
   "editor.formatOnSave": true,
-  "editor.tabFocusMode": false,
+  "editor.tabFocusMode": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2
 }

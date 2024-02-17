@@ -9,7 +9,12 @@
                 "oderwat.indent-rainbow",
                 "streetsidesoftware.code-spell-checker",
                 "vscodevim.vim",
-                "esbenp.prettier-vscode"
+                "esbenp.prettier-vscode",
+                "formulahendry.auto-close-tag",
+                "formulahendry.auto-rename-tag",
+                "naumovs.color-highlight",
+                "kisstkondoros.vscode-gutter-preview",
+                "ritwickdey.LiveServer"
             ]
         }
     }
