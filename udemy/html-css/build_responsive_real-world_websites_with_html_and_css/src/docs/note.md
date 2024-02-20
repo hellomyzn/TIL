@@ -25,3 +25,8 @@ Please also download the additional materials from the end of this lecture (choo
 👋 Pro tip: Don't use lecture numbers when taking notes, because they will change each time I update something in the course.
 
 And now, have a lot of fun with the course! 😁
+
+### Box Model
+
+![css-box-model](./img/css-box-model.png)
+![element height and width calculation](./img/height-and-width-calculation.png)
