@@ -30,3 +30,13 @@ And now, have a lot of fun with the course! 😁
 
 ![css-box-model](./img/css-box-model.png)
 ![element height and width calculation](./img/height-and-width-calculation.png)
+
+### Elements Level
+
+![block level](./img/block-level.png)
+![inline](./img/inline.png)
+![inline-block](./img/inline-block.png)
+
+### Positioning
+
+![positioning](./img/positioning.png)
