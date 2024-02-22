@@ -163,6 +163,10 @@ footer {
   margin: 0 auto;
 }
 
+nav {
+  text-align: center;
+}
+
 nav a:link {
   /* background-color: orangered;
   margin: 20px;

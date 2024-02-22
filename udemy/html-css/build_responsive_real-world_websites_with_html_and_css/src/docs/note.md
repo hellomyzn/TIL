@@ -40,3 +40,8 @@ And now, have a lot of fun with the course! 😁
 ### Positioning
 
 ![positioning](./img/positioning.png)
+
+## Useful Service
+
+- [w3c html vlidator](https://validator.w3.org/)
+- [diff checker](https://www.diffchecker.com/)
