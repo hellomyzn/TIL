@@ -83,6 +83,20 @@ nav {
 }
 ```
 
+### Box Model With box-sizing: border-box
+
+![box-sizing](./img/box-sizing.png)
+universal selector で使用する
+
+```css
+* {
+  /* border-top: 10px solid #1098ad; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
 ## Useful Service
 
 - [w3c html vlidator](https://validator.w3.org/)
