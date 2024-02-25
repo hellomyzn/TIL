@@ -41,6 +41,48 @@ And now, have a lot of fun with the course! 😁
 
 ![positioning](./img/positioning.png)
 
+### float
+
+![float](./img/float.png)
+
+```html
+<header class="main-header clearfix">
+  <h1>📘 The Code Magazine</h1>
+
+  <nav>
+    <a href="blog.html">Blog</a>
+    <a href="#">Challenges</a>
+    <a href="#">Flexbox</a>
+    <a href="#">CSS Grid</a>
+  </nav>
+</header>
+```
+
+```css
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+```
+
 ## Useful Service
 
 - [w3c html vlidator](https://validator.w3.org/)
