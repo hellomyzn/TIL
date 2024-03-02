@@ -1,6 +1,6 @@
 version: '3.6'
 services:
-  python3:
+  python:
     restart: always
     build:
       context: .

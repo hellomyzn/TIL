@@ -1,7 +1,25 @@
 FROM python:3.11
 
-# middleware
 USER root
+RUN mkdir /opt/work
+
+# python path
+ENV PYTHONPATH=/opt/work/
+
+# poetry
+# install path
+ENV POETRY_HOME=/opt/poetry
+RUN curl -sSL https://install.python-poetry.org | python3 && \
+    cd /usr/local/bin && \
+    ln -s /opt/poetry/bin/poetry && \
+    # not create virtual env since it's in a container 
+    poetry config virtualenvs.create false
+COPY ./src/pyproject.toml* ./src/poetry.lock* ./
+# install packages through poetry if there is a pyproject.toml
+RUN if [ -f pyproject.toml ]; then poetry install; fi
+
+
+# middleware
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y \
@@ -22,18 +40,7 @@ RUN groupadd -g ${GID} ${GROUP_NAME} && \
     echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER ${USER_NAME}
 
-# poetry
-ENV PATH /home/${USER_NAME}/.local/bin:$PATH
-COPY --chown=${UID}:${GID} ./src/pyproject.toml /home/myzn/src/pyproject.toml
-RUN curl -sSL https://install.python-poetry.org | python3 - && \
-    poetry config virtualenvs.in-project true && \
-    poetry -C $HOME/src/pyproject.toml install
-
-# pip
-# RUN python -m pip install --no-cache-dir --upgrade --user pip && \
-    # pip install --no-cache-dir -r ${HOME}/src/requirements.txt
-
 # # If you want to just run one command, use below
-# COPY --chown=${UID}:${GID} ./docker-entrypoint.sh /docker-entrypoint.sh
+# COPY --chown=${UID}:${GID} ./infra/docker/python/docker-entrypoint.sh /docker-entrypoint.sh
 # RUN chmod 755 /docker-entrypoint.sh
 # ENTRYPOINT [ "/docker-entrypoint.sh" ]
