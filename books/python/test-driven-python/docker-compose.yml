@@ -5,10 +5,10 @@ services:
     build:
       context: .
       dockerfile: ./infra/docker/python/Dockerfile
-    container_name: 'python3'
-    working_dir: '/home/myzn/'
+    container_name: 'book-python-tdd'
+    working_dir: '/opt/work/'
     tty: true
     volumes:
-      - ./src/:/home/myzn/src
+      - ./src/:/opt/work
     environment:
       - TZ=Asia/Tokyo
