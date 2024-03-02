@@ -6,6 +6,10 @@ RUN mkdir /opt/work
 # python path
 ENV PYTHONPATH=/opt/work/
 
+# cards project in the book needs to run pip install
+ENV PATH="/home/myzn/.local/bin/:$PATH"
+COPY ./src/src/sample-code/cards_proj ./usr/local/bin/cards_proj
+
 # poetry
 # install path
 ENV POETRY_HOME=/opt/poetry
@@ -40,7 +44,3 @@ RUN groupadd -g ${GID} ${GROUP_NAME} && \
     echo "${USER_NAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER ${USER_NAME}
 
-# # If you want to just run one command, use below
-# COPY --chown=${UID}:${GID} ./infra/docker/python/docker-entrypoint.sh /docker-entrypoint.sh
-# RUN chmod 755 /docker-entrypoint.sh
-# ENTRYPOINT [ "/docker-entrypoint.sh" ]

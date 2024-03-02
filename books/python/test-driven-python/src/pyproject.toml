@@ -11,6 +11,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 pytest = "7.0"
+cards = {path = "/usr/local/bin/cards_proj"}
 
 [build-system]
 requires = ["poetry-core"]
