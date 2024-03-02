@@ -59,6 +59,11 @@ And now, have a lot of fun with the course! 😁
 ```
 
 ```css
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
 h1 {
   float: left;
 }
@@ -71,11 +76,6 @@ nav {
   clear: both;
 }
 
-.clearfix::after {
-  clear: both;
-  content: "";
-  display: block;
-}
 .clearfix::after {
   clear: both;
   content: "";
