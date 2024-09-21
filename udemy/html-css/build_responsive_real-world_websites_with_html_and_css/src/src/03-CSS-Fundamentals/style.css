@@ -77,6 +77,11 @@ article {
   list-style: none;
 }
 
+.container {
+  width: 800px;
+  margin: auto 0;
+}
+
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
