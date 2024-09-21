@@ -11,7 +11,7 @@ body {
   text-align: center;
   font-size: 22px;
   text-transform: uppercase;
-  background-color: #f7f7f7;
+  background-color: #f7f7f7f7;
 }
 
 .price {
@@ -29,25 +29,25 @@ body {
   color: black;
 }
 
-.more-info:hover .moreinfo:active {
+.more-info:hover {
   text-decoration: none;
-  color: black;
 }
+
+/* PRODUCT DETAILS */
 
 .details-title {
-  /* hoge */
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 16px;
 }
-
 .details-list {
   list-style: square;
 }
 
+/* BUTTON */
 .add-cart {
   background-color: black;
   border: none;
-  color: #f7f7f7;
+  color: #fff;
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
