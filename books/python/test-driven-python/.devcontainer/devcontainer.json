@@ -17,7 +17,8 @@
                 "mechatroner.rainbow-csv",
                 "mgesbert.python-path",
                 "KevinRose.vsc-python-indent",
-                "vscodevim.vim"
+                "vscodevim.vim",
+                "WakaTime.vscode-wakatime"
             ]
         }
     }
