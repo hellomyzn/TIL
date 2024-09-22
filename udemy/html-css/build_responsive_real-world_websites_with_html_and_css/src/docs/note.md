@@ -40,6 +40,7 @@ And now, have a lot of fun with the course! 😁
 ### Positioning
 
 ![positioning](./img/positioning.png)
+![positioning02](./img/positioning02.png)
 
 ### float
 
