@@ -165,3 +165,22 @@ button {
   top: 50px;
   left: 50px;
 }
+
+h1::first-letter {
+  font-size: normal;
+  margin-right: 5px;
+}
+
+h3 + p::first-line {
+  color: red;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: yellow;
+  font-size: 16px;
+  font-weight: bold;
+
+  display: inline-block;
+  padding: 5px 10px;
+}
