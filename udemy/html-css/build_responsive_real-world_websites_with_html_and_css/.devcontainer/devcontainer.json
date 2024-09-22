@@ -14,7 +14,8 @@
                 "formulahendry.auto-rename-tag",
                 "naumovs.color-highlight",
                 "kisstkondoros.vscode-gutter-preview",
-                "ritwickdey.LiveServer"
+                "ritwickdey.LiveServer",
+                "WakaTime.vscode-wakatime"
             ]
         }
     }
