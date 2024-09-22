@@ -73,10 +73,6 @@ nav {
   float: right;
 }
 
-.clear {
-  clear: both;
-}
-
 .clearfix::after {
   clear: both;
   content: "";
