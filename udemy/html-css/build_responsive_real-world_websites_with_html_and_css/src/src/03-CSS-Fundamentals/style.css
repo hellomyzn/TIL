@@ -140,7 +140,18 @@ nav:link {
   font-size: 10px;
 }
 
+nav a:link {
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child {
+  margin-right: 0;
+}
+
 .post-img {
   width: 800px;
   height: auto;
+  margin: 100px;
 }
