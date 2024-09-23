@@ -94,6 +94,11 @@ universal selector で使用する
 }
 ```
 
+### Flexbox terminology
+
+![flexbox1.png](./img/flexbox1.png)
+![flexbox2.png](./img/flexbox2.png)
+
 ## Useful Service
 
 - [w3c html vlidator](https://validator.w3.org/)
