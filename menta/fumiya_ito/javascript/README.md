@@ -1,6 +1,9 @@
 # docker-javascript-handson
-Based on https://qiita.com/jhorikawa_err/items/fb9c03c0982c29c5b6d5
-
+Javascriptの実行環境用コンテナ
+コンテナ内での実行方法
+```bash
+$ node someple.js
+```
 
 ### Docker Command
 ```
@@ -13,8 +16,8 @@ $ make down
 
 ### Into to container
 ```
-# python3 server (docker-compose exec python3 bash)
-$ make python
+# Javascript server (docker-compose exec js bash)
+$ make js
 ```
 
 
