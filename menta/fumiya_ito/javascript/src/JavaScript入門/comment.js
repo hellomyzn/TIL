@@ -1,7 +1,0 @@
-// hogehoge
-
-/*
-hogehoge
-hogehoge
-hogehoge
-*/
