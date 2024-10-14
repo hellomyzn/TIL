@@ -1,17 +1,12 @@
 version: '3.6'
 services:
-  web:
+  js:
     restart: always
     build:
       context: .
-      dockerfile: ./infra/docker/nginx/Dockerfile
-    container_name: web
-    hostname: web
-    ports:
-      - target: 80
-        published: ${WEB_PUBLISHED_PORT:-8000}
-        protocol: tcp
-        mode: host
+      dockerfile: ./infra/docker/volta/Dockerfile
+    container_name: js
+    hostname: js
     working_dir: /opt/work/
     tty: true
     volumes:
@@ -20,3 +15,4 @@ services:
         target: /opt/work
     environment:
       - TZ=Asia/Tokyo
+

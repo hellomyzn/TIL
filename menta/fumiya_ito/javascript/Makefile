@@ -17,9 +17,9 @@ ps:
 	docker-compose ps
 logs:
 	docker-compose logs
-web:
-	docker-compose exec web bash
+js:
+	docker-compose exec js bash
 start:
 	@make up
-	@make web
+	@make js
 
