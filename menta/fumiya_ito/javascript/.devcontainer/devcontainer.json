@@ -1,7 +1,7 @@
 {
     "name": "HTML VScode",                    // VScodeがコンテナに接続したときのタイトルを自由に設定
     "dockerComposeFile": "../docker-compose.yml",  // docker-conpose.ymlファイルを指定
-    "service": "web",                        // docker-conpose.ymlファイル内に記載したサービス名を指定
+    "service": "js",                        // docker-conpose.ymlファイル内に記載したサービス名を指定
     "workspaceFolder": "/opt/work",         // VScode接続時に開くフォルダを指定
     "customizations": {
         "vscode": {
