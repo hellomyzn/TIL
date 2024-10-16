@@ -5,16 +5,22 @@
 // ①値に"りんご"を持つ、定数appleを定義してください。
 // ②定義した定数appleの値をログで確認してください。
 // ここに処理を書いてください。
-const apple = "りんご";
-console.log(apple);
+
+// ```
+// const apple = "りんご";
+// console.log(apple);
+// ```
 
 // ①値に70を持つ、変数weightを定義してください。
 // ②定義したweightに60を代入してください。
 // ③定義したweightの値をログで確認してください。
 // ここに処理を書いてください。
-var weight = 70;
-weight = 60;
-console.log(weight);
+
+// ```
+// var weight = 70;
+// weight = 60;
+// console.log(weight);
+// ```
 
 // ====================================================
 // 文字列
@@ -26,8 +32,10 @@ console.log(weight);
 // 文字列"あいうえお"を変数で定義してください。
 // ①定数answerに代入してください。
 
-// let aiueo =
-// const answer =
+// ```
+// let aiueo = "あいうえお";
+// const answer = aiueo;
+// ```
 
 // ----------------------------------------------------
 // 文字列変数を変更
@@ -36,8 +44,10 @@ console.log(weight);
 // ①変数answerにあいうえおを格納してください。
 // ②変数answerの値あいうえおをかきくけこに変更してください。
 
-// let answer =
-// answer =
+// ```
+// let answer = "あいうえお";
+// answer = "かきくけこ";
+// ```
 
 // ----------------------------------------------------
 // 2つの文字列を連結
@@ -47,9 +57,11 @@ console.log(weight);
 // ②定数str２にかきくけこを代入してください。
 // ③定数answerにstr1とstr2を連結した値を代入してください。
 
-// const str1 =
-// const str2 =
-// const answer =
+// ```
+// const str1 = "あいうえお";
+// const str2 = "かきくけこ";
+// const answer = str1 + str2;
+// ```
 
 // ----------------------------------------------------
 // 部分文字列抽出
@@ -58,15 +70,17 @@ console.log(weight);
 // ①substringメソッドを使用して、課題を解いてみましょう。
 // ②正しく実行できているか、ログで出力して確認してください
 
-// const str = 'Menta';
-// // 1文字目から3文字目だけコンソールに出力してください
-// console.log(str);
-// // 4文字目以降コンソールに出力してください
-// console.log(str);
+// ```
+const str = "Menta";
+// 1文字目から3文字目だけコンソールに出力してください
+console.log(str.substring(0, 3));
+// 4文字目以降コンソールに出力してください
+console.log(str.substring(3));
+// ```
 
-// const alphabet = "abcde";
-// // 最後の文字だけコンソールに出力してください
-// console.log(alphabet);
+const alphabet = "abcde";
+// 最後の文字だけコンソールに出力してください
+console.log(alphabet.substring(alphabet.length - 1));
 
 // ====================================================
 // 関数
