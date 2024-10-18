@@ -21,3 +21,6 @@ console.log(newArry3);
 
 const newArry4 = newArry2.filter((val) => val > 50);
 console.log(newArry4);
+
+const newArry5 = arry.map((val) => val * 3).filter((val) => val > 100);
+console.log(newArry5);
