@@ -71,16 +71,15 @@
 // ②正しく実行できているか、ログで出力して確認してください
 
 // ```
-const str = "Menta";
-// 1文字目から3文字目だけコンソールに出力してください
-console.log(str.substring(0, 3));
-// 4文字目以降コンソールに出力してください
-console.log(str.substring(3));
+// const str = "Menta";
+// // 1文字目から3文字目だけコンソールに出力してください
+// console.log(str.substring(0, 3));
+// // 4文字目以降コンソールに出力してください
+// console.log(str.substring(3));
+// // 最後の文字だけコンソールに出力してください
+// const alphabet = "abcde";
+// console.log(alphabet.substring(alphabet.length - 1));
 // ```
-
-const alphabet = "abcde";
-// 最後の文字だけコンソールに出力してください
-console.log(alphabet.substring(alphabet.length - 1));
 
 // ====================================================
 // 関数
@@ -93,10 +92,13 @@ console.log(alphabet.substring(alphabet.length - 1));
 // ③関数twiceに実引数3を渡して実行し、返り値をログ出力してください。
 // ①②に従って関数を定義してください。
 
-// const twice = () => {
-// }
+// ```
+// const twice = (num) => {
+//   return num * 2;
+// };
 // // ③ログ出力してください。
-// console.log();
+// console.log(twice(3));
+// ```
 
 // ----------------------------------------------------
 // 引数を+1する関数
@@ -106,11 +108,15 @@ console.log(alphabet.substring(alphabet.length - 1));
 // ③関数addOneに実引数3を渡して実行し、返り値をログ出力してください。
 // ①②に従って関数を定義してください。
 
-// const addOne = () => {
+// ```
+// const addOne = (num) => {
 //   // ここに処理を書いてください。
-// }
+//   num++;
+//   return num;
+// };
 // // ③ログ出力してください。
-// console.log();
+// console.log(addOne(3));
+// ```
 
 // ----------------------------------------------------
 // 引数を-1する関数
@@ -120,11 +126,15 @@ console.log(alphabet.substring(alphabet.length - 1));
 // ③関数minusOneに実引数5を渡して実行し、返り値をログ出力してください。
 // ①②に従って関数を定義してください。
 
-// const minusOne = () => {
+// ```
+// const minusOne = (num) => {
 //   // ここに処理を書いてください。
-// }
+//   num--;
+//   return num;
+// };
 // // ③ログ出力してください。
-// console.log();
+// console.log(minusOne(5));
+// ```
 
 // ----------------------------------------------------
 // 引数文字列の文字数を返す関数
@@ -132,6 +142,8 @@ console.log(alphabet.substring(alphabet.length - 1));
 // ①仮引数strを持つ関数getLengthを定義してください。
 // ②仮引数strの文字数を返してください。
 // ③関数getLengthに実引数"apple"を渡して実行し、返り値をログ出力してください。
+// ```
+// ```
 
 // ----------------------------------------------------
 // 引数の文字数が10文字未満か判定する関数
