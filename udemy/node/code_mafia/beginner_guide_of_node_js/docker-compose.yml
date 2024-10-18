@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  node:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./infra/docker/volta/Dockerfile
+    container_name: js
+    hostname: js
+    working_dir: /opt/work/
+    tty: true
+    volumes:
+      - type: bind
+        source: ./src
+        target: /opt/work
+    environment:
+      - TZ=Asia/Tokyo
+
