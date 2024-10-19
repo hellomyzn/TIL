@@ -508,9 +508,9 @@
 // ②新しく作成した配列をログで出力し、確認する。
 
 // ```
-const arr = [10, 20];
-const newArr = [...arr];
-console.log(newArr);
+// const arr = [10, 20];
+// const newArr = [...arr];
+// console.log(newArr);
 // ```
 
 // ----------------------------------------------------
@@ -519,8 +519,11 @@ console.log(newArr);
 // ①配列colorに"blue", "orange"の要素を追加して、コピーしよう。
 // ②新しく作成した配列をログで出力し、確認する。
 
+// ```
 // const color = ["red", "blue", "yellow"];
-// const newColor =
+// const newColor = [...color, "orange"];
+// console.log(newColor);
+// ```
 
 // ----------------------------------------------------
 // 2つの配列を結合して、新しい配列を作成しよう
@@ -528,9 +531,12 @@ console.log(newArr);
 // ①スプレッド構文を使用し、配列arrとstrを結合してみよう。
 // ②新しく作成した配列をログで出力し、確認する。
 
-// const arr = [10,20];
+// ```
+// const arr = [10, 20];
 // const str = ["10", "20"];
-// const match =
+// const match = [...arr, ...str];
+// console.log(match);
+// ```
 
 // ----------------------------------------------------
 // オブジェクトをコピーして、新しいオブジェクトを作成しよう
@@ -538,8 +544,11 @@ console.log(newArr);
 // ①スプレッド構文を使用し、personオブジェクトをコピーしよう。
 // ②新しく作成した配列をログで出力し、確認する。
 
+// ```
 // const person = { id: 4, name: "鈴木" };
-// const copyPerson =
+// const copyPerson = { ...person };
+// console.log(copyPerson);
+// ```
 
 // ----------------------------------------------------
 // オブジェクトの中にプロパティを追加して、新しいオブジェクトを作成しよう
@@ -547,8 +556,13 @@ console.log(newArr);
 // ①personオブジェクトに、' age: 24, job: "programmer" 'のプロパティを追加し、コピーしてみよう
 // ②新しく作成した配列をログで出力し、確認する。
 
+// ```
 // const person = { id: 4, name: "鈴木" };
-// const newPerson =
+// person.age = 24;
+// person.job = "programmer";
+// const newPerson = { ...person };
+// console.log(newPerson);
+// ```
 
 // ----------------------------------------------------
 // 2つのオブジェクトを結合して、新しいオブジェクトを作成しよう
@@ -556,8 +570,14 @@ console.log(newArr);
 // ①スプレッド構文を使用し、{ country: "America", job: "software engineer" } を結合してみよう。
 // ②新しく作成した配列をログで出力し、確認する。
 
+// ```
 // const person = { name: "Mike", age: 23 };
-// const personInfo =
+// const personInfo = {
+//   ...person,
+//   ...{ country: "America", job: "software engineer" },
+// };
+// console.log(personInfo);
+// ```
 
 // ====================================================
 // 分割代入
@@ -568,8 +588,11 @@ console.log(newArr);
 // ----------------------------------------------------
 // 「アラートです。」というアラートを表示しましょう。
 
-// const message = "アラートです。";
-// // ここから処理を書いてください
+// ```
+const message = "アラートです。";
+// ここから処理を書いてください
+console.log(message);
+// ```
 
 // ----------------------------------------------------
 // 確認アラート
