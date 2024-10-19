@@ -218,13 +218,13 @@
 // ③関数getFullNameに実引数"Tanaka", "Taro"を渡して実行し、返り値をログ出力してください。
 
 // ```
-// ①②に従って関数を定義してください。
-const getFullName = (firstName, lastName) => {
-  // ここに処理を書いてください。
-  return `${firstName}  ${lastName}`;
-};
-// ③ログ出力してください。
-console.log("Tanake", "taro");
+// // ①②に従って関数を定義してください。
+// const getFullName = (firstName, lastName) => {
+//   // ここに処理を書いてください。
+//   return `${firstName}  ${lastName}`;
+// };
+// // ③ログ出力してください。
+// console.log("Tanake", "taro");
 // ```
 
 // ====================================================
@@ -237,12 +237,22 @@ console.log("Tanake", "taro");
 // 空のオブジェクトを定義してください。
 // ①定数personにオブジェクトを定義する。
 // ここから始めてください
+// ```
+// const person = {};
+// ```
 
 // ----------------------------------------------------
 // オブジェクト定義
 // ----------------------------------------------------
 // プロパティnameがボブ、ageが20であるオブジェクトを定義してください。
 // ここから始めてください
+// ```
+// const person = {
+//   name: "bob",
+//   age: 20,
+// };
+// console.log(person);
+// ```
 
 // ----------------------------------------------------
 // オブジェクトのプロパティの値変更
@@ -251,8 +261,12 @@ console.log("Tanake", "taro");
 // ①ageプロパティに30の数字を代入してください。
 // ②コンソール上にobjectを表示させ、ageが変更されていることを確認してください。
 
-// const object = {age: 35, weight: 80};
+// ```
+// const object = { age: 35, weight: 80 };
 // // ここから処理を書いてください。
+// object.age = 30;
+// console.log(object);
+// ```
 
 // ----------------------------------------------------
 // オブジェクトのプロパティの値変更2
@@ -262,17 +276,28 @@ console.log("Tanake", "taro");
 // ②仮引数objのageプロパティの値に対して、numberの値を代入してください。
 // ③返り値に仮引数に渡されたobjを設定してください。
 
-// const object = {age: 35, weight: 80};
+// ```
+// const object = { age: 35, weight: 80 };
 // // ここから処理を書いてください。
+
+// const changeAge = (obj, number) => {
+//   obj.age = number;
+//   return obj;
+// };
+// console.log(changeAge(object, 30));
+// ```
 
 // ----------------------------------------------------
 // libraryオブジェクトのopenHourプロパティの値を更新し、ログに出力してみよう
 // ----------------------------------------------------
 // ①定数libraryの中のopenHourプロパティの値を "8am ~ 9pm"に更新してください。
 
+// ```
 // const library = {
-//   openHour: "7am ~ 10pm"
+//   openHour: "7am ~ 10pm",
 // };
+// library.openHour = "8am ~ 9pm";
+// ```
 
 // ----------------------------------------------------
 // オブジェクトのプロパティの値を加算
@@ -281,8 +306,12 @@ console.log("Tanake", "taro");
 // ①ageプロパティの値を+1してください。
 // ②コンソール上にobjectを表示させ、ageが変更されていることを確認してください。
 
-// const object = {age: 35, weight: 80};
+// ```
+// const object = { age: 35, weight: 80 };
 // // ここから処理を書いてください。
+// object.age++;
+// console.log(object.age);
+// ```
 
 // ----------------------------------------------------
 // オブジェクトにプロパティweightとその値"50kg"を追加する
@@ -290,8 +319,12 @@ console.log("Tanake", "taro");
 // ①weightプロパティに"50kg"の値を持たせて、定数objectに追加してください。
 // ②コンソール上にobjectを表示させ、weightが追加されていることを確認してください。
 
-// const object = {name: "Bob", age: 35};
+// ```
+// const object = { name: "Bob", age: 35 };
 // // ここから処理を書いてください。
+// object.weight = "50kg";
+// console.log(object);
+// ```
 
 // ----------------------------------------------------
 // オブジェクトのnameプロパティを削除する
@@ -299,8 +332,12 @@ console.log("Tanake", "taro");
 // ①定数objectのnameプロパティを削除してください。
 // ②コンソール上にobjectを表示させ、nameが削除されていることを確認してください。
 
-// const object = {name: "Bob", age: 35};
+// ```
+// const object = { name: "Bob", age: 35 };
 // // ここから処理を書いてください。
+// delete object.name;
+// console.log(object);
+// ```
 
 // ====================================================
 // 配列操作
