@@ -16,6 +16,13 @@ const fnArr = (arry) => {
   console.log(`city: ${arry[2]}`);
 };
 
+const forArr2 = ([country, state, city]) => {
+  console.log("---array----");
+  console.log(`country: ${country}`);
+  console.log(`state: ${state}`);
+  console.log(`city: ${city}`);
+};
+
 const fnObj = (objAddr) => {
   console.log("---オブジェクト---");
   console.log(`country: ${objAddr.country}`);
@@ -23,5 +30,13 @@ const fnObj = (objAddr) => {
   console.log(`city: ${objAddr.city}`);
 };
 
+const fnObj2 = ({ country, state, city }) => {
+  console.log("---Object---");
+  console.log(`country: ${country}`);
+  console.log(`state: ${state}`);
+  console.log(`city: ${city}`);
+};
+
 fnArr(arr);
+forArr2(arr);
 fnObj(objAddress);
