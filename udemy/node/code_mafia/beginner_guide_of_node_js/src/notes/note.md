@@ -92,3 +92,27 @@ const jsonObj = require("path/to/filename.json");
 // 2 (Node 19 Experimental)
 import jsonObj from "path/to/filename.json" assert { type: "json" };
 ```
+
+## Section4: npm 基礎
+
+### コマンド
+
+```bash
+# install <package>
+$ npm install <package>
+
+# install devDependencies <package>
+$ npm install <package> -D
+
+# show available package versions
+$ npm view <package> versions
+
+# install specific version <package>
+$ npm install <package>@1.1.1
+
+# show installed packages
+$ npm ls
+
+# install packages by package.json
+$ npm install
+```
