@@ -115,4 +115,47 @@ $ npm ls
 
 # install packages by package.json
 $ npm install
+
+```
+
+### npm script
+
+下記のスクリプトの`scripts`に任意のコマンドを登録できる。  
+実行方法は`npm run <script key>` .
+設定したコマンドにオプションを流したい場合は`--`を挟んで追加できる  
+(e.g. `npm run <npm script> -- --port=3000`)
+
+```js
+{
+  "name": "npm-script",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "private": true,
+//   $ npm run devのようにコマンド実行ができる
+  "scripts": {
+    "dev": "node main.js",
+    "test": "node main.js",
+    "hello": "echo \"Hello\"",
+    "start": "live-server index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "is-odd": "^3.0.1"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "description": ""
+}
+```
+
+### npx
+
+ローカルパッケージを実行できる
+
+```bash
+$ npx live-server
 ```
