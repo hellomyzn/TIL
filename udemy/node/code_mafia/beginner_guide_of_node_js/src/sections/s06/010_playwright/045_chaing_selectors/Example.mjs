@@ -9,13 +9,11 @@ import { chromium } from "@playwright/test";
   await page.goto("http://localhost:3000");
 
   // CSS セレクターで要素を取得
-  const pageTitleLocator = await page.locator(
-    ".cards.list-group-item >> nth=2"
-  );
+  const pageTitleLocator = page.locator(".cards.list-group-item >> nth=2");
   const pageTitle = await pageTitleLocator.innerHTML();
   console.log(pageTitle);
 
-  const parentLocator = await pageTitleLocator.locator("..");
+  const parentLocator = pageTitleLocator.locator("..");
   const parentTitle = await parentLocator.innerHTML();
 
   console.log(parentTitle);
