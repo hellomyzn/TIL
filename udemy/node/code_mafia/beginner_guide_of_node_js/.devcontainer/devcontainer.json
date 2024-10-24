@@ -25,7 +25,9 @@
                 // JS
                 "WallabyJs.quokka-vscod",
                 "sketchbuch.vsc-quokka-statusbar",
-                "xabikos.JavaScriptSnippets"
+                "xabikos.JavaScriptSnippets",
+                // Node
+                "humao.rest-client"
             ]
         }
     }
