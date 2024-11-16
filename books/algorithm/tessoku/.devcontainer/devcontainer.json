@@ -2,7 +2,7 @@
     "name": "Python VScode",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "python3",
-    "workspaceFolder": "/root",
+    "workspaceFolder": "/root/backend",
     "customizations": {
         "vscode": {
             "extensions": [
