@@ -36,4 +36,7 @@ PATH=${VOLTA_HOME}/bin:${PATH}
 for package in 'node' 'yarn'; do
   volta install ${package}
 done
+
+npm install -g nodemon
 END_OF_RUN
+
