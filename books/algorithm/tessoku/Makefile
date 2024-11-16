@@ -1,5 +1,5 @@
 up:
-	docker-compose up -d --build 
+	docker-compose up -d --build
 build:
 	docker-compose build --no-cache --force-rm
 stop:
@@ -21,3 +21,4 @@ python:
 	docker-compose exec python3 bash
 start:
 	@make up
+	@make python
