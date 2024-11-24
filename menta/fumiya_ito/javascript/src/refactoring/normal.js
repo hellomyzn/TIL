@@ -4,19 +4,23 @@
 // forやpushを使わずに加工した新しい配列を作ってください。
 // ```
 var nums = [1, 2, 3];
-var array = [];
-for (num of nums) {
-  array.push(num * 2);
-}
+var array = nums.map((n) => n * 2);
+// for (num of nums) {
+//   array.push(num * 2);
+// }
+console.log(array);
+
 // ```
+
 // ----------------------------------------------------
 // forEachとpushをmapに変換;
 // ----------------------------------------------------
 // forEachやpushを使わずに加工した新しい配列を作ってください。
 // ```
 var nums = [1, 2, 3];
-var array = [];
-nums.forEach((num) => array.push(num + 1));
+var array = nums.map((n) => (n += 1));
+// nums.forEach((num) => array.push(num + 1));
+console.log(array);
 // ```
 
 // ----------------------------------------------------
@@ -35,9 +39,11 @@ var users = [
     age: 22,
   },
 ];
-var names = users.map((user) => {
-  return user.name;
-});
+// var names = users.map((user) => {
+//   return user.name;
+// });
+var names = users.map(({ name }) => name);
+console.log(names);
 // ```
 
 // ----------------------------------------------------
@@ -47,7 +53,11 @@ var names = users.map((user) => {
 
 // ```
 var array = [1, 2, 3, 4];
-var newArray = array.splice(0, 1);
+// var newArray = array.splice(0, 1);
+// var newArray = array.shift();
+var newArray = array.filter((_, i) => i === 0);
+
+console.log(newArray);
 // ```
 
 // ----------------------------------------------------
@@ -60,10 +70,10 @@ var objcet = {
   age: 31,
   email: "taro@example.com",
 };
-
 // emailプロパティのみ削除してください
-var newObject = "";
+var { email, ...newObject } = objcet;
 console.log(newObject); // { name: 'TaroYamada', age: 31 }
+console.log({ email });
 // ```
 
 // ----------------------------------------------------
@@ -79,7 +89,8 @@ if (bool) {
   val = "falseです";
 }
 // 上記の処理をletを使わずにコーディングしてください。
-var newVal = "";
+var newVal = bool ? "trueです" : "falseです";
+console.log(newVal);
 // ```
 
 // ----------------------------------------------------
@@ -89,3 +100,5 @@ var newVal = "";
 var value = "";
 var isString =
   value !== undefined || (value !== null && typeof value === "string");
+var isString =
+  !(value === undefined && value === null) && typeof value === "string";
