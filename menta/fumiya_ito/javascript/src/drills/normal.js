@@ -611,6 +611,8 @@ var object = [
   { id: 3, name: "Michael", age: 15 },
 ];
 // ここに処理を書いてください。
+var foundElement = object.find((element) => element.id === 2);
+console.log(foundElement);
 // ```
 
 // ----------------------------------------------------
@@ -618,8 +620,13 @@ var object = [
 // ----------------------------------------------------
 // 配列内のオブジェクトのnameプロパティの文字列が3文字のオブジェクト要素からなる配列を取得してください。
 // ```
-// var object =
-// var found =
+var object = [
+  { id: 1, name: "John", age: 15 },
+  { id: 2, name: "Bob", age: 20 },
+  { id: 3, name: "Michael", age: 15 },
+];
+var found = object.find((element) => element.name.length === 3);
+console.log(found);
 // ```
 
 // ----------------------------------------------------
@@ -637,6 +644,8 @@ var object = [
   { id: 3, name: "Michael", age: 15 },
 ];
 // ここに処理を書いてください。
+var found = object.filter((e) => e.age === 15);
+console.log(found);
 // ```
 
 // ----------------------------------------------------
@@ -649,7 +658,8 @@ var object = [
   { id: 2, name: "Bob", age: 20 },
   { id: 3, name: "Michael", age: 15 },
 ];
-// var found =
+var found = object.filter((e) => e.id !== 1);
+console.log(found);
 // ```
 
 // ----------------------------------------------------
@@ -658,9 +668,14 @@ var object = [
 // 配列内のオブジェクトのageプロパティが15の要素を削除してください。
 // ```
 
-// var object =
+var object = [
+  { id: 1, name: "John", age: 15 },
+  { id: 2, name: "Bob", age: 20 },
+  { id: 3, name: "Michael", age: 15 },
+];
 
-// var filteredObject =
+var found = object.filter((e) => e.age !== 15);
+console.log(found);
 // ```
 
 // ----------------------------------------------------
@@ -674,7 +689,11 @@ var users = [
   { id: 2, name: "Bob", age: 20 },
   { id: 3, name: "Michael", age: 15 },
 ];
-var newUsers = users;
+var newUsers = users.map((u) => {
+  return (u.age += 1);
+});
+
+console.log(newUsers);
 // ```
 
 // ----------------------------------------------------
@@ -688,7 +707,11 @@ var users = [
   { id: 2, name: "Bob", age: 20 },
   { id: 3, name: "Michael", age: 15 },
 ];
-var newUsers = users;
+var newUsers = users.map((u) => {
+  return `Mr, ${u.name}`;
+});
+
+console.log(newUsers);
 // ```
 
 // ====================================================
@@ -699,13 +722,15 @@ var newUsers = users;
 // オブジェクトのプロパティの値を変更して、新しいオブジェクトを作成しよう
 // ----------------------------------------------------
 // ①スプレッド構文を使用し、プロパティnameの値を'Alice'に変更しよう。
-// ②personオブジェクト内に、' country: ""America"", job: ""software engineer"" 'のプロパティを追加しよう。
+// ②personオブジェクト内に、' country: "America", job: "software engineer" 'のプロパティを追加しよう。
 // ③新しく作成した配列をログで出力し、確認する。
 
 // ```
 var person = { name: "Mike", age: 23 };
-// var newPerson = // nameの値を変更
-// var personInfo =
+var newPerson = { ...person, name: "Alice" };
+var personInfo = { ...newPerson, country: "America", job: "software engineer" };
+console.log(newPerson);
+console.log(personInfo);
 // ```
 
 // ====================================================
@@ -721,6 +746,9 @@ var person = { name: "Mike", age: 23 };
 
 // ```
 // "https://jsonplaceholder.typicode.com/users"
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
 // ```
 
@@ -732,6 +760,12 @@ var person = { name: "Mike", age: 23 };
 
 // ```
 // "https://jsonplaceholder.typicode.com/users"
+fetch("https://jsonplaceholder.typicode.com/users")
+  .then((response) => response.json())
+  .then((data) => {
+    var filteredData = data.filter((d) => d.id === 5);
+    console.log(filteredData);
+  });
 
 // ```
 
@@ -752,7 +786,22 @@ var person = { name: "Mike", age: 23 };
 function redirectUrl(language) {
   let url = "www.example.com";
   // switch文を書いてください。
+  switch (language) {
+    case "English":
+      url += "/en";
+      break;
+    case "Japanese":
+      url += "/ja";
+      break;
+    case "Australia":
+      url += "/en-au";
+      break;
+  }
+  return url;
 }
 // ③ログ出力してください。
-console.log();
+console.log(redirectUrl("English"));
+console.log(redirectUrl("Japanese"));
+console.log(redirectUrl("Australia"));
+console.log(redirectUrl("Korea"));
 // ```
