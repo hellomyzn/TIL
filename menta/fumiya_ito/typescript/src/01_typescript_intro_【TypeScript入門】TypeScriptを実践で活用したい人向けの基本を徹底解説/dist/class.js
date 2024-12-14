@@ -47,4 +47,29 @@ class User1 extends Person4 {
     }
 }
 const user9 = new User1("John", "Tom", true);
+// not allowed since is's protected variable
+// user9.firstName = "hoge";
 user9.yourFirstName();
+class Person5 {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+const user10 = new Person5("Eiji", "Miyazono");
+// user10.setName("hoge");
+console.log(user10.fullName());
+class Person6 {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+const user11 = new Person6("eiji", "m");
+console.log(user11.fullName());
