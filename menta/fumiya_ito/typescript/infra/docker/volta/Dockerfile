@@ -36,4 +36,7 @@ PATH=${VOLTA_HOME}/bin:${PATH}
 for package in 'node' 'yarn'; do
   volta install ${package}
 done
+
+# TypeScript をグローバルインストール
+npm install -g typescript
 END_OF_RUN
