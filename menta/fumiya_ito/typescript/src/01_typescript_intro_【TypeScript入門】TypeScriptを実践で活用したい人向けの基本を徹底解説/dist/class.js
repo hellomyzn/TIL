@@ -73,3 +73,23 @@ class Person6 {
 }
 const user11 = new Person6("eiji", "m");
 console.log(user11.fullName());
+class Student {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+class American1 {
+    constructor(firstName, lastName, middleName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+    }
+}
+class Student3 {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}
+const user12 = new Student("John", "Doe");

@@ -97,3 +97,54 @@ class Person6 {
 
 const user11 = new Person6("eiji", "m");
 console.log(user11.fullName());
+
+interface Person {
+  firstName: string;
+  lastName: string;
+}
+
+class Student implements Person {
+  public firstName: string;
+  public lastName: string;
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+
+interface FullName {
+  readonly firstName: string;
+  readonly lastName: string;
+}
+
+interface MiddleName {
+  readonly middleName: string;
+}
+
+class American1 implements FullName, MiddleName {
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly middleName: string;
+  constructor(firstName: string, lastName: string, middleName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.middleName = middleName;
+  }
+}
+
+interface Person2 {
+  firstName: string;
+  middleName?: string;
+  lastName: string;
+}
+
+class Student3 implements Person {
+  firstName: string;
+  lastName: string;
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+
+const user12 = new Student("John", "Doe");
