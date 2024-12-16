@@ -5,7 +5,10 @@ const App = () => {
   return (
     <div>
       <div>App</div>
-      <Button />
+      <Button title="post" />
+      <Button title="edit" />
+      <Button title="delete" />
+      <Button title="submit" />
     </div>
   );
 };
