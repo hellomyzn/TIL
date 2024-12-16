@@ -5,6 +5,7 @@ import jsonplaceholder from "./apis/jsonplaceholder";
 import Button from "./components/Button";
 import Counter from "./components/Counter";
 import Resources from "./components/Resources";
+import SearchBar from "./components/SearchBar";
 
 const App = () => {
   const [resources, setResources] = useState([]);
@@ -25,6 +26,10 @@ const App = () => {
       console.log(error);
     }
   };
+
+  const onSearchSubmit = (term) => {
+    console.log(term);
+  };
   return (
     <div className="ui container" style={{ marginTop: "30px" }}>
       {/* <Button title="post" />
@@ -32,9 +37,10 @@ const App = () => {
       <Button title="delete" />
       <Button title="submit" /> */}
       {/* <Counter /> */}
-      <Button onClick={getPosts} color="primary" text="Posts" />
-      <Button onClick={getAlbums} color="red" text="Albums" />
-      <Resources resources={resources} />
+      {/* <Button onClick={getPosts} color="primary" text="Posts" />
+      <Button onClick={getAlbums} color="red" text="Albums" /> */}
+      {/* <Resources resources={resources} /> */}
+      <SearchBar onSubmit={onSearchSubmit} />
     </div>
   );
 };
