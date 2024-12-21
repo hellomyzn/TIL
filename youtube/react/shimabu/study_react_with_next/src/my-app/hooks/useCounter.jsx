@@ -1,23 +1,17 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 
 export const useCounter = () => {
   const [counter, setCounter] = useState(1);
+  const doubleCount = useMemo(() => {
+    return counter * 2;
+  }, [counter]);
   const [isShow, setIsShow] = useState(false);
   const handleClick = () => {
     setCounter((prevCounter) => prevCounter + 1);
   };
   const handleToggleButton = useCallback(() => {
     setIsShow((prevIsShow) => !prevIsShow);
-    const useBgLightBlue = () => {
-      useEffect(() => {
-        document.body.style.backgroundColor = "lightblue";
-
-        return () => {
-          document.body.style.backgroundColor = "";
-        };
-      }, []);
-    };
   }, []);
 
-  return { counter, isShow, handleClick, handleToggleButton };
+  return { counter, isShow, handleClick, handleToggleButton, doubleCount };
 };

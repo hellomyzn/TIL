@@ -4,14 +4,14 @@ import { Main } from "@components/Main";
 import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
 
-import { useBgLightBlue } from "@hooks/useBgLightBlue";
+import { useBgColor } from "@hooks/useBgColor";
 import { useCounter } from "@hooks/useCounter";
 import { useInputArray } from "@hooks/useInputArray";
 
 export default function About() {
   const { counter, isShow, handleClick, handleToggleButton } = useCounter();
   const { text, array, handleChange, handleAdd } = useInputArray();
-  useBgLightBlue();
+  useBgColor();
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
