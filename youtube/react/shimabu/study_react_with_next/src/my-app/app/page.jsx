@@ -9,10 +9,10 @@ export default function Home() {
   const [counter, setCounter] = useState(1);
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(false);
+  const [array, setArray] = useState([[]]);
 
   const handleClick = () => {
     setCounter((prevCounter) => prevCounter + 1);
-    console.log(counter);
   };
 
   const handleChange = useCallback((e) => {
@@ -26,6 +26,16 @@ export default function Home() {
     setIsShow((prevIsShow) => !prevIsShow);
   }, []);
 
+  const handleAdd = useCallback(() => {
+    if (array.some((arr) => arr === text)) {
+      alert("the text exists");
+      setText("");
+      return;
+    }
+    setArray((prevArray) => [...prevArray, text]);
+    setText("");
+  }, [array, text]);
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <Header />
@@ -35,6 +45,12 @@ export default function Home() {
         {isShow ? "hide counter" : "show counter"}
       </button>
       <input type="text" value={text} onChange={handleChange} />
+      <button onClick={() => handleAdd()}> add</button>
+      <ul>
+        {array.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
       <Main title="Index Page" page="app/page.js" />
       <Footer />
     </div>
