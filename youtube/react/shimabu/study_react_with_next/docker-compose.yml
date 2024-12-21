@@ -1,0 +1,27 @@
+services:
+  react:
+    restart: always
+    build:
+      context: ./infra/docker/volta
+      dockerfile: ./Dockerfile
+    container_name: react
+    hostname: react
+    working_dir: /app
+    tty: true
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+      - type: volume
+        source: node_modules
+        target: /app/src/my-app/node_modules
+    ports:
+      - target: 3000
+        published: ${WEB_PUBLISHED_PORT:-3000}
+        protocol: tcp
+        mode: host
+    environment:
+      - TZ=Asia/Tokyo
+
+volumes:
+  node_modules:
