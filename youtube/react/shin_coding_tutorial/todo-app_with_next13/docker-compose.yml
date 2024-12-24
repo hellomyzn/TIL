@@ -17,6 +17,10 @@ services:
         published: ${WEB_PUBLISHED_PORT:-3000}
         protocol: tcp
         mode: host
+      - target: 3001
+        published: ${JSON_SERVER_PORT:-3001}
+        protocol: tcp
+        mode: host
     environment:
       - TZ=Asia/Tokyo
     healthcheck:
