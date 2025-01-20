@@ -30,15 +30,25 @@ app.post("/", async (req, res) => {
   res.json(posts);
 });
 
-app.post("/", async (req, res) => {
+app.put("/:id", async (req, res) => {
+  const id = req.params.id;
   const { title, body } = req.body;
-  const posts = await prisma.posts.create({
+  const updatedPost = await prisma.posts.update({
+    where: {
+      id: Number(id),
+    },
     data: {
       title: title,
       body: body,
     },
   });
-  res.json(posts);
+  res.json(updatedPost);
+});
+
+app.delete("/:id", async (req, res) => {
+  const id = req.params.id;
+  const post = await prisma.posts.delete({ where: { id: Number(id) } });
+  return res.json(post);
 });
 
 app.listen(PORT, () => {
