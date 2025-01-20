@@ -17,6 +17,10 @@ services:
         published: ${WEB_PUBLISHED_PORT:-3000}
         protocol: tcp
         mode: host
+      - target: 5555
+        published: ${PRISMA_STUDIO_PUBLISHED_PORT:-5555}
+        protocol: tcp
+        mode: host
     environment:
       - TZ=Asia/Tokyo
     healthcheck:
@@ -29,9 +33,9 @@ services:
     container_name: postgres
     restart: always
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: my-app
+      POSTGRES_USER: ${DB_USER:-myzn}
+      POSTGRES_PASSWORD: ${DB_PASS:-hellomyzn}
+      POSTGRES_DB: ${DB_NAME:-mydb}
       TZ: Asia/Tokyo
     volumes:
       - type: volume
@@ -39,7 +43,7 @@ services:
         target: /var/lib/postgresql/data
     ports:
       - target: 5432
-        published: 5432
+        published: ${DB_PUBLISHED_PORT:-5432}
         protocol: tcp
         mode: host
 
