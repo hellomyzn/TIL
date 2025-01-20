@@ -34,6 +34,41 @@ async function main() {
     },
   });
   console.log("deleted user: ", deletedUser);
+
+  const newUserWithPost = await prisma.user.create({
+    data: {
+      email: "fuga@fuga.com",
+      name: "fuga",
+      posts: {
+        create: {
+          title: "fuga title",
+          content: "fugafugafuga",
+        },
+      },
+    },
+  });
+  console.log("create new user with post: ", newUserWithPost);
+
+  const userWithPost = await prisma.user.findUnique({
+    where: { id: newUserWithPost.id },
+    include: { posts: true },
+  });
+
+  console.log("find user with posts: ", userWithPost);
+
+  const deletedPost = await prisma.post.deleteMany({
+    where: {
+      authorId: newUserWithPost.id,
+    },
+  });
+  console.log("delete post", deletedPost);
+
+  const deletedNewUserWithPost = await prisma.user.delete({
+    where: {
+      id: newUserWithPost.id,
+    },
+  });
+  console.log("delete new user with post", deletedNewUserWithPost);
 }
 
 main()
