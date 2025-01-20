@@ -17,4 +17,12 @@ model Posts {
   id Int @default(autoincrement()) @id
   title  String 
   body String
+  comments Comments[]
+}
+
+model Comments {
+  id Int @default(autoincrement()) @id
+  post Posts @relation(fields: [postId], references: [id]) 
+  postId Int
+  comment String
 }
