@@ -1,4 +1,7 @@
 # docker-react-handson
+下記の動画のプロジェクト
+https://youtu.be/CZlZgRo0bZ4?si=xk4HKIR3f_L3rw_q
+
 Reactの実行環境用コンテナ
 
 Reactプロジェクト作成と起動
