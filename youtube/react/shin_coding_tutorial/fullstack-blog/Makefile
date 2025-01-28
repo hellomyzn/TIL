@@ -20,7 +20,7 @@ logs:
 react:
 	docker-compose exec react bash
 db:
-	docker-compose exec db bash
+	docker-compose exec local_db bash
 start:
 	@make up
 	@make react
