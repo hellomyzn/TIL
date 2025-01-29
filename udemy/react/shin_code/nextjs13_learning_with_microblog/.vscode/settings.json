@@ -8,5 +8,5 @@
   "editor.formatOnSave": true,
   "editor.tabFocusMode": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.autoSave": "onFocusChange"
+  "files.autoSave": "off"
 }
