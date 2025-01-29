@@ -17,6 +17,7 @@ services:
         published: ${WEB_PUBLISHED_PORT:-3000}
         protocol: tcp
         mode: host
+      # for json data
       - target: 3001
         published: ${WEB_PUBLISHED_PORT:-3001}
         protocol: tcp
