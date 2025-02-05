@@ -27,3 +27,28 @@ export const getDetailArticle = async (id: string): Promise<Article> => {
   const article = await res.json();
   return article;
 };
+
+export const createArticle = async (
+  id: string,
+  title: string,
+  content: string
+): Promise<Article> => {
+  const currentDatetime = new Date().toISOString();
+
+  const res = await fetch(`http://localhost:3001/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id, title, content, currentDatetime }),
+  });
+
+  if (res.status === 404) {
+    notFound();
+  }
+
+  if (!res.ok) throw new Error("An error has occurred.");
+
+  const article = await res.json();
+  return article;
+};
