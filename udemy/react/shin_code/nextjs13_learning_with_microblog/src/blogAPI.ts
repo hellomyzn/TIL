@@ -43,10 +43,6 @@ export const createArticle = async (
     body: JSON.stringify({ id, title, content, currentDatetime }),
   });
 
-  if (res.status === 404) {
-    notFound();
-  }
-
   if (!res.ok) throw new Error("An error has occurred.");
 
   const article = await res.json();
