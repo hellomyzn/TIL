@@ -13,7 +13,7 @@ export const getAllArticles = async (): Promise<Article[]> => {
   return articles;
 };
 
-export const getDetailArticle = async (id: string): Promise<Article[]> => {
+export const getDetailArticle = async (id: string): Promise<Article> => {
   const res = await fetch(`http://localhost:3001/posts/${id}`, {
     next: { revalidate: 60 }, //ISR
   });
