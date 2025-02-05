@@ -48,3 +48,14 @@ export const createArticle = async (
   const article = await res.json();
   return article;
 };
+
+export const deleteArticle = async (id: string): Promise<Article> => {
+  const res = await fetch(`http://localhost:3001/posts/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) throw new Error("An error has occurred.");
+
+  const deleteedArticle = await res.json();
+  return deleteedArticle;
+};
