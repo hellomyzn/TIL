@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const CreateBlogPage = () => {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const [id, setId] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
@@ -14,16 +16,15 @@ const CreateBlogPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
-    await fetch(`${API_URL}/api/create`, {
+    // await createArticle(id, title, content);
+
+    await fetch(`${API_URL}/api/blog`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ id, title, content }),
     });
-    // const detailArticle = await res.json();
-    await createArticle(id, title, content);
     setLoading(false);
 
     router.push("/");
