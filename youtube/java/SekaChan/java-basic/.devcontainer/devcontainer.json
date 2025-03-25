@@ -1,6 +1,6 @@
 {
     "name": "Java VScode",
-    "dockerComposeFile": "./docker-compose.yml",
+    "dockerComposeFile": "../docker-compose.yml",
     "service": "java",
     "workspaceFolder": "/opt/work",
     "customizations": {
@@ -16,6 +16,7 @@
                 "yzhang.markdown-all-in-one",
                 "shd101wyy.markdown-preview-enhanced",
                 // java
+                "vscjava.vscode-java-pack",
                 // git
                 "eamodio.gitlens"
             ]
