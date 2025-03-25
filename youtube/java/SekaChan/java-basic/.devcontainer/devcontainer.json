@@ -1,0 +1,24 @@
+{
+    "name": "Java VScode",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "java",
+    "workspaceFolder": "/opt/work",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // common
+                "usernamehw.errorlens",
+                "oderwat.indent-rainbow",
+                "streetsidesoftware.code-spell-checker",
+                "WakaTime.vscode-wakatime",
+                // editor
+                "vscodevim.vim",
+                "yzhang.markdown-all-in-one",
+                "shd101wyy.markdown-preview-enhanced",
+                // java
+                // git
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}
