@@ -1,21 +1,13 @@
-public class Student {
-    String name;
-    int engScore;
-    int mathScore;
+public class Student extends Person{
+    private int stuNo;
 
-    void display() {
-        System.err.println(name);
-        System.err.println("eng: " + engScore + "math: " + mathScore);
+    public void setStudNo(int s) {
+        stuNo = s;
     }
 
-    void setScore(int eng, int math){
-        engScore = eng;
-        mathScore = math;
+    public void displayStuNo() {
+        System.err.println("student no: " + stuNo);
     }
 
-    double getAvg(){
-        double avg = (engScore + mathScore) / 2.0;
-        return avg;
-    }
     
 }
