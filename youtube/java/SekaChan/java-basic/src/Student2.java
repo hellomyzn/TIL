@@ -9,5 +9,4 @@ public class Student2 extends Person2 {
         System.out.println("name: " + getName());
         System.err.println("student no: " + stuNo);
     }
-
 }

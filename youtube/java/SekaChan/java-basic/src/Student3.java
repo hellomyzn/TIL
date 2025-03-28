@@ -1,28 +1,18 @@
-public class Student3 {
-    String name;
-    int engScore;
-    int mathScore;
+public class Student3 extends Person3 {
+    private int stuNo;
 
 
-    Student3(String n) {
-        name = n;
+    Student3(String name) {
+        this(name, 999);
     }
 
-    Student3(String n, int e, int m) {
-        name = n;
-        engScore = e;
-        mathScore = m;
-
+    Student3(String name, int stuNo){
+        super(name);
+        this.stuNo = stuNo;
     }
+
     void display() {
-        System.err.println(name);
-        System.err.println("eng: " + engScore + "math: " + mathScore);
+        super.display();
+        System.err.println(this.stuNo);
     }
-
-    void setScore(int eng, int math){
-        engScore = eng;
-        mathScore = math;
-    }
-
-    
 }

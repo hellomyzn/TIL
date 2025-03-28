@@ -1,16 +1,13 @@
-public class Student4 {
-    String name;
-    static int counter = 0;
-
-
-    Student4(String n) {
-        name = n;
-        counter ++;
-        System.out.println(name + "'s instance get generated");
-    }
-
-    static void display() {
-        System.out.println(counter);
-    }
+public final class Student4 extends Person4 {
+    private int stuNo;
     
+    public Student4(String name, int stuNo) {
+        super(name);
+        this.stuNo = stuNo;
+    }
+
+    public void display(){
+        super.display();
+        System.err.println(this.stuNo);
+    }
 }
