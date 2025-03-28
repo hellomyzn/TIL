@@ -1,22 +1,18 @@
-public class Student5 {
-    private String name;
-    private int score;
+public class Student5 extends Person5 {
+    private int stuNo;
 
-    public Student5(String n) {
-        name = n;
-    }
-
-    public void setScore(int s) {
-        if (0 <= s && s <= 100) {
-            score = s;
-        } else {
-            System.err.println(name + "'s score is not acceptable");
-            score = 0;
-        }
+    public Student5(String name, int stuNo) {
+        super(name);
+        this.stuNo = stuNo;
     }
 
     void display() {
-        System.out.println(name + "'s score is " + score);
+        super.display();
+        System.err.println(this.stuNo);
+    }
+
+    public void chgStuNo(int stuNo){
+        this.stuNo = stuNo;
     }
     
 }
