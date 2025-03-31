@@ -1,8 +1,7 @@
 version: "3.9"
-
 services:
   workspace:
-    container_name: ${PROJECT_NAME:-default}-workspace
+    container_name: ${PROJECT_NAME:-default}-workspace-vscode
     build:
       context: ./docker/workspace
       args:
@@ -13,6 +12,3 @@ services:
     tty: true
     volumes:
       - ../:/home/${USERNAME:-vscode}/workspace:cached
-    ports:
-      - 5555:5555
-      - 8080:8080

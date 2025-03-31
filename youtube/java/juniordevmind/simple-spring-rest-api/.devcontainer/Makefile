@@ -9,15 +9,14 @@ stop:
 	docker-compose stop
 down:
 	docker-compose down
+	docker compose --project-name ${PROJECT_NAME}_devcontainer down
 restart:
 	@make down
 	@make up
 destroy:
 	docker-compose down --rmi all --volumes
-	docker-compose -f ./docker-compose-vscode.yml down --rmi all --volumes
 destroy-volumes:
 	docker-compose down --volumes
-	docker-compose -f ./docker-compose-vscode.yml down --volumes
 ps:
 	docker-compose ps
 logs:
@@ -27,6 +26,3 @@ java:
 start:
 	@make up
 	@make java
-
-server:
-	docker-compose exec --user ${USERNAME} workspace bash -lc " cd /home/vscode/workspace/${PROJECT_NAME} && ./gradlew bootRun"

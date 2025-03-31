@@ -1,6 +1,6 @@
 {
     "name": "workspace in vscode",
-    "dockerComposeFile": ["docker-compose-vscode.yml"],
+    "dockerComposeFile": ["docker-compose.yml"],
     "service": "workspace",
     "workspaceFolder": "/home/vscode/workspace",
     "remoteUser": "vscode",
