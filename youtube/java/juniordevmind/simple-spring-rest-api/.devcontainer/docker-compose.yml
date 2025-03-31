@@ -12,3 +12,6 @@ services:
     tty: true
     volumes:
       - ../:/home/${USERNAME:-vscode}/workspace:cached
+    ports:
+      - 5555:5555
+      - 8080:8080
