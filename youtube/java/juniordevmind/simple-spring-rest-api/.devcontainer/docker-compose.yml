@@ -24,7 +24,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_DB: ${POSTGRES_DB:-dev}
     volumes:
-      - ./docker/postgres/:/var/lib/postgresql/data/
+      - ./docker/postgres/data/:/var/lib/postgresql/data/
     ports:
       - ${POSTGRES_PORT:-5432}:5432
     restart: unless-stopped
