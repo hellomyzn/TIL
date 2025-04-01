@@ -2,6 +2,7 @@
 1. ./devcontainer/Makeを使ってサーバーを起動
 ```
 cd .devcontainer
+cp .env.example .env
 make up
 make sps
 ```
