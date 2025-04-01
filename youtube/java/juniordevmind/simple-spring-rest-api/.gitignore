@@ -1,1 +1,10 @@
 .env
+.devcontainer/docker/pgadmin4_data/*
+.devcontainer/docker/postgres/*
+!.devcontainer/docker/pgadmin4_data/.gitkeep
+!.devcontainer/docker/postgres/.gitkeep
+
+infra/docker/pgadmin4_data/*
+infra/docker/postgres/*
+!infra/docker/pgadmin4_data/.gitkeep
+!infra/docker/postgres/.gitkeep
