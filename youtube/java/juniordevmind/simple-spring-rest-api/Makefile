@@ -20,11 +20,11 @@ ps:
 	docker-compose ps
 logs:
 	docker-compose logs
-java:
+login:
 	docker-compose exec --user ${USERNAME} workspace bash
 start:
 	@make up
-	@make java
+	@make login
 # spring boot: run server
 sps:
 # --no-daemonでvscodeとの競合を防ぐ

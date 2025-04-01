@@ -5,6 +5,10 @@ ARG USER_GROUP_NAME=workspace
 ARG USER_UID=1000
 ARG USER_GID=1000
 
+# make server用に必要
+ENV JAVA_HOME=/home/${USERNAME}/.sdkman/candidates/java/current
+ENV PATH=$JAVA_HOME/bin:$PATH
+
 ARG PKG="git vim curl unzip zip sudo"
 
 SHELL ["/bin/bash", "-c"]
