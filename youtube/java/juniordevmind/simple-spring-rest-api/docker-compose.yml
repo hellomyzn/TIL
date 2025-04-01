@@ -38,7 +38,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@example.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-password}
     volumes:
-      - .infra/docker/pgadmin4_data:/var/lib/pgadmin
+      - ./infra/docker/pgadmin4_data:/var/lib/pgadmin
     ports:
       - 8888:80
     depends_on:

@@ -21,7 +21,7 @@ make sps
 
 4. 終わったらサーバーを落とし、不要なデータは削除する
     - `make destroy`をする
-    - `rm -rf .devcontainer/docker/postgres/data`
-    - `rm -rf .devcontainer/docker/pgadmin4_data`
+    - `rm -rf .devcontainer/docker/postgres/data/*`
+    - `rm -rf .devcontainer/docker/pgadmin4_data/*`
 
 
