@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.example.simple_spring_rest_api.models.TodoItem;
 import com.example.simple_spring_rest_api.services.TodoService;
 
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping(path = TodoController.BASE_URL)
@@ -44,7 +46,7 @@ public class TodoController {
 
     //create todo
     @PostMapping(path = "")
-    public ResponseEntity<TodoItem> createTodoItem(@RequestBody TodoItem newTodoItem) {
+    public ResponseEntity<TodoItem> createTodoItem(@Valid @RequestBody TodoItem newTodoItem) {
         TodoItem savedTodoItem = _todoService.saveTodoItem(newTodoItem);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
             .path("/{id}")
