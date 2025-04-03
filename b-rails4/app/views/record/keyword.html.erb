@@ -1,0 +1,19 @@
+<%= form_tag action: :ph1 do %>
+  <div class="field">
+    <%= label_tag :publish, '出版社 : ' %>
+    <br>
+    <%= text_field_tag :publish %>
+
+  </div>
+  <div class="field">
+    <%= label_tag :price, '最低価格 : ' %>
+    <br>
+    <%= text_field_tag :price %>
+  </div>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<%= form_for @search, url: {action: :keywd_process} do |f| %>
+  <%= f.text_field :keyword, size: 25 %>
+  <%= f.submit 'search' %>
+<% end %>

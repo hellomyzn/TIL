@@ -1,0 +1,12 @@
+<%= link_to 'サポートサイト', 'https//www.wings.msn.to/' %>
+
+<br>
+<%= link_to 'top' , {controller: :hello, action: :index}, id: :link, class: :menu %>
+
+
+<br>
+<%= link_to 'delete', book_path(1), {method: :delete, data: {confirm: 'Can I Delete it ?'}} %>
+
+<br>
+<% @book = Book.find(1) %>
+<%= link_to book_path(@book) do image_tag "http://www.wings.msn.to/books/#{@book.isbn}/#{@book.isbn}.jpg" end %>
