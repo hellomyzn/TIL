@@ -1,0 +1,76 @@
+<!-- document.getElementById() -->
+<!-- 例1: id要素を取得する -->
+<!-- <div id="myTextbox">myTextbox</div>
+<script>
+  const textElement = document.getElementById("myTextbox");
+  console.log(textElement);
+</script> -->
+
+<!-- element.textContent -->
+<!-- 例1: テキストの変更 -->
+<!-- ウェブページの特定の部分のテキストを読み込み変更するためにelement.textContentを使います。 -->
+<!-- このコードは、idがmyElementのHTML要素のテキストを取得して、変更して表示します。 -->
+<!-- <p id="myElement">デフォルトのテキスト</p>
+<button id="myButton">クリックするとテキストが変更する！</button>
+<script>
+  const text = document.getElementById("myElement");
+  var button = document.getElementById("myButton");
+  button.addEventListener("click", function () {
+    text.textContent = "新しいテキスト";
+  });
+</script> -->
+
+<!-- element.style -->
+
+<!-- CSSのプロパティの指定方法
+CSSのcolorやmarginなどの一語であれば、そのまま指定することが可能ですが、ハイフン（-）が使用されているプロパティは、キャメルケースで指定します。
+キャメルケースとは、backgroundColorのように最初の要素語の先頭は小文字、次の要素語から先頭は大文字になる書き方です。
+background-color　→　backgroundColor border-radius　→　borderRadius
+margin-top　→　marginTop 例1: 要素の大きさを変える
+画像などの要素の大きさを変えることもできます。
+例えば、画像を大きくしたり小さくしたりすることができます。 -->
+<div class="imgContainer">
+  <img
+    id="myImage"
+    class="myImage"
+    src="https://prod-code-lesson-api.s3.ap-northeast-1.amazonaws.com/cms/00631d80-ad96-4d18-b98d-1896a8732a66.png"
+  />
+  <button id="myButton">クリックすると画像要素が大きくなる！</button>
+</div>
+
+<style>
+  .imgContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .myImage {
+    width: 300px;
+  }
+</style>
+
+<script>
+  var button = document.getElementById("myButton");
+  button.addEventListener("click", function () {
+    document.getElementById("myImage").style.width = "600px";
+  });
+</script>
+
+<!-- 上記のコードでは、"myImage"というIDを持つ要素（この場合は画像）の幅を600ピクセルに変えています。 -->
+<!-- 例2: 要素の文字色、太さ、背景色を変える file_logo_htmlコード例.html -->
+<!-- 
+<p class="color">文字色が変わります</p>
+<p class="weight">文字が太字になります</p>
+<p class="background">文字に背景色がつきます</p>
+<p>
+  <script>
+    const red = document.querySelector(".color");
+    red.style.color = "red";
+
+    const bold = document.querySelector(".weight");
+    bold.style.fontWeight = "bold";
+
+    const yellow = document.querySelector(".background");
+    yellow.style.backgroundColor = "yellow";
+  </script>
+</p> -->
