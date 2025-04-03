@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+  <script type="text/javascript" src="../js/style.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+
+  <div id="app">
+    <div class="demo" :style="{backgroundColor: color}"></div>
+    <div class="demo" :style="myStyle"></div>
+    <div class="demo" :style="[myStyle, {height: width + 'px'}] "></div>
+    <hr>
+    <input type="text" v-model="color">
+    <input type="text" v-model="width">
+  </div>
+
+
+</body>
+</html>

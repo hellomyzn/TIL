@@ -1,0 +1,14 @@
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+<script src="../js/style.js"></script>
+
+
+
+<div id="app">
+  <button v-on:click="increase(2, $event)">Click me</button>
+  <button v-on:click="counter++">Click me +1</button>
+  <button v-on:click="counter--">Click me -1</button>
+  <p> {{ counter * 2 > 10 ? 'Greater than 10' : 'Smaller than 10' }} </p>
+  <p v-on:mousemove="updateCoordinates">
+    Coordinates: {{ x  }} / {{ y  }} - <span v-on:mousemove.stop="">DEAD STOP</span>
+  </p>
+</div>

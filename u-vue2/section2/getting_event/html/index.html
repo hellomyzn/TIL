@@ -1,0 +1,25 @@
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+<script src="../js/style.js"></script>
+<!--CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<!--JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+  <div class="row">
+    <div class="text-center">
+
+      <div id="app">
+          <button v-on:click="increase">
+            Click me
+          </button>
+          <p>{{ counter }}</p>
+          <p v-on:mousemove="updateCoordinates">Coordinates: {{ x  }} / {{ y  }}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
