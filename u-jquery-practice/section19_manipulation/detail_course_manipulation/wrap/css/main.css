@@ -1,0 +1,14 @@
+.brdrR {
+	border: solid 2px red;
+	padding: 8px;
+}
+
+.brdrG {
+	border: solid 2px green;
+	padding: 8px;
+}
+
+.brdrB {
+	border: solid 2px blue;
+	padding: 8px;
+}

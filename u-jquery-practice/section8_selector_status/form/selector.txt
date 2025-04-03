@@ -1,0 +1,80 @@
+$(":text");
+$(":file");
+$(":password");
+
+$(":checkbox");
+$(":radio");
+
+$(":button");
+
+$(":image");
+$(":reset");
+$(":submit");
+//	<button>タグの初期値はtype="submit"
+//	type="button"
+
+<button>タグの
+初期値は
+type="submit"
+
+────────────────────────────────────────
+
+$(":selected");
+
+$(":checked");
+
+// 通常はこんな感じで使う
+$(":checkbox:checked");
+$("#cb:checked");
+
+$("input[name=group]:checked");
+
+────────────────────────────────────────
+
+setTimeout(function() {
+	console.log($(":focus"));
+}, 2000);
+
+-----
+
+$("input").hide();
+
+$(":visible");
+$(":hidden");
+
+-----
+
+$(":enabled");
+$(":disabled");
+
+────────────────────────────────────────
+
+$("select:empty");
+$("select:parent");
+
+$(":contains(1)");
+
+$(":has(input)");
+
+────────────────────────────────────────
+
+$("body :not(input)");
+$("body :not(input):empty");
+
+────────────────────────────────────────
+
+// jQuery公式サイトで実行
+$(":header");
+
+$(":header").each(function() {
+	var level = $(this)[0].tagName.replace(/\D/g, "") * 1;
+	var indent = new Array(level).join("  ");
+	console.log(indent + $(this).text());
+});
+
+
+$(":header").each(function() {
+	console.log($(this).text());
+});
+
+

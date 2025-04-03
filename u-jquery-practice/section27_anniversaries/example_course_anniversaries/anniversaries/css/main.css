@@ -1,0 +1,29 @@
+body {
+	text-align: center;
+}
+#anniversaries {
+	background: #ffd;
+	border: solid 2px #a60;
+	border-radius: 4px;
+	box-sizing: border-box;
+	display: inline-block;
+	padding: 6px;
+	position: relative;
+	text-align: left;
+	color: #840;
+}
+.anvTtl {
+	font-weight: bold;
+	text-align: center;
+}
+.anvItm {
+	font-size: 90%;
+	border-top: solid 1px #dda;
+	padding: 4px;
+	margin-top: 4px;
+}
+.anvItm a {
+	color: #048;
+	text-decoration: none;
+}
+

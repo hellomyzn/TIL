@@ -1,0 +1,61 @@
+body {
+	text-align: center;
+}
+#calc {
+	background: #dfd;
+	border: solid 2px #ccc;
+	border-radius: 0.3em;
+	padding: 0.75em;
+	display: inline-block;
+	text-align: left;
+}
+#calc * {
+	font-weight: bold;
+	font-size: medium;
+}
+
+#formula {
+	width: 12em;
+	border-radius: 0.5em;
+	box-sizing: border-box;
+	padding: 0.5em;
+	text-align: right;
+	position: relative;
+}
+
+.btnN,
+.btnF {
+	background: #ffc;
+	width: 3em;
+	height: 3em;
+	border-radius: 0.5em;
+	box-sizing: border-box;
+	position: relative;
+	outline: none;
+}
+.btnN {background: #ffc;}
+.btnF {background: #fcc;}
+
+#calcCnfg {
+	margin-top: 0.5em;
+}
+
+#hstry {
+	background: #fff;
+	width: 12em;
+	border: solid 2px #ccc;
+	border-radius: 0.3em;
+	box-sizing: border-box;
+	padding: 0.5em;
+	margin-top: 0.3em;
+	position: relative;
+}
+
+.hstryItm {
+	background: #cdf;
+	font-size: small !important;
+	border-radius: 0.3em;
+	padding: 0.3em 0.5em;
+	margin: 0.2em 0;
+	word-break: break-all;
+}
