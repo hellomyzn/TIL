@@ -1,0 +1,1 @@
+https://www.amazon.co.jp/React-js-Next-js%E8%B6%85%E5%85%A5%E9%96%80-%E6%8E%8C%E7%94%B0%E6%B4%A5%E8%80%B6%E4%B9%83-ebook/dp/B07X7DHZ9F/?_encoding=UTF8&pd_rd_w=3k1Ps&content-id=amzn1.sym.bb272e13-1a68-41b0-a370-44a252d487ac&pf_rd_p=bb272e13-1a68-41b0-a370-44a252d487ac&pf_rd_r=358-1419819-8803344&pd_rd_wg=HIjEF&pd_rd_r=73c6d48e-8cd8-4eb4-ae70-486fddc13523&ref_=aufs_ap_sc_dsk
