@@ -1,0 +1,29 @@
+<script src="https://unpkg.com/vue@2.5.17" charset="utf-8"></script>
+
+<div id="app">
+  <item-dict v-bind:item-name='myItem'></item-dict>
+
+
+</div>
+
+
+<script>
+  Vue.component('item-dict', {
+    props: {
+      itemName: {
+        type: String
+      }
+    },
+    template: '<p>{{ itemName }}は便利です</p>'
+  })
+
+  new Vue({
+    el: '#app',
+    data: {myItem: 'pen'}
+  })
+
+  new Vue({
+    el: '#app',
+    data: {myItem: 'hoge'}
+  })
+</script>

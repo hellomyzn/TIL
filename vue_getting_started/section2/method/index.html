@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://unpkg.com/vue@2.5.17"></script>
+</head>
+<body>
+  
+ <div id="app">
+
+   <div :style="errorMessageStyle">
+    
+     v-on:input
+     <ul>
+         <li v-for="item in items" v-bind:key="item.name">
+           {{item.name}}の個数: <input type="number" v-on:input="item.quantity = $event.target.value" v-bind:value="item.quantity" min="0">
+       </li>
+     </ul>
+     
+     v-on:change
+     <ul>
+         <li v-for="item in items" v-bind:key="item.name">
+           {{item.name}}の個数: <input type="number" v-on:change="item.quantity = $event.target.value" v-bind:value="item.quantity" min="0">
+       </li>
+     </ul>
+
+     v-on:model
+     <ul>
+         <li v-for="item in items" v-bind:key="item.name">
+           {{item.name}}の個数: <input type="number" v-model="item.quantity" v-bind:value="item.quantity" min="0">
+       </li>
+     </ul>
+
+      <p>{{items[0].name}} : {{items[0].price}} x {{items[0].quantity }}</p>
+      <p>小計 : {{totalPrice | numberWithDelimiter}}円</p>
+      <p>合計(税込): {{totalPriceWithTax | numberWithDelimiter}}円</p>
+  
+  
+  
+      <p v-show="!canBuy">
+        {{ 1000 | numberWithDelimiter }}円以上からご購入いただけます
+      </p>
+
+      <button v-bind:disabled="!canBuy" v-on:click="doBuy">購入</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+<script src="app.js"></script>
+
