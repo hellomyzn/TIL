@@ -1,0 +1,1 @@
+https://www.udemy.com/course/learning-ai/?couponCode=ST15MT20425G2
