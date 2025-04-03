@@ -2,4 +2,6 @@
 .cache
 .viminfo
 __pycache__
-*/.ipynb_checkpoints/*
+*/.ipynb_checkpoints/*school/kredo/deeplearning-cnn-yolo/week_2/dataset.zip
+school/kredo/deeplearning-cnn-yolo/week_3/dataset.zip
+school/kredo/deeplearning-cnn-yolo/**/*.zip
