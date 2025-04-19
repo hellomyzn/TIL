@@ -24,7 +24,8 @@ ps:
 logs:
 	docker-compose $(PROJECT_FLAG) logs
 login:
-	docker compose $(PROJECT_FLAG) exec $(USER_FLAG) workspace bash
+	# docker compose $(PROJECT_FLAG) exec $(USER_FLAG) workspace bash
+	docker compose $(PROJECT_FLAG) exec workspace bash
 run:
 	@make up
 	@echo "Waiting for container to be ready..."

@@ -43,41 +43,41 @@ services:
     networks:
       - internal_network_dev
 
-  plantuml:
-    build:
-      context: .
-      dockerfile: ./infra/docker/pluntuml/Dockerfile
-    container_name: 'plantuml'
-    hostname: 'plantuml'
-    ports:
-      - target: 8080
-        published: ${PANTUML_PUBLISHED_PORT:-8080}
-    networks:
-      - internal_network_dev
+  # plantuml:
+  #   build:
+  #     context: .
+  #     dockerfile: ./infra/docker/pluntuml/Dockerfile
+  #   container_name: 'plantuml'
+  #   hostname: 'plantuml'
+  #   ports:
+  #     - target: 8080
+  #       published: ${PANTUML_PUBLISHED_PORT:-8080}
+  #   networks:
+  #     - internal_network_dev
 
-  ssh-stub:
-    build:
-      context: .
-      dockerfile: ./infra/docker/ssh-stub/Dockerfile
-    container_name: 'ssh-stub'
-    hostname: 'ssh-stub'
-    ports:
-      - target: 22
-        published: ${SSH_STUB_PUBLISHED_PORT:-22222}
-    volumes:
-      - type: bind
-        source: ./infra/docker/ssh-stub/ssh/id_rsa.pub
-        target: /root/.ssh/authorized_keys
-      - type: bind
-        source: ./infra/docker/ssh-stub/demo_scripts/docker
-        target: /usr/local/bin/docker
-    networks:
-      internal_network_dev:
-        ipv4_address: 172.20.0.10
+  # ssh-stub:
+  #   build:
+  #     context: .
+  #     dockerfile: ./infra/docker/ssh-stub/Dockerfile
+  #   container_name: 'ssh-stub'
+  #   hostname: 'ssh-stub'
+  #   ports:
+  #     - target: 22
+  #       published: ${SSH_STUB_PUBLISHED_PORT:-22222}
+  #   volumes:
+  #     - type: bind
+  #       source: ./infra/docker/ssh-stub/ssh/id_rsa.pub
+  #       target: /root/.ssh/authorized_keys
+  #     - type: bind
+  #       source: ./infra/docker/ssh-stub/demo_scripts/docker
+  #       target: /usr/local/bin/docker
+  #   networks:
+  #     internal_network_dev:
+  #       ipv4_address: 172.20.0.10
 
 networks:
   internal_network_dev:
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.20.0.0/24
+    # ipam:
+    #   driver: default
+    #   config:
+    #     - subnet: 172.20.0.0/24

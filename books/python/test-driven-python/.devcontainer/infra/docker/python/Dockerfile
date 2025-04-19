@@ -21,8 +21,9 @@ RUN pip install poetry --no-cache-dir
 RUN poetry config virtualenvs.create false
 
 # コピーして依存関係だけインストール
-COPY ${PROJECT_DIR}/pyproject.toml ${PROJECT_DIR}/poetry.lock ./
-RUN if [ -f pyproject.toml ]; then poetry install --no-root --with dev; fi
+# COPY ${PROJECT_DIR}/pyproject.toml ${PROJECT_DIR}/poetry.lock ./
+COPY ${PROJECT_DIR}/pyproject.toml ./
+RUN if [ -f pyproject.toml ]; then poetry install --no-root; fi
 
 # ------------------------
 # 2. final stage
@@ -60,11 +61,17 @@ RUN mkdir -p ${PYTHONPATH} ${POETRY_HOME} ${PIP_HOME} ${SSH_HOME} && \
     chown -R ${USER_NAME}:${GROUP_NAME} ${PYTHONPATH} ${POETRY_HOME} ${PIP_HOME} ${SSH_HOME}
 
 COPY --chown=${UID}:${GID} .devcontainer/infra/docker/python/docker-entrypoint.sh /docker-entrypoint.sh
-COPY --chown=${UID}:${GID} .devcontainer/infra/docker/ssh-stub/ssh/id_rsa ${SSH_HOME}
+# COPY --chown=${UID}:${GID} .devcontainer/infra/docker/ssh-stub/ssh/id_rsa ${SSH_HOME}
 RUN chmod 755 /docker-entrypoint.sh
+
+# Poetryをインストール
+RUN pip install --upgrade pip
+RUN pip install poetry --no-cache-dir
+RUN poetry config virtualenvs.create false
 
 # copy site-packages only
 COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=builder /usr/local/bin/pytest /home/${USER_NAME}/.local/bin/pytest
 
 RUN apt-get update -q && \
     apt-get -y install --no-install-recommends git curl && \
