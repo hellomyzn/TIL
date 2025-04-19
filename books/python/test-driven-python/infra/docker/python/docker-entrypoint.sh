@@ -1,5 +1,3 @@
-#!/bin/bash
-# python /home/myzn/src/main.py
+#! /bin/bash
 
-# コマンドライン引数が指定されている場合、そのコマンドを実行
-exec "$@"
+# python /opt/work/src/main.py

@@ -10,16 +10,21 @@ restart:
 	@make down
 	@make up
 destroy:
-	docker-compose down --rmi all --volumes --remove-orphans 
+	docker-compose down --rmi all --volumes --remove-orphans
 destroy-volumes:
 	docker-compose down --volumes
 ps:
 	docker-compose ps
 logs:
 	docker-compose logs
-python:
-	docker-compose exec python bash
+login:
+	docker-compose exec workspace bash
 start:
 	@make up
-	@make python
-
+	@make login
+run:
+	@make up
+	@echo "Waiting for container to be ready..."
+# 必要なら調整（健康チェック導入もあり）run:
+	@sleep 2
+	docker-compose exec workspace bash -c "python main.py"

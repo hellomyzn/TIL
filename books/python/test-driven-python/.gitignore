@@ -1,10 +1,21 @@
-*.pyc
+# 環境ファイル
+.env
 *.DS_Store
 *poetry.lock
-*__pycache__
+*.bash_history
 
-/src/src/logs
-!/src/src/sample-code/**
-/src/src/sample-code/**/__pycache__
+# Python
+.pytest_cache
+__pycache__/
+*.pyc
+
+docs/sphinx/resources
+docs/sphinx/build
+
+/src/src/**
+!/src/src/**/
 !/src/src/**/.gitkeep
 src/common/config/config.ini
+src/common/config/config.dev.ini
+
+.devcontainer/infra/docker/ssh-stub/ssh/id*
