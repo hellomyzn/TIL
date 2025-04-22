@@ -14,7 +14,7 @@ build:
 stop:
 	docker-compose stop
 down:
-	#{COMPOSE} down
+	${COMPOSE} down
 restart:
 	@make down
 	@make up
