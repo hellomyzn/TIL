@@ -1,6 +1,12 @@
 include .env
 export $(shell sed 's/=.*//' .env)
 
+PROJECT_NAME ?= my_project
+USERNAME ?= vscode
+WORKSPACE_PATH = /home/${USERNAME}/workspace
+PROJECT_PATH = ${WORKSPACE_PATH}/src/${PROJECT_NAME}
+COMPOSE = docker compose --project-name ${PROJECT_NAME}_devcontainer
+
 up:
 	docker-compose up -d --build
 build:
@@ -8,42 +14,57 @@ build:
 stop:
 	docker-compose stop
 down:
-	docker compose --project-name ${PROJECT_NAME}_devcontainer down
+	#{COMPOSE} down
 restart:
 	@make down
 	@make up
 destroy:
-	docker-compose --project-name ${PROJECT_NAME}_devcontainer down --rmi all --volumes
+	${COMPOSE} down --rmi all --volumes
 destroy-volumes:
-	docker-compose --project-name ${PROJECT_NAME}_devcontainer down --volumes
+	${COMPOSE} down --volumes
 ps:
 	docker-compose ps
 logs:
 	docker-compose logs
 login:
-	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec --user ${USERNAME} workspace bash
+	${COMPOSE} exec --user ${USERNAME} workspace bash
 psql:
-	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec postgres bash -c "psql -U postgres"
+	${COMPOSE} exec postgres bash -c "psql -U postgres"
 start:
 	@make up
 	@make login
-# spring boot: run server
-sbs:
-	docker-compose exec --user ${USERNAME} workspace bash -lc \
-	"export PATH=\$$HOME/.sdkman/candidates/maven/current/bin:\$$PATH && \
-	cd /home/${USERNAME}/workspace/src/${PROJECT_NAME} && mvn spring-boot:run"
-#	docker-compose exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/${PROJECT_NAME} && ./gradlew bootRun"
+# Spring Boot: run (通常)
+mvn-run:
+	@make _exec_run cmd="./mvnw spring-boot:run"
+mvn-build:
+	@make _exec_run cmd="./mvnw build"
+mvn-test:
+	@make _exec_run cmd="./mvnw test"
 
-# 	in devcontainer
-sbsd:
-	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec --user ${USERNAME} workspace bash -lc \
-	"export PATH=\$$HOME/.sdkman/candidates/maven/current/bin:\$$PATH && \
-	cd /home/${USERNAME}/workspace/src/${PROJECT_NAME} && mvn spring-boot:run"
-# 	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/src/${PROJECT_NAME} && ./gradlew bootRun"
+gr-run:
+	@make _exec_run cmd="./gradlew bootRun"
+gr-build:
+	@make _exec_run cmd="./gradlew build"
 
-# spring boot: build
-sbb:
-	docker-compose exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/${PROJECT_NAME} && ./gradlew build"
-# 	in devcontainer
-sbbd:
-	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/${PROJECT_NAME} && ./gradlew build"
+
+# Spring Boot: run (in devcontainer)
+mvn-run-d:
+	@make _exec_run_dev cmd="./mvnw spring-boot:run"
+mvn-build-d:
+	@make _exec_run cmd="./mvnw build"
+mvn-test-d:
+	@make _exec_run_dev cmd="./mvnw test"
+
+gr-run-d:
+	@make _exec_run_dev cmd="./gradlew bootRun"
+gr-build-d:
+	@make _exec_run_dev cmd="./gradlew build"
+
+
+# 共通関数（通常環境でコマンド実行）
+_exec_run:
+	docker compose exec --user ${USERNAME} workspace bash -lc "cd ${PROJECT_PATH} && $${cmd}"
+
+# 共通関数（devcontainerでコマンド実行）
+_exec_run_dev:
+	${COMPOSE} exec --user ${USERNAME} workspace bash -lc "cd ${PROJECT_PATH} && $${cmd}"
