@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  workspace:
+    container_name: ${PROJECT_NAME:-default}
+    build:
+      context: ./infra/docker/workspace
+      args:
+        USERNAME: ${USERNAME:-hoge}
+        USER_GROUP_NAME: ${USER_GROUP_NAME:-workspace}
+        USER_UID: ${USER_UID:-1000}
+        USER_GID: ${USER_GID:-1000}
+    tty: true
+    volumes:
+      - ./:/home/${USERNAME:-hoge}/workspace:cached
+    ports:
+      - 5555:5555
+      - 8080:8080
+
+  postgres:
+    container_name: ${PROJECT_NAME:-default}-postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-dev}
+    volumes:
+      - ./infra/docker/postgres/data:/var/lib/postgresql/data/
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
+    restart: unless-stopped
+
+  pgadmin4:
+    container_name: ${PROJECT_NAME:-default}-pgadmin
+    restart: always
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@example.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-password}
+    volumes:
+      - ./infra/docker/pgadmin4_data:/var/lib/pgadmin
+    ports:
+      - 8888:80
+    depends_on:
+      - postgres

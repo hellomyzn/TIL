@@ -1,0 +1,28 @@
+{
+    "name": "workspace in vscode",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "workspace",
+    "workspaceFolder": "/home/vscode/workspace",
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // common
+                "usernamehw.errorlens",
+                "oderwat.indent-rainbow",
+                "streetsidesoftware.code-spell-checker",
+                "WakaTime.vscode-wakatime",
+                // editor
+                "vscodevim.vim",
+                "yzhang.markdown-all-in-one",
+                "shd101wyy.markdown-preview-enhanced",
+                // java
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-boot-dev-pack",
+                "vscjava.vscode-gradle",
+                // git
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}

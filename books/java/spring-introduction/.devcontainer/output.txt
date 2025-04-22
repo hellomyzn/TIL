@@ -1,0 +1,213 @@
+=== Directory Structure ===
+.
+├── Makefile
+├── devcontainer.json
+├── docker
+│   ├── pgadmin4_data
+│   ├── postgres
+│   └── workspace
+│       ├── gradle
+│       │   └── Dockerfile
+│       └── maven
+│           └── Dockerfile
+├── docker-compose.yml
+└── output.txt
+
+7 directories, 6 files
+
+
+=== File Contents ===
+
+
+```docker/workspace/maven/Dockerfile
+FROM ubuntu:22.04
+
+ARG USERNAME=vscode
+ARG USER_GROUP_NAME=workspace
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+# make server用に必要
+ENV JAVA_HOME=/home/${USERNAME}/.sdkman/candidates/java/current
+ENV PATH=$JAVA_HOME/bin:$PATH
+
+ARG PKG="git vim curl unzip zip sudo"
+
+SHELL ["/bin/bash", "-c"]
+
+RUN apt-get update \
+    && apt-get install -y ${PKG} \
+    && groupadd --gid ${USER_GID} ${USER_GROUP_NAME} \
+    && useradd --uid ${USER_UID} --shell /bin/bash --gid ${USER_GID} -m ${USERNAME} \
+    && echo %${USER_GROUP_NAME} ALL=\(ALL\) NOPASSWD:ALL > /etc/sudoers.d/${USER_GROUP_NAME} \
+    && chmod 0440 /etc/sudoers.d/${USER_GROUP_NAME}
+
+ARG JAVA_VERSION=17.0.4-amzn
+ARG GRADLE_VERSION=7.5
+
+RUN su ${USERNAME} --command \
+    'curl -s "https://get.sdkman.io" | bash \
+    && source "${HOME}/.sdkman/bin/sdkman-init.sh" \
+    && sdk install java "${JAVA_VERSION}" \
+    && sdk install gradle "${GRADLE_VERSION}"'```
+
+
+```docker/workspace/gradle/Dockerfile
+FROM ubuntu:22.04
+
+ARG USERNAME=vscode
+ARG USER_GROUP_NAME=workspace
+ARG USER_UID=1000
+ARG USER_GID=1000
+
+# make server用に必要
+ENV JAVA_HOME=/home/${USERNAME}/.sdkman/candidates/java/current
+ENV PATH=$JAVA_HOME/bin:$PATH
+
+ARG PKG="git vim curl unzip zip sudo"
+
+SHELL ["/bin/bash", "-c"]
+
+RUN apt-get update \
+    && apt-get install -y ${PKG} \
+    && groupadd --gid ${USER_GID} ${USER_GROUP_NAME} \
+    && useradd --uid ${USER_UID} --shell /bin/bash --gid ${USER_GID} -m ${USERNAME} \
+    && echo %${USER_GROUP_NAME} ALL=\(ALL\) NOPASSWD:ALL > /etc/sudoers.d/${USER_GROUP_NAME} \
+    && chmod 0440 /etc/sudoers.d/${USER_GROUP_NAME}
+
+ARG JAVA_VERSION=17.0.4-amzn
+ARG MAVEN_VERSION=3.9.6
+
+RUN su ${USERNAME} --command \
+    'curl -s "https://get.sdkman.io" | bash \
+    && source "${HOME}/.sdkman/bin/sdkman-init.sh" \
+    && sdk install java "${JAVA_VERSION}" \
+    && sdk install maven "${MAVEN_VERSION}"'
+```
+[docker/postgres/.gitkeep はバイナリファイルのため省略]
+[docker/pgadmin4_data/.gitkeep はバイナリファイルのため省略]
+
+
+```Makefile
+include .env
+export $(shell sed 's/=.*//' .env)
+
+up:
+	docker-compose up -d --build
+build:
+	docker-compose build --no-cache --force-rm
+stop:
+	docker-compose stop
+down:
+	docker compose --project-name ${PROJECT_NAME}_devcontainer down
+restart:
+	@make down
+	@make up
+destroy:
+	docker-compose --project-name ${PROJECT_NAME}_devcontainer down --rmi all --volumes
+destroy-volumes:
+	docker-compose --project-name ${PROJECT_NAME}_devcontainer down --volumes
+ps:
+	docker-compose ps
+logs:
+	docker-compose logs
+login:
+	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec --user ${USERNAME} workspace bash
+psql:
+	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec postgres bash -c "psql -U postgres"
+start:
+	@make up
+	@make login
+# spring boot: run server
+sps:
+	docker-compose exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/${PROJECT_NAME} && ./gradlew bootRun"
+# 	in devcontainer
+spsd:
+	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/src/${PROJECT_NAME} && mvn spring-boot:run"
+
+# spring boot: build
+spb:
+	docker-compose exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/${PROJECT_NAME} && ./gradlew build"
+# 	in devcontainer
+spbd:
+	docker-compose --project-name ${PROJECT_NAME}_devcontainer exec --user ${USERNAME} workspace bash -lc "cd /home/${USERNAME}/workspace/${PROJECT_NAME} && ./gradlew build"```
+[.env はバイナリファイルのため省略]
+
+
+```docker-compose.yml
+version: "3.9"
+services:
+  workspace:
+    container_name: ${PROJECT_NAME:-default}-vscode
+    build:
+      context: ./docker/workspace/maven
+      args:
+        USERNAME: ${USERNAME:-vscode}
+        USER_GROUP_NAME: ${USER_GROUP_NAME:-workspace}
+        USER_UID: ${USER_UID:-1000}
+        USER_GID: ${USER_GID:-1000}
+    tty: true
+    volumes:
+      - ../:/home/${USERNAME:-vscode}/workspace:cached
+    ports:
+      - 5555:5555
+      - 8080:8080
+
+  # postgres:
+  #   container_name: ${PROJECT_NAME:-default}-postgres
+  #   image: postgres
+  #   environment:
+  #     POSTGRES_USER: ${POSTGRES_USER:-postgres}
+  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+  #     POSTGRES_DB: ${POSTGRES_DB:-dev}
+  #   volumes:
+  #     - ./docker/postgres/data/:/var/lib/postgresql/data/
+  #   ports:
+  #     - ${POSTGRES_PORT:-5432}:5432
+  #   restart: unless-stopped
+
+  # pgadmin4:
+  #   container_name: ${PROJECT_NAME:-default}-pgadmin
+  #   restart: always
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@example.com}
+  #     PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-password}
+  #   volumes:
+  #     - ./docker/pgadmin4_data:/var/lib/pgadmin
+  #   ports:
+  #     - 8888:80
+  #   depends_on:
+  #     - postgres```
+[.env.example はバイナリファイルのため省略]
+
+
+```devcontainer.json
+{
+    "name": "workspace in vscode",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "workspace",
+    "workspaceFolder": "/home/vscode/workspace",
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // common
+                "usernamehw.errorlens",
+                "oderwat.indent-rainbow",
+                "streetsidesoftware.code-spell-checker",
+                "WakaTime.vscode-wakatime",
+                // editor
+                "vscodevim.vim",
+                "yzhang.markdown-all-in-one",
+                "shd101wyy.markdown-preview-enhanced",
+                // java
+                "vscjava.vscode-java-pack",
+                "vmware.vscode-boot-dev-pack",
+                "vscjava.vscode-gradle",
+                // git
+                "eamodio.gitlens"
+            ]
+        }
+    }
+}```
