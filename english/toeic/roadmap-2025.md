@@ -1,3 +1,10 @@
+## 勉強方法
+![alt text](./img/grammer.png)
+![alt text](./img/vocabulary.png)
+![alt text](./img/listening.png)
+![alt text](./img/mock-test.png)
+
+
 ## 2025年8月（8/25〜8/31）
 ```mermaid
 gantt
