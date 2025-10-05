@@ -1,0 +1,27 @@
+{
+  "name": "golang_concurrency",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/home/myzn/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Basic
+        "WakaTime.vscode-wakatime",
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "vscodevim.vim",
+        "esbenp.prettier-vscode",
+        "Gruntfuggly.todo-tree",
+        "eamodio.gitlens",
+        "mikestead.dotenv",
+        "GitHub.vscode-github-actions",
+
+        // go
+        "golang.go",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
