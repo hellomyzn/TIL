@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"unsafe"
-)
+import "fmt"
 
 // const secret = "abc"
 
@@ -21,40 +18,116 @@ import (
 // 	b bool
 // )
 
-type Task struct {
-	Title    string
-	Estimate int
+// type Task struct {
+// 	Title    string
+// 	Estimate int
+// }
+
+// func funcDefer() {
+// 	defer fmt.Println("main func final-finish")
+// 	defer fmt.Println("main func semi-finish")
+// 	fmt.Println("hello world")
+// }
+
+// func trimExtention(files ...string) []string {
+// 	out := make([]string, 0, len(files))
+// 	for _, f := range files {
+// 		out = append(out, strings.TrimSuffix(f, ".csv"))
+// 	}
+// 	return out
+// }
+
+// func fileChecker(name string) (string, error) {
+
+// 	f, err := os.Open(name)
+// 	if err != nil {
+// 		return "", errors.New("file not found")
+// 	}
+// 	defer f.Close()
+// 	return name, nil
+// }
+
+// func addExt(f func(file string) string, name string) {
+// 	fmt.Println(f(name))
+// }
+
+// func multiply() func(int) int {
+// 	return func(n int) int {
+// 		return n * 1000
+// 	}
+// }
+
+func countUp() func(int) int {
+	count := 0
+	return func(n int) int {
+		count += n
+		return count
+	}
 }
-
 func main() {
-
-	task1 := Task{
-		Title:    "Learn Golang",
-		Estimate: 3,
+	f4 := countUp()
+	for i := 1; i <= 5; i++ {
+		v := f4(2)
+		fmt.Printf("%v\n", v)
 	}
 
-	task1.Title = "Learn Go"
-	fmt.Printf("%[1]T %+[1]v %v\n", task1, task1.Title)
-	var task2 Task = task1
-	task2.Title = "new"
-	fmt.Printf("task1: %v task2: %v\n", task1.Title, task2.Title)
+	// funcDefer()
+	// files := []string{"file1.csv", "file1.csv", "file1.csv"}
+	// fmt.Println(trimExtention(files...))
 
-	task1p := &Task{
-		Title:    "Learn concurrency",
-		Estimate: 2,
-	}
-	fmt.Printf("task1p: %T %+v %v\n", task1p, *task1p, unsafe.Sizeof(task1p))
-	task1p.Title = "CHanged"
-	fmt.Printf("task1p: %+v\n", *task1p)
-	var task2p *Task = task1p
-	task2p.Title = "Changed by Task2"
-	fmt.Printf("task1: %+v\n", *task1p)
-	fmt.Printf("task2: %+v\n", *task2p)
+	// name, err := fileChecker("file.txt")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+	// fmt.Println(name)
 
-	task1.extendEstimate()
-	fmt.Printf("task1 value receiver: %+v\n", task1.Estimate)
-	(&task1).extendEstimatePointer()
-	fmt.Printf("task1 value receiver: %+v\n", task1.Estimate)
+	// i := 1
+	// func(i int) {
+	// 	fmt.Println(i)
+	// }(i)
+
+	// f1 := func(i int) int {
+	// 	return i + 1
+	// }
+	// fmt.Println(f1(3))
+
+	// f2 := func(file string) string {
+	// 	return file + ".csv"
+	// }
+
+	// addExt(f2, "file1")
+
+	// f3 := multiply()
+	// fmt.Println(f3(2))
+
+	// task1 := Task{
+	// 	Title:    "Learn Golang",
+	// 	Estimate: 3,
+	// }
+
+	// task1.Title = "Learn Go"
+	// fmt.Printf("%[1]T %+[1]v %v\n", task1, task1.Title)
+	// var task2 Task = task1
+	// task2.Title = "new"
+	// fmt.Printf("task1: %v task2: %v\n", task1.Title, task2.Title)
+
+	// task1p := &Task{
+	// 	Title:    "Learn concurrency",
+	// 	Estimate: 2,
+	// }
+	// fmt.Printf("task1p: %T %+v %v\n", task1p, *task1p, unsafe.Sizeof(task1p))
+	// task1p.Title = "CHanged"
+	// fmt.Printf("task1p: %+v\n", *task1p)
+	// var task2p *Task = task1p
+	// task2p.Title = "Changed by Task2"
+	// fmt.Printf("task1: %+v\n", *task1p)
+	// fmt.Printf("task2: %+v\n", *task2p)
+
+	// task1.extendEstimate()
+	// fmt.Printf("task1 value receiver: %+v\n", task1.Estimate)
+	// (&task1).extendEstimatePointer()
+	// fmt.Printf("task1 value receiver: %+v\n", task1.Estimate)
 
 	// fmt.Println("hello world")
 
@@ -215,9 +288,9 @@ func main() {
 	// }
 }
 
-func (task Task) extendEstimate() {
-	task.Estimate += 10
-}
-func (task *Task) extendEstimatePointer() {
-	task.Estimate += 10
-}
+// func (task Task) extendEstimate() {
+// 	task.Estimate += 10
+// }
+// func (task *Task) extendEstimatePointer() {
+// 	task.Estimate += 10
+// }
