@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 // const secret = "abc"
 
@@ -57,19 +60,96 @@ import "fmt"
 // 	}
 // }
 
-func countUp() func(int) int {
-	count := 0
-	return func(n int) int {
-		count += n
-		return count
+//	func countUp() func(int) int {
+//		count := 0
+//		return func(n int) int {
+//			count += n
+//			return count
+//		}
+//	}
+
+type controller interface {
+	speedUp() int
+	speedDown() int
+}
+
+type vehicle struct {
+	speed       int
+	enginePower int
+}
+
+type bycycle struct {
+	speed      int
+	humanPower int
+}
+
+func (v *vehicle) speedUp() int {
+	v.speed += 10 * v.enginePower
+	return v.speed
+}
+func (v *vehicle) speedDown() int {
+	v.speed -= 5 * v.enginePower
+	return v.speed
+}
+
+func (v *bycycle) speedUp() int {
+	v.speed += 3 * v.humanPower
+	return v.speed
+}
+func (v *bycycle) speedDown() int {
+	v.speed -= 1 * v.humanPower
+	return v.speed
+}
+
+func (v vehicle) String() string {
+	return fmt.Sprintf("Vehicle current speed is %v (enginePower %v)", v.speed, v.enginePower)
+}
+
+func speedUpAndDwon(c controller) {
+	fmt.Printf("current speed: %v\n", c.speedUp())
+	fmt.Printf("current speed: %v\n", c.speedDown())
+}
+
+func checkType(i any) {
+	switch i.(type) {
+	case nil:
+		fmt.Println("nil")
+	case int:
+		fmt.Println("int")
+
+	case string:
+		fmt.Println("string")
+	default:
+		fmt.Println("unknown")
 	}
 }
+
 func main() {
-	f4 := countUp()
-	for i := 1; i <= 5; i++ {
-		v := f4(2)
-		fmt.Printf("%v\n", v)
+	v := &vehicle{0, 5}
+	speedUpAndDwon(v)
+
+	b := &bycycle{0, 5}
+	speedUpAndDwon(b)
+	fmt.Println(v)
+	speedUpAndDwon(v)
+	fmt.Println(v)
+
+	var i1 interface {
 	}
+	var i2 any
+	fmt.Printf("%[1]v %[1]T %v\n", i1, unsafe.Sizeof(i1))
+	fmt.Printf("%[1]v %[1]T %v\n", i2, unsafe.Sizeof(i2))
+	checkType((i2))
+	i2 = 1
+	checkType((i2))
+	i2 = "hello"
+	checkType((i2))
+
+	// f4 := countUp()
+	// for i := 1; i <= 5; i++ {
+	// 	v := f4(2)
+	// 	fmt.Printf("%v\n", v )
+	// }
 
 	// funcDefer()
 	// files := []string{"file1.csv", "file1.csv", "file1.csv"}
