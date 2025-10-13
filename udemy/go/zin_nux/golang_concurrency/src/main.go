@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"unsafe"
+	"time"
 )
 
 // const secret = "abc"
@@ -68,82 +68,146 @@ import (
 //		}
 //	}
 
-type controller interface {
-	speedUp() int
-	speedDown() int
-}
+// type controller interface {
+// 	speedUp() int
+// 	speedDown() int
+// }
 
-type vehicle struct {
-	speed       int
-	enginePower int
-}
+// type vehicle struct {
+// 	speed       int
+// 	enginePower int
+// }
 
-type bycycle struct {
-	speed      int
-	humanPower int
-}
+// type bycycle struct {
+// 	speed      int
+// 	humanPower int
+// }
 
-func (v *vehicle) speedUp() int {
-	v.speed += 10 * v.enginePower
-	return v.speed
-}
-func (v *vehicle) speedDown() int {
-	v.speed -= 5 * v.enginePower
-	return v.speed
-}
+// func (v *vehicle) speedUp() int {
+// 	v.speed += 10 * v.enginePower
+// 	return v.speed
+// }
+// func (v *vehicle) speedDown() int {
+// 	v.speed -= 5 * v.enginePower
+// 	return v.speed
+// }
 
-func (v *bycycle) speedUp() int {
-	v.speed += 3 * v.humanPower
-	return v.speed
-}
-func (v *bycycle) speedDown() int {
-	v.speed -= 1 * v.humanPower
-	return v.speed
-}
+// func (v *bycycle) speedUp() int {
+// 	v.speed += 3 * v.humanPower
+// 	return v.speed
+// }
+// func (v *bycycle) speedDown() int {
+// 	v.speed -= 1 * v.humanPower
+// 	return v.speed
+// }
 
-func (v vehicle) String() string {
-	return fmt.Sprintf("Vehicle current speed is %v (enginePower %v)", v.speed, v.enginePower)
-}
+// func (v vehicle) String() string {
+// 	return fmt.Sprintf("Vehicle current speed is %v (enginePower %v)", v.speed, v.enginePower)
+// }
 
-func speedUpAndDwon(c controller) {
-	fmt.Printf("current speed: %v\n", c.speedUp())
-	fmt.Printf("current speed: %v\n", c.speedDown())
-}
+// func speedUpAndDwon(c controller) {
+// 	fmt.Printf("current speed: %v\n", c.speedUp())
+// 	fmt.Printf("current speed: %v\n", c.speedDown())
+// }
 
-func checkType(i any) {
-	switch i.(type) {
-	case nil:
-		fmt.Println("nil")
-	case int:
-		fmt.Println("int")
+// func checkType(i any) {
+// 	switch i.(type) {
+// 	case nil:
+// 		fmt.Println("nil")
+// 	case int:
+// 		fmt.Println("int")
 
-	case string:
-		fmt.Println("string")
-	default:
-		fmt.Println("unknown")
-	}
+// 	case string:
+// 		fmt.Println("string")
+// 	default:
+// 		fmt.Println("unknown")
+// 	}
+// }
+
+type item struct {
+	price float32
 }
 
 func main() {
-	v := &vehicle{0, 5}
-	speedUpAndDwon(v)
-
-	b := &bycycle{0, 5}
-	speedUpAndDwon(b)
-	fmt.Println(v)
-	speedUpAndDwon(v)
-	fmt.Println(v)
-
-	var i1 interface {
+	a := 1
+	if a == 0 {
+		fmt.Println("zero")
+	} else if a > 0 {
+		fmt.Println("positive")
+	} else {
+		fmt.Println("negative")
 	}
-	var i2 any
-	fmt.Printf("%[1]v %[1]T %v\n", i1, unsafe.Sizeof(i1))
-	fmt.Printf("%[1]v %[1]T %v\n", i2, unsafe.Sizeof(i2))
-	checkType((i2))
-	i2 = 1
-	checkType((i2))
-	i2 = "hello"
-	checkType((i2))
+
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	// for {
+	// 	fmt.Println("working")
+	// 	time.Sleep(2 * time.Second)
+	// }
+
+	var i int
+	for {
+		if i > 3 {
+			break
+		}
+
+		fmt.Println(i)
+		i += 1
+		time.Sleep(300 * time.Millisecond)
+	}
+
+loop:
+	for i := 0; i < 10; i++ {
+		switch i {
+		case 2:
+			continue
+		case 3:
+			continue
+		case 8:
+			break loop
+		default:
+			fmt.Printf("%v ", i)
+		}
+	}
+	fmt.Printf("\n")
+
+	items := []item{
+		{price: 10.},
+		{price: 20.},
+		{price: 30.},
+	}
+
+	for _, i := range items {
+		i.price *= 1.1
+	}
+	fmt.Printf("%+v\n", items)
+
+	for i := range items {
+		items[i].price *= 1.1
+	}
+	fmt.Printf("%+v\n", items)
+
+	// v := &vehicle{0, 5}
+	// speedUpAndDwon(v)
+
+	// b := &bycycle{0, 5}
+	// speedUpAndDwon(b)
+	// fmt.Println(v)
+	// speedUpAndDwon(v)
+	// fmt.Println(v)
+
+	// var i1 interface {
+	// }
+	// var i2 any
+	// fmt.Printf("%[1]v %[1]T %v\n", i1, unsafe.Sizeof(i1))
+	// fmt.Printf("%[1]v %[1]T %v\n", i2, unsafe.Sizeof(i2))
+	// checkType((i2))
+	// i2 = 1
+	// checkType((i2))
+	// i2 = "hello"
+	// checkType((i2))
 
 	// f4 := countUp()
 	// for i := 1; i <= 5; i++ {
