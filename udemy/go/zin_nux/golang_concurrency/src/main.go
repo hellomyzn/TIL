@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"unsafe"
-)
+import "fmt"
 
 // const secret = "abc"
 
@@ -73,39 +70,110 @@ func main() {
 	// var1 += 1
 	// fmt.Println((var1))
 
-	var ui1 uint16
-	fmt.Printf("memory address of ui1: %p\n", &ui1)
+	// var ui1 uint16
+	// fmt.Printf("memory address of ui1: %p\n", &ui1)
 
-	var ui2 uint16
-	fmt.Printf("memory address of ui2: %p\n", &ui2)
+	// var ui2 uint16
+	// fmt.Printf("memory address of ui2: %p\n", &ui2)
 
-	var p1 *uint16
-	fmt.Printf("value of p1: %v\n", p1)
-	p1 = &ui1
-	fmt.Printf("value of p1: %v\n", p1)
-	fmt.Printf("size of p1: %d[bytes]\n ", unsafe.Sizeof(p1))
-	fmt.Printf("memory address of p1: %p\n", &p1)
-	fmt.Printf("value of ui1(dereference): %v\n", *p1)
+	// var p1 *uint16
+	// fmt.Printf("value of p1: %v\n", p1)
+	// p1 = &ui1
+	// fmt.Printf("value of p1: %v\n", p1)
+	// fmt.Printf("size of p1: %d[bytes]\n ", unsafe.Sizeof(p1))
+	// fmt.Printf("memory address of p1: %p\n", &p1)
+	// fmt.Printf("value of ui1(dereference): %v\n", *p1)
 
-	var pp1 **uint16 = &p1
-	fmt.Printf("value of pp1: %v\n", pp1)
-	fmt.Printf("size of pp1: %d[bytes]\n ", unsafe.Sizeof(pp1))
-	fmt.Printf("memory address of pp1: %p\n", &pp1)
+	// var pp1 **uint16 = &p1
+	// fmt.Printf("value of pp1: %v\n", pp1)
+	// fmt.Printf("size of pp1: %d[bytes]\n ", unsafe.Sizeof(pp1))
+	// fmt.Printf("memory address of pp1: %p\n", &pp1)
 
-	fmt.Printf("value of p1(dereference): %v\n", *pp1)
-	fmt.Printf("value of ui1(dereference): %v\n", **pp1)
+	// fmt.Printf("value of p1(dereference): %v\n", *pp1)
+	// fmt.Printf("value of ui1(dereference): %v\n", **pp1)
 
-	ok, result := true, "A"
-	fmt.Printf("memory address of result: %p\n", &result)
-	if ok {
-		result := "B"
-		fmt.Printf("memory address of result: %p\n", &result)
-		println(result)
-	} else {
-		result := "C"
-		println(result)
+	// ok, result := true, "A"
+	// fmt.Printf("memory address of result: %p\n", &result)
+	// if ok {
+	// 	result := "B"
+	// 	fmt.Printf("memory address of result: %p\n", &result)
+	// 	println(result)
+	// } else {
+	// 	result := "C"
+	// 	println(result)
+	// }
+
+	// println(result)
+
+	// var a1 [3]int
+	// var a2 = [3]int{10, 20, 30}
+	// a3 := [...]int{10, 20}
+	// fmt.Printf("%v, %v, %v\n", a1, a2, a3)
+	// fmt.Printf("%v, %v, %v\n", len(a1), a2, a3)
+	// fmt.Printf("%v, %v, %v\n", cap(a1), a2, a3)
+	// fmt.Printf("%T, %T, %T\n", cap(a1), a2, a3)
+
+	// var s1 []int
+	// s2 := []int{}
+	// fmt.Printf("s1: %[1]T %[1]v %v %v\n", s1, len(s1), cap(s1))
+	// fmt.Printf("s2: %[1]T %[1]v %v %v\n", s2, len(s2), cap(s2))
+	// fmt.Println(s1 == nil)
+	// fmt.Println(s2 == nil)
+	// s1 = append(s1, 1, 2, 3)
+	// fmt.Printf("s1: %[1]T %[1]v %v %v\n", s1, len(s1), cap(s1))
+	// s3 := []int{4, 5, 6}
+	// s1 = append(s1, s3...)
+	// fmt.Printf("s1: %[1]T %[1]v %v %v\n", s1, len(s1), cap(s1))
+	// s4 := make([]int, 0, 2)
+	// fmt.Printf("s4: %[1]T %[1]v %v %v\n", s4, len(s4), cap(s4))
+	// s5 := make([]int, 4, 6)
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// s6 := s5[1:3]
+	// s6[1] = 10
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// fmt.Printf("s6: %[1]T %[1]v %v %v\n", s6, len(s6), cap(s6))
+	// s6 = append(s6, 2)
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// fmt.Printf("s6: %[1]T %[1]v %v %v\n", s6, len(s6), cap(s6))
+
+	// sc6 := make([]int, len(s5[1:3]))
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// fmt.Printf("sc6: %[1]T %[1]v %v %v\n", sc6, len(sc6), cap(sc6))
+	// copy(sc6, s5[1:3])
+	// fmt.Printf("sc6: %[1]T %[1]v %v %v\n", sc6, len(sc6), cap(sc6))
+	// sc6[1] = 12
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// fmt.Printf("sc6: %[1]T %[1]v %v %v\n", sc6, len(sc6), cap(sc6))
+
+	// s5 = make([]int, 4, 6)
+	// fs6 := s5[1:3:3]
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// fmt.Printf("sc6: %[1]T %[1]v %v %v\n", fs6, len(fs6), cap(fs6))
+	// fs6[0] = 6
+	// fs6[1] = 7
+	// fs6 = append(fs6, 8)
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// fmt.Printf("sc6: %[1]T %[1]v %v %v\n", fs6, len(fs6), cap(fs6))
+	// s5[3] = 9
+	// fmt.Printf("s5: %[1]T %[1]v %v %v\n", s5, len(s5), cap(s5))
+	// fmt.Printf("sc6: %[1]T %[1]v %v %v\n", fs6, len(fs6), cap(fs6))
+
+	var m1 map[string]int
+	m2 := map[string]int{}
+	fmt.Printf("%v %v \n", m1, m1 == nil)
+	fmt.Printf("%v %v \n", m2, m2 == nil)
+	m2["A"] = 10
+	m2["B"] = 20
+	m2["C"] = 0
+	fmt.Printf("%v %v %v\n", m2, len(m2), m2["A"])
+	delete(m2, "A")
+	fmt.Printf("%v %v %v\n", m2, len(m2), m2["A"])
+	v, ok := m2["A"]
+	fmt.Printf("%v %v\n", v, ok)
+	v, ok = m2["C"]
+	fmt.Printf("%v %v\n", v, ok)
+
+	for k, v := range m2 {
+		fmt.Printf("%v %v\n", k, v)
 	}
-
-	println(result)
-
 }
