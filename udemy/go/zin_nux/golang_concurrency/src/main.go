@@ -1,8 +1,9 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-	"time"
+	"os"
 )
 
 // const secret = "abc"
@@ -124,70 +125,118 @@ import (
 // 	}
 // }
 
-type item struct {
-	price float32
+// type item struct {
+// 	price float32
+// }
+
+var ErrCustom = errors.New("not found")
+
+func fileCHecker(name string) error {
+	f, err := os.Open(name)
+	if err != nil {
+		return fmt.Errorf("in checker: %w", err)
+	}
+	defer f.Close()
+	return nil
 }
 
 func main() {
-	a := 1
-	if a == 0 {
-		fmt.Println("zero")
-	} else if a > 0 {
-		fmt.Println("positive")
-	} else {
-		fmt.Println("negative")
+	err01 := errors.New("something wrong")
+	err02 := errors.New("something wrong")
+	fmt.Printf("%[1]p %[1]T %[1]v\n", err01)
+	fmt.Println(err01.Error())
+	fmt.Println(err01)
+	println(err01 == err02)
+
+	err0 := fmt.Errorf("add info: %w", errors.New("orginal error"))
+	fmt.Printf("%[1]p %[1]T %[1]v\n", err0)
+	fmt.Println(errors.Unwrap(err0))
+	fmt.Printf("%T\n", errors.Unwrap(err0))
+
+	err1 := fmt.Errorf("add info: %v", errors.New("orginal error"))
+	fmt.Println(err1)
+	fmt.Printf("%T\n", err1)
+	fmt.Println(errors.Unwrap(err1))
+
+	err2 := fmt.Errorf("in repository layer: %w", ErrCustom)
+	fmt.Println(err2)
+	err2 = fmt.Errorf("in service layer: %w", err2)
+	fmt.Println(err2)
+
+	if errors.Is(err2, ErrCustom) {
+		fmt.Println("matched")
 	}
 
-	for i := 0; i < 5; i++ {
-		fmt.Println(i)
+	file := "file1.txt"
+	err3 := fileCHecker(file)
+	if err3 != nil {
+		if errors.Is(err3, os.ErrNotExist) {
+			fmt.Printf("%v file not found\n", file)
+		} else {
+			fmt.Println("unknown error")
+		}
 	}
+	fmt.Println(err3)
+
+	// a := 1
+	// if a == 0 {
+	// 	fmt.Println("zero")
+	// } else if a > 0 {
+	// 	fmt.Println("positive")
+	// } else {
+	// 	fmt.Println("negative")
+	// }
+
+	// for i := 0; i < 5; i++ {
+	// 	fmt.Println(i)
+	// }
 
 	// for {
 	// 	fmt.Println("working")
 	// 	time.Sleep(2 * time.Second)
 	// }
 
-	var i int
-	for {
-		if i > 3 {
-			break
-		}
+	// 	var i int
+	// 	for {
+	// 		if i > 3 {
+	// 			break
+	// 		}
 
-		fmt.Println(i)
-		i += 1
-		time.Sleep(300 * time.Millisecond)
-	}
+	// 		fmt.Println(i)
+	// 		i += 1
+	// 		time.Sleep(300 * time.Millisecond)
+	// 	}
 
-loop:
-	for i := 0; i < 10; i++ {
-		switch i {
-		case 2:
-			continue
-		case 3:
-			continue
-		case 8:
-			break loop
-		default:
-			fmt.Printf("%v ", i)
-		}
-	}
-	fmt.Printf("\n")
+	// loop:
+	// 	for i := 0; i < 10; i++ {
+	// 		switch i {
+	// 		case 2:
+	// 			continue
+	// 		case 3:
+	// 			continue
+	// 		case 8:
+	// 			break loop
+	// 		default:
+	// 			fmt.Printf("%v ", i)
+	// 		}
+	// 	}
+	// 	fmt.Printf("\n")
 
-	items := []item{
-		{price: 10.},
-		{price: 20.},
-		{price: 30.},
-	}
+	// 	items := []item{
+	// 		{price: 10.},
+	// 		{price: 20.},
+	// 		{price: 30.},
+	// 	}
 
-	for _, i := range items {
-		i.price *= 1.1
-	}
-	fmt.Printf("%+v\n", items)
+	// 	for _, i := range items {
+	// 		i.price *= 1.1
+	// 	}
+	// 	fmt.Printf("%+v\n", items)
 
-	for i := range items {
-		items[i].price *= 1.1
-	}
-	fmt.Printf("%+v\n", items)
+	// 	for i := range items {
+	// 		items[i].price *= 1.1
+	// 	}
+	// 	fmt.Printf("%+v\n", items)
 
 	// v := &vehicle{0, 5}
 	// speedUpAndDwon(v)
