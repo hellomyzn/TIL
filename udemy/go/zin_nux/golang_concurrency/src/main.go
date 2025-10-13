@@ -1,9 +1,9 @@
 package main
 
 import (
-	"errors"
 	"fmt"
-	"os"
+
+	"golang.org/x/exp/constraints"
 )
 
 // const secret = "abc"
@@ -129,54 +129,98 @@ import (
 // 	price float32
 // }
 
-var ErrCustom = errors.New("not found")
+// var ErrCustom = errors.New("not found")
 
-func fileCHecker(name string) error {
-	f, err := os.Open(name)
-	if err != nil {
-		return fmt.Errorf("in checker: %w", err)
-	}
-	defer f.Close()
-	return nil
+// func fileCHecker(name string) error {
+// 	f, err := os.Open(name)
+// 	if err != nil {
+// 		return fmt.Errorf("in checker: %w", err)
+// 	}
+// 	defer f.Close()
+// 	return nil
+// }
+
+type customConstrains interface {
+	~int | int16 | float32 | float64 | string
+}
+type NewInt int
+
+func add[T customConstrains](x, y T) T {
+	return x + y
 }
 
+func min[T constraints.Ordered](x, y T) T {
+	if x < y {
+		return x
+	}
+	return y
+}
+
+func sumValues[K int | string, V constraints.Float | constraints.Integer](m map[K]V) V {
+	var sum V
+	for _, v := range m {
+		sum += v
+	}
+	return sum
+
+}
 func main() {
-	err01 := errors.New("something wrong")
-	err02 := errors.New("something wrong")
-	fmt.Printf("%[1]p %[1]T %[1]v\n", err01)
-	fmt.Println(err01.Error())
-	fmt.Println(err01)
-	println(err01 == err02)
+	fmt.Printf("%v\n", add(1, 2))
+	fmt.Printf("%v\n", add(1.1, 2.2))
+	fmt.Printf("%v\n", add("text", "file"))
+	var i1, i2 NewInt = 3, 4
+	fmt.Printf("%v\n", add(i1, i2))
+	fmt.Printf("%v\n", min(i1, i2))
 
-	err0 := fmt.Errorf("add info: %w", errors.New("orginal error"))
-	fmt.Printf("%[1]p %[1]T %[1]v\n", err0)
-	fmt.Println(errors.Unwrap(err0))
-	fmt.Printf("%T\n", errors.Unwrap(err0))
-
-	err1 := fmt.Errorf("add info: %v", errors.New("orginal error"))
-	fmt.Println(err1)
-	fmt.Printf("%T\n", err1)
-	fmt.Println(errors.Unwrap(err1))
-
-	err2 := fmt.Errorf("in repository layer: %w", ErrCustom)
-	fmt.Println(err2)
-	err2 = fmt.Errorf("in service layer: %w", err2)
-	fmt.Println(err2)
-
-	if errors.Is(err2, ErrCustom) {
-		fmt.Println("matched")
+	m1 := map[string]uint{
+		"A": 1,
+		"B": 2,
+		"C": 3,
 	}
-
-	file := "file1.txt"
-	err3 := fileCHecker(file)
-	if err3 != nil {
-		if errors.Is(err3, os.ErrNotExist) {
-			fmt.Printf("%v file not found\n", file)
-		} else {
-			fmt.Println("unknown error")
-		}
+	m2 := map[int]float32{
+		1: 1.23,
+		2: 4.56,
+		3: 7.89,
 	}
-	fmt.Println(err3)
+	fmt.Println(sumValues(m1))
+	fmt.Println(sumValues(m2))
+
+	// err01 := errors.New("something wrong")
+	// err02 := errors.New("something wrong")
+	// fmt.Printf("%[1]p %[1]T %[1]v\n", err01)
+	// fmt.Println(err01.Error())
+	// fmt.Println(err01)
+	// println(err01 == err02)
+
+	// err0 := fmt.Errorf("add info: %w", errors.New("orginal error"))
+	// fmt.Printf("%[1]p %[1]T %[1]v\n", err0)
+	// fmt.Println(errors.Unwrap(err0))
+	// fmt.Printf("%T\n", errors.Unwrap(err0))
+
+	// err1 := fmt.Errorf("add info: %v", errors.New("orginal error"))
+	// fmt.Println(err1)
+	// fmt.Printf("%T\n", err1)
+	// fmt.Println(errors.Unwrap(err1))
+
+	// err2 := fmt.Errorf("in repository layer: %w", ErrCustom)
+	// fmt.Println(err2)
+	// err2 = fmt.Errorf("in service layer: %w", err2)
+	// fmt.Println(err2)
+
+	// if errors.Is(err2, ErrCustom) {
+	// 	fmt.Println("matched")
+	// }
+
+	// file := "file1.txt"
+	// err3 := fileCHecker(file)
+	// if err3 != nil {
+	// 	if errors.Is(err3, os.ErrNotExist) {
+	// 		fmt.Printf("%v file not found\n", file)
+	// 	} else {
+	// 		fmt.Println("unknown error")
+	// 	}
+	// }
+	// fmt.Println(err3)
 
 	// a := 1
 	// if a == 0 {
