@@ -1,7 +1,10 @@
 package main
 
 import (
+	"gin-introduction/controllers"
 	"gin-introduction/models"
+	"gin-introduction/repositories"
+	"gin-introduction/services"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,11 +18,12 @@ func main() {
 		{ID: 3, Name: "product 3", Price: 3000,
 			Description: "desc 3", SoldOut: false},
 	}
+
+	itemRepository := repositories.NewItemMemoryRepository(items)
+	itemService := services.NewItemService(itemRepository)
+	itemController := controllers.NewItemController(itemService)
+
 	router := gin.Default()
-	router.GET("/sample", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	router.GET("/items", itemController.FindAll)
 	router.Run() // デフォルトで0.0.0.0:8080で待機します
 }

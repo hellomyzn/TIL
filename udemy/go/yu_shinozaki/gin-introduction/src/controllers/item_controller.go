@@ -27,5 +27,4 @@ func (c *ItemController) FindAll(ctx *gin.Context) {
 	}
 
 	ctx.JSON(http.StatusOK, gin.H{"data": items})
-
 }
