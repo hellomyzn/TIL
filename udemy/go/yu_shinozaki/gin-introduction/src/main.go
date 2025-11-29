@@ -25,5 +25,6 @@ func main() {
 
 	router := gin.Default()
 	router.GET("/items", itemController.FindAll)
+	router.GET("/items/:id", itemController.FindById)
 	router.Run() // デフォルトで0.0.0.0:8080で待機します
 }
