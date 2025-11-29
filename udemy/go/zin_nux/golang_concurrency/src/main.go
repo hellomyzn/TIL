@@ -1,17 +1,52 @@
 package main
 
-func Add(x, y int) int {
-	return x + y
-}
+import (
+	"context"
+	"fmt"
+	"log"
+	"os"
+	"runtime"
+	"runtime/trace"
+	"time"
+)
 
-func Divide(x, y int) float32 {
-	if y == 0 {
-		return 0.
+func main() {
+	// var wg sync.WaitGroup
+	// wg.Add(1)
+	// go func() {
+	// 	defer wg.Done()
+	// 	fmt.Println("goroutine invoked")
+	// }()
+	// wg.Wait()
+	// fmt.Printf("num of working goroutines: %d\n", runtime.NumGoroutine())
+	// fmt.Printf("main func finish\n")
+
+	f, err := os.Create("trace.out")
+	if err != nil {
+		log.Fatalln("Error", err)
 	}
 
-	return float32(x) / float32(y)
+	defer func() {
+		if err := f.Close(); err != nil {
+			log.Fatalln("Error", err)
+		}
+	}()
+
+	if err := trace.Start(f); err != nil {
+		log.Fatalln("Error", err)
+	}
+	defer trace.Stop()
+	ctx, t := trace.NewTask(context.Background(), "main")
+	defer t.End()
+
+	fmt.Println("The number of logical CPU Cores: ", runtime.NumCPU())
+	task(ctx, "Task1")
+	task(ctx, "Task2")
+	task(ctx, "Task3")
 }
-func main() {
-	// x, y := 3, 5
-	// fmt.Printf("%v %v\n", Add(x, y), Divide(x, y))
+
+func task(ctx context.Context, name string) {
+	defer trace.StartRegion(ctx, name).End()
+	time.Sleep(time.Second)
+	fmt.Println(name)
 }
