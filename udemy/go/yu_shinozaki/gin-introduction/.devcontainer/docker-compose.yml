@@ -28,11 +28,11 @@ services:
         mode: host
     environment:
       - TZ=${TZ-Asia/Tokyo}
-    # depends_on:
-    #   # mysql:
-    #   #   condition: service_healthy
-    #   # postgres:
-    #   #   condition: service_healthy
+    depends_on:
+      # mysql:
+      #   condition: service_healthy
+      postgres:
+        condition: service_healthy
 
   # plantuml:
   #   build:
@@ -70,32 +70,57 @@ services:
 #     timeout: 5s
 #     retries: 5
 
+  postgres:
+    build:
+      context: ..
+      dockerfile: .devcontainer/infra/docker/postgres/Dockerfile
+    container_name: ${PROJECT_NAME:-gin-introduction}-vscode-postgres
+    hostname: ${PROJECT_NAME:-gin-introduction}-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-apppass}
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      TZ: ${TZ-Asia/Tokyo}
+    ports:
+      - target: 5432
+        published: ${POSTGRES_PORT:-15432}
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: bind
+        source: ./infra/docker/postgres/pgdata
+        target: /var/lib/postgresql/data
+      - type: bind
+        source: ./infra/docker/postgres/init.d
+        target: /docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-app}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  # postgres:
-  #   image: postgres:16
-  #   container_name: ${PROJECT_NAME:-gin-introduction}-vscode-postgres
-  #   hostname: ${PROJECT_NAME:-gin-introduction}-postgres
-  #   restart: unless-stopped
-  #   environment:
-  #     POSTGRES_USER: ${POSTGRES_USER:-app}
-  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-apppass}
-  #     POSTGRES_DB: ${POSTGRES_DB:-app}
-  #     TZ: ${TZ-Asia/Tokyo}
-  #   ports:
-  #     - target: 5432
-  #       published: ${POSTGRES_PORT:-5432}
-  #       protocol: tcp
-  #       mode: host
-  #   volumes:
-  #     - type: volume
-  #       source: postgres-data
-  #       target: /var/lib/postgresql/data
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-app}"]
-  #     interval: 10s
-  #     timeout: 5s
-  #     retries: 5
+  pgadmin:
+    build:
+      context: ..
+      dockerfile: .devcontainer/infra/docker/pgadmin/Dockerfile
+    container_name: ${PROJECT_NAME:-gin-introduction}-vscode-pgadmin
+    hostname: ${PROJECT_NAME:-gin-introduction}-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@test.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - target: 80
+        published: ${PGADMIN_PORT:-81}
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: bind
+        source: ./infra/docker/pgadmin/pgadmin
+        target: /var/lib/pgadmin
+    depends_on:
+      - postgres
 
 # volumes:
-#   # mysql-data:
-#   # postgres-data:
+  # mysql-data:

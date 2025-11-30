@@ -21,7 +21,7 @@ exec:
 logs:
 	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} ${ENV_PATH} logs -f
 dev:
-	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} ${ENV_PATH} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && air '
+	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} ${ENV_PATH} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && go tool air '
 tidy:
 	docker compose ${DOCKER_COMPOSE_FILE_PATH} ${PROJECT_FLAG} ${ENV_PATH} exec ${USER_FLAG} workspace bash -c 'cd ${WORKDIR}/src && go mod tidy'
 test:

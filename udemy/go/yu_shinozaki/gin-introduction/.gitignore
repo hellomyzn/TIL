@@ -1,3 +1,13 @@
 *.env
 src/server
 src/tmp
+
+# postgres
+.devcontainer/infra/docker/postgres/init.d/*
+!.devcontainer/infra/docker/postgres/init.d/.gitkeep
+.devcontainer/infra/docker/postgres/pgdata/*
+!.devcontainer/infra/docker/postgres/pgdata/.gitkeep
+
+# pgadmin
+.devcontainer/infra/docker/pgadmin/pgadmin/*
+!.devcontainer/infra/docker/pgadmin/pgadmin/.gitkeep
