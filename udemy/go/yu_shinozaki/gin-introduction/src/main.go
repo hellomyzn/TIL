@@ -1,8 +1,8 @@
 package main
 
 import (
+	"gin-introduction/config"
 	"gin-introduction/controllers"
-	"gin-introduction/models"
 	"gin-introduction/repositories"
 	"gin-introduction/services"
 
@@ -10,16 +10,21 @@ import (
 )
 
 func main() {
-	items := []models.Item{
-		{ID: 1, Name: "product 1", Price: 1000,
-			Description: "desc 1", SoldOut: false},
-		{ID: 2, Name: "product 2", Price: 2000,
-			Description: "desc 2", SoldOut: true},
-		{ID: 3, Name: "product 3", Price: 3000,
-			Description: "desc 3", SoldOut: false},
-	}
+	config.Initialize()
+	db := config.SetupDB()
 
-	itemRepository := repositories.NewItemMemoryRepository(items)
+	// items := []models.Item{
+	// 	{ID: 1, Name: "product 1", Price: 1000,
+	// 		Description: "desc 1", SoldOut: false},
+	// 	{ID: 2, Name: "product 2", Price: 2000,
+	// 		Description: "desc 2", SoldOut: true},
+	// 	{ID: 3, Name: "product 3", Price: 3000,
+	// 		Description: "desc 3", SoldOut: false},
+	// }
+
+	// itemRepository := repositories.NewItemMemoryRepository(items)
+
+	itemRepository := repositories.NewItemRepository(db)
 	itemService := services.NewItemService(itemRepository)
 	itemController := controllers.NewItemController(itemService)
 

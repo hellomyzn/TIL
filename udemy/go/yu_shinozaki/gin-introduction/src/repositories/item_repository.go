@@ -3,6 +3,8 @@ package repositories
 import (
 	"errors"
 	"gin-introduction/models"
+
+	"gorm.io/gorm"
 )
 
 type IItemRepository interface {
@@ -60,4 +62,55 @@ func (r *ItemMemoryRepository) Delete(itemId uint) error {
 		}
 	}
 	return errors.New("Item not found")
+}
+
+type ItemRepository struct {
+	db *gorm.DB
+}
+
+func NewItemRepository(db *gorm.DB) IItemRepository {
+	return &ItemRepository{db: db}
+}
+
+func (r *ItemRepository) Create(newItem models.Item) (*models.Item, error) {
+	result := r.db.Create(&newItem)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return &newItem, nil
+}
+
+// Delete implements IItemRepository.
+func (i *ItemRepository) Delete(itemId uint) error {
+	panic("unimplemented")
+}
+
+func (r *ItemRepository) FindAll() (*[]models.Item, error) {
+	var items []models.Item
+	result := r.db.Find(&items)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+
+	return &items, nil
+}
+
+func (r *ItemRepository) FindById(itemId uint) (*models.Item, error) {
+	var item models.Item
+	result := r.db.First(&item, itemId)
+
+	if result.Error != nil {
+		if result.Error.Error() == "record not found" {
+			return nil, errors.New("Item not found")
+		}
+		return nil, result.Error
+	}
+
+	return &item, nil
+
+}
+
+// Update implements IItemRepository.
+func (i *ItemRepository) Update(updateItem models.Item) (*models.Item, error) {
+	panic("unimplemented")
 }
