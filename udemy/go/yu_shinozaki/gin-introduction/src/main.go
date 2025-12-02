@@ -28,13 +28,21 @@ func main() {
 	itemService := services.NewItemService(itemRepository)
 	itemController := controllers.NewItemController(itemService)
 
+	authRepository := repositories.NewAuthRepository(db)
+	authService := services.NewAuthService(authRepository)
+	authController := controllers.NewAuthController(authService)
+
 	router := gin.Default()
+
 	itemRouter := router.Group("/items")
+	authRouter := router.Group("/auth")
 
 	itemRouter.GET("", itemController.FindAll)
 	itemRouter.GET("/:id", itemController.FindById)
 	itemRouter.POST("", itemController.Create)
 	itemRouter.PUT("/:id", itemController.Update)
 	itemRouter.DELETE("/:id", itemController.Delete)
+
+	authRouter.POST("/signup", authController.Signup)
 	router.Run() // デフォルトで0.0.0.0:8080で待機します
 }
