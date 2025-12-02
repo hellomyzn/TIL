@@ -9,7 +9,7 @@ func main() {
 	config.Initialize()
 	db := config.SetupDB()
 
-	if err := db.AutoMigrate(&models.Item{}); err != nil {
+	if err := db.AutoMigrate(&models.Item{}, &models.User{}); err != nil {
 		panic("Failed to migrate database")
 	}
 }
