@@ -8,19 +8,28 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
-@Component
+
+@Named
 class BusinessService {
-	private DataService DataService
+	private DataService dataService;
 
-	@Autowired
 	public DataService getDataService() {
-		return DataService;
+		return dataService;
 	}
 
+	@Inject
 	public void setDataService(DataService dataService) {
-		DataService = dataService;
+		System.out.println("Setter Injection");
+		this.dataService = dataService;
 	}
+}
+
+@Named
+class DataService {
+
 }
 
 @Configuration
@@ -30,6 +39,7 @@ public class CdiContextLauncherApplication {
 	public static void main(String[] args) {
 		try (var context = new AnnotationConfigApplicationContext(CdiContextLauncherApplication.class);){
 			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+			System.out.println(context.getBean(BusinessService.class).getDataService());
 		}
 	}
 }
