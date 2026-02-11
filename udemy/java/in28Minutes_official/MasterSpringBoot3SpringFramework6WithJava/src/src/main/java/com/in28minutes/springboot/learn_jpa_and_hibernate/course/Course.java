@@ -1,20 +1,25 @@
 package com.in28minutes.springboot.learn_jpa_and_hibernate.course;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Course {
+
+	@Id
 	private long id;
+
+	@Column(name = "name")
 	private String name;
+
+	@Column(name = "author")
+	private String author;
 
 	public long getId() {
 		return id;
 	}
-	public Course() {
-	}
 
-	public Course(long id, String name, String author) {
-		this.id = id;
-		this.name = name;
-		Author = author;
-	}
 
 	public void setId(long id) {
 		this.id = id;
@@ -26,7 +31,7 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", name=" + name + ", Author=" + Author + "]";
+		return "Course [id=" + id + ", name=" + name + ", Author=" + author + "]";
 	}
 
 	public void setName(String name) {
@@ -34,12 +39,19 @@ public class Course {
 	}
 
 	public String getAuthor() {
-		return Author;
+		return author;
 	}
 
 	public void setAuthor(String author) {
-		Author = author;
+		this.author = author;
 	}
 
-	private String Author;
+	public Course() {
+	}
+
+	public Course(long id, String name, String author) {
+		this.id = id;
+		this.name = name;
+		this.author = author;
+	}
 }
