@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "c0b51fb809edc323",
+    "type": "split",
+    "children": [
+      {
+        "id": "a4b77a99ff4822f1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b559cfa434b4055e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "0 Inbox/Periodic Notes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ad15ebe9dd292c2f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Periodic Notes/Weekly/2024-W21.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3988657e8827e0c7",
+    "type": "split",
+    "children": [
+      {
+        "id": "4aefa39abff726b6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0cfa922fcf0aa111",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "debd22ea8beb57a4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3387cbf8f434d11d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "04c0696230df48ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "c949c37950537019",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b480b1904f53bfd2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "0 Inbox/Periodic Notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "53857c685ba2ea71",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "0 Inbox/Periodic Notes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f3b03d3ee31dcf72",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "88b1b3d95dd0f59a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "0 Inbox/Periodic Notes.md"
+              }
+            }
+          },
+          {
+            "id": "651cbfc7a9df2fee",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false,
+      "periodic-notes:Open today": false
+    }
+  },
+  "active": "b559cfa434b4055e",
+  "lastOpenFiles": [
+    "0 Inbox/Land my first position as a DevOps Engineer.md",
+    "0 Inbox/CKA.md",
+    "0 Inbox/2024.md",
+    "Periodic Notes/Daily/2024-05-25.md",
+    "0 Inbox/Periodic Notes.md",
+    "Periodic Notes/Weekly/2024-W21.md",
+    "0 Inbox/Course - GitOps Fundamentals with Flux.md",
+    "Periodic Notes/Daily/2024-05-22.md",
+    "Periodic Notes/Daily/2024-05-20.md",
+    "Periodic Notes/Daily/2024-05-21.md",
+    "Periodic Notes/Daily/2024-05-23.md",
+    "Periodic Notes/Daily/2024-05-19.md",
+    "Periodic Notes/Monthly/2024-05.md",
+    "Periodic Notes/Weekly/2024-W22.md",
+    "Templates/daily.md",
+    "Templates/monthly.md",
+    "Periodic Notes/Weekly/2024-W20.md",
+    "1 Projects/CKA",
+    "Templates/weekly.md",
+    "0 Inbox/Run a half marathon.md",
+    "0 Inbox/2024-05-20.md",
+    "1 Projects/Build a Homelab/Build a Homelab.md",
+    "0 Inbox/Create a staging cluster.md",
+    "0 Inbox/Talos Linux.md",
+    "1 Projects/Build a Homelab",
+    "0 Inbox/kekw.md",
+    "4 Archive/My test note.md",
+    "Templates/Zettel template.md",
+    "Periodic Notes/Monthly",
+    "Periodic Notes/Weekly",
+    "Periodic Notes/Daily",
+    "Periodic Notes",
+    "3 Resources/Notetaking",
+    "Templates",
+    "2 Areas/Tech blog",
+    "3 Resources/Filmmaking"
+  ]
+}
