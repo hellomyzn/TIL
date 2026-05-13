@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タスク管理</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    #root {
+      width: 100%;
+      max-width: 540px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+      color: #f8fafc;
+      letter-spacing: -0.5px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .input-row input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1.5px solid #334155;
+      background: #1e293b;
+      color: #f1f5f9;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .input-row input::placeholder { color: #64748b; }
+    .input-row input:focus { border-color: #6366f1; }
+
+    .btn-add {
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      background: #6366f1;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .btn-add:hover { background: #4f46e5; }
+    .btn-add:disabled { background: #334155; color: #64748b; cursor: default; }
+
+    .stats {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    .stats span { display: flex; align-items: center; gap: 4px; }
+
+    .empty {
+      text-align: center;
+      color: #475569;
+      padding: 48px 0;
+      font-size: 0.95rem;
+    }
+
+    .task-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: #1e293b;
+      border: 1.5px solid #1e293b;
+      transition: border-color 0.15s, opacity 0.15s;
+    }
+
+    .task-item.done {
+      opacity: 0.6;
+      border-color: #22c55e44;
+    }
+
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #475569;
+      flex-shrink: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .checkbox.checked {
+      background: #22c55e;
+      border-color: #22c55e;
+    }
+
+    .checkbox.checked::after {
+      content: '';
+      width: 6px;
+      height: 10px;
+      border: 2px solid #fff;
+      border-top: none;
+      border-left: none;
+      transform: rotate(45deg) translateY(-1px);
+    }
+
+    .task-text {
+      flex: 1;
+      font-size: 0.97rem;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .task-text.done {
+      text-decoration: line-through;
+      color: #64748b;
+    }
+
+    .btn-delete {
+      background: none;
+      border: none;
+      color: #475569;
+      cursor: pointer;
+      font-size: 1.1rem;
+      line-height: 1;
+      padding: 4px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      transition: color 0.15s;
+    }
+
+    .btn-delete:hover { color: #f87171; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useRef } = React;
+
+    function App() {
+      const [tasks, setTasks] = useState([]);
+      const [input, setInput] = useState('');
+      const inputRef = useRef(null);
+
+      const addTask = () => {
+        const text = input.trim();
+        if (!text) return;
+        setTasks(prev => [...prev, { id: Date.now(), text, done: false }]);
+        setInput('');
+        inputRef.current?.focus();
+      };
+
+      const toggleTask = (id) => {
+        setTasks(prev => prev.map(t => t.id === id ? { ...t, done: !t.done } : t));
+      };
+
+      const deleteTask = (id) => {
+        setTasks(prev => prev.filter(t => t.id !== id));
+      };
+
+      const handleKeyDown = (e) => {
+        if (e.key === 'Enter') addTask();
+      };
+
+      const doneCount = tasks.filter(t => t.done).length;
+
+      return (
+        <div>
+          <h1>タスク管理</h1>
+
+          <div className="input-row">
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="新しいタスクを入力..."
+              autoFocus
+            />
+            <button className="btn-add" onClick={addTask} disabled={!input.trim()}>
+              追加
+            </button>
+          </div>
+
+          {tasks.length > 0 && (
+            <div className="stats">
+              <span>全 {tasks.length} 件</span>
+              <span>完了 {doneCount} 件</span>
+              <span>残り {tasks.length - doneCount} 件</span>
+            </div>
+          )}
+
+          {tasks.length === 0 ? (
+            <div className="empty">タスクがありません。追加してみましょう！</div>
+          ) : (
+            <ul className="task-list">
+              {tasks.map(task => (
+                <li key={task.id} className={`task-item${task.done ? ' done' : ''}`}>
+                  <div
+                    className={`checkbox${task.done ? ' checked' : ''}`}
+                    onClick={() => toggleTask(task.id)}
+                    role="checkbox"
+                    aria-checked={task.done}
+                    tabIndex={0}
+                    onKeyDown={e => e.key === 'Enter' && toggleTask(task.id)}
+                  />
+                  <span className={`task-text${task.done ? ' done' : ''}`}>{task.text}</span>
+                  <button
+                    className="btn-delete"
+                    onClick={() => deleteTask(task.id)}
+                    aria-label="削除"
+                    title="削除"
+                  >
+                    ✕
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
