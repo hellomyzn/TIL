@@ -1,0 +1,50 @@
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: ./infra/docker/mysql/Dockerfile
+    container_name: db-practice-mysql
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-practice}
+      MYSQL_USER: ${MYSQL_USER:-practice}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-practice}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+    ports:
+      - "${MYSQL_PUBLISHED_PORT:-3306}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -uroot -p\"$$MYSQL_ROOT_PASSWORD\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 120s
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./infra/docker/postgres/Dockerfile
+    container_name: db-practice-postgres
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Tokyo
+      POSTGRES_DB: ${POSTGRES_DB:-practice}
+      POSTGRES_USER: ${POSTGRES_USER:-practice}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-practice}
+    ports:
+      - "${POSTGRES_PUBLISHED_PORT:-5432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./db/postgres/initdb:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+
+volumes:
+  mysql-data:
+  postgres-data:
